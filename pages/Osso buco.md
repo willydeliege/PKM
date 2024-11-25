@@ -38,14 +38,11 @@ type:: [[cooking/plat]]
   *   Placer la grille au centre du four. Préchauffer le four à 180 °C (350 °F).
    *   Placer la farine dans une assiette creuse. Enrober les tranches de veau de farine.
    *   Dans une grande casserole à feu moyen-élevé, dorer la viande des deux côtés dans l'huile. Saler et poivrer. Réserver sur une assiette.
-    *   Dans la même casserole, attendrir les oignons. Ajouter de l’huile au besoin. Déglacer avec le vin. Remettre la viande et ajouter le reste des ingrédients. Saler légèrement et poivrer. Porter à ébullition. Couvrir et cuire au four 45 minutes. Réduire la température du four à 165 °C (325 °F). Poursuivre la cuisson 1 heure. Rectifier l'assaisonnement.
+   *   Dans la même casserole, attendrir les oignons. Ajouter de l’huile au besoin. Déglacer avec le vin. Remettre la viande et ajouter le reste des ingrédients. Saler légèrement et poivrer. Porter à ébullition. Couvrir et cuire au four 45 minutes. Réduire la température du four à 165 °C (325 °F). Poursuivre la cuisson 1 heure. Rectifier l'assaisonnement.
           
-  *   ### Gremolata
+  * Gremolata
       
-      *   Entre-temps, dans un bol, mélanger tous les ingrédients. Répartir la viande dans des assiettes. Parsemer la gremolata. Accompagner d’orzo et de rubans de courgettes, si désiré.
-          
-  
-  ### Note de l'équipe Ricardo
+      *   Entre-temps, dans un bol, mélanger tous les ingrédients. Répartir la viande dans des assiettes. Parsemer la gremolata. Accompagner d’orzo et de rubans de courgettes, si désiré.Note de l'équipe Ricardo
   
    **Une idée rapide pour accompagner l'osso buco**  Faire cuire de l'orzo jusqu'à ce qu'il soit _al dente_. L'orzo est une petite pâte alimentaire qui ressemble à des grains de riz. On le trouve dans les supermarchés. Réserver de l’eau de cuisson. Ajouter de l’huile d'olive et un peu d’eau de cuisson aux pâtes cuites. Ajouter du zeste râpé et du jus de citron. Simple et délicieux. On pourrait faire la même chose avec une pâte de votre choix. On pourrait aussi ajouter du fromage parmesan frais râpé.  
     
