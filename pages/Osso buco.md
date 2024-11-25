@@ -42,8 +42,9 @@ type:: [[cooking/plat]]
           
   * Gremolata
       
-      *   Entre-temps, dans un bol, mélanger tous les ingrédients. Répartir la viande dans des assiettes. Parsemer la gremolata. Accompagner d’orzo et de rubans de courgettes, si désiré.Note de l'équipe Ricardo
+      *   Entre-temps, dans un bol, mélanger tous les ingrédients. Répartir la viande dans des assiettes. Parsemer la gremolata. Accompagner d’orzo et de rubans de courgettes, si désiré.
+- Note de l'équipe Ricardo
   
    **Une idée rapide pour accompagner l'osso buco**  Faire cuire de l'orzo jusqu'à ce qu'il soit _al dente_. L'orzo est une petite pâte alimentaire qui ressemble à des grains de riz. On le trouve dans les supermarchés. Réserver de l’eau de cuisson. Ajouter de l’huile d'olive et un peu d’eau de cuisson aux pâtes cuites. Ajouter du zeste râpé et du jus de citron. Simple et délicieux. On pourrait faire la même chose avec une pâte de votre choix. On pourrait aussi ajouter du fromage parmesan frais râpé.  
     
-  Pour la gremolata, on peut faire un mélange de zeste de citron et d'orange. [Osso buco | RICARDO](https://www.ricardocuisine.com/recettes/2149-osso-buco)
+  Pour la gremolata, on peut faire un mélange de zeste de citron et d'orange.
