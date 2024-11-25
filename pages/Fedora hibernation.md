@@ -1,0 +1,2 @@
+- #Linux #Hibernate
+- Not secure see [The Chilling Reality of Cold Boot Attacks](https://blog.f-secure.com/cold-boot-attacks/)

@@ -1,0 +1,22 @@
+type:: #health
+src:: [Les trois piliers à respecter pour maintenir un bon système immunitaire avant l'hiver - RTBF Actus](https://www.rtbf.be/article/les-trois-piliers-a-respecter-pour-maintenir-un-bon-systeme-immunitaire-avant-l-hiver-11465303?utm_campaign=Tendance+22-11-2024&utm_medium=email&utm_source=Newsletter&actId=%7EahjpOv2BbAOvuyC4YAY21U95aE9quhLYede2__LuuwZgE9ha8aN2_EL_5h_2v8Lc1o1b6vHcWyR7bDyPEHmTP4UM9NC8P8Mh30sfgvfxr_syBPkYe38EI7tRb&actCampaignType=CAMPAIGN_MAIL&actSource=728202)
+
+- ## Les fibres alimentaires : l'apport de la soupe
+  ----------------------------------------------
+  
+   Comme l’explique le Dr Luc Stévens, "_[ces fibres](https://www.rtbf.be/article/les-aliments-riches-en-fibres-permettraient-de-reduire-les-risques-de-maladies-chroniques-10117837) vont entraîner le développement d’[une flore intestinale qui nous est favorable à plusieurs égards](https://www.rtbf.be/article/le-microbiote-intestinal-un-acteur-cle-de-notre-sante-10971555) et qui développe ce bon système immunitaire pour nous_".  On les trouve principalement dans les légumes, les fruits, les légumineuses et les céréales complètes à savoir le pain complet, les pâtes et le riz complets. "_Ce sont les légumes qui nous apportent le plus de fibres, d’où l’intérêt d’en manger plusieurs portions par jour_".  **Trois portions de légumes par jour** sont nécessaires et la soupe peut-être un bon moyen d’apporter l’une d’entre elles de façon aisée. En Belgique, la moyenne est de 15 à 20 g/jour. Or **il en faut au minimum 30 g**. "_Nous devons manger plus de légumes_" insiste le médecin nutritionniste et diététicien qui exerce la médecine sportive au Centre Européen de Rééducation (CER à Liège).​​​​​​​
+- ## Garder un apport calorique suffisant
+  ------------------------------------
+  
+   100.000 milliards de globules blancs sont produits par jour par notre corps. Conséquence, "_le système immunitaire a besoin d’énergie pour se développer_".  Pour le Dr Stévens, il s’agit donc d'éviter de sauter un repas ou de trop contrôler sa ration calorique "_sinon on met le système immunitaire en difficulté_".
+-
+- ## Ingurgiter des micronutriments en suffisance
+  --------------------------------------------
+  
+   Le code couleur est le moyen idéal afin d’apporter [les micronutriments dont nous avons besoin](https://www.rtbf.be/article/en-manque-de-vitamines-preferez-une-alimentation-saine-aux-complements-9426343).
+	- **La vitamine A**, très importante, se trouve dans les aliments, surtout les légumes, jaunes, oranges et verts : carottes, potimarrons, brocolis, épinards, poivrons_" indique le Dr Stévens.
+	- **La vitamine C** que l’on retrouve principalement dans les fruits oranges, rouges et noirs. Deux fruits chaque jour constituent l’apport journalier nécessaire en vitamine C. "_Les poivrons sont par ailleurs les légumes qui en contiennent le plus. Si besoin, on peut la prendre dans un court laps de temps sous forme de compléments_". Le jus de fruits peut faire partie de cet apport. Il est riche en sucres certes, mais il s’agit d’établir un équilibre. "_Si effectivement, je ne mange, le matin par_ _exemple, que des sucres simples, ce n’est pas une bonne idée. C’est l’ensemble qui compte_".  [
+	- **La vitamine D**, "](https://www.rtbf.be/article/des-complements-de-vitamine-d-pour-reduire-le-risque-de-developper-certains-cancers-10520406)_[est une vitamine anticancer](https://www.rtbf.be/article/des-complements-de-vitamine-d-pour-reduire-le-risque-de-developper-certains-cancers-10520406) et très importante pour avoir un système bon immunitaire. On ne la trouve quasi uniquement que dans les poissons gras, donc il faut en prendre en plus sous forme d’un complément_". Les vitamines A et C par contre doivent être favorisées sous forme alimentaire car il y a cet apport de fibres indispensables en plus values.
+	- **La vitamine E** contenue dans les huiles végétales, doit aussi être consommée chaque jour. "_Tout l’avantage est de varier les huiles d’un point de vue gustatif. Comme on choisit différents vins, on doit avoir chez soi différentes huiles : tournesol, colza, [olive](https://www.rtbf.be/article/huile-d-olive-enfin-de-meilleures-perspectives-apres-un-envol-historique-des-prix-11432353)…_"
+	- **Le zinc** associé aux protéines animales et aux légumineuses.
+	- **Le magnésium** "_intervient dans tout et donc dans le système immunitaire. Mais on le trouve partout donc on doit moins se tracasser_".

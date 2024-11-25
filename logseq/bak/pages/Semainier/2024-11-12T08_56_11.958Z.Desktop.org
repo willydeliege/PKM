@@ -1,0 +1,35 @@
+* LATER Médicaments Papa [0%]
+:LOGBOOK:
+- Note taken on [2024-08-20 mar 09:22] \\
+Reprise du forzaten le 1 le matin
+CLOCK: [2024-07-28 dim 08:17]--[2024-07-28 dim 08:28] =>  0:11
+#+BEGIN: clocktable :scope subtree :maxlevel 2
+#+CAPTION: Clock summary at [2024-07-01 Mon 09:31]
+| Headline                  | Time   |      |
+|---------------------------+--------+------|
+| *Total time*              | *2:53* |      |
+| \_  Médicaments Papa [0%] |        | 2:53 |
+#+END:
+CLOCK: [2024-06-30 Sun 06:49]--[2024-06-30 Sun 07:01] =>  0:12
+CLOCK: [2024-04-14 dim 08:24]--[2024-04-14 dim 08:40] =>  0:16
+CLOCK: [2024-03-31 Sun 10:16]--[2024-03-31 Sun 10:29] =>  0:13
+CLOCK: [2024-03-03 Sun 09:26]--[2024-03-03 Sun 09:38] =>  0:12
+CLOCK: [2024-03-10 Sun 08:02]--[2024-03-10 Sun 08:15] =>  0:29
+CLOCK: [2024-02-25 Sun 06:01]--[2024-02-25 Sun 06:14] =>  0:13
+CLOCK: [2024-02-18 dim. 09:24]--[2024-02-18 dim. 09:34] =>  0:10
+CLOCK: [2024-02-11 dim. 09:20]--[2024-02-11 dim. 09:32] =>  0:12
+CLOCK: [2024-02-04 Sun 03:23]--[2024-02-04 Sun 03:36] =>  0:13
+- Note taken on [2024-01-31 Wed 11:06] \\
+d-tri en compimés à sucer
+CLOCK: [2024-01-28 Sun 08:29]--[2024-01-28 Sun 08:48] =>  0:19
+CLOCK: [2024-01-21 dim 08:16]--[2024-01-21 dim 08:27] =>  0:11
+CLOCK: [2024-01-14 Sun 08:04]--[2024-01-14 Sun 08:19] =>  0:15
+CLOCK: [2024-01-07 Sun 06:10]--[2024-01-07 Sun 06:24] =>  0:14
+:END:
+- [ ] l-thyroxine 100 _1 matin -- séparé_
+- [ ] amiodarone _1 matin_ *!!! ⚠️ PAS LE WEEK-END*
+- [ ] forzaten 20/5 _1 matin_
+- [ ] eliquis 5 _1 matin 1 soir_
+- [ ] duastenide/tamsulosine 0,5/0,4 _1 soir_
+- [ ] simvastatine _1 soir_
+- [ ] bisoprolol 2.5 _0.5 soir_

@@ -1,0 +1,1398 @@
+Delivered-To: frederic.willem@gmail.com
+Received: by 2002:a05:7108:321c:b0:3dc:a9a0:5d5b with SMTP id j28csp1118060gde;
+        Fri, 22 Nov 2024 00:27:32 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGQ67m1lT4HGnQMdtAFQ2wn6WMHGSjGoBoubd7V3lRLENRcYNzasnWQavsfmuUif6yKyv/n
+X-Received: by 2002:a5d:5984:0:b0:382:134d:164 with SMTP id ffacd0b85a97d-38260602760mr1295368f8f.19.1732264051812;
+        Fri, 22 Nov 2024 00:27:31 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1732264051; cv=none;
+        d=google.com; s=arc-20240605;
+        b=YNHPTpKg0L0CYJhNT7MLVjsTuWlXZmV56mnE3szfZN2sgjirIuCmgFXL+pAJ6GX0fz
+         C52D0edsLfsz1CD4PZrpT9IhTStqbdjHHNyV5EyV94eo8rE/9unMEhwJTGHCy9qUeL2y
+         CS+PJBtK4W6ilXW1ADP/WzTrVJvgyiq/qK5UGsRkUK+zo40aesMkPZIKo20WF/eykYTS
+         3RMJ1Qu2TBk9T1Rs3R5EEzFJ0qNCz7vFVa1fvHcStRGZwLmhYo9fZblx6jmpUckYvADB
+         kask+ZdzYGmcLokUIf9BU6qxl+8kBhEXEOgClmu0jZBpm4FM+60UCSivVVWHtTjVLQMR
+         ZB6w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:list-unsubscribe-post:precedence:mime-version:subject
+         :message-id:to:reply-to:from:date:list-unsubscribe:dkim-signature
+         :dkim-signature;
+        bh=xJdjzEzuVoe/q0um1oinaSeCR+5zWW13PrPrEeqX3Lo=;
+        fh=sBt9Jl+WfPZMk9pCknzILW+wINNmh0ii1Uq021oxfqo=;
+        b=GyQS+GnHqAKzapcrYrS9eA6jVLJntbcqjUZxC1pWVBn/bpRwclU2CPQtZB625a4rCZ
+         buPs1kJLg7OfVoWxf3jELvlaUm4gZ5SlSBYZ3a4/Y9NxQ6jlFHbyBJrM03f83D76UNVn
+         MteQD7BCX/9CChS6fsG7BdALocbKTytCWULIslogtb7qPvU2zHHuQWabWI4Q80aL36XX
+         au3AosVHKy1d07/mU1ToC0DM+lzegDji4k13aWgY8x2uXWc/PrKN5TP/X04sdsQGZ1gb
+         rnDih2x7sYuIs5P3t3i8RvD2C1lZ61AXhr6mqrzK+j8IMEcrha2GJmV9z2Vgrk/ACs00
+         LqsQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@bf07.eu1.hubspotemail.net header.s=hs2 header.b=bHvSWYbt;
+       dkim=pass header.i=@mobilevikings.be header.s=hs2-26077024 header.b=iSZjgtFv;
+       spf=pass (google.com: domain of 1axch2cgn3kpuifl3ahq8188699wx9b9nzs591@bf07.eu1.hubspotemail.net designates 143.244.82.32 as permitted sender) smtp.mailfrom=1axch2cgn3kpuifl3ahq8188699wx9b9nzs591@bf07.eu1.hubspotemail.net;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=mobilevikings.be
+Return-Path: <1axch2cgn3kpuifl3ahq8188699wx9b9nzs591@bf07.eu1.hubspotemail.net>
+Received: from bd77esy.bf07.eu1.hubspotemail.net (bd77esy.bf07.eu1.hubspotemail.net. [143.244.82.32])
+        by mx.google.com with ESMTPS id ffacd0b85a97d-3825fd277b3si875035f8f.406.2024.11.22.00.27.31
+        for <frederic.willem@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 22 Nov 2024 00:27:31 -0800 (PST)
+Received-SPF: pass (google.com: domain of 1axch2cgn3kpuifl3ahq8188699wx9b9nzs591@bf07.eu1.hubspotemail.net designates 143.244.82.32 as permitted sender) client-ip=143.244.82.32;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@bf07.eu1.hubspotemail.net header.s=hs2 header.b=bHvSWYbt;
+       dkim=pass header.i=@mobilevikings.be header.s=hs2-26077024 header.b=iSZjgtFv;
+       spf=pass (google.com: domain of 1axch2cgn3kpuifl3ahq8188699wx9b9nzs591@bf07.eu1.hubspotemail.net designates 143.244.82.32 as permitted sender) smtp.mailfrom=1axch2cgn3kpuifl3ahq8188699wx9b9nzs591@bf07.eu1.hubspotemail.net;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=mobilevikings.be
+Received: by 172.16.220.117 with SMTP id a0b9znrox27ui2ygtx6a2rvj4l94bbugwoisq90fsf3;
+        Fri, 22 Nov 2024 08:27:17 GMT
+DKIM-Signature: v=1; s=hs2; d=bf07.eu1.hubspotemail.net; 
+        i=@bf07.eu1.hubspotemail.net; 
+        h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id:list-unsubscribe-post; 
+        a=rsa-sha256; c=relaxed/relaxed; 
+        bh=xJdjzEzuVoe/q0um1oinaSeCR+5zWW13PrPrEeqX3Lo=; 
+        b=bHvSWYbtWPzh1w8Vto1JNc3bJkGamU4PIxGFyC/lCZQJz4N51UlleKjKken6qN
+         te2dDjm8TvNIKNaqaNa7o+dcnjExCxe2R/f5b/1ITwa5P+qqfDrLlL+J1Mj+b6w
+         SVPAC9FotYqIL/ccS2FD6hR15zTQr8wkPZWn3gssBNkFH1/xDo6ESx1xbnmS2pE
+         zcojOFhJBB14EgozDb7Ha/KmcGQdZw5orVgtGeffsDqU97pmprICoAjCso6bkBx
+         rwSB5hhr/hCRDieIJcTwFCDHT5t0KJ0J5zgx+pU2TZZRpdEPLHXC+S07zkWJrGZ
+         NxA+fnp11Xmb/r5Ng/qSCeg6cORA==; q=dns/txt; t=1732264037; 
+        x=1732526837;
+DKIM-Signature: v=1; s=hs2-26077024; d=mobilevikings.be; 
+        i=@mobilevikings.be; 
+        h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id:list-unsubscribe-post; 
+        a=rsa-sha256; c=relaxed/relaxed; 
+        bh=xJdjzEzuVoe/q0um1oinaSeCR+5zWW13PrPrEeqX3Lo=; 
+        b=iSZjgtFv7yvVwzFQ8We3wees1Nj6pZU92j/RvB5ZuvL4ihyvL0cf+wLbd8xg8w
+         FrjO7cxYJBKpzhbwVWvhcpJjjLa2hqPT6YqvL0k4VeIos77Ctd8nAySQby+FzaZ
+         zs1kSGrtEHe1EXri0f1ywsVlB6/gl5U/c0wj1jpoY2qnLJSp0Y8mFb17+ssogJu
+         5Q3YsNxjkzyCrOZ2qmWVaem7TGKtfnBFNXAadGiDlJxKkTfcc4TIgQGYvocs4gs
+         lisFLfTcb7nxO6rnu74p9xpLAeAZxUA5cL5bNnE1hReSq6UlQgG2bfTiDbT2C/j
+         1B64/AXOQvQoQR7Xo0Y9O4XxjWqA==; q=dns/txt; t=1732264037; 
+        x=1732526837;
+Return-Path: <1axch2cgn3kpuifl3ahq8188699wx9b9nzs591@bf07.eu1.hubspotemail.net>
+X-HS-Cid: 1axfo4i603f0g2s29hirbu4lmghy9dgayuayn9
+List-Unsubscribe: <mailto:1axdl759mxg2yb2hdcycted7jda2nqut9xfpjd@bf07.eu1.hubspotemail.net?subject=unsubscribe>, <https://email.mobilevikings.be/hs/subscription-preferences/v2/unsubscribe-all?data=W2nVjwf3Y2x4kW45BnfR3W2llcW3H90Py1BrLq9W2ThDjz3VYZqlW1QblXn2zY3xnW3GZf_g1SsKDcW3S__Jh3BPc0TW2Wc7Ht2vK2jmW2xRSL44hm4N9W3T30yh1LCpRtW1LwQD_3W2NVZW3Fd46j4tfyk-W2THq3r4cLv6fW2MMLQR4fK1VCW2MSl8Y3W3z1vW1--z-B1ZqRdcW25lPgK3jlV0fW2MLZ_V2PTpY2W47wpvR3LJBKVW2HPrck1Xx5WNW4tGcjQ233x9yW45Hr5w3BNKM9W2qVbPx3XXSgFW1N4k1T41tzH0W3jsLdc3VydfmW3T5pkB2RwpbyW2YgmCy43Qd4QW2zG8nG4prTG2W3drWMg1VqW9ZW1ZpDZn1--Z3-W2KGXTH21nqTZW41zB9d36F7P0W1Vvd-d2MzgwBW34wJPh215VvRW4prxpv2zMwL-W32rkL6384QH4W4kfxjY4mGkvTW1LGLPZ4fr29zW43WFfQ3b1d94W4fP_y_47LyM5W2xKBrR3DZ_dyW36gWf11_mMyvW21g-NY2B1T2dW3VBljm38wgN4W3VK0T22YCGJtW2HDGzQ3K1GJLW36jdHT2KY35Z0>
+Date: Fri, 22 Nov 2024 09:27:17 +0100
+From: Mobile Vikings <info@mobilevikings.be>
+Reply-To: info@mobilevikings.be
+To: frederic.willem@gmail.com
+Message-ID: <1732264037293.66b71808-cf4c-43ba-9574-050d692bd506@bf07.eu1.hubspotemail.net>
+Subject: =?utf-8?Q?=F0=9F=8F=86Frederic,_gagnant-gagnant_pendant_Black_Friday_!?=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_210442_1409954981.1732264037386"
+Precedence: bulk
+X-Report-Abuse-To: abuse@hubspot.com (see
+ https://policy.hubspot.com/abuse-complaints)
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Feedback-ID: aeps7f2:aibxd14h:aipuz:HubSpot
+
+------=_Part_210442_1409954981.1732264037386
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+MAINTENANT 5 =E2=82=AC de r=C3=A9duction suppl=C3=A9mentaire sur votre fact=
+ure Mobile Vikings
+
+=C3=87a y est : les offres Black Friday sont arriv=C3=A9es !  =F0=9F=96=A4 =
+Profitez d=C3=A8s maintenant de r=C3=A9ductions =C3=A9normes en ligne et ob=
+tenez une remise suppl=C3=A9mentaire sur votre facture Mobile Vikings  avec=
+ les Viking Deals =E2=80=94 sur des achats que vous comptiez d=C3=A9j=C3=A0=
+ faire.
+
+EN PLUS, recevez un cadeau suppl=C3=A9mentaire pour votre premi=C3=A8re Vik=
+ing Deal...  Cela signifie 3x profiter pendant la p=C3=A9riode du Black Fri=
+day !
+
+Sp=C3=A9cialement pour vous !
+
+Effectuez votre premier Viking Deal avec l=E2=80=99un de nos partenaires av=
+ant le 3 d=C3=A9cembre et recevez =E2=82=AC5 de r=C3=A9duction suppl=C3=A9m=
+entaire sur votre facture Mobile Vikings en plus de votre deal !
+
+(visible dans My Viking avant le 10/12)
+
+C'est votre chance, Frederic =E2=80=94 saisissez-la ! Profiteur. =F0=9F=98=
+=89
+
+Je suis un profiteur (https://email.mobilevikings.be/e3t/Ctc/RK+113/d33CLT0=
+4/MW7TzHknF-mN6R7RyhvsVdkVcSh175nHT0mN6klYVx5m_5PW50kH_H6lZ3nDW8sJKzq2M_7w3=
+W8VD0PN2Hb2kGW5mPQcR7bPYwwW4q_lL48ntRCQN2GhkwWzYnbSW7G87jP5mQQMcN28LLLhRlRd=
+yN765pkrYsV6SW72fYlf1xvdQpW8gxjkF3tp9b-W1ZpVjY2SH38qW7LNY142_DFl_W15LDrk2cr=
+Cv5VL-mym4ZPtRWVdk7yN6S0nKXW8kDC7N6wQv55W39ZtSy3nwn4qW167_DB82Ls2sW8Mkx1k8H=
+JchbW7mc1tG3x3GXtW7mLvyq3V-jMhW5Ds_sk5tdJSJN1jwyC1CGxGjW7hkjWX5KD7xTW325c8X=
+5RXvMzW3PtRFN6nSk3jMFvZpwbX4M0W2ggGc230ydKLW4JCY1T2Y4yd_Vsxgpk9dDrC9N1Bysl0=
+kbQ5VW1CyyZz5L59gzf5k1Hrg04 )
+
+=F0=9F=91=89 R=C3=A9duction sur vos produits pr=C3=A9f=C3=A9r=C3=A9s
+
+=F0=9F=91=89 R=C3=A9duction sur votre facture Mobile Vikings
+
+=E2=9C=85 =E2=82=AC5 de r=C3=A9duction suppl=C3=A9mentaire
+
+Impossible de ne pas aimer? D=C3=A9couvrez  tous les partenaires ::
+
+Emma (https://email.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-mN6R=
+7RyhvsVdkVcSh175nHT0mN6klYX03prCCW7Y8-PT6lZ3lyN4_KR5-88JYsW95D8Tk5nbB2dW615=
+t2f201n1WW9hJ4VJ5Rg50jW4c63Xb7XY7YhVX8xmT4dY63DW551yY61WsQ-wW20VMZ82PXznkN7=
+dq10_MT49HW66J86j78b5wJW7fdWrG6Yw23zW8ZF_lb1pVnqQW5XDPTj3XVqWxW7W_jWL8xzlPk=
+W17pWmJ8Hpdg4W77gXLD5F6JspW73zmhx6wnqQRW2lJLGl3mmbrcW2d1CbM2KZhssVkyQ7697Kp=
+x_W8Fq92q49rYrQW101qHD4tKxv7W3h4fJL4v5F9dMgcDVTJgmWzW6898k01XGBQZW5jHvTB5-v=
+FTsf5-mcTs04 )
+
+Nike (https://email.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-mN6R=
+7RyhvsVdkVcSh175nHT0mN6klYX03prCCW7Y8-PT6lZ3nsW42TN-m7dJ9z4W11XfKV3nLQbHW8j=
+0H3x4dM9M8VK0wvv91Zk_cW6nBNtm7drQBMW33_vd69d8jVVW90pJWL4TXHG9N5FlRkRcjgWwN7=
+8rtYWQLScvW1mNMCD80nRbsW4tXdfm78f12gW3wRkTw8j24SnW4tckFn2PCQ_3W6d98mj82J8NN=
+Vqpc782XhmTZW1YvDSz61Jg2BMYH0x9rB2RVN6LH_ZfjDPmDW6zS2Md1GzTLzVW5QMg76_DSRN7=
+yr08n7pKVCW16x1ft5fg4HqVfLh8G75N85xW2mKQgJ596MJfW2HVJxm8KwfNVW8VyD9k8v8MDvf=
+1_ltJg04 )
+Vanden Borre (https://email.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzH=
+knF-mN6R7RyhvsVdkVcSh175nHT0mN6klYX03prCCW7Y8-PT6lZ3pNVfM46j1vDvRXN4kdkxx5b=
+rMMW56hJ0s6fCKVDV5mT9X4qQxcLW8MqkDt3JTMY0N6nmpql_WqjdMxWm3P-mRYzW1zHJLR8bRR=
+k7W2ypfP332CCKKW5pXHGT62sqdRW1H6SnZ4MntfsW45yHgT85P6s0N50tmts2PxXgW39c66t5m=
+p7qtW8rhn434gh1rWW4RRskF1pGCJrW5tC9tB90S8RYW2BgVH97y_18JW2sMpkM5BQN9ZW94Ps6=
+x6cznLhW7m6gg-88DrYrW4RwN-l58KtB9W7Zj_Vq7KrcVLF3v-9S-H3nnW37xk5V3zCBfTN766x=
+t51rmytd-F4rK04 )
+
+Fnac (https://email.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-mN6R=
+7RyhvsVdkVcSh175nHT0mN6klYX03prCCW7Y8-PT6lZ3l8W42McdC66jL1KW3vdlwD37WJKpW1_=
+F-HH5N02lWW1njcrN8PXP_CW8mWm8F8cYgmnW75t9347Qlh74W89MM5k2Vg1FyW8fx1Ym3_rwnj=
+W1qFc505tB480N3X0ChP5ZP2SW4xDXFD93FRKxW661Ll98WhltgW8BmpyC4b9GyGN7mHhH2wPtF=
+pW5kDZYf62RXRXN5krDqfftYjbW5qFvHx86lfd4W5GyjW61Dw57xVZLQnR2RR84BW53jktd2hG_=
+bbW2q458G2Q-rPkW6DD4fR1PPrJqW75sQzW4vnxqfVfJcZy2zVKJJW5qSNkD2-5FJgW6FFHm26M=
+679Xf4plcbs04 )
+amazon (https://email.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-mN=
+6R7RyhvsVdkVcSh175nHT0mN6klYXj3prCCW8wLKSR6lZ3pYW1qgXYb3cYhmkW52bgcZ8DN8KPW=
+1TCL5V1hy1htW4FM5S45Gqyk3W27tbJm79TmxdW6JR6H_4S1dllVr56XN3yWVdXVP5yTM2tQRdl=
+N68Ys6MDPY7YW2VFLdh2x-5dVW963rwk3LMmzDW8b-YVs22p4LDW6jKwbL6k4yPxW5ZfrqS1mcP=
+NTW6n51Ty11D5DtW7mb-lS6Nj6dVW59jnzf6DS1-dN67THzj9Sj8gW5BwXmK7xGcfBW8KRK9s6v=
+M67CW33qRry783T8-W3pTL8w6VlkSXW228CH48cQKH8W8w3MLV7MVxphN4Db3dDLYyBXW2lcVHw=
+3h4R_-W6yn7ZT2KP_gBW7hsDBM6ZLVd5f5srKpY04 )
+Samsung (https://email.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-m=
+N6R7RyhvsVdkVcSh175nHT0mN6klYXj3prCCW8wLKSR6lZ3pWW1pV9NK8wLDL8VRpn2s35-_GhV=
+Hwfs_795ZxcW91pj1X6Qpw8sW4YL4VZ7dt0HlW45sgJm83zHyTW3vSL8h1WGySsW7_FJ168sg0q=
+3W5nZBys1QCZ36N8SNl8s9ZhtqW8BVJl58ZYgDmW7q_wYY4qklTdW6KKdcx5GySHXW2D8PMx5ps=
+TWJW2m0jVx99TNKkW30CgZN3w_zP-W8g4K5J7PKv3cW6RXFFC2wQscvVBqFqq37xpRQV5_g7T2s=
+gjB2W7HkdzW3BQ7VwW8y85DY2Dh4hcVkjkl93Dcj3TW7LN96z8C7Y65W5Xqp_-1Jsq0kW5m1L6d=
+4fNHXQW2lllGX3dD6CxW9dFX5P7WtD2Rf73C-fF04 )
+
+Je veux au moins 5=E2=82=AC de r=C3=A9duction
+(https://email.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-mN6R7Ryhv=
+sVdkVcSh175nHT0mN6klYVx5m_5PW50kH_H6lZ3nDW8sJKzq2M_7w3W8VD0PN2Hb2kGW5mPQcR7=
+bPYwwW4q_lL48ntRCQN2GhkwWzYnbSW7G87jP5mQQMcN28LLLhRlRdyN765pkrYsV6SW72fYlf1=
+xvdQpW8gxjkF3tp9b-W1ZpVjY2SH38qW7LNY142_DFl_W15LDrk2crCv5VL-mym4ZPtRWVdk7yN=
+6S0nKXW8kDC7N6wQv55W39ZtSy3nwn4qW167_DB82Ls2sW8Mkx1k8HJchbW7mc1tG3x3GXtW7mL=
+vyq3V-jMhW5Ds_sk5tdJSJN1jwyC1CGxGjW7hkjWX5KD7xTW325c8X5RXvMzW3PtRFN6nSk3jMF=
+vZpwbX4M0W2ggGc230ydKLW4JCY1T2Y4yd_Vsxgpk9dDrC9N1Bysl0kbQ5VW1CyyZz5L59gzf5k=
+1Hrg04 )
+
+Salutations Viking,
+
+L=E2=80=99=C3=A9quipe Mobile Vikings
+
+Des questions ? Trouvez votre r=C3=A9ponse dans notre Aide & Support (https=
+://email.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-mN6R7RyhvsVdkVc=
+Sh175nHT0mN6klYWK3prCCW7lCdLW6lZ3kyW1Yy77H65mHFFW2yNRcd2qxSxzW3lkth737bhl5W=
+58F17N4ychdzN42zWtJvtc34W3bL4Cc3F2th4W1THJ791BchhtW3DWjMx81vnV3W2S6pF132jwN=
+0N8x3XC7cf19FW7XV_K11kfzs7W1dxrSL8f94CgW5-6hTC1HlssCW5yg0b898gvyBW2LXxxJ3QY=
+Q9mN7Fw-kg5pNQVW4kvMyY4GzWznW416g3q3Mz4TbN60WlfNRMDl2W22Xgc33_xtWfW6H76cW6G=
+n3TbW149TJ13gy9b8W5yVgR18cKvYmW8fDY521mP6dHf2TDzvn04 ) .
+
+D=C3=A9sinscrivez-vous (https://email.mobilevikings.be/hs/preferences-cente=
+r/en/page?data=3DW2nVjwf3Y2wXwW4fxwlB3_v8FwW4hhRj04r7VRmW1_3wPt1LnMgnW3jx7w=
+F1XqbTqW2Thx_M2y1MJYW1LnNMY2t1fdXW3F1gtZ2zFgKsW3Zt9Ww45M9hTW214znl32BFNWW3L=
+PFd13QLHCdW237Lcg4fB05TW2CTBmQ4mtm9sW2p1fFl1NFjVdW3g711g1_9P2kW3GLK6T3FdY6p=
+W3z7YbQ2sZwNvW3b99Lm4rk3BrW3ZC84t2-H7-_W3Z-ZbB3jv041W366DGl4kK4HkW3gxgs81Z8=
+NVdW2sN5yV49V7sgW1Nnc672-rH-PW2s-QRt3GFH8DW1BwPCV45wCz3W2t0XD54fpQFfW4fjlM1=
+1Nn9-QW3NWG2w3Xwm1yW2Mp8VD4rCRQWW1Q9_Z53QP66jW3LQt9R3SSkM_W2PPykS237jGtW3Qz=
+VX41N7fT1W3gbnGq4prxbWW3H4lvp4kCbZLW2RKf0B232kMyW2FVzFx4tDvmhW1XvtpJ2RT_fMW=
+49JbNV3jkGxGW2qG-B64rrGBLW1BGnrF2WjbyZW3dkfCw3BLcWXW1Sv1RF4tCh6PW3Y2Z561Vyv=
+5sW3gqrRK2HJRd-W2vTkDL3S-m0z0&_hsenc=3Dp2ANqtz-9anXnUpKvYh_CnSVKkUALlUV8vUY=
+K_zv2ru9eEi9tWp3EjJtX3dzO1IKteW7bSwzHR1mAeJw55XF_WGfve9rBsaJ-XasR8gLQIcQ_UW=
+kFmNqXhcbs&_hsmi=3D99273391 ) .
+
+Suivez-nous sur
+
+Facebook (https://email.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-=
+mN6R7RyhvsVdkVcSh175nHT0mN6klYWK3prCCW7lCdLW6lZ3kCV22h8M24PFZ7W45Nttg532tqr=
+W7NKQFb4ZRWqsW7L8TxY2nfjSVW1HH8YY8fqQm8W66hLqH93kTpcW66J3l35Qbbx2W1sK5zV2Ht=
+njhN3BMTZpqjGr8W8JkDf55n1hCgW3kz76G4xy-B8W6KkvRX2FNK5WW13683B78BZYwVw68_r7p=
+x7V2W86KCJM73vTnmW97sYLT5WhgrVW7pHLVJ7zKGwtW25252x5n0Wm9W7qX-Q56RJX7hN1WBR6=
+N8w12-V2ytVX3yKq_CMKCyFmBYhHMN7WffxshGq2PW18t-0b9k1n5Xf1fPFpP04 )
+
+Instagram (https://email.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF=
+-mN6R7RyhvsVdkVcSh175nHT0mN6klYWK3prCCW7lCdLW6lZ3lDW7J_X255ntTdMW8Hctt15sYB=
+mGW43kbm07MJjz5W33xCQR4ntpsKW5xtjPj8W7dY2W266Yz-1DRrSJVf17ls2X6t1rW4LypZH6t=
+mYBbW404BQq2rHC0xW5WRJKv3Q8lcwVdQFKJ99NX5gVyVsMD8p1jCKW4C41347Dy9dkW37nftw2=
+QC95JW7F8sFJ5_jgMjW1XcCz81-Lm8WVz86Th8tgkVLW2-Qg-X8nm10lW2GY9T32zQf1TW8vKVt=
+N2HtV6cW7R9HM37NP3MyW3XzHhh7XZ2hGW2XSVGc5pt8hXW2FbLMR3KWqVff694fNq04 )
+
+x (https://email.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-mN6R7Ry=
+hvsVdkVcSh175nHT0mN6klYWq3prCCW6N1vHY6lZ3lfW5r_3QP3LmRDnW2vfTRX1-42QXW57mrB=
+n2czq_FW4KPxqp5SGRG9W4SCq7m8Sc-xNW9l2WbW2F3hwcW2g3DXL7CV9G2W99Sysr3hQ7JNW3g=
+VFjS3fgj1bW45_mgY7mzX0vW3Nm53K6VPG0rW19LJ5C6r8RYPW3GH5SL6lPBCpW6Z1kHs29WxpM=
+W29s7p34x1b-jV7BTwh7W6BMlN7BST1VLjSljW2SfY6688q96gN6zLVrYHvnj1W406WB34Ln4Ps=
+W7jdp837bFRyKT99ZD2lZ9RWf3T8c4x04 )
+
+TikTok (https://email.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-mN=
+6R7RyhvsVdkVcSh175nHT0mN6klYWK3prCCW7lCdLW6lZ3kVW84G2Dj1PSL1XN6Bwtjr9RKjfW7=
+n6yyG5vZYyTW3jHmmg2y13DHW1-jgZW3XBGWWW93jzTB2RPbFNVj6qJJ7dgKhrW6gJ6r76HF_HZ=
+W2lZtpg3LQJd0W3qb2-q4H1QzvW8ZRS0j77GRDkW2p981_3LB66fVxQNsK40cwyPW8HTFHw1vq4=
+NPW2wTp346Qz7-XW2cTFzs4FxHGWW3m_ZXV1xKHNDW6kmd-D2qPTkpN8FYgP7lxGFwW1FlqWR1v=
+DJznW7qN-1m1Z4h8cW510jyx3F45jnW21q7zM1yNn0zVs344c2Zg7Dpf89hJ2M04 )
+
+YouTube (https://email.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-m=
+N6R7RyhvsVdkVcSh175nHT0mN6klYWK3prCCW7lCdLW6lZ3m8W3PHrwx3wDt1BV--d8V4XTg4ZV=
+pMNSw41P51SW8lQ88H6YHd1bW33jXsM8XWFrqW7b4y-R1qRdvMW4fHzR07JjCJtW2Y1-0k1_L06=
+tW8zpvDV2yM2sVW6-rbYp6JFfP7W1ndJFw2h3sg9N5HzGdl6_R12W4K4Pny1YdhhjW3cSqyn3wZ=
+ZWrVd-d8-8rQXB_W3pj9x_4154W2W28m1ZR5MLv8XW50mbH18xWF-ZW3M_vrP58gnjlW6wDNHw1=
+dgKGmN7Z-sWWPm-T3W3wGWTF23k2ZKW8tdNGN4RwvH8W7PvSxh7Ffv3ff2bvv-j04 )
+
+Mobile Vikings
+
+Kempische Steenweg 309 box 1 , 3500 Hasselt, Limburg, Belgium
+------=_Part_210442_1409954981.1732264037386
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html><html lang=3D"en"><head>
+    <style type=3D"text/css" id=3D"hs-inline-css" data-hse-element-inlined=
+=3D"true">
+        @font-face {
+            font-family: 'Mr Alex Bold';
+            font-style: normal;
+            font-weight: bold;
+            src: local('Mr Alex Bold'),
+                 local('MrAlex-Bold'),
+                 url(https://mv-s3-mas-email-content.s3.amazonaws.com/fonts=
+/MrAlex-Bold.woff) format('woff');
+        }
+        @font-face {
+            font-family: 'Foro Sans';
+            font-style: normal;
+            font-weight: normal;
+            src: local('Foro Sans Regular'),
+                 local('ForoSans-Regular'),
+                 url(https://mv-s3-mas-email-content.s3.amazonaws.com/fonts=
+/ForoSans-Regular.woff) format('woff');
+        }
+        @font-face {
+            font-family: 'Foro Sans';
+            font-style: normal;
+            font-weight: bold;
+            src: local('Foro Sans Bold'),
+                 local('ForoSans-Bold'),
+                 url(https://mv-s3-mas-email-content.s3.amazonaws.com/fonts=
+/ForoSans-Bold.woff) format('woff');
+        }
+        * {
+            font-family: 'Foro Sans', -apple-system, BlinkMacSystemFont, "S=
+egoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        table {
+            border-collapse:collapse;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            font-family: 'Mr Alex Bold';
+            font-weight: bold;
+            display:block;
+            margin:0;
+            padding:0;
+        }
+        img,a img {
+            border:0;
+            height:auto;
+            outline:none;
+            text-decoration:none;
+        }
+        body,#bodyTable,#bodyCell {
+            height:100%;
+            margin:0;
+            padding:0;
+            width:100%;
+        }
+        #outlook a {
+            padding:0;
+        }
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+        table {
+            mso-table-lspace: 0;
+            mso-table-rspace: 0;
+        }
+        table td,
+        table th {
+            font-family: 'Foro Sans', -apple-system, BlinkMacSystemFont, "S=
+egoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height:24px;
+        }
+        table th {
+            font-weight: bold;
+        }
+        td.td-content {
+            padding:20px 40px 40px;
+        }
+        td.td-content a {
+            display:inline;
+            color:#00A5DB;
+            text-decoration:underline;
+        }
+        td.td-content ul,td.td-content ol {
+            padding:0 15px;
+        }
+        td.td-content ul li,td.td-content ol li {
+            padding-left:10px;
+        }
+        .ReadMsgBody {
+            width:100%;
+        }
+        .ExternalClass {
+            width:100%;
+        }
+        a[href^=3Dtel],a[href^=3Dsms] {
+            color:inherit;
+            cursor:default;
+            text-decoration:none;
+        }
+        p,a,li,td,body,table,blockquote {
+            -ms-text-size-adjust:100%;
+            -webkit-text-size-adjust:100%;
+        }
+        .ExternalClass,.ExternalClass p,.ExternalClass td,.ExternalClass di=
+v,=3D
+        .ExternalClass span,.ExternalClass font {
+            line-height:100%;
+        }
+        a[x-apple-data-detectors] {
+            color:inherit !important;
+            text-decoration:none !important;
+            font-size:inherit !important;
+            font-family:inherit !important;
+            font-weight:inherit !important;
+            line-height:inherit !important;
+        }
+        img {
+            margin:0;
+            padding:0;
+            border:0;
+            display:inherit;
+        }
+        p {
+            color:#D8D8D8;
+            font-size:16px;
+            line-height:24px;
+            margin:0 0 20px;
+            font-family: 'Foro Sans', -apple-system, BlinkMacSystemFont, "S=
+egoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        a {
+            color:#00A5DB;
+            display:inline-block;
+        }
+        p a {
+            color:#00A5DB;
+        }
+        p strong {
+            color: #FFFFFF;
+            font-weight: bold;
+        }
+        @media only screen and (max-width: 480px) {
+            table#canspamBar td {
+                font-size:14px !important;
+            }
+            table#canspamBar td a {
+                display:block !important;
+                margin-top:10px !important;
+            }
+        }
+    </style>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html charset=3DUTF-8"=
+>
+    <meta http-equiv=3D"x-ua-compatible" content=3D"IE=3Dedge">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1">
+    <title>=F0=9F=8F=86Frederic, win-win during Black Friday!</title>
+   =20
+ =20
+<style type=3D"text/css" data-hse-inline-css=3D"true" hs-reset-stylesheet=
+=3D"true" data-hse-element-inlined=3D"true">
+body {
+  margin: 0 !important;=20
+  padding: 0 !important;=20
+}
+a {
+  color: #00a4bd;=20
+}img {
+  outline: none;
+  text-decoration: none;}
+a img {
+  border: none;=20
+}.hs_rss_email_entries_table p {
+  margin-bottom: 10px;
+}
+pre {
+  white-space:pre-wrap;
+}
+h1 {
+  font-size: 28px;
+}
+h2 {
+  font-size: 22px;
+}
+h3 {
+  font-size: 17px;
+}
+h4 {
+  font-size: 15px;
+}
+h5 {
+  font-size: 13px;
+}
+h6 {
+  font-size: 10px;
+}
+</style>
+   =20
+<style type=3D"text/css" data-hse-inline-css=3D"true" id=3D"base_stylesheet=
+" data-hse-element-inlined=3D"true">
+  h1,h2,h3,h4,h5,h6 {
+    mso-line-height-rule: exactly;
+    margin: 0;
+  }
+  .hse-body-wrapper-table {
+    margin: 0;
+    padding: 0;
+    width: 100% !important;
+    min-width: 320px !important;
+    height: 100% !important;
+  }
+  .hubspot-branding-text {
+    font-size: 13px;
+    margin-bottom: 1em;
+    margin:0;
+    -ms-text-size-adjust:100%;
+    -webkit-text-size-adjust:100%;
+    mso-line-height-rule:exactly;
+    font-family: Arial, sans-serif;
+    color: #23496d;
+  }
+  .hubspot-branding-text a {
+    color: #23496d;
+  }
+  #section_hubspot_brand.hse-section-full-width.branding-box-design .module=
+AlignmentCell {
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+   =20
+  .hse-section.hse-section-full-width {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+   =20
+  .hse-pre-header {
+    line-height: 120%;
+    padding: 10px 10px 10px 0;
+    text-align: right;
+  }
+  .hse-column-container {
+    min-width: 280px;=20
+    max-width: 600px;
+    Margin-left: auto;
+    Margin-right: auto;}
+  .hse-column-container.hse-no-stack-row {
+    border-collapse: separate;
+    display: table;
+    width: 100%;
+  }
+  .hse-section-full-width .hse-column-container {
+    max-width: 100%;
+    Margin-left: 0;
+    Margin-right: 0;
+  }.hs_cos_wrapper_type_cta .hs-cta-img {
+    display: block;
+  }
+</style>
+ =20
+<style type=3D"text/css" data-hse-inline-css=3D"true" data-hse-element-inli=
+ned=3D"true">
+  .hse-no-stack {
+    display: table-cell;
+    vertical-align: top;
+  }
+  .hse-no-stack.hse-size-3 { max-width: 150px; width: 25%; }
+.hse-no-stack.hse-size-4 { max-width: 200px; width: 33.33%; }
+.hse-no-stack.hse-size-5 { max-width: 250px; width: 41.66%; }
+.hse-no-stack.hse-size-6 { max-width: 300px; width: 50%; }
+.hse-no-stack.hse-size-7 { max-width: 350px; width: 58.33%; }
+.hse-no-stack.hse-size-8 { max-width: 400px; width: 66.66%; }
+.hse-no-stack.hse-size-9 { max-width: 450px; width: 75%; }
+.hse-no-stack.hse-size-12 { max-width: 600px; width: 100%; }
+</style>
+ =20
+<style type=3D"text/css" id=3D"overrideable_styles" data-hse-inline-css=3D"=
+true" data-hse-element-inlined=3D"true">
+body, td {
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #d8d8d8;
+  word-break: break-word;=20
+}
+.hs_cos_wrapper_type_rich_text p, .hs_cos_wrapper_type_rich_text div, .hs_c=
+os_wrapper_type_rich_text ol, .hs_cos_wrapper_type_rich_text ul, .hs_cos_wr=
+apper_type_rich_text blockquote,
+.hs_cos_wrapper_type_inline_rich_text p, .hs_cos_wrapper_type_inline_rich_t=
+ext div, .hs_cos_wrapper_type_inline_rich_text ul, .hs_cos_wrapper_type_inl=
+ine_rich_text blockquote,
+ h1,h2,h3,h4,h5,h6 {
+  mso-line-height-rule: exactly;
+  line-height: 175%;
+}
+.hse-secondary {
+  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 135%;
+  color: #d8d8d8;
+}
+.hs_cos_wrapper_type_rich_text h1,
+.hs_cos_wrapper_type_inline_rich_text h1,
+.hs_rss_email_entries_table h1 {
+ =20
+ =20
+  font-size: 28px;
+ =20
+ =20
+}
+.hs_cos_wrapper_type_rich_text h2,
+.hs_cos_wrapper_type_inline_rich_text h2,
+.hs_rss_email_entries_table h2 {
+ =20
+ =20
+  font-size: 22px;
+ =20
+ =20
+}
+.hs_cos_wrapper_type_rich_text a,
+.hs_cos_wrapper_type_inline_rich_text a,
+.hs_rss_email_entries_table a {
+  color: ;
+ =20
+ =20
+ =20
+}
+.hse-footer {
+  margin-bottom: 20px;
+}
+.hse-body-background {
+  background-color: #000000;
+}
+.hse-border {
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+  box-sizing: border-box;
+}
+.hse-border-bottom {
+  border-bottom: 1px solid #000000;
+}
+.hse-border-top {
+  border-top: 1px solid #000000;
+}
+.hse-section {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+</style>
+  <!--[if gte mso 9]>
+  <xml>
+      <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+  </xml>
+ =20
+  <style>
+    ul > li {
+      text-indent: -1em;
+    }
+  </style>
+<![endif]-->
+<!--[if mso]>
+<style type=3D"text/css">
+ body, td {font-family: Arial, Helvetica, sans-serif;}
+ .hse-body-wrapper-table {background-color: #000000;}
+</style>
+<![endif]-->
+ =20
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0">
+<meta name=3D"generator" content=3D"HubSpot"><meta property=3D"og:url" cont=
+ent=3D"https://email.mobilevikings.be/-temporary-slug-68391c3d-18ee-4347-92=
+d1-350322a6e23a"><meta name=3D"robots" content=3D"noindex,follow"><style ty=
+pe=3D"text/css">#hs_body #hs_cos_wrapper_main a[x-apple-data-detectors]{col=
+or:inherit !important;text-decoration:none !important;font-size:inherit !im=
+portant;font-family:inherit !important;font-weight:inherit !important;line-=
+height:inherit !important}
+a{text-decoration:underline}p{margin:0}body{-ms-text-size-adjust:100%;-webk=
+it-text-size-adjust:100%;-webkit-font-smoothing:antialiased;moz-osx-font-sm=
+oothing:grayscale}
+table{border-spacing:0;mso-table-lspace:0;mso-table-rspace:0}table,td{borde=
+r-collapse:collapse}
+img{-ms-interpolation-mode:bicubic}p,a,li,td,blockquote{mso-line-height-rul=
+e:exactly}
+@media only screen and (max-width:639px){img.stretch-on-mobile,.hs_rss_emai=
+l_entries_table img,.hs-stretch-cta .hs-cta-img{height:auto !important;widt=
+h:100% !important}
+.display_block_on_small_screens{display:block}.hs_padded{padding-left:20px =
+!important;padding-right:20px !important}
+.hs-hm,table.hs-hm{display:none}.hs-hd{display:block !important}table.hs-hd=
+{display:table !important}
+}.moz-text-html .hse-column-container{max-width:600px !important;width:600p=
+x !important}
+.moz-text-html .hse-column{display:table-cell;vertical-align:top}.moz-text-=
+html .hse-section .hse-size-3{max-width:150px !important;width:150px !impor=
+tant}
+.moz-text-html .hse-section .hse-size-4{max-width:200px !important;width:20=
+0px !important}
+.moz-text-html .hse-section .hse-size-5{max-width:250px !important;width:25=
+0px !important}
+.moz-text-html .hse-section .hse-size-6{max-width:300px !important;width:30=
+0px !important}
+.moz-text-html .hse-section .hse-size-7{max-width:350px !important;width:35=
+0px !important}
+.moz-text-html .hse-section .hse-size-8{max-width:400px !important;width:40=
+0px !important}
+.moz-text-html .hse-section .hse-size-9{max-width:450px !important;width:45=
+0px !important}
+.moz-text-html .hse-section .hse-size-12{max-width:600px !important;width:6=
+00px !important}
+@media only screen and (min-width:640px){.hse-column-container{max-width:60=
+0px !important;width:600px !important}
+.hse-column{display:table-cell;vertical-align:top}.hse-section .hse-size-3{=
+max-width:150px !important;width:150px !important}
+.hse-section .hse-size-4{max-width:200px !important;width:200px !important}=
+.hse-section .hse-size-5{max-width:250px !important;width:250px !important}
+.hse-section .hse-size-6{max-width:300px !important;width:300px !important}=
+.hse-section .hse-size-7{max-width:350px !important;width:350px !important}
+.hse-section .hse-size-8{max-width:400px !important;width:400px !important}=
+.hse-section .hse-size-9{max-width:450px !important;width:450px !important}
+.hse-section .hse-size-12{max-width:600px !important;width:600px !important=
+} }@media only screen and (max-width:639px){ul,blockquote{margin:0;padding:=
+1em 40px}
+}</style></head>
+<body style=3D"height:100%; width:100%; -ms-text-size-adjust:100%; -webkit-=
+text-size-adjust:100%; margin:0 !important; padding:0 !important; font-fami=
+ly:sans-serif; font-size:16px; color:#d8d8d8; word-break:break-word">
+    <!--[if gte mso 15]>
+    <xml>
+    <o:OfficeDocumentSettings>
+    <o:AllowPNG />
+    <o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<!--[if gte mso 9]>
+<v:background xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"t">
+    <v:fill type=3D"tile" size=3D"100%,100%" color=3D"#ffffff"/>
+</v:background>
+<![endif]-->
+<center>
+    <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"100%" bgcolor=3D"#111111" style=3D"border-collapse:collapse; mso=
+-table-lspace:0; mso-table-rspace:0; -ms-text-size-adjust:100%; -webkit-tex=
+t-size-adjust:100%; height:100%" height=3D"100%">
+    <tbody><tr>
+        <td align=3D"center" valign=3D"top" style=3D"-ms-text-size-adjust:1=
+00%; -webkit-text-size-adjust:100%; color:#d8d8d8; word-break:break-word; f=
+ont-family:'Foro Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Robo=
+to, Helvetica, Arial, sans-serif; font-size:16px; line-height:24px">
+            <!-- BEGIN TEMPLATE // -->
+            <!--[if gte mso 9]>
+            <table align=3D"center" border=3D"0" cellspacing=3D"0" cellpadd=
+ing=3D"0" width=3D"440" style=3D"width:440px;">
+            <tr>
+            <td align=3D"center" valign=3D"top" width=3D"440" style=3D"widt=
+h:440px;">
+            <![endif]-->
+            <div id=3D"hs_cos_wrapper_module_171690750433210" class=3D"hs_c=
+os_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color=
+: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-general-t=
+ype=3D"widget" data-hs-cos-type=3D"module"><!-- // BEGIN FOOTER -->
+</div><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"440"=
+ style=3D"border-collapse:collapse; mso-table-lspace:0; mso-table-rspace:0;=
+ -ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; width:440px; pad=
+ding:3px">
+            <!-- // BEGIN PREHEADER -->
+            <tbody><tr>
+                <td valign=3D"top" style=3D"-ms-text-size-adjust:100%; -web=
+kit-text-size-adjust:100%; color:#d8d8d8; word-break:break-word; font-famil=
+y:'Foro Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helve=
+tica, Arial, sans-serif; font-size:16px; line-height:24px">
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"100%" bgcolor=3D"#111111" style=3D"border-collapse:collapse; mso-=
+table-lspace:0; mso-table-rspace:0; -ms-text-size-adjust:100%; -webkit-text=
+-size-adjust:100%">
+                    <tbody><tr>
+                        <td valign=3D"top" style=3D"-ms-text-size-adjust:10=
+0%; -webkit-text-size-adjust:100%; word-break:break-word; font-family:'Foro=
+ Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, A=
+rial, sans-serif; padding:16px 16px 16px 0; font-size:12px; line-height:20p=
+x; color:#D8D8D8" class=3D"preview-text">
+                          <!-- Preview -->
+                          <span style=3D"color:#d8d8d8;font-family:'Foro Sa=
+ns',-apple-system,BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,=
+ sans-serif !important;font-size:12px;line-height:20px;">
+                           =20
+                             =20
+                           =20
+                            </span>
+                        </td>
+                        <td valign=3D"top" style=3D"-ms-text-size-adjust:10=
+0%; -webkit-text-size-adjust:100%; word-break:break-word; font-family:'Foro=
+ Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, A=
+rial, sans-serif; padding:16px 16px 0; font-size:12px; line-height:20px; co=
+lor:#D8D8D8">
+                            <!-- View as webpage link -->
+                           =20
+                        </td>
+                    </tr>
+                </tbody></table>
+                </td>
+            </tr>
+            <tr>
+              <td bgcolor=3D"#000000" style=3D"-ms-text-size-adjust:100%; -=
+webkit-text-size-adjust:100%; color:#d8d8d8; word-break:break-word; font-fa=
+mily:'Foro Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, He=
+lvetica, Arial, sans-serif; font-size:16px; line-height:24px; background-co=
+lor:#000000">
+               =20
+                  <div id=3D"hs_cos_wrapper_custom_html_fr" class=3D"hs_cos=
+_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: =
+inherit; font-size: inherit; line-height: inherit;" data-hs-cos-general-typ=
+e=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapper_custom_h=
+tml_fr_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_=
+inline_rich_text" style=3D"color: inherit; font-size: inherit; line-height:=
+ inherit;" data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"inline_r=
+ich_text" data-hs-cos-field=3D"richtext_field"><center></center><!--[if gte=
+ mso 15]>
+    <xml>
+    <o:OfficeDocumentSettings>
+    <o:AllowPNG />
+    <o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<table align=3D"center" bgcolor=3D"#111111" style=3D"border-collapse:collap=
+se; mso-table-lspace:0; mso-table-rspace:0; -ms-text-size-adjust:100%; -web=
+kit-text-size-adjust:100%; height:100%; border-width:0px; border-style:none=
+" width=3D"100%" cellspacing=3D"0" height=3D"100%">
+<tbody>
+<tr>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; padding:0px" align=3D"center" valign=3D"top"><!=
+-- BEGIN TEMPLATE // --> <!--[if gte mso 9]>
+            <table align=3D"center" border=3D"0" cellspacing=3D"0" cellpadd=
+ing=3D"0" width=3D"440" style=3D"width:440px;">
+            <tr>
+            <td align=3D"center" valign=3D"top" width=3D"440" style=3D"widt=
+h:440px;">
+            <![endif]-->
+<table style=3D"border-collapse:collapse; mso-table-lspace:0; mso-table-rsp=
+ace:0; -ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; width:440p=
+x; padding:3px; border-width:0px; border-style:none" width=3D"440" cellspac=
+ing=3D"0"><!-- BEGIN PREHEADER // -->
+<tbody>
+<tr>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; padding:0px" valign=3D"top"><!-- BEGIN MODULE: =
+STANDARD PREHEADER // -->
+<table bgcolor=3D"#111111" width=3D"100%" style=3D"border-collapse:collapse=
+; mso-table-lspace:0; mso-table-rspace:0; -ms-text-size-adjust:100%; -webki=
+t-text-size-adjust:100%; border-width:0px; border-style:none" cellspacing=
+=3D"0">
+<tbody>
+<tr>
+<td class=3D"preview-text" style=3D"-ms-text-size-adjust:100%; -webkit-text=
+-size-adjust:100%; word-break:break-word; font-family:'Foro Sans', -apple-s=
+ystem, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif=
+; font-size:16px; line-height:24px; padding:20px 0; color:#d8d8d8" valign=
+=3D"top"><span style=3D"color: #d8d8d8; font-family: 'Foro Sans',-apple-sys=
+tem,BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !i=
+mportant; font-size: 12px; line-height: 20px;">MAINTENANT 5 =E2=82=AC de r=
+=C3=A9duction suppl=C3=A9mentaire sur votre facture Mobile Vikings </span><=
+/td>
+</tr>
+</tbody>
+</table>
+<!-- // END MODULE: STANDARD PREHEADER --></td>
+</tr>
+<!-- // END PREHEADER --> <!-- BEGIN HEADER // -->
+<tr>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; padding:0px" bgcolor=3D"#000000" valign=3D"top"=
+><!-- BEGIN MODULE: HEADER IMAGE // --> <img alt=3D"Profitez 3x avec Viking=
+ deals" src=3D"https://mv-s3-mas-email-content.s3.amazonaws.com/optimizer/d=
+t-4163/headerB-fr.png" width=3D"440" style=3D"height:auto; -ms-interpolatio=
+n-mode:bicubic; margin:0; padding:0; border:0; display:inherit; outline:non=
+e; text-decoration:none; width:440px; max-width:440px" height=3D"auto"></td=
+>
+</tr>
+<!-- // END HEADER -->
+<tr>
+<td class=3D"td-content" style=3D"-ms-text-size-adjust:100%; -webkit-text-s=
+ize-adjust:100%; word-break:break-word; font-family:'Foro Sans', -apple-sys=
+tem, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; =
+background-color:#000000 !important; text-align:center; color:#d8d8d8; font=
+-size:14px; line-height:26px; padding:0px 24px 24px" bgcolor=3D"#000000" va=
+lign=3D"top" align=3D"center"><span style=3D"font-family: 'Foro Sans',-appl=
+e-system,BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-ser=
+if !important; font-size: 16px; line-height: 30px;"> =C3=87a y est : <stron=
+g style=3D"color: #ffffff;">les offres Black Friday sont arriv=C3=A9es ! </=
+strong> =F0=9F=96=A4 Profitez d=C3=A8s maintenant de <strong style=3D"color=
+: #ffffff;">r=C3=A9ductions =C3=A9normes en ligne </strong>et obtenez une <=
+strong style=3D"color: #ffffff;">remise suppl=C3=A9mentaire sur votre factu=
+re Mobile Vikings </strong> avec les Viking Deals =E2=80=94 sur des achats =
+que vous comptiez d=C3=A9j=C3=A0 faire. <br>EN PLUS, recevez <strong style=
+=3D"color: #ffffff;">un cadeau suppl=C3=A9mentaire pour votre premi=C3=A8re=
+ Viking Deal... </strong> Cela signifie <strong style=3D"color: #ffffff;">3=
+x profiter pendant la p=C3=A9riode du Black Friday !</strong> </span></td>
+</tr>
+<tr>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; background-color:#000000; text-align:center; pa=
+dding:0 24px 0 24px" bgcolor=3D"#000000" valign=3D"top" align=3D"center">
+<table width=3D"100%" cellspacing=3D"0" style=3D"border-collapse:collapse; =
+mso-table-lspace:0; mso-table-rspace:0; -ms-text-size-adjust:100%; -webkit-=
+text-size-adjust:100%">
+<tbody>
+<tr>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; background-color:#2c2c2c; text-align:center; bo=
+rder-radius:14px 14px 0px 0px; padding:24px 24px 16px 24px" bgcolor=3D"#2c2=
+c2c" width=3D"50%" valign=3D"top" align=3D"center"><img src=3D"https://mv-s=
+3-mas-email-content.s3.amazonaws.com/optimizer/dt-4163/icon1.png" width=3D"=
+130" height=3D"74" style=3D"-ms-interpolation-mode:bicubic; margin:0; paddi=
+ng:0; border:0; outline:none; text-decoration:none; display:inline-block; w=
+idth:130px; height:74px; max-width:130px" alt=3D"icon"></td>
+</tr>
+<tr>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; word=
+-break:break-word; font-family:'Foro Sans', -apple-system, BlinkMacSystemFo=
+nt, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size:16px; line-=
+height:24px; background-color:#2c2c2c; text-align:center; padding:0 24px 8p=
+x 24px; color:#d8d8d8" bgcolor=3D"#2c2c2c" width=3D"50%" valign=3D"top" ali=
+gn=3D"center"><span style=3D"font-family: 'Foro                            =
+                        Sans',-apple-system,BlinkMacSystemFont, 'Segoe UI' =
+, Roboto,                                                    Helvetica, Ari=
+al, sans-serif                                                    !importan=
+t; font-size: 16px; line-height: 30px; color: #ffffff;"> <strong style=3D"c=
+olor: #ffffff;">Sp=C3=A9cialement pour vous ! <br></strong> </span></td>
+</tr>
+<tr>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; word=
+-break:break-word; font-family:'Foro Sans', -apple-system, BlinkMacSystemFo=
+nt, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size:16px; line-=
+height:24px; background-color:#2c2c2c; text-align:center; padding:24px 24px=
+ 24px 24px; color:#d8d8d8" bgcolor=3D"#2c2c2c" width=3D"50%" valign=3D"top"=
+ align=3D"center"><span style=3D"font-family: 'Foro Sans',-apple-system,Bli=
+nkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !importan=
+t; font-size: 16px; line-height: 30px; color: #d8d8d8;"> Effectuez votre pr=
+emier Viking Deal avec l=E2=80=99un de nos partenaires avant le 3 d=C3=A9ce=
+mbre et <strong style=3D"color: #ffffff;">recevez <span style=3D"font-famil=
+y: 'Foro Sans',-apple-system,BlinkMacSystemFont, 'Segoe UI', Roboto, Helvet=
+ica, Arial, sans-serif !important; font-size: 16px; line-height: 30px; colo=
+r: #d8d8d8;"><strong style=3D"color: #ffffff;"><span style=3D"font-family: =
+'Foro Sans',-apple-system,BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica=
+, Arial, sans-serif !important; font-size: 16px; line-height: 30px; color: =
+#d8d8d8;"><strong style=3D"color: #ffffff;"><span style=3D"font-family: 'Fo=
+ro Sans',-apple-system,BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, A=
+rial, sans-serif !important; font-size: 16px; line-height: 30px; color: #d8=
+d8d8;"><strong style=3D"color: #ffffff;">=E2=82=AC</strong></span></strong>=
+</span></strong></span>5 de r=C3=A9duction suppl=C3=A9mentaire sur votre fa=
+cture Mobile Vikings</strong> en plus de votre deal !<br>(visible dans My V=
+iking avant le 10/12)&nbsp;<br><br>C'est votre chance,&nbsp;Frederic =E2=80=
+=94 saisissez-la ! Profiteur. =F0=9F=98=89 </span></td>
+</tr>
+<tr>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; background-color:#2c2c2c; text-align:center; bo=
+rder-radius:0px 0px 14px 14px; padding:0px 24px 24px 24px" bgcolor=3D"#2c2c=
+2c" valign=3D"top" align=3D"center"><a href=3D"https://email.mobilevikings.=
+be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-mN6R7RyhvsVdkVcSh175nHT0mN6klYVx5nR32W=
+50kH_H6lZ3kRW8YN0rb7Xy-fZW6g5vZD4L5NGrW33Dvhm6_Xf_jW72w89H2Y77gcW3T4NXC2qJD=
+f2W91xb-g7LQ2YjW7v27KL1Qb-3hW22yzRN8Y2RN7W5YHkl81R4PPLW4D55CM4F1BP6W4L7bcB1=
+zm0FnVxSx9Y1_9VyDN6WZj65RLLcnN8YmJ74h0CShW1gtBcq4LNZR_W629ffQ3bx-jdN1FL1dGq=
+FdMlW7T6-PG1QXhlsW6dM69k8NTC7lW7mtfrq5F3mkxW2LXJCw30r4dPW5JsRKd5bW303W153MR=
+x4gTmQQN7V4XSWPd8sGN52JY1qyR5B1Vs3LFB6dmfz2W1kt8tx62M8FNW3f-VHV5p8wpCW36g0y=
+b2Lf5_wW89QXyN7ZcT8GW5HG2x110BkT8W7YX0yM1rWGPFf4g6c3F04" style=3D"-ms-text-=
+size-adjust:100%; -webkit-text-size-adjust:100%; color:#00a4bd; display:inl=
+ine-block; text-align:center" target=3D"_blank" rel=3D"noopener" linktext=
+=3D"  " align=3D"center" data-hs-link-id=3D"0"> <img src=3D"https://mv-s3-m=
+as-email-content.s3.eu-west-1.amazonaws.com/optimizer/dt-4163/cta-1-fr.png"=
+ width=3D"198" height=3D"55" style=3D"-ms-interpolation-mode:bicubic; margi=
+n:0; padding:0; outline:none; text-decoration:none; border:none; display:in=
+line-block; width:198px; height:55px; max-width:198px; text-align:center" a=
+lt=3D"Je suis un profiteur" align=3D"center"> </a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; background-color:#000000; padding:8px 0px 0px; =
+text-align:center" bgcolor=3D"#000000" valign=3D"top" align=3D"center"><img=
+ src=3D"https://mv-s3-mas-email-content.s3.amazonaws.com/optimizer/dt-4163/=
+subtitleB-1-fr.png" width=3D"440" height=3D"225" style=3D"-ms-interpolation=
+-mode:bicubic; margin:0; padding:0; border:0; outline:none; text-decoration=
+:none; display:inline-block; width:440px; height:225px; max-width:440px; te=
+xt-align:center" alt=3D"Profitez 3x?" align=3D"center"></td>
+</tr>
+<tr>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; background-color:#000000; padding:0px; text-ali=
+gn:center" bgcolor=3D"#000000" valign=3D"top" align=3D"center"><img src=3D"=
+https://mv-s3-mas-email-content.s3.amazonaws.com/optimizer/dt-4163/invoice-=
+B-fr.png" width=3D"344" height=3D"471" style=3D"-ms-interpolation-mode:bicu=
+bic; margin:0; padding:0; border:0; outline:none; text-decoration:none; dis=
+play:inline-block; width:344px; height:471px; max-width:344px; text-align:c=
+enter" alt=3D"facture" align=3D"center"></td>
+</tr>
+<tr></tr>
+<tr>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; background-color:#000000; padding:32px 0px 16px=
+; text-align:center" bgcolor=3D"#000000" valign=3D"top" align=3D"center"><i=
+mg src=3D"https://mv-s3-mas-email-content.s3.amazonaws.com/optimizer/dt-416=
+3/subtitle-2-nl.png" width=3D"392" height=3D"80" style=3D"-ms-interpolation=
+-mode:bicubic; margin:0; padding:0; border:0; outline:none; text-decoration=
+:none; display:inline-block; width:392px; height:80px; max-width:392px; tex=
+t-align:center" alt=3D"black friday deals =3D viking deals" align=3D"center=
+"></td>
+</tr>
+<tr>
+<td class=3D"td-content" style=3D"-ms-text-size-adjust:100%; -webkit-text-s=
+ize-adjust:100%; word-break:break-word; font-family:'Foro Sans', -apple-sys=
+tem, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; =
+background-color:#000000 !important; text-align:center; color:#d8d8d8; font=
+-size:14px; line-height:26px; padding:0 24px 0 24px" bgcolor=3D"#000000" va=
+lign=3D"top" align=3D"center"><span style=3D"font-family: 'Foro Sans',-appl=
+e-system,BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-ser=
+if !important; font-size: 16px; line-height: 30px;"> =F0=9F=91=89 R=C3=A9du=
+ction sur vos produits pr=C3=A9f=C3=A9r=C3=A9s <br>=F0=9F=91=89 R=C3=A9duct=
+ion sur votre facture Mobile Vikings <br>=E2=9C=85 <strong style=3D"color: =
+#ffffff;">=E2=82=AC5 de r=C3=A9duction suppl=C3=A9mentaire</strong> </span>=
+</td>
+</tr>
+<tr>
+<td class=3D"td-content" style=3D"-ms-text-size-adjust:100%; -webkit-text-s=
+ize-adjust:100%; word-break:break-word; font-family:'Foro Sans', -apple-sys=
+tem, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; =
+background-color:#000000 !important; text-align:center; color:#d8d8d8; font=
+-size:14px; line-height:26px; padding:16px 24px 0 24px" bgcolor=3D"#000000"=
+ valign=3D"top" align=3D"center"><span style=3D"font-family: 'Foro Sans',-a=
+pple-system,BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-=
+serif !important; font-size: 16px; line-height: 30px;"> Impossible de ne pa=
+s aimer? D=C3=A9couvrez <strong style=3D"color: #ffffff;"> tous les partena=
+ires :</strong>: </span></td>
+</tr>
+<tr>
+<td class=3D"td-content" style=3D"-ms-text-size-adjust:100%; -webkit-text-s=
+ize-adjust:100%; word-break:break-word; font-family:'Foro Sans', -apple-sys=
+tem, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; =
+text-align:left; color:#d8d8d8; font-size:14px; line-height:24px; padding:0=
+px 0px 0px 0px" bgcolor=3D"#000000" valign=3D"top" align=3D"left">
+<table width=3D"100%" cellspacing=3D"0" style=3D"border-collapse:collapse; =
+mso-table-lspace:0; mso-table-rspace:0; -ms-text-size-adjust:100%; -webkit-=
+text-size-adjust:100%">
+<tbody>
+<tr>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; padding:24px 0px 16px; text-align:center; width=
+:98.1567%" colspan=3D"6" valign=3D"top" align=3D"center" width=3D"98.1567%"=
+><a href=3D"https://email.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHkn=
+F-mN6R7RyhvsVdkVcSh175nHT0mN6klYX03qgyTW7Y8-PT6lZ3n-W4BdCt17Fzy-1W3xjpq_1J5=
+GHvW8rfks979SNK1W2jRmPt6hjjgRW5SXwqg48D3x4V7-jDf6H-q43W8TvBvP516mXQN7ZVvtMJ=
+2n_pW2KTQ--3V0BX0W5z4yVl7B--3RW1pxmpd6Cc963N5Y6_4sqHsyDW4ll3601zVN1sW7wc-SH=
+8VPp63VtRgDD83392cN2ZCPwm8cVbGW8y6QHV1vXyN-W2Tzjtm38vLdhW5HbCXG3ntW1-W5nwX-=
+J8Gs1ZTW5FyYP912zMYMVcP6415PhXb5W1NdC53564C6xW8KXLdP8fc6gPW6yRdRN5F32H8W4lJ=
+ym22bZql2dzV2V604" target=3D"_blank" rel=3D"noopener" linktext=3D"  " style=
+=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; display:inlin=
+e; color:#00a5db; text-decoration:underline" data-hs-link-id=3D"0"> <img al=
+t=3D"Emma" src=3D"https://mv-s3-mas-email-content.s3.amazonaws.com/optimize=
+r/dt-4163/partner-1.png" style=3D"-ms-interpolation-mode:bicubic; margin:0;=
+ padding:0; height:auto; outline:none; text-decoration:none; border:none; m=
+ax-width:164px; width:164px; display:inline" width=3D"164" height=3D"auto">=
+ </a></td>
+</tr>
+<tr>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; padding:8px 0px 16px; text-align:right; width:4=
+9.0783%" colspan=3D"3" valign=3D"top" align=3D"right" width=3D"49.0783%"><a=
+ href=3D"https://email.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-m=
+N6R7RyhvsVdkVcSh175nHT0mN6klYX03qgyTW7Y8-PT6lZ3pRW32yhGr4XHtfFW1kFRGB5S13Pp=
+W4Vp91j1sCJ4CW4VWwc21nXTm_N8cCptMfxGwnW7glNZj7HRL28W8rzGfV4fMSmnN2sbrFyD8q1=
+VW64VwF32mhxVCVWPv2S7jNXKVN81TbxNkMfLSW8VbFq_8xJ5jGW4TyZ565x5qZ5W1145Dy4Yzc=
+74W7gxBg22Qwmx5W5k3W5f3b835KW842wL6219TkRW3LwlwZ4mYTpyW6HvvLD3zkmSmW4-NKHh3=
+vF18bW1_kgvK6yhpXmW7MKXSG8ZxPZ0W6G--bX8nyVYJW72gnlD6BYpMpW2k09J94GM6VHW3Qyb=
+g73Q3cmmd6QrBl04" style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adj=
+ust:100%; color:#00a5db; text-decoration:underline; display:block; text-ali=
+gn:right" target=3D"_blank" rel=3D"noopener" linktext=3D"  " align=3D"right=
+" data-hs-link-id=3D"0"> <img alt=3D"Nike" src=3D"https://mv-s3-mas-email-c=
+ontent.s3.amazonaws.com/optimizer/dt-4163/partner-2.png" style=3D"-ms-inter=
+polation-mode:bicubic; margin:0; padding:0; height:auto; outline:none; text=
+-decoration:none; border:none; max-width:148px; width:148px; display:inline=
+" width=3D"148" height=3D"auto"> </a></td>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; padding:8px 0px 16px; text-align:left; width:49=
+.0783%" colspan=3D"3" valign=3D"top" align=3D"left" width=3D"49.0783%"><a h=
+ref=3D"https://email.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-mN6=
+R7RyhvsVdkVcSh175nHT0mN6klYX03qgyTW7Y8-PT6lZ3kZW3GVkGl1VMD_vW1qBgG37yHBZjW5=
+DpgCr7T05kzW4c3Fdl3n40qZW5Y8Klg4fMpXtV496DY3m0HxNW1lcH518bjf1pW4RVKmh3wN0Dc=
+W8K2cQ7842HLrW8jBrV65b-y2CW5xXZNy6hN9NkW5B4RK47pbPQyW6FZnQm7lKvNbW3GqZrB6wX=
+q6hW8MdsX23b7ydpW6MwcyD7XktpcW8NjZsF9jB8qJW6KJ1XC6QCXp2N2P4SG2-Wb9jW3mwf5q1=
+pTtXfW3fnGmf3nQLLzVgVS4F3FSd3dVY8s6d5LD8rfW1pn7202FHnDmW4Yb08m52VLpTW8CGhX1=
+16VT2kf11HBVP04" style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adju=
+st:100%; color:#00a5db; text-decoration:underline; display:block; text-alig=
+n:left" target=3D"_blank" rel=3D"noopener" linktext=3D"  " align=3D"left" d=
+ata-hs-link-id=3D"0"> <img alt=3D"Vanden Borre" src=3D"https://mv-s3-mas-em=
+ail-content.s3.amazonaws.com/optimizer/dt-4163/partner-3.png" style=3D"-ms-=
+interpolation-mode:bicubic; margin:0; padding:0; height:auto; outline:none;=
+ text-decoration:none; border:none; max-width:148px; width:148px; display:i=
+nline" width=3D"148" height=3D"auto"> </a></td>
+</tr>
+<tr>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; padding:8px 0px 16px; text-align:right; width:3=
+2.7189%" colspan=3D"2" valign=3D"top" align=3D"right" width=3D"32.7189%"><a=
+ href=3D"https://email.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-m=
+N6R7RyhvsVdkVcSh175nHT0mN6klYX03qgyTW7Y8-PT6lZ3lkW5y7DvC6S-ssNW6YM0hR64RRK3=
+W7S0r7n397hRYW5G44Jd714lgpW8jd_2l2hb5bPW4STb0n4VFFRbN6gbvwYvsXDfW5ClvGy9cJ2=
+m3W87CcJH3pVdqlW22hcMM2vTVG9W2CxFtS120RypW15k2Ws3WVyZvN7Z7zhnfpVN0W8qKK9v48=
+5xnpW4XZF2k5gwMWSW3XfFkR39Nk6bW6rym-P8LNWk3W7PMbWY7cNl3qW8r8xKb6g5wCnW57QGM=
+68PJ2FpW7tmCtP5623YNW58TNNR4-CnsLW56L8tV921Yj2W38P07V2XyR3tN7mL8DLddvKnW3_K=
+y_h3Dc6N7f2lxdwz04" style=3D"-ms-text-size-adjust:100%; -webkit-text-size-a=
+djust:100%; color:#00a5db; text-decoration:underline; display:block" target=
+=3D"_blank" rel=3D"noopener" linktext=3D"  " data-hs-link-id=3D"0"> <img al=
+t=3D"Fnac" src=3D"https://mv-s3-mas-email-content.s3.amazonaws.com/optimize=
+r/dt-4163/partner-4.png" style=3D"-ms-interpolation-mode:bicubic; margin:0;=
+ padding:0; height:auto; outline:none; text-decoration:none; border:none; m=
+ax-width:126px; width:126px; display:inline" width=3D"126" height=3D"auto">=
+ </a></td>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; padding:8px 0px 16px; text-align:center; width:=
+32.7189%" colspan=3D"2" valign=3D"top" align=3D"center" width=3D"32.7189%">=
+<a href=3D"https://email.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF=
+-mN6R7RyhvsVdkVcSh175nHT0mN6klYXj3qgyTW8wLKSR6lZ3nvW7yWqLB3ZhbC8N4cz1MzLysM=
+VW6zqvJk3Fl4GNW3_3zz81vV1fPVJkqr02lLf_ZW5t0fgx9j32tWN3Vd_L-y9WwHW6QH-2M4rsk=
+SkVWL2Zq48jTH0VKx0TQ6xrF-DN1XsdGrpWdfyW10KfKJ6d59GDN6q_fZ9qTjw0VD8FL58HVF7L=
+W62XHFC3Kc_hCVxGJVX6Nf8twW5SyX5m297flmW2xp94l3C6qhrW7H9XR05Xx_BwW7d5frP6vd9=
+3HW726y313hBnpCW4-Hw7B8dMgn9W2ByQHP62WmD2W1SfS5x6vnnHyW7zT3f51SZ5j8W7kxPcN5=
+xnymvW2-smPL3qnslsW6KrGdn3WCj0rf5ZxYqH04" target=3D"_blank" rel=3D"noopener=
+" linktext=3D"  " style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adj=
+ust:100%; display:inline; color:#00a5db; text-decoration:underline" data-hs=
+-link-id=3D"0"> <img alt=3D"amazon" src=3D"https://mv-s3-mas-email-content.=
+s3.amazonaws.com/optimizer/dt-4163/partner-5.png" style=3D"-ms-interpolatio=
+n-mode:bicubic; margin:0; padding:0; height:auto; outline:none; text-decora=
+tion:none; border:none; max-width:126px; width:126px; display:inline" width=
+=3D"126" height=3D"auto"> </a></td>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; padding:8px 0px 16px; text-align:left; width:32=
+.7189%" colspan=3D"2" valign=3D"top" align=3D"left" width=3D"32.7189%"><a h=
+ref=3D"https://email.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-mN6=
+R7RyhvsVdkVcSh175nHT0mN6klYXj3qgyTW8wLKSR6lZ3lqW6JJWqY4WgXKyW5yfrq77F7Y_HN4=
+Pkmz4MJ2PfVs_CJv1rVdsNN39FLXfzDcwVW1f20233KjMNCW9m3pNK7sYcHGV4Yy1m6--vtsW5D=
+BzC24B9P_zW7RLL567WYqLGW8TVshS8lr7-CW6bC_3s47M4tdW81_0ld227pMJW6PL_Z79g8NPT=
+VlqWM17Y9hw5N4P1qDL3JpHTN5NHrfTwFfs-W8dbZ7x2rRZvQW4c4Kn45WwBPDW28_cLM84pDpy=
+N3cl4ZSKhkDGW4Dd4MB96-RwFW4lct5587q0gqW8ZmZPr1m2HnzVyBHQq4cQB6pW2zc4JS6D20M=
+cW2sR5-X9gJYpZW96pZvh1tZKm9f7TKWsC04" target=3D"_blank" rel=3D"noopener" li=
+nktext=3D"  " style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:=
+100%; display:inline; color:#00a5db; text-decoration:underline" data-hs-lin=
+k-id=3D"0"> <img alt=3D"Samsung" src=3D"https://mv-s3-mas-email-content.s3.=
+amazonaws.com/optimizer/dt-4163/partner-6.png" style=3D"-ms-interpolation-m=
+ode:bicubic; margin:0; padding:0; height:auto; outline:none; text-decoratio=
+n:none; border:none; max-width:140px; width:126px; display:inline" width=3D=
+"126" height=3D"auto"> </a></td>
+</tr>
+<tr>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; padding:0px; width:16.3594%" width=3D"16.3594%"=
+>&nbsp;</td>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; padding:0px; width:16.3594%" width=3D"16.3594%"=
+>&nbsp;</td>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; padding:0px; width:16.3594%" width=3D"16.3594%"=
+>&nbsp;</td>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; padding:0px; width:16.3594%" width=3D"16.3594%"=
+>&nbsp;</td>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; padding:0px; width:16.3594%" width=3D"16.3594%"=
+>&nbsp;</td>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; padding:0px; width:16.3594%" width=3D"16.3594%"=
+>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; background-color:#000000; text-align:center; pa=
+dding:8px 24px 24px 24px" bgcolor=3D"#000000" valign=3D"top" align=3D"cente=
+r"><a href=3D"https://email.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzH=
+knF-mN6R7RyhvsVdkVcSh175nHT0mN6klYVx5nR32W50kH_H6lZ3m-W6LpZS85vSyBbW35pWJF8=
+1V86TW24Drxg1GNjcsN30FYhTQN_dMW8Jp4ZS5_FXygW3g0w851ZrM_XW59GmvY4BxxvWV2Ybz_=
+8LcKqdW6dN0f05tCDpxW2qfC5S9dZJbwN8zy78X14bsSVVyJW28m0ZfsVXFsTV2l9Dm-W4JTjvN=
+1KL41gW6j7K5w7_nFCZN2fj7wgT_5YPN2hBxc35SY8qW3R2mxc2p9vJWN8sdnWdmjk2yW5Ss6t4=
+4glvHBW6qyBYF6KMr1gW4_C6m49d_xL-N4SCWbRPn6SdW4WXMBV1VPq21W4tKd4c18dPfvW5Bv3=
+XZ3647BhW39psDM28TJL-W5DYsw46-fXNGW285YXJ8JNSm0W43Qh_D8_jrF-W5GgvFT6cBVpyW4=
+qSqLZ7XpT8Hf4Y_c5g04" style=3D"-ms-text-size-adjust:100%; -webkit-text-size=
+-adjust:100%; color:#00a4bd; display:inline-block; text-align:center" targe=
+t=3D"_blank" rel=3D"noopener" linktext=3D"  " align=3D"center" data-hs-link=
+-id=3D"1"> <img src=3D"https://mv-s3-mas-email-content.s3.eu-west-1.amazona=
+ws.com/optimizer/dt-4163/ctaB-2-fr.png" width=3D"274" height=3D"55" style=
+=3D"-ms-interpolation-mode:bicubic; margin:0; padding:0; outline:none; text=
+-decoration:none; border:none; display:inline-block; width:274px; height:55=
+px; max-width:274px; text-align:center" alt=3D" Je veux au moins 5=E2=82=AC=
+ de r=C3=A9duction
+                                                " align=3D"center"> </a></t=
+d>
+</tr>
+<tr>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; background-color:#000000; padding:24px 24px 40px; line-height:30p=
+x" bgcolor=3D"#000000" valign=3D"top">
+<p style=3D"margin-bottom: 1em; -ms-text-size-adjust:100%; -webkit-text-siz=
+e-adjust:100%; color:#d8d8d8; font-size:16px; margin:0 0 20px; font-family:=
+'Foro Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helveti=
+ca, Arial, sans-serif; mso-line-height-rule:exactly; line-height:175%"><spa=
+n style=3D"color: #d8d8d8; font-family: 'Foro Sans',-apple-system,BlinkMacS=
+ystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important; fon=
+t-size: 16px; line-height: 30px;"> Salutations Viking, <br><strong style=3D=
+"font-weight:bold; color:#ffffff">L=E2=80=99=C3=A9quipe Mobile Vikings</str=
+ong> </span></p>
+</td>
+</tr>
+<!-- // BEGIN FOOTER -->
+<tr>
+<td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; colo=
+r:#d8d8d8; word-break:break-word; font-family:'Foro Sans', -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-s=
+ize:16px; line-height:24px; padding:0px"></td>
+</tr>
+<!-- // END FOOTER --></tbody>
+</table>
+<!--[if gte mso 9]>
+        </td>
+        </tr>
+        </table>
+        <![endif]--> <!-- // END TEMPLATE --></td>
+</tr>
+</tbody>
+</table></div></div>
+               =20
+              </td>
+            </tr>
+            <!-- // BEGIN FOOTER -->
+            <tr>
+    <td valign=3D"top" style=3D"-ms-text-size-adjust:100%; -webkit-text-siz=
+e-adjust:100%; color:#d8d8d8; word-break:break-word; font-family:'Foro Sans=
+', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,=
+ sans-serif; font-size:16px; line-height:24px; height:40px" height=3D"40">&=
+nbsp;</td>
+</tr>
+<tr>
+    <td style=3D"-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; =
+word-break:break-word; font-family:'Foro Sans', -apple-system, BlinkMacSyst=
+emFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size:11px; l=
+ine-height:20px; text-align:center; color:#797979" align=3D"center">
+        <span style=3D"font-weight: 400;">Des questions ? Trouvez votre r=
+=C3=A9ponse dans notre<span> </span><a href=3D"https://email.mobilevikings.=
+be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-mN6R7RyhvsVdkVcSh175nHT0mN6klYWK3qgyTW=
+7lCdLW6lZ3nsW16tzzm5VJ98_W26hQDK37wnhFW1VhpBd3rYJ_dW26GfCn4_vR3YW2Qyt2N1hMy=
+j7VXZT_D3s3N6XVsVRWN85mRwLW1JZGFm75GkHVW6JzDzK6gpKdrW3_JYMZ6GP9fdW4-2cjR7rt=
+q3HW8YzSb43J5x5sN3WvwbVRwpT_W5CD0bN2khVyyW6D4qVl2yDBRwW8XV3WF3sx-BrW8z7xXs8=
+VNGS-W8YZcgT7RbL4dN7QGMJy_xtkhW7p9Zh64HlpvgW2db6387S0PlhN3q9gy71Z53FW5P3w-0=
+2t9JQXW8vcVM47wbc1vf2883Cn04" style=3D"-ms-text-size-adjust:100%; -webkit-t=
+ext-size-adjust:100%; display:inline-block; color:#cccccc; text-decoration:=
+underline" data-hs-link-id=3D"0" target=3D"_blank">Aide &amp; Support</a>.<=
+/span>
+        <br>
+        <a target=3D"_blank" style=3D"-ms-text-size-adjust:100%; -webkit-te=
+xt-size-adjust:100%; display:inline-block; color:#cccccc; text-decoration:u=
+nderline" class=3D"hubspot-mergetag" data-unsubscribe=3D"true" href=3D"http=
+s://email.mobilevikings.be/hs/preferences-center/en/page?data=3DW2nVjwf3Y2w=
+XwW4fxwlB3_v8FwW4hhRj04r7VRmW1_3wPt1LnMgnW3jx7wF1XqbTqW2Thx_M2y1MJYW1LnNMY2=
+t1fdXW3F1gtZ2zFgKsW3Zt9Ww45M9hTW214znl32BFNWW3LPFd13QLHCdW237Lcg4fB05TW2CTB=
+mQ4mtm9sW2p1fFl1NFjVdW3g711g1_9P2kW3GLK6T3FdY6pW3z7YbQ2sZwNvW3b99Lm4rk3BrW3=
+ZC84t2-H7-_W3Z-ZbB3jv041W366DGl4kK4HkW3gxgs81Z8NVdW2sN5yV49V7sgW1Nnc672-rH-=
+PW2s-QRt3GFH8DW1BwPCV45wCz3W2t0XD54fpQFfW4fjlM11Nn9-QW3NWG2w3Xwm1yW2Mp8VD4r=
+CRQWW1Q9_Z53QP66jW3LQt9R3SSkM_W2PPykS237jGtW3QzVX41N7fT1W3gbnGq4prxbWW3H4lv=
+p4kCbZLW2RKf0B232kMyW2FVzFx4tDvmhW1XvtpJ2RT_fMW49JbNV3jkGxGW2qG-B64rrGBLW1B=
+GnrF2WjbyZW3dkfCw3BLcWXW1Sv1RF4tCh6PW3Y2Z561Vyv5sW3gqrRK2HJRd-W2vTkDL3S-m0z=
+0&amp;utm_campaign=3DBlack%20Friday%202024&amp;utm_source=3Dhs_email&amp;ut=
+m_medium=3Demail&amp;utm_content=3D99273390&amp;_hsenc=3Dp2ANqtz-9XU1xJs8xV=
+pVITl866Yr_y_XU4K2_U7u6OkIz1NpW1P1-FQu5yOpxVEIjgprJvSZrBI1xGsTHfXVuMotgNjma=
+dx_tojrf1klnqkqlqBF0n1GYN5GA&amp;_hsmi=3D99273391" data-hs-link-id=3D"1">D=
+=C3=A9sinscrivez-vous</a>.
+        <br>
+        <br>
+        <span style=3D"font-weight: 400;display:block;margin-bottom:12px;">=
+Suivez-nous sur</span>
+        <a target=3D"_blank" style=3D"-ms-text-size-adjust:100%; -webkit-te=
+xt-size-adjust:100%; color:#00a4bd; display:inline-block" href=3D"https://e=
+mail.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-mN6R7RyhvsVdkVcSh17=
+5nHT0mN6klYWK3qgyTW7lCdLW6lZ3mFW1tM61s1M8M9JMfc6CF50YvVW2xtLc45gLdsVW2lz8JW=
+1MVpBRW7Hyts_99Zk44W4x23hT1xbl3jW5Lw_w_4c9Cs4W5SHW3s64KMNrW9c1DDd1vn0cMW6JW=
+t8870K3RhVZMhYK6RF3zjW3PNMx63tp9KyW7781dM18zjXLW191v6v6SwktmW5Bb46969V1kpN5=
+6sQg-7PlwwVmwsfr5ZsVFtW63fmVh8RDmw8W2cQQ-p1wL89-VSKSnM8QNymSN1b4r--4b1CPVkC=
+zF66GyrG9W7Zbykt7cv_kqW7QbXl91FDr_DdcTVkg04" data-hs-link-id=3D"1">
+            <img style=3D"-ms-interpolation-mode:bicubic; margin:0; padding=
+:0; height:auto; outline:none; text-decoration:none; border:none; display:i=
+nline-block" src=3D"https://mv-s3-mas-email-content.s3.amazonaws.com/icons/=
+icon-facebook.png" width=3D"32" height=3D"auto" alt=3D"Facebook">
+        </a>
+        <a target=3D"_blank" style=3D"-ms-text-size-adjust:100%; -webkit-te=
+xt-size-adjust:100%; color:#00a4bd; display:inline-block" href=3D"https://e=
+mail.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-mN6R7RyhvsVdkVcSh17=
+5nHT0mN6klYWK3qgyTW7lCdLW6lZ3n5W8mTpDp4CM5mgW5mJpfv4Zm2djW2fHPcT59ddQ6N1y3p=
+g4H5nJGW4S6R9v8fxhSHW59DrCw8Rv30gMHKP1klKWdGV2BM6n1fcgz0W8XypXx1R4fZ4W4cn4f=
+k1WbR99W1M6CmW8vl4D4W7Hrw5_7DXHFcW165_cS2FJtzfW42w8K08wLZ8TW5wbBYJ775GlZW47=
+Vmp87_8kNYN3jrT2C95gL-VJTBPf2H7Ty-W8WRd_w8Scx1BW70N2tR6BSqVLW3GVrhx13kfJjN7=
+qfMTk9c4shW1NC1p17wYGFKW87s8WH3pCzz4f7MQCc604" data-hs-link-id=3D"1">
+            <img style=3D"-ms-interpolation-mode:bicubic; margin:0; padding=
+:0; height:auto; outline:none; text-decoration:none; border:none; display:i=
+nline-block" src=3D"https://mv-s3-mas-email-content.s3.amazonaws.com/icons/=
+icon-instagram.png" width=3D"32" height=3D"auto" alt=3D"Instagram">
+        </a>
+        <a target=3D"_blank" style=3D"-ms-text-size-adjust:100%; -webkit-te=
+xt-size-adjust:100%; color:#00a4bd; display:inline-block" href=3D"https://e=
+mail.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-mN6R7RyhvsVdkVcSh17=
+5nHT0mN6klYWq3qgyTW6N1vHY6lZ3mDVXpKWC2fBWWWVM8m1P5xgN0BN35GKMvH6BVTW1mlVqq3=
+jWLBDW4qvYfK3J-qB6W6f1CsS279bXbW1CTxDh6X6qtyW85tkNr3FQ8y_W869RBq6DfVCFW3cl2=
+-23VZS5gW8yyKYz4BZ7tKN3rhLTZrtRZvW7BvFk-6BP9LhW6-VpWl1kGjrHW4Q1GZh89tk3YW7c=
+FPPJ7lQY7HW1Z7zCf3NrwFlN5kxMHtWZb83W2P8b7d2TnNPCW4NW0lv1HmFkhW4wvKnk8N-_DCV=
+J2VzL7nPzc3f5Q5tKW04" data-hs-link-id=3D"1">
+            <img style=3D"-ms-interpolation-mode:bicubic; margin:0; padding=
+:0; height:auto; outline:none; text-decoration:none; border:none; display:i=
+nline-block" src=3D"https://mv-s3-mas-email-content.s3.amazonaws.com/icons/=
+icon-x.png" width=3D"32" height=3D"auto" alt=3D"x">
+        </a>
+        <a target=3D"_blank" style=3D"-ms-text-size-adjust:100%; -webkit-te=
+xt-size-adjust:100%; color:#00a4bd; display:inline-block" href=3D"https://e=
+mail.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-mN6R7RyhvsVdkVcSh17=
+5nHT0mN6klYWK3qgyTW7lCdLW6lZ3nrW7jYC-w6hC6gwW61SWR51NxWRdW6zv0Rg7Ryx9rW74Pk=
+gM3xs4SsW5Hdxn84FNVXxN8yg9kwp912cW4lPRnM3sdmNsW6HMRRS44p_GXVTBQDC65jQ9dW1Nk=
+hFj60mflNVTKSfv8ByCJ_N7qnvFCGqCJxW7XpdNR3qHbgwN94C8lxmd9jMW24d2Y13PCxXcW5m3=
+zs-3QFGp0VvKLSX8RHHr8W4VZWsZ2-8D-bW7plNXK78WpP4VT4pBw6dm9mbW4_mRJt2t0JkQN19=
+nv6xsQj7wN2xMr4PPt78SW3ZxFNB8fP20wf7P-Y6n04" data-hs-link-id=3D"1">
+            <img style=3D"-ms-interpolation-mode:bicubic; margin:0; padding=
+:0; height:auto; outline:none; text-decoration:none; border:none; display:i=
+nline-block" src=3D"https://mv-s3-mas-email-content.s3.amazonaws.com/icons/=
+icon-tiktok.png" width=3D"32" height=3D"auto" alt=3D"TikTok">
+        </a>
+        <a target=3D"_blank" style=3D"-ms-text-size-adjust:100%; -webkit-te=
+xt-size-adjust:100%; color:#00a4bd; display:inline-block" href=3D"https://e=
+mail.mobilevikings.be/e3t/Ctc/RK+113/d33CLT04/MW7TzHknF-mN6R7RyhvsVdkVcSh17=
+5nHT0mN6klYWK3qgyTW7lCdLW6lZ3nlV_mSrc18pJrcW62Tgrz56m9_9W6zLnZp4FR4hLW7v6Jq=
+217C9FVW8ZN07Q1yWh-PW2XtVTt7mqx5zW9bt3S45n2g-XW7BSGrQ7brxgxW1D0xfN1xrBSKW3J=
+t3dq4JhgdjVklCgv3fF6g7W6PcWtX32skKqN2bNfcXJkQjSW56kgGP8YLrzPW1znjrF5SMJKVW7=
+QyXHd7KsGYLW8g34TV3nwVlmW5HRVNL2Y76b1W1T6kFw7qMFwrW8Y8mnQ7SKBt_W4fgQnG8g5Zm=
+fW6Z1RQ76817N8W7X9t8840_y8RN1KZPy5K3VXxf1SHDB204" data-hs-link-id=3D"1">
+            <img style=3D"-ms-interpolation-mode:bicubic; margin:0; padding=
+:0; height:auto; outline:none; text-decoration:none; border:none; display:i=
+nline-block" src=3D"https://mv-s3-mas-email-content.s3.amazonaws.com/icons/=
+icon-youtube.png" width=3D"32" height=3D"auto" alt=3D"YouTube">
+        </a>
+        <br>
+        <br>
+        Mobile Vikings
+        <br>
+        <span class=3D"address" style=3D"display:inline-block">
+          Kempische Steenweg 309 box 1 , 3500 Hasselt, Limburg, Belgium
+        </span>
+    </td>
+</tr>
+<tr>
+    <td valign=3D"top" style=3D"-ms-text-size-adjust:100%; -webkit-text-siz=
+e-adjust:100%; color:#d8d8d8; word-break:break-word; font-family:'Foro Sans=
+', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,=
+ sans-serif; font-size:16px; line-height:24px; height:40px" height=3D"40">&=
+nbsp;</td>
+</tr>
+<!-- // END FOOTER -->
+            <!-- // END FOOTER -->
+        </tbody></table>
+        <!--[if gte mso 9]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+        <!-- // END TEMPLATE -->
+    </td>
+</tr>
+</tbody></table>
+</center>
+<img src=3D"https://email.mobilevikings.be/e3t/Cto/RK+113/d33CLT04/MW7TzHkn=
+F-mN6R7RyhvsVdkVcSh175nHT0mW6klYGw3D55Q91d2" alt=3D"" width=3D"1" height=3D=
+"1" border=3D"0" style=3D"display:none!important;min-height:1px!important;w=
+idth:1px!important;border-width:0!important;margin-top:0!important;margin-b=
+ottom:0!important;margin-right:0!important;margin-left:0!important;padding-=
+top:0!important;padding-bottom:0!important;padding-right:0!important;paddin=
+g-left:0!important"></body></html>
+------=_Part_210442_1409954981.1732264037386--
+

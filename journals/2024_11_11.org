@@ -1,0 +1,16 @@
+* This is my first quote
+:PROPERTIES:
+:id: 673186d0-3e86-415b-9ea9-b98e2bee2590
+:END:
+** Test a new page
+*** My page
+rst
+rstr
+new line
+***
+** And a subheading
+*** a test of checkbox
+:LOGBOOK:
+CLOCK: [2024-11-15 Fri 09:01:20]--[2024-11-15 Fri 09:01:21] =>  00:00:01
+:END:
+- [x] test

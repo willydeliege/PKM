@@ -1,0 +1,8 @@
+- Appelle hssn [[2024/10/15]]
+- Électricien est venu mais ne sais pas réparer [[2024/10/18]]
+	- A coupé le fil de la sonde
+		- Idiot va
+- Gars du chez Bulex [[2024/10/31]]
+	- ok
+	- gars super sympatique
+	- avait la pièce dans sa voiture 🎉
