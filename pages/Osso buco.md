@@ -27,7 +27,7 @@ type:: [[cooking/plat]]
           
       *   1 feuille de laurier
           
-  *   ### Gremolata
+  *   Gremolata
       
       *   2 citrons, le zeste râpé finement
           
