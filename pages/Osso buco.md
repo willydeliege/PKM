@@ -34,15 +34,10 @@ type:: [[cooking/plat]]
       *   1 gousse d'ail, hachée finement
           
       *   10 g (1/4 tasse) de persil ciselé
-          
-  
-  Ajouter à ma liste d'épicerieAjouter à mon menuAjouter à mes recettes
-  
-  Passer en mode cuisine
 - Préparation
   -----------
   
-  *   *   Placer la grille au centre du four. Préchauffer le four à 180 °C (350 °F).
+     *   Placer la grille au centre du four. Préchauffer le four à 180 °C (350 °F).
           
       *   Placer la farine dans une assiette creuse. Enrober les tranches de veau de farine.
           
