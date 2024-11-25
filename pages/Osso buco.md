@@ -1,17 +1,15 @@
 type:: [[cooking/plat]]
 
 - Ingrédients
-- -----------
-  
   *   50 g (1/3 tasse) de farine tout usage non blanchie
           
-      *   4 tranches de jarret de veau d'environ 5 cm (2 po) d'épaisseur
+  *   4 tranches de jarret de veau d'environ 5 cm (2 po) d'épaisseur
           
-      *   30 ml (2 c. à soupe) d'huile d'olive
+  *   30 ml (2 c. à soupe) d'huile d'olive
           
-      *   2 oignons, hachés
+  *   2 oignons, hachés
           
-      *   375 ml (1 1/2 tasse) de vin blanc sec
+  *   375 ml (1 1/2 tasse) de vin blanc sec
           
       *   1 boîte de 540 ml (19 oz) de tomates en dés
           
