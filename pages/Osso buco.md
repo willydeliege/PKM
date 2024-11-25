@@ -1,4 +1,5 @@
 type:: [[cooking/plat]]
+src:: [Osso buco | RICARDO](https://www.ricardocuisine.com/recettes/2149-osso-buco)
 
 - Ingrédients
       *   50 g (1/3 tasse) de farine tout usage non blanchie
