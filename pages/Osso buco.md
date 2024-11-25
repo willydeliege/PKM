@@ -35,15 +35,10 @@ type:: [[cooking/plat]]
           
       *   10 g (1/4 tasse) de persil ciselé
 - Préparation
-  -----------
-  
-     *   Placer la grille au centre du four. Préchauffer le four à 180 °C (350 °F).
-          
-      *   Placer la farine dans une assiette creuse. Enrober les tranches de veau de farine.
-          
-      *   Dans une grande casserole à feu moyen-élevé, dorer la viande des deux côtés dans l'huile. Saler et poivrer. Réserver sur une assiette.
-          
-      *   Dans la même casserole, attendrir les oignons. Ajouter de l’huile au besoin. Déglacer avec le vin. Remettre la viande et ajouter le reste des ingrédients. Saler légèrement et poivrer. Porter à ébullition. Couvrir et cuire au four 45 minutes. Réduire la température du four à 165 °C (325 °F). Poursuivre la cuisson 1 heure. Rectifier l'assaisonnement.
+  *   Placer la grille au centre du four. Préchauffer le four à 180 °C (350 °F).
+   *   Placer la farine dans une assiette creuse. Enrober les tranches de veau de farine.
+   *   Dans une grande casserole à feu moyen-élevé, dorer la viande des deux côtés dans l'huile. Saler et poivrer. Réserver sur une assiette.
+    *   Dans la même casserole, attendrir les oignons. Ajouter de l’huile au besoin. Déglacer avec le vin. Remettre la viande et ajouter le reste des ingrédients. Saler légèrement et poivrer. Porter à ébullition. Couvrir et cuire au four 45 minutes. Réduire la température du four à 165 °C (325 °F). Poursuivre la cuisson 1 heure. Rectifier l'assaisonnement.
           
   *   ### Gremolata
       
