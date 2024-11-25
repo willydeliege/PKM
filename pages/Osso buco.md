@@ -3,7 +3,7 @@ type:: [[cooking/plat]]
 - Ingrédients
 - -----------
   
-  *   *   50 g (1/3 tasse) de farine tout usage non blanchie
+  *   50 g (1/3 tasse) de farine tout usage non blanchie
           
       *   4 tranches de jarret de veau d'environ 5 cm (2 po) d'épaisseur
           
