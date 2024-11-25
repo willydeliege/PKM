@@ -1,3 +1,5 @@
+type:: [[cooking/plat]]
+
 - Ingrédients
 - -----------
   
