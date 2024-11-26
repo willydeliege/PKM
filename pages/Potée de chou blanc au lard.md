@@ -1,4 +1,5 @@
 type:: [[cooking/plat]]
+src:: [Potée au chou blanc et lard fumé - In My Cuisine](https://in-my-cuisine.com/potee-au-chou-blanc-et-lard-fume/)
 
 - Ingrédients
   *   1/3 chou blanc
@@ -28,4 +29,3 @@ type:: [[cooking/plat]]
   *   Au bout de 20min, rajouter les 3 pommes de terres coupées en morceaux, mouiller avec le reste de vin blanc et laisser mijoter pendant 20min supplémentaires.
       
   *   C'est prêt si le choux est bien translucide et que la lame du couteau s'enfonce sans problème dans les pommes de terre.
-   [Potée au chou blanc et lard fumé - In My Cuisine](https://in-my-cuisine.com/potee-au-chou-blanc-et-lard-fume/)
