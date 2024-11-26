@@ -1,5 +1,6 @@
 type:: [[cooking/plat]]
 
+-
 - **18:46** [[quick capture]]: 500 gr de filet mignon 1 oignon 1 poivron vert 1 poivron rouge 1.5 dl de vin blanc 2 dl de crème fraiche liquide 2 cuillères à café de miel Coriandre ou persil Sel, poivre Huile d'olive (1) Filet mignon à la crème et aux poivrons - filet mignon with cream and peppers
 - Préparation de la recette du filet mignon à la crème et aux poivrons
 	- Pour commencer je vais éplucher et tailler les poivrons.
