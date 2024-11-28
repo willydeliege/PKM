@@ -6,8 +6,4 @@
 -
 -
 -
-- LATER R-V cardio
-  SCHEDULED: <2024-11-29 Fri>
-  :AGENDA:
-  estimated: 30m
-  :END:
+- LATER R-V cardio >[2024-12-03 10:00 - 10:30](#agenda://?start=1733216400000&end=1733218200000&allDay=false)
