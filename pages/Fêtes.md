@@ -1,0 +1,1 @@
+- [Les fêtes irrésistibles, c'est chez Delhaize ✨ - "My Delhaize" <hello@em.delhaize.be> - 2024-11-28 1904.eml](../assets/Les_fêtes_irrésistibles,_c'est_chez_Delhaize_✨_-_"My_Delhaize"_<hello@em_1732823730919_0.delhaize.be> - 2024-11-28 1904.eml)
