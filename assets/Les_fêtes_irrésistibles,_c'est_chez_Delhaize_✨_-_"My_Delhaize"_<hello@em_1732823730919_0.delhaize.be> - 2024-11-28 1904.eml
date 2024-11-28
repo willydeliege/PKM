@@ -1,0 +1,1517 @@
+Delivered-To: fredericwillem@gmail.com
+Received: by 2002:a05:7108:2289:b0:3dc:a9a0:5d5b with SMTP id i9csp51381gdb;
+        Thu, 28 Nov 2024 10:04:52 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFoUUVJ6qGtfKvTA2N+AfqA6rXTfYQBDXtg3xW9dYTPPK+9UYAtdQNJKDl3gOInlTkfirb0
+X-Received: by 2002:a05:6102:c92:b0:4a4:87f8:f41e with SMTP id ada2fe7eead31-4af449346ddmr10584087137.9.1732817092252;
+        Thu, 28 Nov 2024 10:04:52 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1732817092; cv=none;
+        d=google.com; s=arc-20240605;
+        b=O2YQ3mS9HSMoroKAWdvdt1EOguTygbHB4WJrARKHTYI7aIaJvktApkF5GWr4mct1Dm
+         hX9tGx+UrRmqK/3gqR4cyiltqXyNwCPnekhfHAeE0487ndrKybnkJ7oPx5KnJuzkgFA0
+         ZO6bYyckWBwXL9ZnEj/4HoNf9WTIsIClnDHsbhrwEH5foMVrAbxJ9T78nMPixj7KBCsR
+         UylaElzWx9hwYOWaA6ANrcjafRmjw2edqFM0My3QxbpQOvKgSR7ZBmO9pujlnHnZ8bIo
+         fDZnGMtiAGbmXFc8Qi5f8P/c6ui8ruELCtILXch22ohfBCqRB8OHZ6OC9vjs8a5oR+A2
+         AKZA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:message-id:mime-version:list-unsubscribe-post
+         :list-unsubscribe:date:subject:to:from:dkim-signature:dkim-signature;
+        bh=e3CKxyYuNn/zdXzYpOfHavpQ8diAbaBqrwWP0DyUHvw=;
+        fh=mVfRMPk43vks2fSTrCU/6o071zCUoNdjTW/UClZnJhA=;
+        b=EqF8hQ1qK0K5K4IggH9QP0ViuEhebBt2ROsPSjvxakqkUFYlu4++dcBqFoWTvn0G+z
+         ix36DpagsJA30EG8Ekl4oDLSaa0jCuLo4gu1j6HbB2dN+fDLPE1BhlnB1hvPF5ddvP1m
+         nctvsxdv76Il72HeKfZluN0b9U2Bg0QRxLpx+TxZEaYbtU9WZgRMSdtHdJnIKzDf/9wR
+         TtWrT9FztdzHiYWNKCeUzVHjmZGv3fYC4Re05eqa+/fwx2K2BJYfTPf3Xgz3Tks9d3hX
+         VzN6KtB9zEpCSuYUrrUb5Ve6E1awW/h9T6VshdIBIFOJwtd+JzH8yfr1tx2ZA90jftPc
+         n1yQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@em.delhaize.be header.s=50dkim1 header.b=NwWhJ9UQ;
+       dkim=pass header.i=@s50.y.mc.salesforce.com header.s=fbldkim50 header.b="bt11/K51";
+       spf=pass (google.com: domain of bounce-10_html-315341-146404-510000646-7770@bounce.em.delhaize.be designates 161.71.65.79 as permitted sender) smtp.mailfrom=bounce-10_HTML-315341-146404-510000646-7770@bounce.em.delhaize.be;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=em.delhaize.be
+Return-Path: <bounce-10_HTML-315341-146404-510000646-7770@bounce.em.delhaize.be>
+Received: from mta2.em.delhaize.be (mta2.em.delhaize.be. [161.71.65.79])
+        by mx.google.com with ESMTPS id ada2fe7eead31-4af59361a56si622162137.411.2024.11.28.10.04.51
+        for <fredericwillem@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 28 Nov 2024 10:04:52 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-10_html-315341-146404-510000646-7770@bounce.em.delhaize.be designates 161.71.65.79 as permitted sender) client-ip=161.71.65.79;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@em.delhaize.be header.s=50dkim1 header.b=NwWhJ9UQ;
+       dkim=pass header.i=@s50.y.mc.salesforce.com header.s=fbldkim50 header.b="bt11/K51";
+       spf=pass (google.com: domain of bounce-10_html-315341-146404-510000646-7770@bounce.em.delhaize.be designates 161.71.65.79 as permitted sender) smtp.mailfrom=bounce-10_HTML-315341-146404-510000646-7770@bounce.em.delhaize.be;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=em.delhaize.be
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=50dkim1; d=em.delhaize.be;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Message-ID:Content-Type; i=hello@em.delhaize.be;
+ bh=e3CKxyYuNn/zdXzYpOfHavpQ8diAbaBqrwWP0DyUHvw=;
+ b=NwWhJ9UQ/cKp9GqtxoGNW3sP2Olr8Esk0ZAk5PblOC4ucFGO4S6W6hEa8bOivwZgwSzb15zH5hLM
+   bLc01hkmeqMXq8JlPzLmMfsWAeqJYSeCVeiFItf3C4BPPzcvMn8yZXjcSO91KH91ok26ZeUI5zy9
+   SX0jMIZEIdHfdvu9CFomn820beiyNp4R7+dlKVyQ+XwF8/vnQHz4FD1ua2AcTcX2P3sbAZp8/GjU
+   o4jz+BX8kQKBQlxWbk74TlFZXVzAh55aRc75x7nzu83eo6/Rxph2cUZQIObK0xG2BsVZU9IakNaP
+   bD7rmWMMLs6Ri9hg9TJZKExGriPmOOacBQCE9A==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=fbldkim50; d=s50.y.mc.salesforce.com;
+ h=From:To:Subject:Date:List-Unsubscribe:MIME-Version:Message-ID:Content-Type;
+ bh=e3CKxyYuNn/zdXzYpOfHavpQ8diAbaBqrwWP0DyUHvw=;
+ b=bt11/K5165FkZGI+I2Fddf4FJ0izpYLQJsvfTXe0Cc7YxpFcsTR9LCQf18t+wccTW6FXmuu0vtWJ
+   oX05vvmujdm5HlC87mtJARjcbjOAxGAmEUu0b7G+NRt1cxKtwwYFfreHKB2lurTGg2MEM2jD4RHt
+   Gr6zGsqNkvSDI/xkLLGqMH86nCie1bkgwnNLn/BaAs5GitbgZRW7P8h7BSaai8R74rZWAoNmbQu6
+   OSRKXPe1ru5fHCQtGo6AAgFJKKQSfXZC9zgH4A1K0sLze47NK9D1cP23HD8MMrbpo/zs+aqfw/Ch
+   WoFP0C5IwOtg2kw6RR4bgRHXqMIvIAeh/6ktoQ==
+Received: by mta2.em.delhaize.be id h92oc82fmd4k for <fredericwillem@gmail.com>; Thu, 28 Nov 2024 18:04:51 +0000 (envelope-from <bounce-10_HTML-315341-146404-510000646-7770@bounce.em.delhaize.be>)
+From: "My Delhaize" <hello@em.delhaize.be>
+To: <fredericwillem@gmail.com>
+Subject: =?UTF-8?B?TGVzIGbDqnRlcyBpcnLDqXNpc3RpYmxlcywgYydlc3QgY2hleiBE?=
+ =?UTF-8?B?ZWxoYWl6ZSDinKg=?=
+Date: Thu, 28 Nov 2024 12:04:50 -0600
+List-Unsubscribe: <https://click.em.delhaize.be/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiI1MTAwMDA2NDYiLCJzIjoiMzE1MzQxIiwibGlkIjoiMTAiLCJqIjoiMTQ2NDA0IiwiamIiOiI3NzcwIiwiZCI6IjUwMDAxMCJ9.th0R9EAivb_OVvt-0xJPLvnyeWMHMquLi14-oKg-9A8>, <mailto:leave-fd8a15701a3c402029-fece17717067007c-fecc157473600479-fe3911717564047d731076-ff2a13777264@leave.em.delhaize.be>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+MIME-Version: 1.0
+X-SFMC-Stack: 50
+x-job: 510000646_146404
+Message-ID: <a539bf84-4036-4f37-9ae0-d4900eb91810@fra3s50mta238.xt.local>
+Feedback-ID: 510000646:146404:161.71.65.79:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="jnzbEKGCHWrH=_?:"
+
+This is a multi-part message in MIME format.
+
+--jnzbEKGCHWrH=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Delhaize &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj;  &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj;  &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj;  &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj;  &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj;  &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj;  &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj;
+ &zwnj; &zwnj; &zwnj; &zwnj; &zwnj;  &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj;  &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj;  &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj;  
+
+ 
+ - - -
+
+ load mydll userdata
+
+ - - -
+
+ 
+  
+
+ En cas de difficulte pour lire la newsletter, 
+https://view.em.delhaize.be/?qs=a8f1d71295f66185e8be25855f9e2f888045b3b4ed48b20d9fabbdf17761efdf0e7957c2a75f75993f57f00cecfb442a450dd903dad868d841e55c7d3adf1ac8a5b62227f3dc64a9 
+consultez-la en ligne .
+
+
+  
+
+
+  
+
+ Pour des fetes irresistibles !
+
+  
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c04aa7a8f8dfd94e5cdd83bce497c2faf9aa11edfd5bf85d52fbafb630a4865be0d477489169b9d496198ae09602202d7 
+
+
+ La fin de l&rsquo;annee, c&rsquo;est l&rsquo;occasion ideale pour creer des moments en famille inoubliables. Avec Delhaize, preparez un festin irresistible grace a nos delicieux produits festifs de qualite, adaptes a tous les budgets. Decouvrez aussi nos recettes inspirantes, nos services pratiques et nos promos festives pour des fetes sans souci. Oui, les fetes irresistibles, c&rsquo;est toujours chez Delhaize !
+
+
+  
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74cb73bad46b55c97c8fe18cf2d245ee7a475ce21974d1e34cffc4b6fa08f67a3c3829e0ba3f0d0da3d1f21b210f72d1c46 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c78401a244fb0968b1697e41d4b7870603c5686604100fc4e8db3b61aacad1b7b9db6fb8e236947431cb4a5c777c86d45 
+
+
+  
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c04aa7a8f8dfd94e5cdd83bce497c2faf9aa11edfd5bf85d52fbafb630a4865be0d477489169b9d496198ae09602202d7 
+Vers les produits irresistibles > 
+
+
+  
+
+ L&rsquo;abus d&rsquo;alcool nuit a la sante
+
+
+  
+
+
+
+ 
+
+De nouvelles promos Black Friday vous attendent en ligne !
+
+ 
+
+Decouvrez nos promos Black Friday 1+1 & 2+2 exclusivement disponibles sur 
+https://click.em.delhaize.be/?qs=b88045481f9fe74c3215b0a76f913d00240a29b41f4d3464204871b6facafeb7a07db557eceb30eb35cae8e3e6540379d63fa3f80d9c7520 
+delhaize.be  et dans votre app My Delhaize.
+
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c3215b0a76f913d00240a29b41f4d3464204871b6facafeb7a07db557eceb30eb35cae8e3e6540379d63fa3f80d9c7520 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c3215b0a76f913d00240a29b41f4d3464204871b6facafeb7a07db557eceb30eb35cae8e3e6540379d63fa3f80d9c7520 
+
+
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c3215b0a76f913d00240a29b41f4d3464204871b6facafeb7a07db557eceb30eb35cae8e3e6540379d63fa3f80d9c7520 
+Vers les promos Black Friday > 
+
+
+ 
+
+
+ ----------
+ECOM WRAPPING PAPER
+
+
+
+  
+
+ Un rouleau de papier cadeau offert pour chaque commande en ligne !
+
+  
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74cabca457eefa3b96f965bfe7894d660fc9c7b62a191ea1a22afe089e4cbc02f9a4e6136f2fa1e25c5fba0831f15b14b5f 
+
+ Pour chaque commande de min. &euro; 75 passee en ligne jusqu&rsquo;au 11/12/24, vous recevez un rouleau de papier cadeau gratuit. On se disait que ca pourrait vous emballer...
+
+  
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74cabca457eefa3b96f965bfe7894d660fc9c7b62a191ea1a22afe089e4cbc02f9a4e6136f2fa1e25c5fba0831f15b14b5f 
+Je passe commande ! > 
+
+
+  
+
+
+ 
+ 
+ 
+ 
+ 
+
+ ----------
+
+  
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c77749943bb5fa5d495175b073b9272922b4dde747e95893f0944d2084b0d32de342a4237a70ab9e0d07cf602fcfd9672 
+
+ Saint Nicolas a aussi pense a vous
+
+  
+
+ C&rsquo;est le moment ideal pour savourer des clementines, d&rsquo;autant qu&rsquo;elles sont en promo !
+
+  
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c77749943bb5fa5d495175b073b9272922b4dde747e95893f0944d2084b0d32de342a4237a70ab9e0d07cf602fcfd9672 
+J&rsquo;en profite > 
+
+
+  
+
+
+ 
+
+Recettes a petits prix pour fetes a grand succes !
+
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c1268f4da8b015ea91459cb66029b336d27fcfa2039a65d46236407dfd62dabaa0cd7b4bfc3a708c6047d439cde87d413 
+
+
+ 
+
+Cuilleres apero de legumes croquants et mayonnaise a la truffe
+
+ 
+
+Facile, < 30 min.
+
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c1268f4da8b015ea91459cb66029b336d27fcfa2039a65d46236407dfd62dabaa0cd7b4bfc3a708c6047d439cde87d413 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c1268f4da8b015ea91459cb66029b336d27fcfa2039a65d46236407dfd62dabaa0cd7b4bfc3a708c6047d439cde87d413 
+Vers la recette 
+
+
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c839e01a78464c2e0b60ec87d55b46e8ad749d94b34acca9f3ee23884112b61578925d2003516d16bc0321dbc1d26699f 
+
+
+ 
+
+Rosaces de pommes de terre au brie, chips de jambon et vinaigrette aux olives
+
+ 
+
+Facile, 30-60 min.
+
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c839e01a78464c2e0b60ec87d55b46e8ad749d94b34acca9f3ee23884112b61578925d2003516d16bc0321dbc1d26699f 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c839e01a78464c2e0b60ec87d55b46e8ad749d94b34acca9f3ee23884112b61578925d2003516d16bc0321dbc1d26699f 
+Vers la recette 
+
+
+ 
+
+
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c661937e452d8abbf17bd3fb3d879f19ea686748ee6711b3151366ea17c7c2d0b4e81cc5e8d4c4b5e111a1a01b100fdab 
+
+
+ 
+
+Tagliatelle au tomates cerise roties, champignons, creme de parmesan et poudre d&rsquo;olives
+
+ 
+
+Facile, > 60 min.
+
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c661937e452d8abbf17bd3fb3d879f19ea686748ee6711b3151366ea17c7c2d0b4e81cc5e8d4c4b5e111a1a01b100fdab 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c661937e452d8abbf17bd3fb3d879f19ea686748ee6711b3151366ea17c7c2d0b4e81cc5e8d4c4b5e111a1a01b100fdab 
+Vers la recette 
+
+
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c343b949b25e7d0cfff89d2ad20f67d9bf437ca7b36b9bbdbd803121b4bd4e0635c3a625fc08a5aaf7138a84d5c06f2c3 
+
+
+ 
+
+Riz au lait, caramel au beurre sale et amandes caramelisees
+
+ 
+
+Facile, > 60 min.
+
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c343b949b25e7d0cfff89d2ad20f67d9bf437ca7b36b9bbdbd803121b4bd4e0635c3a625fc08a5aaf7138a84d5c06f2c3 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c343b949b25e7d0cfff89d2ad20f67d9bf437ca7b36b9bbdbd803121b4bd4e0635c3a625fc08a5aaf7138a84d5c06f2c3 
+Vers la recette 
+
+
+ 
+
+
+ 
+
+
+ 
+
+Vos fetes irresistiblement delicieuses ? Dans votre magazine Delhaize, bien sur !
+
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c04a3276392c33cfee835d15d81efa39584bda0b98200de67b766eaad04334b6c4866f7fc604a81effa362879bd7a9f7a 
+
+Oui, votre magazine Delhaize est une mine d&rsquo;informations precieuses et d&rsquo;inspiration gourmande pour vos fetes. Des recettes, des services exclusifs pour vous aider, tout, tout, tout pour des fetes irresistibles ! Retrouvez-le egalement dans votre Delhaize.
+
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c04a3276392c33cfee835d15d81efa39584bda0b98200de67b766eaad04334b6c4866f7fc604a81effa362879bd7a9f7a 
+Je lis le magazine > 
+
+
+ 
+
+
+
+  
+
+ Decouvrez notre Guide des fetes pour reussir tous vos p&rsquo;tits plats !
+
+  
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c78401a244fb0968b1697e41d4b7870603c5686604100fc4e8db3b61aacad1b7b9db6fb8e236947431cb4a5c777c86d45 
+
+
+ Vous voulez surprendre vos amis et votre famille avec des fetes irresistibles ? Dans notre Guide food des fetes, vous trouverez un apercu de notre gamme de produits festifs que vous pouvez servir tels quels ou integrer dans votre menu.
+
+  
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c78401a244fb0968b1697e41d4b7870603c5686604100fc4e8db3b61aacad1b7b9db6fb8e236947431cb4a5c777c86d45 
+C&rsquo;est la fete > 
+
+
+  
+
+
+  
+
+ Vos recettes de fin d&rsquo;annee ? Encore meilleures avec NOS PRODUITS KitchenAid
+
+  
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74cbc1e36a57f42ab1896184df2900867f1b298c8a3b9fcd1da1b52ba0a9074db21566419985dfb7738f284bb9417bdad61 
+
+ Pour preparer vos recettes, rien de tel que les ustensiles KitchenAid* ! Epargnez des timbres jusqu&rsquo;au 08/01/2025. Vous en avez 10 ? Echangez votre carte jusqu&rsquo;au 15/01/2025, et recevez jusqu&rsquo;a 69 % de reduction** sur ces produits.
+
+  
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74cbc1e36a57f42ab1896184df2900867f1b298c8a3b9fcd1da1b52ba0a9074db21566419985dfb7738f284bb9417bdad61 
+J&rsquo;epargne ! > 
+
+
+  
+
+ * Infos et reglement sur 
+https://click.em.delhaize.be/?qs=b88045481f9fe74ce0036a615506a17cb669df7d46642b647fa7efb0d0906fb728324d315eb5f783dde4fef145ba43209d5d2d0ee72bacd0 
+delhaize.be/action-epargne-kitchenaid .
+
+ ** Les pourcentages de reduction sont appliques aux prix sans timbres. Les prix sans timbres sont les prix recommandes par le fabricant.
+
+
+  
+
+
+  
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74cb310b6dbb18e17c708bf26df49475328e55c9b00516670bccdeca8c73da87fbea2a1a71f0600eb336e288f67758e1316 
+
+ Decouvrez les promos de la semaine
+
+  
+
+ Offres valables du 28 novembre au 4 decembre 2024 inclus.
+
+  
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74cb310b6dbb18e17c708bf26df49475328e55c9b00516670bccdeca8c73da87fbea2a1a71f0600eb336e288f67758e1316 
+Feuilletez-le > 
+
+
+  
+
+
+ ----------MMD Segmented Insert
+
+
+ 
+
+
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c5408f51e2b58645ca210f827eb372ed0aa61cab13c105aef79663d58bdf5b8afb9790fc6008125019b987ec449739893 
+
+
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c5408f51e2b58645ca210f827eb372ed0aa61cab13c105aef79663d58bdf5b8afb9790fc6008125019b987ec449739893 
+
+It&rsquo;s Pizza Party time avec Doritos(R) !
+
+ 
+
+Doritos(R), c&rsquo;est le snack parfait combine a vos dips preferes ou l&rsquo;ingredient ultime pour realiser vos Doritos(R) Loaded Nachos. Besoin d&rsquo;inspiration ? Decouvrez notre recette incontournable : La Doritos(R) Loaded Pizza !
+
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c5408f51e2b58645ca210f827eb372ed0aa61cab13c105aef79663d58bdf5b8afb9790fc6008125019b987ec449739893 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c5408f51e2b58645ca210f827eb372ed0aa61cab13c105aef79663d58bdf5b8afb9790fc6008125019b987ec449739893 
+Decouvrir la recette 
+
+
+ 
+
+
+
+
+ 
+ ----------
+
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c608f7c57c59d05ef767c35747bbfd005f090a00eea6fd8991b049f013f15648c60344498b6d203456d008ec603ee08a5 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c90c7ebeaea7cc1add834176b510bef57aca3186b0dda79f7f839acbfff918489728c40ca91de546315f31a03a4055b6d 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c90c7ebeaea7cc1add834176b510bef57aca3186b0dda79f7f839acbfff918489728c40ca91de546315f31a03a4055b6d 
+
+ 
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c90c7ebeaea7cc1add834176b510bef57aca3186b0dda79f7f839acbfff918489728c40ca91de546315f31a03a4055b6d 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c90c7ebeaea7cc1add834176b510bef57aca3186b0dda79f7f839acbfff918489728c40ca91de546315f31a03a4055b6d 
+263 points > 
+
+ 
+ 0 points expirent le .
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c3fde9acd61ff2f53437a65bbe52caaaca6f945a88adf4e23f950f81b205bfbd477abe07b7845590343153971794e47e9 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c3fde9acd61ff2f53437a65bbe52caaaca6f945a88adf4e23f950f81b205bfbd477abe07b7845590343153971794e47e9 
+Mes e-deals > 
+
+ 
+ 7/28 offres activees.   
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c1591826cb9e676e3cf6d0e347619e3d4bc918918291379d14a5620b1d910ded9d435a7735cacd293c595c760ace98722 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c1591826cb9e676e3cf6d0e347619e3d4bc918918291379d14a5620b1d910ded9d435a7735cacd293c595c760ace98722 
+170 € epargnes 
+
+ 
+ depuis 1 an.
+ 
+
+ 
+
+
+
+
+
+ 
+  
+
+ Avez-vous apprecie cet e-mail ?
+
+  
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c0d9706c31131613f30df6224ac113a0a4b938a14ae84420a2e001b445c34f51e62101c2f00bafa74fe8880816417be702de25bbccbb295ee 
+   
+https://click.em.delhaize.be/?qs=b88045481f9fe74c9ee9decc3c94d37418be2348d8927ebac8d57a168ed21f243d8dd4a43511a644c3a5b0745ee9cfec5b8b63473d16582054b19c439dfffeae 
+  
+
+  
+
+
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74cb92ad446410c20fffd810d2c4607ec50ac3365d304c93595a96a5479ebaa17c1e9af9aab6d5373fc463f7af3282be8c6 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c3997da6b396d1abdfd067b4768d758df07a4fabfca14722675f6195a4ad88a9f06aff7f063bb72b6272604b0f122442c 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c792271d72ffed4322dd2cc19bd5fddfc2a814b22b2af3310e8f1858614d19551ba70bf1e9186ecec68b7126b21a22ac5 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c9f8688a292ca327ade9fdf17b739871b0ef805ae7b24572a277a0e1875b821030a6977a1df7bb9cabd009e5662f66ba8 
+
+
+ 
+
+Telechargez notre application :
+
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74c310dd48b4f5557e4a6a35d37592857747917b63242bfbf3d041459df74bca8dfdbac59969b0170f3bd1eb2079142fabd 
+ 
+https://click.em.delhaize.be/?qs=b88045481f9fe74c5c4e3a22c417f655118e7efeee14e371303b7a8660a06691a00a9700da1303ef6a51f5679415494b15ee18919d29ec48 
+  
+
+ 
+
+
+ 
+
+https://click.em.delhaize.be/?qs=b88045481f9fe74ca1a8416c42ecb7058a95e14c6bf53a437f224036addda0d0ffdaee876678bbaf92309f950d56ac36d652cdde4b9fbc3d 
+Trouvez un magasin  | 
+https://click.em.delhaize.be/?qs=b88045481f9fe74ca407efd15d30419041c52fe0988462e475204cb8d0121df7a41ed050b7dae1325b5d168d7d856cdf534dfb45721a1d60 
+Contact  | 
+https://click.em.delhaize.be/?qs=b88045481f9fe74c7878930e94503bb115f6481f8670629c8fd3f7b6c1944425088671012dac4c9f0e81ccfcd1fdbd983b423ff64cc68c7a 
+Privacy  | 
+https://click.em.delhaize.be/?qs=b88045481f9fe74cde4499c244d5d08785b13499d054e81fb248dd10e8571c63ef56a7ff71792970b0b212e203570810861d1c6596a63d2e94c16d29cb480c37 
+Se desinscrire 
+
+
+ Delhaize Le Lion SA,
+
+ Brusselsesteenweg 347, 1730 Asse
+
+ RPM Bruxelles 0402.206.045.
+
+ Pour etre certain de recevoir nos emails, ajoutez 
+mailto:hello@em.delhaize.be 
+hello@em.delhaize.be  a vos contacts.
+
+
+ (c) Copyright Delhaize 2024. All rights reserved.
+
+ 
+
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  Delhaize Le LionRue Osseghemstraat 53Brussels BRUSSELS1080 BEhttps://click.em.delhaize.be/profile_center.aspx?qs=8e4d4bfb610b0e3436a5dd743551a6498ced0200dc8c0ab41a76eaea0a846f94c67f612a20b662222bb790e0d92bf72f6fe46ab6bb208cb55312da938f0cc01a            
+            
+          
+
+--jnzbEKGCHWrH=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="robots" content="noindex, nofollow">
+<title>Delhaize</title>
+<style type="text/css">
+body, table, td, a {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+table, td {
+    mso-table-lspace: 0pt;
+    mso-table-rspace: 0pt;
+}
+img {
+    border: 0;
+    height: auto;
+    line-height: 100%;
+    outline: none;
+    text-decoration: none;
+    -ms-interpolation-mode: bicubic;
+}
+table {
+    border-collapse: collapse !important;
+}
+body {
+    margin: 0;
+    padding: 0;
+    width: 100% !important;
+    height: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    background-color: #FCEAE8;
+    font-weight: normal;
+}
+div[style*="margin: 16px 0;"] {
+    margin: 0 !important;
+}
+a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+.onlymobile {
+    height: 0px !important;
+    display: none !important;
+}
+th {
+    font-weight: normal !important;
+}
+
+@media only screen and (max-width: 650px) {
+.wrapper {
+    width: 95% !important;
+}
+.container {
+    width: 92% !important;
+}
+.full {
+    width: 100% !important;
+}
+.logotxt {
+    width: 70% !important;
+}
+.logoimg {
+    width: 30% !important;
+}
+.logo {
+    vertical-align: top !important;
+    max-width: 100px !important;
+}
+*[class="mobiletable"] {
+    width: 100% !important;
+    display: block !important;
+}
+.mobiletable {
+    width: 100% !important;
+    display: block !important;
+}
+.mobiletableinner {
+    width: 90% !important;
+    display: block !important;
+}
+.mobilespacer {
+    width: 100% !important;
+    height: 20px !important;
+    display: block !important;
+}
+.mobilespacersmall {
+    width: 100% !important;
+    height: 10px !important;
+    display: block !important;
+}
+.mobileIMG {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+}
+.onlymobile {
+    height: 20px !important;
+    display: block !important;
+}
+.removemobile {
+    width: 0px !important;
+    height: 0px !important;
+    display: block !important;
+}
+.headertxt {
+    font-size:32px !important;
+    line-height:32px !important;
+}
+.quattroimg {
+    width: 160px !important;
+    height: 160px !important;
+}
+}
+</style>
+<!--[if mso]>       <style type="text/css">          .body-text {          font-family: Arial, sans-serif !important;          }    .emailButton {          border: none !important;          }       </style>       <![endif]--> 
+<!--[if gte mso 9]>       <xml>          <o:OfficeDocumentSettings>             <o:AllowPNG/>             <o:PixelsPerInch>96</o:PixelsPerInch>          </o:OfficeDocumentSettings>       </xml>       <![endif]-->
+</head>
+<body style="margin:0; padding:0;background-color: #FCEAE8;" bgcolor="#FCEAE8"><style type="text/css">
+div.preheader 
+{ display: none !important; } 
+</style>
+<div class="preheader" style="font-size: 1px; display: none !important;">Nos promos Black Friday 1+1 et 2+2 vous attendent en ligne !</div>
+<img src="https://click.em.delhaize.be/open.aspx?ffcb10-fecc157473600479-fec4177177670d74-fe3911717564047d731076-ff9e1570-fece17717067007c-ff2a13777264&d=500010&bmt=0" width="1" height="1" alt="">
+<center style="width: 100%; background-color: #FCEAE8;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FCEAE8">
+    <tr>
+      <td width="100%" valign="top" align="center">
+<div style="display: none; max-height: 0px; overflow: hidden;">
+ &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp; </div></td>
+    </tr>
+  </table>
+  <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--  --><!--  --><!-- --></td></tr></table>
+  <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- INTRO BANNER --><table bgcolor="#FCEAE8" border="0" cellpadding="0" cellspacing="0" width="100%">
+ 
+  <tr>
+   <td align="center" valign="top" width="100%">
+    <table align="center" bgcolor="#FCEAE8" border="0" cellpadding="0" cellspacing="0" class="wrapper" style="width: 600px;" width="600">
+     
+      <tr>
+       <td height="10" style="font-size:2px; line-height:2px;">
+        &nbsp;</td></tr><tr>
+       <td align="center">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" class="container" style="width: 560px;" width="560">
+         
+          <tr>
+           <td align="center" class="body-text" style="font-family:Arial, Helvetica, sans-serif;color:#000000;font-size:12px;line-height:16px;text-align:center;" valign="top">
+            En cas de difficult&eacute; pour lire la newsletter, <a href="https://view.em.delhaize.be/?qs=a8f1d71295f66185e8be25855f9e2f888045b3b4ed48b20d9fabbdf17761efdf0e7957c2a75f75993f57f00cecfb442a450dd903dad868d86d586115423a3f080e8cfc5388b58240" style="color:#000000;">consultez-la en ligne</a>.</td></tr></table></td></tr><tr>
+       <td height="10" style="font-size:2px; line-height:2px;">
+        &nbsp;</td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table bgcolor="#FCEAE8" border="0" cellpadding="0" cellspacing="0" width="100%">
+ 
+  <tr>
+   <td align="center" valign="top" width="100%">
+    <table align="center" bgcolor="#d8c28b" border="0" cellpadding="0" cellspacing="0" class="wrapper" style="width: 600px;" width="600">
+     
+      <tr>
+       <td height="40" style="font-size:2px; line-height:2px;">
+        &nbsp;</td></tr><tr>
+       <td align="center">
+        <table border="0" cellpadding="0" cellspacing="0" class="container" style="width: 560px;">
+         
+          <tr>
+           <td align="left">
+            <table border="0" cellpadding="0" cellspacing="0" class="container_cta" width="100%">
+             
+              <tr>
+               <th class="mobiletable" style="vertical-align:top;" valign="top" width="400">
+                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                 
+                  <tr>
+                   <td class="headertxt" style="font-family: Cervo Neue, Tahoma,Verdana,Segoe,sans-serif; font-size:40px; line-height:44px; color: #ffffff; text-align: left;font-weight: bold;text-transform: uppercase;">
+                    Pour des f&ecirc;tes irr&eacute;sistibles&nbsp;!</td></tr><tr>
+                   <td class="removemobile" height="30" style="font-size:2px; line-height:2px;">
+                    &nbsp;</td></tr></table></th><th class="mobilespacersmall" height="10" style="font-size:2px; line-height:2px;" width="10">
+               </th><th align="right" class="mobiletable" valign="bottom" width="150">
+                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                 
+                  <tr>
+                   <td align="right">
+                    <a   data-linkto="https://" href="https://click.em.delhaize.be/?qs=b88045481f9fe74c38a0a6598da775884f42845459658f5ced816c1597e05b02da8b3dee78742995814eb4d13b044c68fb95adc74570a361" style="font-size: 16px; font-family:Arial, Helvetica, sans-serif; color: #000000; text-decoration: none;" target="_blank" title=""><img alt="Delhaize" class="logo" data-assetid="286985" height="auto" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/delhaize-logo-new-200x180.png" style="display: block; font-family: Arial, Helvetica, sans-serif; color: #000000; font-size: 20px; width: 100%; max-width: 120px; border: none; padding: 0px; text-align: center; height: auto;" width="100%"></a></td></tr></table></th></tr></table></td></tr></table></td></tr><tr>
+       <td align="center">
+        <table border="0" cellpadding="0" cellspacing="0" class="container" style="width: 560px;">
+         
+          <tr>
+           <td align="center">
+            <table border="0" cellpadding="0" cellspacing="0" class="container_cta" width="100%">
+             
+              <tr>
+               <td align="left" class="body-text" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px; color:#000000;" valign="top">
+                La fin de l&rsquo;ann&eacute;e, c&rsquo;est l&rsquo;occasion id&eacute;ale pour cr&eacute;er des moments en famille inoubliables. Avec Delhaize, pr&eacute;parez un festin irr&eacute;sistible gr&acirc;ce &agrave; nos d&eacute;licieux produits festifs de qualit&eacute;, adapt&eacute;s &agrave; tous les budgets. D&eacute;couvrez aussi nos recettes inspirantes, nos services pratiques et nos promos festives pour des f&ecirc;tes sans souci. <strong>Oui, les f&ecirc;tes irr&eacute;sistibles, c&rsquo;est toujours chez Delhaize&nbsp;!</strong></td></tr></table></td></tr><tr>
+           <td height="20" style="font-size:2px; line-height:2px;">
+            &nbsp;</td></tr><tr>
+           <td align="left">
+            <table border="0" cellpadding="0" cellspacing="0" class="container_cta" width="100%">
+             
+              <tr>
+               <th class="mobiletable" valign="top" width="270">
+                <a   data-linkto="https://" href="https://click.em.delhaize.be/?qs=b88045481f9fe74c8898a2034b31db1a9891eda9d07da65fcba2db3adfaa72eee7ad81302d1a197ed5119642a1399b2d36462fe958e3726e" title="Vranken Champagne Premier Cru 1+1"><img alt="Vranken Champagne Premier Cru 1+1" data-assetid="297716" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/2024_w49_MyDll_promo01-v02.jpg" style="display: inline-block; width: 100%; max-width: 450px; vertical-align: top; padding: 0px; height: auto; text-align: center; border: none;" width="270"></a></th><th class="mobilespacer" height="10" style="font-size:2px; line-height:2px;" width="20">
+               </th><th class="mobiletable" valign="top" width="270">
+                <a   data-linkto="https://" href="https://click.em.delhaize.be/?qs=b88045481f9fe74cb3aa3f037100fce48971d4bf236fb913c8b85421964c45d4d159e51efae27809e770f6b871cdc6d653bdf3541ae65086" title="Delhaize"><img alt="Delhaize" data-assetid="297964" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/2024_w49_MyDll_promo02-v04-lu.jpg" style="display: inline-block; width: 100%; max-width: 450px; vertical-align: top; padding: 0px; height: auto; text-align: center; border: none;" width="270"></a></th></tr></table></td></tr><tr>
+           <td height="20" style="font-size:2px; line-height:2px;">
+            &nbsp;</td></tr><tr>
+           <td class="mobiletable">
+            <table align="left" border="0" cellpadding="0" cellspacing="0">
+             
+              <tr>
+               <td align="center" bgcolor="#d8c69a" style="-webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px;" width="310">
+                <!--[if mso]>                         <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" alias="2024w49_MyDll_AllPromosEOY" href="https://www.delhaize.be/fr/eoy-guide-des-fetes?cmpid=em_General_2024-11-28_w49_na_Thu_FR_na_na_146404_na_na&a.deeplink.id=62bc14f3e252c62fe6e39f4e&ctxa.launch.campaign.medium=em&ctxa.launch.campaign.content=General&ctxa.launch.campaign.source=146404&ctxa.launch.campaign.term=2024-11-28" style="height:40px;v-text-anchor:middle;width:310px;" arcsize="5%" stroke="f" fillcolor="#D1223E">                           <center>                             <![endif]-->
+<a  href="https://click.em.delhaize.be/?qs=b88045481f9fe74ca07a837ba326f8e36a13a4fdc8b2441f62a432f3d914e41279beff33224a0772288815c7bce58c36ec908acaff567d04" style="background-color:#D1223E;border-radius:3px;color:#ffffff;display:inline-block;font-family:Arial, Helvetica, sans-serif;font-size:16px;font-weight:bold;line-height:40px;text-align:center;text-decoration:none;width: 100%;-webkit-text-size-adjust:none;">Vers les produits irr&eacute;sistibles &gt;</a> <!--[if mso]>                       </center>                     </v:roundrect>                     <![endif]--></td></tr></table></td></tr><tr>
+           <td height="20" style="font-size:2px; line-height:2px;">
+            &nbsp;</td></tr><tr>
+           <td align="center">
+            <table border="0" cellpadding="0" cellspacing="0" class="container_cta" width="100%">
+             
+              <tr>
+               <td align="left" class="body-text" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:16px; color:#000000;font-style: italic;" valign="top">
+                L&rsquo;abus d&rsquo;alcool nuit &agrave; la sant&eacute;</td></tr></table></td></tr></table></td></tr><tr>
+       <td height="40" style="font-size:2px; line-height:2px;">
+        &nbsp;</td></tr><tr>
+       <td align="center" valign="bottom">
+        <img alt="" data-assetid="297726" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/2024_w49_MyDll_ornaments_03_top-v02.jpg" style="display: block; font-family: Arial, Helvetica, sans-serif; color: #000000; font-size: 24px; width: 100%; max-width: 600px; padding: 0px; text-align: center; height: auto; border: none;" width="100%"></td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- DUO IMG + TITLE + SUBTITLE + INTRO --><table bgcolor="#FCEAE8" border="0" cellpadding="0" cellspacing="0" width="100%">
+	
+		<tr>
+			<td align="center" valign="top" width="100%">
+				<table align="center" bgcolor="#151515" border="0" cellpadding="0" cellspacing="0" class="wrapper" style="width: 600px;" width="600">
+					
+						<tr>
+							<td align="center" valign="top">
+								<img alt="" data-assetid="297727" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/2024_w49_MyDll_ornaments_03_bottom-v02.jpg" style="display: block; font-family: Arial, Helvetica, sans-serif; color: #000000; font-size: 24px; width: 100%; max-width: 600px; padding: 0px; text-align: center; height: auto; border: none;" width="100%"></td></tr><tr>
+							<td height="40" style="font-size:2px; line-height:2px;">
+								&nbsp;</td></tr><tr>
+							<td align="center">
+								<table border="0" cellpadding="0" cellspacing="0" class="container" style="width: 560px;">
+									
+										<tr>
+											<td style="font-family: Cervo Neue, Tahoma,Verdana,Segoe,sans-serif; font-size:28px; line-height:28px; color: #ffffff; text-align: left;font-weight: bold;text-transform: uppercase;">
+												De nouvelles promos Black Friday vous attendent en ligne&nbsp;!</td></tr><tr>
+											<td height="10" style="font-size:2px; line-height:2px;">
+												&nbsp;</td></tr><tr>
+											<td align="left" class="body-text" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px; color:#ffffff;" valign="top">
+												D&eacute;couvrez nos promos Black&nbsp;Friday 1+1 &amp; 2+2 exclusivement disponibles sur <a  href="https://click.em.delhaize.be/?qs=b88045481f9fe74c42a550674f0fc23b637dcf2ebc7d506e2fd68fa6d529323e2f945a12acb5219388b37a25d90f1da8fac4ddb60c3d4635" style="color:#D1223E;font-weight:bold;text-decoration:underline;">delhaize.be</a> et dans votre app My&nbsp;Delhaize.</td></tr><tr>
+											<td height="20" style="font-size:2px; line-height:2px;">
+												&nbsp;</td></tr><tr>
+											<td align="left">
+												<table border="0" cellpadding="0" cellspacing="0" class="container_cta" width="100%">
+													
+														<tr>
+															<th class="mobiletable" valign="top" width="270">
+																<a   data-linkto="https://" href="https://click.em.delhaize.be/?qs=b88045481f9fe74c42a550674f0fc23b637dcf2ebc7d506e2fd68fa6d529323e2f945a12acb5219388b37a25d90f1da8fac4ddb60c3d4635" title="De nouvelles promos Black Friday vous attendent en ligne"><img alt="De nouvelles promos Black Friday vous attendent en ligne" data-assetid="297729" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/2024W49_BF_Products_600x6001.jpg" style="display: inline-block; width: 100%; max-width: 450px; vertical-align: top; padding: 0px; height: auto; text-align: center; border: none;" width="270"></a></th><th class="mobilespacer" height="10" style="font-size:2px; line-height:2px;" width="20">
+															</th><th class="mobiletable" valign="top" width="270">
+																<a   data-linkto="https://" href="https://click.em.delhaize.be/?qs=b88045481f9fe74c42a550674f0fc23b637dcf2ebc7d506e2fd68fa6d529323e2f945a12acb5219388b37a25d90f1da8fac4ddb60c3d4635" title="De nouvelles promos Black Friday vous attendent en ligne"><img alt="AvantDe nouvelles promos Black Friday vous attendent en ligne" data-assetid="297728" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/2024W49_BF_with_copy_600x6001.jpg" style="display: inline-block; width: 100%; max-width: 450px; vertical-align: top; padding: 0px; text-align: center; height: auto; border: none;" width="270"></a></th></tr></table></td></tr><tr>
+											<td height="20" style="font-size:2px; line-height:2px;">
+												&nbsp;</td></tr><tr>
+											<td class="mobiletable">
+												<table align="left" border="0" cellpadding="0" cellspacing="0">
+													
+														<tr>
+															<td align="center" bgcolor="#151515" style="-webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px;" width="290">
+																<!--[if mso]>                         <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" alias="2024w49_MyDll_BF_Ecom" href="https://www.delhaize.be/fr/blackfriday?cmpid=em_General_2024-11-28_w49_na_Thu_FR_na_na_146404_na_na&a.deeplink.id=62bc14f3e252c62fe6e39f4e&ctxa.launch.campaign.medium=em&ctxa.launch.campaign.content=General&ctxa.launch.campaign.source=146404&ctxa.launch.campaign.term=2024-11-28" style="height:40px;v-text-anchor:middle;width:290px;" arcsize="5%" stroke="f" fillcolor="#D1223E">                           <center>                             <![endif]-->
+<a  href="https://click.em.delhaize.be/?qs=b88045481f9fe74c42a550674f0fc23b637dcf2ebc7d506e2fd68fa6d529323e2f945a12acb5219388b37a25d90f1da8fac4ddb60c3d4635" style="background-color:#D1223E;border-radius:3px;color:#ffffff;display:inline-block;font-family:Arial, Helvetica, sans-serif;font-size:16px;font-weight:bold;line-height:40px;text-align:center;text-decoration:none;width: 100%;-webkit-text-size-adjust:none;">Vers les promos Black Friday &gt;</a> <!--[if mso]>                       </center>                     </v:roundrect>                     <![endif]--></td></tr></table></td></tr></table></td></tr><tr>
+							<td height="40" style="font-size:2px; line-height:2px;">
+								&nbsp;</td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--  -->
+
+
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- --><!-- HEADER + TITLE + SUBTITLE + LOGO --><table bgcolor="#FCEAE8" border="0" cellpadding="0" cellspacing="0" width="100%">
+ 
+  <tr>
+   <td align="center" valign="top" width="100%">
+    <table align="center" bgcolor="#d8c288" border="0" cellpadding="0" cellspacing="0" class="wrapper" style="width: 600px;" width="600">
+     
+      <tr>
+       <td height="40" style="font-size:2px; line-height:2px;">
+        &nbsp;</td></tr><tr>
+       <td align="center">
+        <table border="0" cellpadding="0" cellspacing="0" class="container" style="width: 560px;">
+         
+          <tr>
+           <td style="font-family: Cervo Neue, Tahoma,Verdana,Segoe,sans-serif; font-size:28px; line-height:28px; color: #332414; text-align: left;font-weight: bold;text-transform: uppercase;">
+            Un rouleau de papier cadeau offert pour chaque commande en ligne&nbsp;!</td></tr><tr>
+           <td height="10" style="font-size:2px; line-height:2px;">
+            &nbsp;</td></tr><tr>
+           <td align="left">
+            <table border="0" cellpadding="0" cellspacing="0" class="container_cta" width="100%">
+             
+              <tr>
+               <th class="mobiletable" valign="top" width="270">
+                <a   data-linkto="https://" href="https://click.em.delhaize.be/?qs=b88045481f9fe74c7055a2102deba19bd5b931415ba01ae9d91894d352fd6ca752301c3efc4c94cb90e496f6961020b67625641d96af40b8" style="font-size: 16px; font-family:Arial, Helvetica, sans-serif; color: #ffffff; text-decoration: none;" target="_blank" title="Un rouleau de papier cadeau offert pour chaque commande en ligne !"><img alt="Un rouleau de papier cadeau offert pour chaque commande en ligne !" data-assetid="297715" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/w49-2024-Mydll-giftpaper-fr.jpg" style="display: inline-block; width: 100%; max-width: 450px; font-weight: normal; vertical-align: top; padding: 0px; text-align: center; height: auto; border: none;" width="270"></a></th><th class="mobilespacer" height="10" style="font-size:2px; line-height:2px;" width="20">
+               </th><th class="mobiletable" style="vertical-align:top;" valign="top" width="270">
+                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                 
+                  <tr>
+                   <td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px;text-align: left;font-weight: normal;color:#332414;">
+                    Pour chaque commande de min. &euro;&nbsp;75 pass&eacute;e en ligne jusqu&rsquo;au 11/12/24, vous recevez un rouleau de papier cadeau gratuit. On se disait que &ccedil;a pourrait vous emballer...</td></tr><tr>
+                   <td height="20" style="font-size:2px; line-height:2px;">
+                    &nbsp;</td></tr><tr>
+                   <td class="mobiletable">
+                    <table align="left" border="0" cellpadding="0" cellspacing="0">
+                     
+                      <tr>
+                       <td align="center" bgcolor="#d8c288" style="-webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px;" width="240">
+                        <!--[if mso]>                         <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://www.delhaize.be/fr/eoy-papiercadeau?cmpid=em_General_2024-11-28_w49_na_Thu_FR_na_na_146404_na_na&a.deeplink.id=62bc14f3e252c62fe6e39f4e&ctxa.launch.campaign.medium=em&ctxa.launch.campaign.content=General&ctxa.launch.campaign.source=146404&ctxa.launch.campaign.term=2024-11-28" alias="2024w49_MyDll_PapierCadeau" style="height:40px;v-text-anchor:middle;width:240px;" arcsize="5%" stroke="f" fillcolor="#D1223E">                           <center>                             <![endif]-->
+<a  href="https://click.em.delhaize.be/?qs=b88045481f9fe74c7055a2102deba19bd5b931415ba01ae9d91894d352fd6ca752301c3efc4c94cb90e496f6961020b67625641d96af40b8" style="background-color:#D1223E;border-radius:3px;color:#ffffff;display:inline-block;font-family:Arial, Helvetica, sans-serif;font-size:16px;font-weight:bold;line-height:40px;text-align:center;text-decoration:none;width: 100%;-webkit-text-size-adjust:none;">Je passe commande ! &gt;</a> <!--[if mso]>                       </center>                     </v:roundrect>                     <![endif]--></td></tr></table></td></tr></table></th></tr></table></td></tr></table></td></tr><tr>
+       <td height="40" style="font-size:2px; line-height:2px;">
+        &nbsp;</td></tr></table></td></tr></table></td></tr></table>
+  
+ 
+ 
+  
+    
+<!-- --&gt;</div></div></div>--></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- HEADER + TITLE + SUBTITLE + LOGO --><table bgcolor="#FCEAE8" border="0" cellpadding="0" cellspacing="0" width="100%">
+ 
+  <tr>
+   <td align="center" valign="top" width="100%">
+    <table align="center" bgcolor="#fbdce8" border="0" cellpadding="0" cellspacing="0" class="wrapper" style="width: 600px;" width="600">
+     
+      <tr>
+       <td align="center">
+        <table border="0" cellpadding="0" cellspacing="0" class="container" style="width: 560px;">
+         
+          <tr>
+           <td height="40" style="font-size:2px; line-height:2px;">
+            &nbsp;</td></tr><tr>
+           <td align="left">
+            <table border="0" cellpadding="0" cellspacing="0" class="container_cta" width="100%">
+             
+              <tr>
+               <th class="mobiletable" valign="top" width="270">
+                <a   data-linkto="https://" href="https://click.em.delhaize.be/?qs=b88045481f9fe74c1b3bcd9ab8d975b3f9de875ccda781669d6241c966a9ec0fc58d9a8c36152b72cedbdafa689f87854144fb15ab89f30f" style="font-size: 16px; font-family:Arial, Helvetica, sans-serif; color: #ffffff; text-decoration: none;" target="_blank" title="Psst ! Saint-Nicolas a aussi son mot à dire"><img alt="Psst ! Saint-Nicolas a aussi son mot à dire" data-assetid="297773" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/2024_w49_MyDll_Sint-fr-v03.jpg" style="display: inline-block; width: 100%; max-width: 450px; font-weight: normal; vertical-align: top; padding: 0px; text-align: center; height: auto; border: none;" width="270"></a></th><th class="mobilespacer" height="10" style="font-size:2px; line-height:2px;" width="20">
+               </th><th class="mobiletable" style="vertical-align:top;" valign="top" width="270">
+                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                 
+                  <tr>
+                   <td style="font-family: Cervo Neue, Tahoma,Verdana,Segoe,sans-serif; font-size:28px; line-height:28px; color: #332414; text-align: left;font-weight: bold;text-transform: uppercase;">
+                    Saint Nicolas a aussi pens&eacute; &agrave; vous</td></tr><tr>
+                   <td height="10" style="font-size:2px; line-height:2px;">
+                    &nbsp;</td></tr><tr>
+                   <td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px;text-align: left;font-weight: normal;color:#332414;">
+                    C&rsquo;est le moment id&eacute;al pour savourer des cl&eacute;mentines, d&rsquo;autant qu&rsquo;elles sont en promo&nbsp;!</td></tr><tr>
+                   <td height="20" style="font-size:2px; line-height:2px;">
+                    &nbsp;</td></tr><tr>
+                   <td class="mobiletable">
+                    <table align="left" border="0" cellpadding="0" cellspacing="0">
+                     
+                      <tr>
+                       <td align="center" bgcolor="#fbdce8" style="-webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px;" width="170">
+                        <!--[if mso]>                         <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://www.delhaize.be/fr/shop/Fruits-et-legumes-frais/Fruits-frais/Agrumes/Mandarines/Clementines/p/F2022062000102070000?cmpid=em_General_2024-11-28_w49_na_Thu_FR_na_na_146404_na_na&a.deeplink.id=62bc14f3e252c62fe6e39f4e&ctxa.launch.campaign.medium=em&ctxa.launch.campaign.content=General&ctxa.launch.campaign.source=146404&ctxa.launch.campaign.term=2024-11-28" alias="2024w49_MyDll_StNicolas" style="height:40px;v-text-anchor:middle;width:170px;" arcsize="5%" stroke="f" fillcolor="#D1223E">                           <center>                             <![endif]-->
+<a  href="https://click.em.delhaize.be/?qs=b88045481f9fe74c1b3bcd9ab8d975b3f9de875ccda781669d6241c966a9ec0fc58d9a8c36152b72cedbdafa689f87854144fb15ab89f30f" style="background-color:#D1223E;border-radius:3px;color:#ffffff;display:inline-block;font-family:Arial, Helvetica, sans-serif;font-size:16px;font-weight:bold;line-height:40px;text-align:center;text-decoration:none;width: 100%;-webkit-text-size-adjust:none;">J&rsquo;en profite &gt;</a> <!--[if mso]>                       </center>                     </v:roundrect>                     <![endif]--></td></tr></table></td></tr></table></th></tr></table></td></tr></table></td></tr><tr>
+       <td height="40" style="font-size:2px; line-height:2px;">
+        &nbsp;</td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- TITLE + DUO CARD --><table bgcolor="#FCEAE8" border="0" cellpadding="0" cellspacing="0" width="100%">
+	
+		<tr>
+			<td align="center" valign="top" width="100%">
+				<table align="center" bgcolor="#d8c28b" border="0" cellpadding="0" cellspacing="0" class="wrapper" style="width: 600px;" width="600">
+					
+						<tr>
+							<td height="40" style="font-size:2px; line-height:2px;">
+								&nbsp;</td></tr><tr>
+							<td align="center">
+								<table border="0" cellpadding="0" cellspacing="0" class="container" style="width: 560px;">
+									
+										<tr>
+											<td style="font-family: Cervo Neue, Tahoma,Verdana,Segoe,sans-serif; font-size:30px; line-height:30px; color: #010307; text-align: left;font-weight: bold;text-transform: uppercase;">
+												Recettes &agrave; petits prix pour f&ecirc;tes &agrave; grand succ&egrave;s&nbsp;!</td></tr><tr>
+											<td height="20" style="font-size:2px; line-height:2px;">
+												&nbsp;</td></tr><tr>
+											<td align="left">
+												<table border="0" cellpadding="0" cellspacing="0" class="container_cta" width="100%">
+													
+														<tr>
+															<th bgcolor="#ffffff" class="mobiletable" valign="top" width="275">
+																<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+																	
+																		<tr>
+																			<td valign="top">
+																				<a   data-linkto="https://" href="https://click.em.delhaize.be/?qs=b88045481f9fe74cde4fed53aee5d5a0ef23cfeff0fe3f4dfc9914449600c1f53f6482a1b0c599f55ba64c885485e8b6da39f344f6602475" title="Cuillères apéro de légumes croquants et mayonnaise à la truffe"><img alt="Cuillères apéro de légumes croquants et mayonnaise à la truffe" data-assetid="297301" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/2024_w49_MyDll_recipe01.jpg" style="display: inline-block; width: 100%; max-width: 450px; font-weight: normal; vertical-align: top; padding: 0px; height: auto; border: none; text-align: center;" width="275"></a></td></tr><tr>
+																			<th bgcolor="#ffffff" class="mobiletable" style="" width="100%">
+																				<table align="center" border="0" cellpadding="0" cellspacing="0" class="mobiletableinner" style="" width="255">
+																					
+																						<tr>
+																							<td height="20" style="font-size:2px; line-height:2px;">
+																								&nbsp;</td></tr><tr>
+																							<td style="font-family: Cervo Neue, Tahoma,Verdana,Segoe,sans-serif; font-size:20px; line-height:20px; color: #000000; text-align: left;font-weight: bold;text-transform: uppercase;">
+																								Cuill&egrave;res ap&eacute;ro de l&eacute;gumes croquants et mayonnaise &agrave; la truffe</td></tr><tr>
+																							<td height="10" style="font-size:2px; line-height:2px;">
+																								&nbsp;</td></tr><tr>
+																							<td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px; color:#696969;font-weight: normal;text-align: left;">
+																								Facile, &lt; 30 min.</td></tr><tr>
+																							<td height="20" style="font-size:2px; line-height:2px;">
+																								&nbsp;</td></tr><tr>
+																							<td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px;text-align: left;" valign="middle">
+																								<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+																									
+																										<tr>
+																											<td style="vertical-align: top;" valign="top" width="30">
+																												<a href="https://click.em.delhaize.be/?qs=b88045481f9fe74c1e12b09b1bfb5b4e1013746a2ae4c426c72aa30062cd84c5861e327845cd66ec306a689421b87de29352d497d4de7aa8" style="" title="Delhaize"><img alt="" height="24" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/delhaize-link-icon.png" style="border:none; display:inline-block;width: 24px; max-width: 24px;height: 24px; max-height: 24px;" width="24"></a></td><td style="">
+																												<a  href="https://click.em.delhaize.be/?qs=b88045481f9fe74cde4fed53aee5d5a0ef23cfeff0fe3f4dfc9914449600c1f53f6482a1b0c599f55ba64c885485e8b6da39f344f6602475" style="font-weight: bold;text-decoration: underline;color:#000000;" title="Delhaize">Vers la recette</a></td></tr></table></td></tr><tr>
+																							<td height="20" style="font-size:2px; line-height:2px;">
+																								&nbsp;</td></tr></table></th></tr></table></th><th class="mobilespacer" height="10" style="font-size:2px; line-height:2px;" width="10">
+															</th><th bgcolor="#ffffff" class="mobiletable" valign="top" width="275">
+																<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+																	
+																		<tr>
+																			<td valign="top">
+																				<a   data-linkto="https://" href="https://click.em.delhaize.be/?qs=b88045481f9fe74c8aeeecac9eb04ef9b27e826c0fbb630fd13c721e3c0e23a0ced48b5d055ebfd4ea46708709b51b4a78de36e30594b3f2" title="Rosaces de pommes de terre au brie, chips de jambon et vinaigrette aux olives"><img alt="Rosaces de pommes de terre au brie, chips de jambon et vinaigrette aux olives" data-assetid="297302" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/2024_w49_MyDll_recipe02.jpg" style="display: inline-block; width: 100%; max-width: 450px; font-weight: normal; vertical-align: top; padding: 0px; text-align: center; height: auto; border: none;" width="275"></a></td></tr><tr>
+																			<th bgcolor="#ffffff" class="mobiletable" style="" width="100%">
+																				<table align="center" border="0" cellpadding="0" cellspacing="0" class="mobiletableinner" style="" width="255">
+																					
+																						<tr>
+																							<td height="20" style="font-size:2px; line-height:2px;">
+																								&nbsp;</td></tr><tr>
+																							<td style="font-family: Cervo Neue, Tahoma,Verdana,Segoe,sans-serif; font-size:20px; line-height:20px; color: #000000; text-align: left;font-weight: bold;text-transform: uppercase;">
+																								Rosaces de pommes de terre au brie, chips de jambon et vinaigrette aux olives</td></tr><tr>
+																							<td height="10" style="font-size:2px; line-height:2px;">
+																								&nbsp;</td></tr><tr>
+																							<td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px; color:#696969;font-weight: normal;text-align: left;">
+																								Facile, 30-60 min.</td></tr><tr>
+																							<td height="20" style="font-size:2px; line-height:2px;">
+																								&nbsp;</td></tr><tr>
+																							<td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px;text-align: left;" valign="middle">
+																								<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+																									
+																										<tr>
+																											<td style="vertical-align: top;" valign="top" width="30">
+																												<a href="https://click.em.delhaize.be/?qs=b88045481f9fe74cb32b8891e14f5b977d0e100d7c44eb2c209499650268d4de89b6747ff25a52f5ddba6eda34ea5106343966bcd9fba9e9" style="" title="Delhaize"><img alt="" height="24" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/delhaize-link-icon.png" style="border:none; display:inline-block;width: 24px; max-width: 24px;height: 24px; max-height: 24px;" width="24"></a></td><td style="">
+																												<a  href="https://click.em.delhaize.be/?qs=b88045481f9fe74c8aeeecac9eb04ef9b27e826c0fbb630fd13c721e3c0e23a0ced48b5d055ebfd4ea46708709b51b4a78de36e30594b3f2" style="font-weight: bold;text-decoration: underline;color:#000000;" title="Delhaize">Vers la recette</a></td></tr></table></td></tr><tr>
+																							<td height="20" style="font-size:2px; line-height:2px;">
+																								&nbsp;</td></tr></table></th></tr></table></th></tr></table></td></tr><tr>
+											<td height="20" style="font-size:2px; line-height:2px;">
+												&nbsp;</td></tr><tr>
+											<td align="left">
+												<table border="0" cellpadding="0" cellspacing="0" class="container_cta" width="100%">
+													
+														<tr>
+															<th bgcolor="#ffffff" class="mobiletable" valign="top" width="275">
+																<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+																	
+																		<tr>
+																			<td valign="top">
+																				<a   data-linkto="https://" href="https://click.em.delhaize.be/?qs=b88045481f9fe74caeab857b509e3672adc84fc0a39520b4a12861a13fd84a5d9159414757cddc128bb4fce892a976a354073bbb76f06e99" title="Tagliatelle au tomates cerise rôties, champignons, crème de parmesan et poudre d’olives"><img alt="Tagliatelle au tomates cerise rôties, champignons, crème de parmesan et poudre d’olives" data-assetid="297304" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/2024_w49_MyDll_recipe03.jpg" style="display: inline-block; width: 100%; max-width: 450px; font-weight: normal; vertical-align: top; padding: 0px; text-align: center; height: auto; border: none;" width="275"></a></td></tr><tr>
+																			<th bgcolor="#ffffff" class="mobiletable" style="" width="100%">
+																				<table align="center" border="0" cellpadding="0" cellspacing="0" class="mobiletableinner" style="" width="255">
+																					
+																						<tr>
+																							<td height="20" style="font-size:2px; line-height:2px;">
+																								&nbsp;</td></tr><tr>
+																							<td style="font-family: Cervo Neue, Tahoma,Verdana,Segoe,sans-serif; font-size:20px; line-height:20px; color: #000000; text-align: left;font-weight: bold;text-transform: uppercase;">
+																								Tagliatelle au tomates cerise r&ocirc;ties, champignons, cr&egrave;me de parmesan et poudre d&rsquo;olives</td></tr><tr>
+																							<td height="10" style="font-size:2px; line-height:2px;">
+																								&nbsp;</td></tr><tr>
+																							<td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px; color:#696969;font-weight: normal;text-align: left;">
+																								Facile, &gt; 60 min.</td></tr><tr>
+																							<td height="20" style="font-size:2px; line-height:2px;">
+																								&nbsp;</td></tr><tr>
+																							<td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px;text-align: left;" valign="middle">
+																								<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+																									
+																										<tr>
+																											<td style="vertical-align: top;" valign="top" width="30">
+																												<a href="https://click.em.delhaize.be/?qs=b88045481f9fe74cc9e4b1a42352954072a82563a8f5de1a6e72b813230fbb637c0e86f100a8f172b51c586d674930c29c6bbe38eaaf2cc4" style="" title="Delhaize"><img alt="" height="24" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/delhaize-link-icon.png" style="border:none; display:inline-block;width: 24px; max-width: 24px;height: 24px; max-height: 24px;" width="24"></a></td><td style="">
+																												<a  href="https://click.em.delhaize.be/?qs=b88045481f9fe74caeab857b509e3672adc84fc0a39520b4a12861a13fd84a5d9159414757cddc128bb4fce892a976a354073bbb76f06e99" style="font-weight: bold;text-decoration: underline;color:#000000;" title="Delhaize">Vers la recette</a></td></tr></table></td></tr><tr>
+																							<td height="20" style="font-size:2px; line-height:2px;">
+																								&nbsp;</td></tr></table></th></tr></table></th><th class="mobilespacer" height="10" style="font-size:2px; line-height:2px;" width="10">
+															</th><th bgcolor="#ffffff" class="mobiletable" valign="top" width="275">
+																<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+																	
+																		<tr>
+																			<td valign="top">
+																				<a   data-linkto="https://" href="https://click.em.delhaize.be/?qs=b88045481f9fe74cb97009a2f94f6e6bc9b0e7f89f4bcb923ec6ad25b2ef1723df5f22df2c6c8638ba457d48ab9773cb1d98114b8e61d977" title="Riz au lait, caramel au beurre salé et amandes caramélisées"><img alt="Riz au lait, caramel au beurre salé et amandes caramélisées" data-assetid="297303" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/2024_w49_MyDll_recipe04.jpg" style="display: inline-block; width: 100%; max-width: 450px; font-weight: normal; vertical-align: top; padding: 0px; text-align: center; height: auto; border: none;" width="275"></a></td></tr><tr>
+																			<th bgcolor="#ffffff" class="mobiletable" style="" width="100%">
+																				<table align="center" border="0" cellpadding="0" cellspacing="0" class="mobiletableinner" style="" width="255">
+																					
+																						<tr>
+																							<td height="20" style="font-size:2px; line-height:2px;">
+																								&nbsp;</td></tr><tr>
+																							<td style="font-family: Cervo Neue, Tahoma,Verdana,Segoe,sans-serif; font-size:20px; line-height:20px; color: #000000; text-align: left;font-weight: bold;text-transform: uppercase;">
+																								Riz au lait, caramel au beurre sal&eacute; et amandes caram&eacute;lis&eacute;es</td></tr><tr>
+																							<td height="10" style="font-size:2px; line-height:2px;">
+																								&nbsp;</td></tr><tr>
+																							<td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px; color:#696969;font-weight: normal;text-align: left;">
+																								Facile, &gt; 60 min.</td></tr><tr>
+																							<td height="20" style="font-size:2px; line-height:2px;">
+																								&nbsp;</td></tr><tr>
+																							<td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px;text-align: left;" valign="middle">
+																								<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+																									
+																										<tr>
+																											<td style="vertical-align: top;" valign="top" width="30">
+																												<a href="https://click.em.delhaize.be/?qs=b88045481f9fe74c242721f8d90ade5223f1b23304ce32b82991d2fe9911c50ca3f2b0ec01fe57c7fb3ade2d34bb28b18323de4a7cb52659" style="" title="Delhaize"><img alt="" height="24" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/delhaize-link-icon.png" style="border:none; display:inline-block;width: 24px; max-width: 24px;height: 24px; max-height: 24px;" width="24"></a></td><td style="">
+																												<a  href="https://click.em.delhaize.be/?qs=b88045481f9fe74cb97009a2f94f6e6bc9b0e7f89f4bcb923ec6ad25b2ef1723df5f22df2c6c8638ba457d48ab9773cb1d98114b8e61d977" style="font-weight: bold;text-decoration: underline;color:#000000;" title="Delhaize">Vers la recette</a></td></tr></table></td></tr><tr>
+																							<td height="20" style="font-size:2px; line-height:2px;">
+																								&nbsp;</td></tr></table></th></tr></table></th></tr></table></td></tr></table></td></tr><tr>
+							<td height="40" style="font-size:2px; line-height:2px;">
+								&nbsp;</td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- DUO CONTENT IMG + TEXT LTR --><table bgcolor="#FCEAE8" border="0" cellpadding="0" cellspacing="0" width="100%">
+	
+		<tr>
+			<td align="center" valign="top" width="100%">
+				<table align="center" bgcolor="#0f4b50" border="0" cellpadding="0" cellspacing="0" class="wrapper" style="width: 600px;" width="600">
+					
+						<tr>
+							<td height="40" style="font-size:2px; line-height:2px;">
+								&nbsp;</td></tr><tr>
+							<td align="center">
+								<table border="0" cellpadding="0" cellspacing="0" class="container" style="width: 560px;">
+									
+										<tr>
+											<td style="font-family: Cervo Neue, Tahoma,Verdana,Segoe,sans-serif; font-size:30px; line-height:30px; color: #ffffff; text-align: left;font-weight: bold;text-transform: uppercase;">
+												Vos f&ecirc;tes irr&eacute;sistiblement d&eacute;licieuses&nbsp;? Dans votre magazine Delhaize, bien s&ucirc;r&nbsp;!</td></tr><!-- TITLE SPACER --><tr>
+											<td height="20" style="font-size:2px; line-height:2px;">
+												&nbsp;</td></tr><tr>
+											<td align="left">
+												<table border="0" cellpadding="0" cellspacing="0" class="container_cta" width="100%">
+													
+														<tr>
+															<th class="mobiletable" valign="top" width="270">
+																<a   data-linkto="https://" href="https://click.em.delhaize.be/?qs=b88045481f9fe74c4283d46b9391f010b0bbb580041855fcfdccfb1bea7266f701bbba849fbd1d43dbdb5767e2535079b6b3b0a28de852e5" style="font-size: 16px; font-family:Arial, Helvetica, sans-serif; color: #000000; text-decoration: none;" target="_blank" title="Vos fêtes irrésistiblement délicieuses ? Dans votre magazine Delhaize, bien sûr !"><img alt="Vos fêtes irrésistiblement délicieuses ? Dans votre magazine Delhaize, bien sûr !" data-assetid="297714" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/2024_w49_MyDll_Feestgids-FR-v02.jpg" style="display: inline-block; width: 100%; max-width: 450px; font-weight: normal; vertical-align: top; padding: 0px; text-align: center; height: auto; border: none;" width="270"></a></th>
+<th class="mobilespacer" height="10" style="font-size:2px; line-height:2px;" width="20">
+															</th><th class="mobiletable" style="vertical-align:top;" valign="top" width="270">
+																<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+																	
+																		<tr>
+																			<td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px;text-align: left;font-weight: normal;color:#ffffff;">
+																				Oui, votre magazine Delhaize est une mine d&rsquo;informations pr&eacute;cieuses et d&rsquo;inspiration gourmande pour vos f&ecirc;tes. Des recettes, des services exclusifs pour vous aider, tout, tout, tout pour des f&ecirc;tes irr&eacute;sistibles&nbsp;! Retrouvez-le &eacute;galement dans votre Delhaize.</td></tr><tr>
+																			<td height="20" style="font-size:2px; line-height:2px;">
+																				&nbsp;</td></tr><tr>
+																			<td class="mobiletable">
+																				<table align="left" border="0" cellpadding="0" cellspacing="0">
+																					
+																						<tr>
+																							<td align="center" bgcolor="#0f4b50" style="-webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px;" width="210">
+																								<!--[if mso]>                         <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://www.delhaize.be/fr/magazine?cmpid=em_General_2024-11-28_w49_na_Thu_FR_na_na_146404_na_na&a.deeplink.id=62bc14f3e252c62fe6e39f4e&ctxa.launch.campaign.medium=em&ctxa.launch.campaign.content=General&ctxa.launch.campaign.source=146404&ctxa.launch.campaign.term=2024-11-28" alias="2024w49_MyDll_Magazine" style="height:40px;v-text-anchor:middle;width:210px;" arcsize="5%" stroke="f" fillcolor="#D1223E">                           <center>                             <![endif]-->
+<a  href="https://click.em.delhaize.be/?qs=b88045481f9fe74c4283d46b9391f010b0bbb580041855fcfdccfb1bea7266f701bbba849fbd1d43dbdb5767e2535079b6b3b0a28de852e5" style="background-color:#D1223E;border-radius:3px;color:#ffffff;display:inline-block;font-family:Arial, Helvetica, sans-serif;font-size:16px;font-weight:bold;line-height:40px;text-align:center;text-decoration:none;width: 100%;-webkit-text-size-adjust:none;">Je lis le magazine &gt;</a> <!--[if mso]>                       </center>                     </v:roundrect>                     <![endif]--></td></tr></table></td></tr></table></th></tr></table></td></tr></table></td></tr><tr>
+							<td height="30" style="font-size:2px; line-height:2px;">
+								&nbsp;</td></tr><tr>
+							<td align="center" valign="bottom">
+								<img alt="" data-assetid="297772" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/2024_w49_MyDll_ornaments_04_top.jpg" style="display: block; font-family: Arial, Helvetica, sans-serif; color: #000000; font-size: 24px; width: 100%; max-width: 600px; padding: 0px; text-align: center; height: auto; border: none;" width="100%"></td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- DUO CONTENT IMG + TEXT RTL --><table bgcolor="#FCEAE8" border="0" cellpadding="0" cellspacing="0" width="100%">
+ 
+  <tr>
+   <td align="center" valign="top" width="100%">
+    <table align="center" bgcolor="#d8c28b" border="0" cellpadding="0" cellspacing="0" class="wrapper" style="width: 600px;" width="600">
+     
+      <tr>
+       <td align="center" valign="top">
+        <img alt="" data-assetid="297299" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/2024_w49_MyDll_ornaments_02_bottom.jpg" style="display: block; font-family: Arial, Helvetica, sans-serif; color: #000000; font-size: 24px; width: 100%; max-width: 600px; padding: 0px; text-align: center; height: auto; border: none;" width="100%"></td></tr><tr>
+       <td height="30" style="font-size:2px; line-height:2px;">
+        &nbsp;</td></tr><tr>
+       <td align="center">
+        <table border="0" cellpadding="0" cellspacing="0" class="container" style="width: 560px;">
+         
+          <tr>
+           <td dir="ltr" style="font-family: Cervo Neue, Tahoma,Verdana,Segoe,sans-serif; font-size:30px; line-height:30px; color: #ffffff; text-align: left;font-weight: bold;text-transform: uppercase;">
+            D&eacute;couvrez notre Guide des f&ecirc;tes pour r&eacute;ussir tous vos p&rsquo;tits plats&nbsp;!</td></tr><tr>
+           <td height="20" style="font-size:2px; line-height:2px;">
+            &nbsp;</td></tr><tr>
+           <td align="left">
+            <table border="0" cellpadding="0" cellspacing="0" class="container_cta" dir="rtl" width="100%">
+             
+              <tr>
+               <th class="mobiletable" valign="top" width="270">
+                <table border="0" cellpadding="0" cellspacing="0" dir="ltr" style="width: 100%;">
+                 
+                  <tr>
+                   <td>
+                    <a   data-linkto="https://" href="https://click.em.delhaize.be/?qs=b88045481f9fe74c9114b23c58548652796856830caa7a9cfc2d2a8ba512b71c34e77c5116f6e8edbc8cdeb5012f18d06e6f5056995e5a9c" style="font-size: 16px; font-family:Arial, Helvetica, sans-serif; color: #000000; text-decoration: none;" target="_blank" title="Découvrez notre Guide des fêtes pour réussir tous vos p’tits plats !"><img alt="Découvrez notre Guide des fêtes pour réussir tous vos p’tits plats !" data-assetid="297834" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/w49-2024-Mydll-EOYmag-fr-v07.jpg" style="display: inline-block; width: 100%; max-width: 450px; font-weight: normal; vertical-align: top; padding: 0px; text-align: center; height: auto; border: none;" width="270"></a></td></tr></table></th><th class="mobilespacer" height="10" style="font-size:2px; line-height:2px;" width="20">
+               </th><th class="mobiletable" style="vertical-align:top;" valign="top" width="270">
+                <table border="0" cellpadding="0" cellspacing="0" dir="ltr" style="width: 100%;">
+                 
+                  <tr>
+                   <td dir="ltr" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px;text-align: left;font-weight: normal;color:#ffffff;">
+                    Vous voulez surprendre vos amis et votre famille avec des f&ecirc;tes irr&eacute;sistibles&nbsp;? Dans notre Guide food des f&ecirc;tes, vous trouverez un aper&ccedil;u de notre gamme de produits festifs que vous pouvez servir tels quels ou int&eacute;grer dans votre menu.</td></tr><tr>
+                   <td height="20" style="font-size:2px; line-height:2px;">
+                    &nbsp;</td></tr><tr>
+                   <td class="mobiletable">
+                    <table align="left" border="0" cellpadding="0" cellspacing="0">
+                     
+                      <tr>
+                       <td align="center" bgcolor="#d8c28b" style="-webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px;" width="170">
+                        <!--[if mso]>                         <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://www.delhaize.be/fr/eoy-guide-des-fetes/food?cmpid=em_General_2024-11-28_w49_na_Thu_FR_na_na_146404_na_na&a.deeplink.id=62bc14f3e252c62fe6e39f4e&ctxa.launch.campaign.medium=em&ctxa.launch.campaign.content=General&ctxa.launch.campaign.source=146404&ctxa.launch.campaign.term=2024-11-28" alias="2024w49_MyDll_GuideFetes_Food" style="height:40px;v-text-anchor:middle;width:170px;" arcsize="5%" stroke="f" fillcolor="#D1223E">                           <center>                             <![endif]-->
+<a  href="https://click.em.delhaize.be/?qs=b88045481f9fe74c9114b23c58548652796856830caa7a9cfc2d2a8ba512b71c34e77c5116f6e8edbc8cdeb5012f18d06e6f5056995e5a9c" style="background-color:#D1223E;border-radius:3px;color:#ffffff;display:inline-block;font-family:Arial, Helvetica, sans-serif;font-size:16px;font-weight:bold;line-height:40px;text-align:center;text-decoration:none;width: 100%;-webkit-text-size-adjust:none;">C&rsquo;est&nbsp;la f&ecirc;te &gt;</a> <!--[if mso]>                       </center>                     </v:roundrect>                     <![endif]--></td></tr></table></td></tr></table></th></tr></table></td></tr></table></td></tr><tr>
+       <td height="40" style="font-size:2px; line-height:2px;">
+        &nbsp;</td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- DUO CONTENT IMG + TEXT LTR --><table bgcolor="#FCEAE8" border="0" cellpadding="0" cellspacing="0" width="100%">
+ 
+  <tr>
+   <td align="center" valign="top" width="100%">
+    <table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" class="wrapper" style="width: 600px;" width="600">
+     
+      <tr>
+       <td height="40" style="font-size:2px; line-height:2px;">
+        &nbsp;</td></tr><tr>
+       <td align="center">
+        <table border="0" cellpadding="0" cellspacing="0" class="container" style="width: 560px;">
+         
+          <tr>
+           <td style="font-family: Cervo Neue, Tahoma,Verdana,Segoe,sans-serif; font-size:30px; line-height:30px; color: #D1223E; text-align: left;font-weight: bold;text-transform: uppercase;">
+            Vos recettes de fin d&rsquo;ann&eacute;e&nbsp;? Encore meilleures avec NOS PRODUITS KitchenAid</td></tr><!-- TITLE SPACER --><tr>
+           <td height="20" style="font-size:2px; line-height:2px;">
+            &nbsp;</td></tr><tr>
+           <td align="left">
+            <table border="0" cellpadding="0" cellspacing="0" class="container_cta" width="100%">
+             
+              <tr>
+               <th class="mobiletable" valign="top" width="270">
+                <a   data-linkto="https://" href="https://click.em.delhaize.be/?qs=b88045481f9fe74c8da28f846a00c19d12d599037a89c293175f6254398cba845389181bbc0e2e8a481c99c198b562b6f70f023d5ab5e8d9" style="font-size: 16px; font-family:Arial, Helvetica, sans-serif; color: #000000; text-decoration: none;" target="_blank" title="Vos recettes de fin d’année ? Encore meilleures avec KitchenAid"><img alt="Vos recettes de fin d’année ? Encore meilleures avec KitchenAid" data-assetid="297774" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/w49-2024-Mydll-KitchenAid-fr-v2.jpg" style="display: inline-block; width: 100%; max-width: 450px; font-weight: normal; vertical-align: top; padding: 0px; text-align: center; height: auto; border: none;" width="270"></a></th><th class="mobilespacer" height="10" style="font-size:2px; line-height:2px;" width="20">
+               </th><th class="mobiletable" style="vertical-align:top;" valign="top" width="270">
+                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                 
+                  <tr>
+                   <td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px;text-align: left;font-weight: normal;">
+                    Pour pr&eacute;parer vos recettes, rien de tel que les ustensiles <b>KitchenAid</b>*&nbsp;! &Eacute;pargnez des timbres jusqu&rsquo;au 08/01/2025. Vous en avez 10&nbsp;? &Eacute;changez votre carte jusqu&rsquo;au 15/01/2025, et recevez jusqu&rsquo;&agrave; 69&nbsp;% de r&eacute;duction** sur ces produits.</td></tr><tr>
+                   <td height="20" style="font-size:2px; line-height:2px;">
+                    &nbsp;</td></tr><tr>
+                   <td class="mobiletable">
+                    <table align="left" border="0" cellpadding="0" cellspacing="0">
+                     
+                      <tr>
+                       <td align="center" bgcolor="#ffffff" style="-webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px;" width="170">
+                        <!--[if mso]>                         <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://mydelhaize.page.link/?link=https://www.delhaize.be/campaign?campaignId%3DKitchenAid24&apn=be.delhaize.my&isi=1463175036&ibi=be.delhaize.my&ifl=https://www.delhaize.be/fr/action-epargne-kitchenaid&ofl=https://www.delhaize.be/fr/action-epargne-kitchenaid&afl=https://www.delhaize.be/fr/action-epargne-kitchenaid&cmpid=em_General_2024-11-28_w49_na_Thu_FR_na_na_146404_na_na&a.deeplink.id=62bc14f3e252c62fe6e39f4e&ctxa.launch.campaign.medium=em&ctxa.launch.campaign.content=General&ctxa.launch.campaign.source=146404&ctxa.launch.campaign.term=2024-11-28" alias="2024w49_MyDll_DSC_KitchenAid" style="height:40px;v-text-anchor:middle;width:170px;" arcsize="5%" stroke="f" fillcolor="#D1223E">                           <center>                             <![endif]-->
+<a  href="https://click.em.delhaize.be/?qs=b88045481f9fe74c8da28f846a00c19d12d599037a89c293175f6254398cba845389181bbc0e2e8a481c99c198b562b6f70f023d5ab5e8d9" style="background-color:#D1223E;border-radius:3px;color:#ffffff;display:inline-block;font-family:Arial, Helvetica, sans-serif;font-size:16px;font-weight:bold;line-height:40px;text-align:center;text-decoration:none;width: 100%;-webkit-text-size-adjust:none;">J&rsquo;&eacute;pargne ! &gt;</a> <!--[if mso]>                       </center>                     </v:roundrect>                     <![endif]--></td></tr></table></td></tr></table></th></tr></table></td></tr><tr>
+           <td height="20" style="font-size:2px; line-height:2px;">
+            &nbsp;</td></tr><tr>
+           <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px;line-height:16px;text-align: left;font-weight: normal;font-style: italic;color:#000000;">
+            * Infos et r&egrave;glement sur <a  href="https://click.em.delhaize.be/?qs=b88045481f9fe74c96b3774c182b6f4b612189c358300d95b2c449462d97f6bfe2ce241b2793645b7da9fd55d251901280938c915ed5073f" style="color:#000000;font-weight:bold;text-decoration:underline;">delhaize.be/action-epargne-kitchenaid</a>.<br>
+            ** Les pourcentages de r&eacute;duction sont appliqu&eacute;s aux prix sans timbres. Les prix sans timbres sont les prix recommand&eacute;s par le fabricant.</td></tr></table></td></tr><tr>
+       <td height="40" style="font-size:2px; line-height:2px;">
+        &nbsp;</td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- DUO CONTENT IMG + TEXT LTR --><table bgcolor="#FCEAE8" border="0" cellpadding="0" cellspacing="0" width="100%">
+ 
+  <tr>
+   <td align="center" valign="top" width="100%">
+    <table align="center" bgcolor="#0f4b50" border="0" cellpadding="0" cellspacing="0" class="wrapper" style="width: 600px;" width="600">
+     
+      <tr>
+       <td height="40" style="font-size:2px; line-height:2px;">
+        &nbsp;</td></tr><tr>
+       <td align="center">
+        <table border="0" cellpadding="0" cellspacing="0" class="container" style="width: 560px;">
+         
+          <tr>
+           <td align="left">
+            <table border="0" cellpadding="0" cellspacing="0" class="container_cta" width="100%">
+             
+              <tr>
+               <th class="mobiletable" valign="top" width="270">
+                <a   data-linkto="https://" href="https://click.em.delhaize.be/?qs=b88045481f9fe74cc9dc1513b95550801f0e054cc6b232365ed7d70d654763f57d584afabe014d9ad950c11b23162e1c0963363be13b6b10" style="font-size: 16px; font-family:Arial, Helvetica, sans-serif; color: #000000; text-decoration: none;" target="_blank" title="Découvrez les promos de la semaine"><img alt="Découvrez les promos de la semaine" data-assetid="296561" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/w49-2024-Mydll-folder-fr.png" style="display: inline-block; width: 100%; max-width: 450px; font-weight: normal; vertical-align: top; padding: 0px; text-align: center; height: auto; border: none;" width="270"></a></th><th class="mobilespacer" height="10" style="font-size:2px; line-height:2px;" width="20">
+               </th><th class="mobiletable" style="vertical-align:top;" valign="top" width="270">
+                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                 
+                  <tr>
+                   <td style="font-family: Cervo Neue, Tahoma,Verdana,Segoe,sans-serif; font-size:30px; line-height:30px; color: #ffffff; text-align: left;font-weight: bold;text-transform: uppercase;">
+                    D&eacute;couvrez les promos de la semaine</td></tr><!-- TITLE SPACER --><tr>
+                   <td height="20" style="font-size:2px; line-height:2px;">
+                    &nbsp;</td></tr><tr>
+                   <td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px;text-align: left;font-weight: normal;color:#ffffff;">
+                    Offres valables du 28&nbsp;novembre au 4&nbsp;d&eacute;cembre 2024 inclus.</td></tr><tr>
+                   <td height="20" style="font-size:2px; line-height:2px;">
+                    &nbsp;</td></tr><tr>
+                   <td class="mobiletable">
+                    <table align="left" border="0" cellpadding="0" cellspacing="0">
+                     
+                      <tr>
+                       <td align="center" bgcolor="#0f4b50" style="-webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px;" width="180">
+                        <!--[if mso]>                         <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://www.delhaize.be/fr/folder?cmpid=em_General_2024-11-28_w49_na_Thu_FR_na_na_146404_na_na&a.deeplink.id=62bc14f3e252c62fe6e39f4e&ctxa.launch.campaign.medium=em&ctxa.launch.campaign.content=General&ctxa.launch.campaign.source=146404&ctxa.launch.campaign.term=2024-11-28" alias="2024w49_MyDll_Promos_D2D" style="height:40px;v-text-anchor:middle;width:180px;" arcsize="5%" stroke="f" fillcolor="#D1223E">                           <center>                             <![endif]-->
+<a  href="https://click.em.delhaize.be/?qs=b88045481f9fe74cc9dc1513b95550801f0e054cc6b232365ed7d70d654763f57d584afabe014d9ad950c11b23162e1c0963363be13b6b10" style="background-color:#D1223E;border-radius:3px;color:#ffffff;display:inline-block;font-family:Arial, Helvetica, sans-serif;font-size:16px;font-weight:bold;line-height:40px;text-align:center;text-decoration:none;width: 100%;-webkit-text-size-adjust:none;">Feuilletez-le &gt;</a> <!--[if mso]>                       </center>                     </v:roundrect>                     <![endif]--></td></tr></table></td></tr></table></th></tr></table></td></tr></table></td></tr><tr>
+       <td height="40" style="font-size:2px; line-height:2px;">
+        &nbsp;</td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--  -->
+
+
+    
+
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- --><!-- DUO CONTENT IMG + TEXT LTR --><table bgcolor="#FCEAE8" border="0" cellpadding="0" cellspacing="0" width="100%">
+	
+		<tr>
+			<td align="center" valign="top" width="100%">
+				<table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" class="wrapper" style="width: 600px;" width="600">
+					
+						<tr>
+							<td height="20" style="font-size:2px; line-height:2px;">
+								&nbsp;</td></tr><tr>
+							<td align="center" valign="top">
+								<a   data-linkto="https://" href="https://click.em.delhaize.be/?qs=b88045481f9fe74cbff11d27eb2ebf3311ec6d63c8dbf18f128afe6319d84312a119b4877a41d54ad114dfba02c6424d09574fa0f456d096" style="font-size: 16px; font-family:Arial, Helvetica, sans-serif; color: #000000; text-decoration: none;" target="_blank" title=""><img alt="Sous les spotlights, cette semaine" data-assetid="293191" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/DLL-MMD-title-header-fr.png" style="display: block; font-family: Arial, Helvetica, sans-serif; color: #000000; font-size: 24px; width: 100%; max-width: 600px; padding: 0px; text-align: center; height: auto; border: none;" width="100%"></a></td></tr><tr>
+							<td height="10" style="font-size:2px; line-height:2px;">
+								&nbsp;</td></tr><tr>
+							<td align="center">
+								<table border="0" cellpadding="0" cellspacing="0" class="container" style="width: 560px;">
+									
+										<tr>
+											<td align="left">
+												<table border="0" cellpadding="0" cellspacing="0" class="container_cta" width="100%">
+													
+														<tr>
+															<th class="mobiletable" valign="top" width="270">
+																<a   data-linkto="https://" href="https://click.em.delhaize.be/?qs=b88045481f9fe74cbff11d27eb2ebf3311ec6d63c8dbf18f128afe6319d84312a119b4877a41d54ad114dfba02c6424d09574fa0f456d096" style="font-size: 16px; font-family:Arial, Helvetica, sans-serif; color: #000000; text-decoration: none;" target="_blank" title="It’s Pizza Party time avec Doritos® !"><img alt="It’s Pizza Party time avec Doritos® !" data-assetid="297295" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/2024_w49_MyDll_MMD_Doritos.jpg" style="display: inline-block; width: 100%; max-width: 450px; font-weight: normal; vertical-align: top; padding: 0px; text-align: center; height: auto; border: none;" width="270"></a></th><th class="mobilespacer" height="10" style="font-size:2px; line-height:2px;" width="20">
+															</th><th class="mobiletable" style="vertical-align:top;" valign="top" width="270">
+																<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+																	
+																		<tr>
+																			<td style="font-family: Cervo Neue, Tahoma,Verdana,Segoe,sans-serif; font-size:24px; line-height:24px; color: #000000; text-align: left;font-weight: bold;text-transform: uppercase;">
+																				It&rsquo;s Pizza Party time avec Doritos<sup style="font-size:16px;line-height:0;">&reg;</sup>&nbsp;!</td></tr><tr>
+																			<td height="10" style="font-size:2px; line-height:2px;">
+																				&nbsp;</td></tr><tr>
+																			<td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px;text-align: left;font-weight: normal;">
+																				Doritos<sup style="font-size:10px;line-height:0;">&reg;</sup>, c&rsquo;est le snack parfait combin&eacute; &agrave; vos dips pr&eacute;f&eacute;r&eacute;s ou l&rsquo;ingr&eacute;dient ultime pour r&eacute;aliser vos Doritos<sup style="font-size:10px;line-height:0;">&reg;</sup> Loaded Nachos. Besoin d&rsquo;inspiration&nbsp;? D&eacute;couvrez notre recette incontournable&nbsp;: La Doritos<sup style="font-size:10px;line-height:0;">&reg;</sup> Loaded Pizza&nbsp;!</td></tr><tr>
+																			<td height="20" style="font-size:2px; line-height:2px;">
+																				&nbsp;</td></tr><tr>
+																			<td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px;text-align: left;" valign="middle">
+																				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+																					
+																						<tr>
+																							<td style="vertical-align: top;" valign="top" width="30">
+																								<a  href="https://click.em.delhaize.be/?qs=b88045481f9fe74cbff11d27eb2ebf3311ec6d63c8dbf18f128afe6319d84312a119b4877a41d54ad114dfba02c6424d09574fa0f456d096" style="" title="Delhaize"><img alt="" height="24" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/delhaize-link-icon.png" style="border:none; display:inline-block;width: 24px; max-width: 24px;height: 24px; max-height: 24px;" width="24"></a></td><td style="">
+																								<a  href="https://click.em.delhaize.be/?qs=b88045481f9fe74cbff11d27eb2ebf3311ec6d63c8dbf18f128afe6319d84312a119b4877a41d54ad114dfba02c6424d09574fa0f456d096" style="font-weight: bold;text-decoration: underline;color:#000000;" title="Delhaize">D&eacute;couvrir la recette</a></td></tr></table></td></tr></table></th></tr></table></td></tr></table></td></tr><tr>
+							<td height="40" style="font-size:2px; line-height:2px;">
+								&nbsp;</td></tr></table></td></tr></table></td></tr></table>
+
+
+    <!--  --></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--    -->
+<!-- MyDelhaize_SuperPlus_P2P3_FR  -->
+<table bgcolor="#FCEAE8" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="center" valign="top" width="100%"><table align="center" bgcolor="#feedf1" border="0" cellpadding="0" cellspacing="0" class="wrapper" style="width: 600px;" width="600">
+        <tr>
+          <td height="40" style="font-size:2px; line-height:2px;">&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="center"><table border="0" cellpadding="0" cellspacing="0" class="container" style="width: 560px;">
+              <tr>
+                <td align="left"><table border="0" cellpadding="0" cellspacing="0" class="container_cta" width="100%">
+                    <tr>
+                      <th align="center" class="mobiletable" valign="top" width="270"> <table border="0" cellpadding="0" cellspacing="0" style="width: 250px;max-width: 250px;">
+                          <tr>
+                            <td height="70" style="vertical-align: bottom;" valign="bottom" width="250"><a href="https://click.em.delhaize.be/?qs=b88045481f9fe74c53552d9adf55daa8016773ca81ded527da73a0b52b39b1864d5c5eed30693866468117f7c04aa71ae998df258ec9d127" style="" title="Delhaize"><img alt="" height="70" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/144/DLL-superplus-dashbord-barcode-top.png" style="border:none; display:inline-block;width: 250px; max-width: 250px;height: 70px; max-height: 70px;" width="250"></a></td>
+                          </tr>
+                          <tr>
+                            <td align="center" bgcolor="#ce122f" height="100" style="" width="250"><a  href="https://click.em.delhaize.be/?qs=b88045481f9fe74ce01cd342f107af571e5da0a12342a67c84cdb853d711512e9d2da4202208079c77cbdc2b4d661ff9ef3c7487b44fec91" style="" target="_blank"><img alt="barcode" border="0" hspace="0" src="http://cl.s50.exct.net/LiveContent.aspx?qs=7e4af20a64ae9593c9bf7705ae23012f9c4c165b56d0175abd229d9514b2632b2bcb6c4d7cd2ed2c2f883d2d403b0846621f95fcd92380f9c65a7e8a62e06401312ef37e0c132b552fc6ebcd3deae51bae065792a634ac093271fe57ac74fc43fd3c9e264c4eb520" style="width: 250px; max-width: 250px;height: 100px; max-height: 100px;"> </a></td>
+                          </tr>
+                          <tr>
+                            <td height="20" style="vertical-align: top;" valign="top" width="250"><a href="https://click.em.delhaize.be/?qs=b88045481f9fe74c9dfc55e816bb9b2caad275f3366daf82e34f67a6e665eea64f5872f6cc827c250bc1238c238d8246ba9672f2d5eba128" style="" title="Delhaize"><img alt="" height="20" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/144/DLL-superplus-dashbord-barcode-bottom.png" style="border:none; display:inline-block;width: 250px; max-width: 250px;height: 20px; max-height: 20px;" width="250"></a></td>
+                          </tr>
+                          <tr>
+                            <td height="10" style="font-size:2px; line-height:2px;">&nbsp;</td>
+                          </tr>
+                        </table></th>
+                      <th class="mobilespacer" height="10" style="font-size:2px; line-height:2px;" width="10"> </th>
+                      <th class="mobiletable" style="vertical-align:top;" valign="top" width="270"> <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                          <tr>
+                            <td height="10" style="font-size:2px; line-height:2px;">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px;text-align: left;" valign="middle"><table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                                <tr>
+                                  <td style="" width="30"><a href="https://click.em.delhaize.be/?qs=b88045481f9fe74c9dfc55e816bb9b2caad275f3366daf82e34f67a6e665eea64f5872f6cc827c250bc1238c238d8246ba9672f2d5eba128" style="" title="Delhaize"><img alt="" height="24" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/3/counter_icon_2.png" style="border:none; display:inline-block;width: 24px; max-width: 24px;height: 24px; max-height: 24px;" width="24"></a></td>
+                                  <td style=""><a href="https://click.em.delhaize.be/?qs=b88045481f9fe74c9dfc55e816bb9b2caad275f3366daf82e34f67a6e665eea64f5872f6cc827c250bc1238c238d8246ba9672f2d5eba128" style="font-family: Cervo Neue, Tahoma,Verdana,Segoe,sans-serif; font-size:20px; line-height:20px; color: #000000; text-align: left;font-weight: bold;text-transform: uppercase;text-decoration: none;" title="Delhaize">263 points &gt;</a></td>
+                                </tr>
+                              </table></td>
+                          </tr>
+                          <!-- TITLE SPACER -->
+                          <tr>
+                            <td height="10" style="font-size:2px; line-height:2px;">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px;text-align: left;font-weight: normal;"><!-- --><!--  --></td>
+                          </tr>
+                          <tr>
+                            <td height="20" style="font-size:2px; line-height:2px;">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px;text-align: left;" valign="middle"><table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                                <tr>
+                                  <td style="" width="30"><a href="https://click.em.delhaize.be/?qs=b88045481f9fe74c7997fbd8f275c306c07693582725cee93697fc1de7824073ffe58ff0251770f0c8aedf24448c0f1ab710eff2ec2da583" style="" title="Delhaize"><img alt="" height="24" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/145/Counter_Icon_sDeals.png" style="border:none; display:inline-block;width: 24px; max-width: 24px;height: 24px; max-height: 24px;" width="24"></a></td>
+                                  <td style=""><a href="https://click.em.delhaize.be/?qs=b88045481f9fe74c7997fbd8f275c306c07693582725cee93697fc1de7824073ffe58ff0251770f0c8aedf24448c0f1ab710eff2ec2da583" style="font-family: Cervo Neue, Tahoma,Verdana,Segoe,sans-serif; font-size:20px; line-height:20px; color: #000000; text-align: left;font-weight: bold;text-transform: uppercase;text-decoration: none;" title="Delhaize">Mes e-deals &gt;</a></td>
+                                </tr>
+                              </table></td>
+                          </tr>
+                          <!-- TITLE SPACER -->
+                          <tr>
+                            <td height="10" style="font-size:2px; line-height:2px;">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px;text-align: left;font-weight: normal;">
+        <!--  --> 7/28 offres activ&eacute;es. <!----></td>
+                          </tr>
+                          <tr>
+                            <td height="20" style="font-size:2px; line-height:2px;">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px;text-align: left;" valign="middle"><table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                                <tr>
+                                  <td style="" width="30"><a href="https://click.em.delhaize.be/?qs=b88045481f9fe74c1a9d476d57066a66fa02874ceadd51107208de4087a16a81a9128f3248602cf126f6c215e23abee08f83f1d5bd7f53fc" style="" title="Delhaize"><img alt="" height="24" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/2/Counter_Icon_Savings.png" style="border:none; display:inline-block;width: 24px; max-width: 24px;height: 24px; max-height: 24px;" width="24"></a></td>
+                                  <td style=""><a href="https://click.em.delhaize.be/?qs=b88045481f9fe74c1a9d476d57066a66fa02874ceadd51107208de4087a16a81a9128f3248602cf126f6c215e23abee08f83f1d5bd7f53fc" style="font-family: Cervo Neue, Tahoma,Verdana,Segoe,sans-serif; font-size:20px; line-height:20px; color: #000000; text-align: left;font-weight: bold;text-transform: uppercase;text-decoration: none;" title="Delhaize">170 € &eacute;pargn&eacute;s</a></td>
+                                </tr>
+                              </table></td>
+                          </tr>
+                          <!-- TITLE SPACER -->
+                          <tr>
+                            <td height="10" style="font-size:2px; line-height:2px;">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px;text-align: left;font-weight: normal;"> depuis 1 an.</td>
+                          </tr>
+                          <tr>
+                            <td height="20" style="font-size:2px; line-height:2px;">&nbsp;</td>
+                          </tr>
+                        </table></th>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td height="40" style="font-size:2px; line-height:2px;">&nbsp;</td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+</td></tr></table>
+
+</td></tr></table>
+  <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- --><table bgcolor="#FCEAE8" border="0" cellpadding="0" cellspacing="0" width="100%">
+ 
+  <tr>
+   <td align="center" valign="top" width="100%">
+    <table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" class="wrapper" style="width: 600px;" width="600">
+     
+      <tr>
+       <td align="center">
+        <table border="0" cellpadding="0" cellspacing="0" class="container" style="width: 560px;" width="560">
+         
+          <tr>
+           <td height="40" style="font-size:2px; line-height:2px;">
+            &nbsp;</td></tr><tr>
+           <td align="left" class="body-text" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px; color:#000000;text-align: center;font-weight:bold;" valign="top">
+            Avez-vous appr&eacute;ci&eacute; cet e-mail&nbsp;?</td></tr><tr>
+           <td height="10" style="font-size:2px; line-height:2px;">
+            &nbsp;</td></tr><tr>
+           <td align="center" style="font-family:Arial, Helvetica, sans-serif;color:#ffffff;text-align:center;">
+            <a href="https://click.em.delhaize.be/?qs=b88045481f9fe74c1e551009dc12b9abd860e432821840e08b184b64d9cd43aa53332956e69ca1ac6c2d8b0673f91cbff7649646e349104b03fa8ed2bddb4919" style="text-decoration:none;color:#383838;" target="_blank"><img alt="" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/delhaize-feedback-positive.png" style="border:none; display:inline-block;width: 30px; max-width: 30px;" width="30"></a>&nbsp;&nbsp;&nbsp;<a href="https://click.em.delhaize.be/?qs=b88045481f9fe74c6d56914d695144958e8c29382a86098911c5f210d5d240ec56996a93249457805adbacc26b2d59423e9e23bf56bf05138e799b3fb707248e" style="text-decoration:none;color:#383838;" target="_blank">&nbsp;<img alt="" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/delhaize-feedback-negative.png" style="border:none; display:inline-block;width: 30px; max-width: 30px;" width="30"></a></td></tr><tr>
+           <td height="40" style="font-size:2px; line-height:2px;">
+            &nbsp;</td></tr></table></td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table bgcolor="#FCEAE8" border="0" cellpadding="0" cellspacing="0" width="100%">
+	
+		<tr>
+			<td align="center" valign="top" width="100%">
+				<table align="center" bgcolor="#FCE7F0" border="0" cellpadding="0" cellspacing="0" class="wrapper" style="width: 600px;" width="600">
+					
+						<tr>
+							<td align="center">
+								<table border="0" cellpadding="0" cellspacing="0" class="container" style="width: 560px;" width="560">
+									
+										<tr>
+											<td height="40" style="font-size:2px; line-height:2px;">
+												&nbsp;</td></tr><tr>
+											<td>
+												<table align="center" border="0" cellpadding="0" cellspacing="0" width="200">
+													
+														<tr>
+															<td align="center" valign="middle" width="40">
+																<a   data-linkto="https://" href="https://click.em.delhaize.be/?qs=b88045481f9fe74cb9a08c18c9d513b7cfe4448426779f78c4b2ed76c30e96ec7d7a94dd7bd604e87a153fd7efffd23f68bfb04e2ce7d685" style="display: block;" target="_blank" title=""><img alt="fb" data-assetid="271267" height="40" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/DLL-Transactional-icon-fb.png" style="height: 40px; width: 40px;" width="40"></a></td><td align="center" valign="middle" width="40">
+																<a   data-linkto="https://" href="https://click.em.delhaize.be/?qs=b88045481f9fe74c58ea7e51ba3e7b59520d7a7c8da6a70eff1593114a2bae6c3b2c25c874e348c5d2f65bb62ecffccfb0855ba156210ed5" style="display: block;" target="_blank" title=""><img alt="tw" data-assetid="271268" height="40" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/DLL-Transactional-icon-x.png" style="height: 40px; width: 40px;" width="40"></a></td><td align="center" valign="middle" width="40">
+																<a   data-linkto="https://" href="https://click.em.delhaize.be/?qs=b88045481f9fe74c2645d79a61dd49b6ee3870c60d163847a074d6f381166e4c348116730c157670e9e050f31b121dde328f9093dbfbf55c" style="display: block;" target="_blank" title=""><img alt="yt" data-assetid="271271" height="40" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/DLL-Transactional-icon-youtube.png" style="height: 40px; width: 40px;" width="40"></a></td><td align="center" valign="middle" width="40">
+																<a   data-linkto="https://" href="https://click.em.delhaize.be/?qs=b88045481f9fe74cff0ed03f2a705fb7799b9be7a683bd0e1f8f0cdcb404c11e8ee2d45ed22e63c25f1a62ffa431b0f580d1f9c8bc324003" style="display: block;" target="_blank" title=""><img alt="pin" data-assetid="271273" height="40" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/DLL-Transactional-icon-pinterest.png" style="height: 40px; width: 40px;" width="40"></a></td></tr></table></td></tr><tr>
+											<td height="30" style="font-size:2px; line-height:2px;">
+												&nbsp;</td></tr><tr>
+											<td align="left" class="body-text" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:20px; color:#000000;text-align: center;" valign="top">
+												T&eacute;l&eacute;chargez notre application&nbsp;:</td></tr><tr>
+											<td height="10" style="font-size:2px; line-height:2px;">
+												&nbsp;</td></tr><tr>
+											<td align="center" style="font-family:Arial, Helvetica, sans-serif;color:#ffffff;text-align:center;">
+												<a href="https://click.em.delhaize.be/?qs=b88045481f9fe74cd5bc27eb12206750bf967736a2eb7929bfa6ff6ed2ba756e08add6f751af878005755cb93f55f52305a51226f9ae254d" style="text-decoration:none;color:#383838;" target="_blank"><img alt="app store" src="https://mcusercontent.com/4ffda0f5aa5cb5dce132de2e0/images/485b60e7-06a9-4706-873a-ce0669a2d18d.png" style="border:none; display:inline-block;" width="120"></a>&nbsp;<a href="https://click.em.delhaize.be/?qs=b88045481f9fe74c6e6c29721c4b106be11d3ce769603c4c02aac9c8f5d282dead7c26641b7a65ffb8c6112488040aa9cd557e21f81fea1c" style="text-decoration:none;color:#383838;" target="_blank">&nbsp;<img alt="play store" src="https://mcusercontent.com/4ffda0f5aa5cb5dce132de2e0/images/cb61037f-c1c7-450b-b636-e59d53a0d6fc.png" style="border:none; display:inline-block;" width="140"></a></td></tr><tr>
+											<td height="40" style="font-size:2px; line-height:2px;">
+												&nbsp;</td></tr></table></td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- FOOTER -->
+<table bgcolor="#FCEAE8" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="center" valign="top" width="100%"><table align="center" bgcolor="#0f4b50" border="0" cellpadding="0" cellspacing="0" class="wrapper" style="width: 600px;" width="600">
+        <tr>
+          <td align="center" valign="top"><img alt="" data-assetid="297435" src="https://image.em.delhaize.be/lib/fe3911717564047d731076/m/1/DLL-Alert-W48-Foodbanks-ornament-footer.jpg" style="display: block; font-family: Arial, Helvetica, sans-serif; color: #000000; font-size: 24px; width: 100%; max-width: 600px; padding: 0px; text-align: center; height: auto; border: none;" width="100%"></td>
+        </tr>
+        <tr>
+          <td height="40" style="font-size:2px; line-height:2px;">&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="center"><table align="center" border="0" cellpadding="0" cellspacing="0" class="container" style="width: 560px;" width="560">
+              <tr>
+                <td align="center" class="body-text" style="font-family:Arial, Helvetica, sans-serif;color:#ffffff;font-size:12px;line-height:16px;text-align:left;" valign="top"><a href="https://click.em.delhaize.be/?qs=b88045481f9fe74c6980e053d31b260f26bac05bd9a3fb9302865e5fc163bafb49b6acc498c515c5ef4dc72a9c606699fdb773bba3cc7b6e" style="color:#ffffff;">Trouvez un magasin</a>&nbsp;|&nbsp;<a href="https://click.em.delhaize.be/?qs=b88045481f9fe74c0e5bbd536ecb6caf12be3b033ca00901111a14250f56c044db345cf028283e02ba08c8687b2bb871d0f7acdd96091576" style="color:#ffffff;">Contact</a>&nbsp;|&nbsp;<a href="https://click.em.delhaize.be/?qs=b88045481f9fe74c2357e5f96563c5002636f5bb68d2f96cf7a56750b6707929e970df7aa374faa37dca5681701d286ff94d09e3d258c25a" style="color:#ffffff;font-weight:normal;text-decoration:underline;">Privacy</a>&nbsp;|&nbsp;
+<a href="https://click.em.delhaize.be/?qs=b88045481f9fe74cb2b1aff7e34b1e4dae58dcb089e12a432a06baf53a87beff386b980d7e85e8257b4e3016c6cb3f89b9badd5e8c8739205205df0eae9b1f9a" style="color:#ffffff;font-weight:normal;text-decoration:underline;">Se d&eacute;sinscrire</a><br>
+                  <br>
+                  Delhaize Le Lion SA,<br>
+                  Brusselsesteenweg 347, 1730 Asse<br>
+                  RPM Bruxelles 0402.206.045.<br>
+                  <br>
+                  
+                  <!-- copy --> Pour &ecirc;tre certain de recevoir nos emails, ajoutez <a href="mailto:hello@em.delhaize.be" style="text-decoration:underline; color:#FFFFFF;" target="_blank" title="">hello@em.delhaize.be</a> &agrave;&nbsp;vos contacts.<br>
+                  <br>
+                  &copy; Copyright Delhaize 2024. All rights reserved.</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td height="40" style="font-size:2px; line-height:2px;">&nbsp;</td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td height="20" style="font-size:2px; line-height:2px;">&nbsp;</td>
+  </tr>
+</table>
+</td></tr></table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: BreveTitle,TimesNewRoman,Times,Baskerville,Georgia,serif;"> Delhaize Le LionRue Osseghemstraat 53Brussels BRUSSELS1080 BEhttps://click.em.delhaize.be/profile_center.aspx?qs=8e4d4bfb610b0e3436a5dd743551a6498ced0200dc8c0ab41a76eaea0a846f94c67f612a20b66222b0feae28a66ad1fb</div>
+  <div style="display:none; white-space:nowrap; font:15px courier; line-height:0;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </div>
+</center>
+</body>
+</html>
+
+--jnzbEKGCHWrH=_?:--
+
