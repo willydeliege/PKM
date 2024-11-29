@@ -8,3 +8,4 @@
 		- 0497/89 35 66
 - LATER Recupérer les documents du réseau de santé wallon [[Audrey Lambert]]
   id:: 6748c71a-44f9-4e7e-b9ba-a9a8ac49588b
+- #quote La Suisse a un taux de décès supérieur à la France et en même temps, les trains sont toujours à l'heure
