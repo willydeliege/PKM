@@ -12,7 +12,6 @@
   collapsed:: true
 	- [[2024/11/29]] *08:28*
 - Rapport Dre Laret
-  collapsed:: true
 	- Liège, le 30 octobre 2023.
 	  
 	  Destinataire : Docteur LITT Pierre
@@ -141,4 +140,4 @@
 	  Amicalement
 	  
 	  Docteur Vinciane LARET.
-- ![ECG](../assets/Default.aspx_1732853547672_0.pdf)
+	- ![ECG](../assets/Default.aspx_1732853547672_0.pdf)
