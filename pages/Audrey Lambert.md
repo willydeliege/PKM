@@ -9,6 +9,8 @@
 - DONE [[2024/11/29]] *08:28*  -  Recupérer les documents du réseau de santé wallon [[Audrey Lambert]]
   id:: 6748c71a-44f9-4e7e-b9ba-a9a8ac49588b
   string:: 20241129
+  collapsed:: true
+	- [[2024/11/29]] *08:28*
 - Rapport Dre Laret
   collapsed:: true
 	- Liège, le 30 octobre 2023.
