@@ -9,6 +9,7 @@
 - LATER Recupérer les documents du réseau de santé wallon [[Audrey Lambert]]
   id:: 6748c71a-44f9-4e7e-b9ba-a9a8ac49588b
 - Rapport Dre Laret
+  collapsed:: true
 	- Liège, le 30 octobre 2023.
 	  
 	  Destinataire : Docteur LITT Pierre
@@ -137,3 +138,4 @@
 	  Amicalement
 	  
 	  Docteur Vinciane LARET.
+-
