@@ -138,4 +138,4 @@
 	  Amicalement
 	  
 	  Docteur Vinciane LARET.
--
+- ![ECG](../assets/Default.aspx_1732853547672_0.pdf)
