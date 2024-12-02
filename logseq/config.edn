@@ -452,4 +452,5 @@
  :builtin-pages? false}
  :ui/show-brackets? false
  :journal/page-title-format "yyyy/MM/dd"
- :editor/preferred-pasting-file? true}
+ :editor/preferred-pasting-file? true
+ :editor/logical-outdenting? true}
