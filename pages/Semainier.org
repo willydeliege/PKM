@@ -5,7 +5,7 @@ SCHEDULED: <2024-12-02 Mon ++1w>
 CLOCK: [2024-12-02 Mon 06:08:28]
 :END:
 {{renderer better-tasks}}
-- [ ] l-thyroxine 100 _1 matin -- séparé_
+- [x] l-thyroxine 100 _1 matin -- séparé_
 - [ ] amiodarone _1 matin_ *!!! ⚠️ PAS LE WEEK-END*
 - [ ] forzaten 20/5 _1 matin_
 - [ ] eliquis 5 _1 matin 1 soir_
