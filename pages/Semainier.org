@@ -1,7 +1,8 @@
-* LATER Médicaments
+* NOW Médicaments
 SCHEDULED: <2024-12-02 Mon ++1w>
 :LOGBOOK:
 - State "DONE" from "LATER" [2024-11-25 Mon 06:38]
+CLOCK: [2024-12-02 Mon 06:08:28]
 :END:
 {{renderer better-tasks}}
 - [ ] l-thyroxine 100 _1 matin -- séparé_
