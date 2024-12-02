@@ -12,4 +12,4 @@ CLOCK: [2024-12-02 Mon 06:08:28]--[2024-12-02 Mon 06:19:49] =>  00:11:21
 - [ ] eliquis 5 _1 matin 1 soir_
 - [ ] duastenide/tamsulosine 0,5/0,4 _1 soir_
 - [ ] simvastatine 20 _1 soir_
-- [x] bisoprolol 2.5 _0.5 soir_
+- [ ] bisoprolol 2.5 _0.5 soir_
