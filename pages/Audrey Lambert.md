@@ -1,4 +1,4 @@
-- LATER R-V cardio #health
+- DONE R-V cardio #health
   SCHEDULED: <2024-12-03 Tue 10:00>
   :LOGBOOK:
   CLOCK: [2024-11-28 Thu 12:11:51]--[2024-11-28 Thu 12:11:56] =>  00:00:05
@@ -8,9 +8,11 @@
 	- LATER Annuler R-V Dre Laret
 	  background-color:: red
 		- 0497/89 35 66
+- R-V Car
 - DONE [[2024/11/29]] *08:28*  -  Recupérer les documents du réseau de santé wallon [[Audrey Lambert]]
   id:: 6748c71a-44f9-4e7e-b9ba-a9a8ac49588b
   string:: 20241129
+  collapsed:: true
 	- [[2024/11/29]] *08:28*
 - Rapport Dre Laret
   collapsed:: true
