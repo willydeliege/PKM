@@ -8,7 +8,8 @@
 	- LATER Annuler R-V Dre Laret
 	  background-color:: red
 		- 0497/89 35 66
-- R-V Car
+- R-V Cardio
+  SCHEDULED: <2025-06-03 Tue 10:30>
 - DONE [[2024/11/29]] *08:28*  -  Recupérer les documents du réseau de santé wallon [[Audrey Lambert]]
   id:: 6748c71a-44f9-4e7e-b9ba-a9a8ac49588b
   string:: 20241129
