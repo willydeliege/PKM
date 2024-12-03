@@ -1,0 +1,9 @@
+.embed-page .mr-3 {
+  cursor: pointer;
+}
+.embed-page .blocks-container {
+  display: none;
+}
+.embed-page.unfolded .blocks-container {
+  display: block;
+}
