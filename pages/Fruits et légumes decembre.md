@@ -1,30 +1,30 @@
-- Légumes
-  
-  
-  
-  *   Ail
-  *   Bette ou blette
-  *   Betterave rouge
-  *   Carotte
-  *   Céleri (branche et rave)
-  *   Champignon de Paris
-  *   Chicon
-  *   Choux (blanc, frisé, ...)
-  *   Courge et potimarron
-  *   Échalote
-  *   Épinard
-  *   Fenouil
-  *   Navet
-  *   Panais
-  *   Poireau
-  *   Pomme de terre
-  *   Radis noir
-  *   Rutabaga
-  *   Salade (laitue, mâche, ...)
-  *   Salsifis
-  *   Topinambour
-- Fruits
-	- **De Belgique** : 
+# Légumes 
+
+
+
+*   Ail
+*   Bette ou blette
+*   Betterave rouge
+*   Carotte
+*   Céleri (branche et rave)
+*   Champignon de Paris
+*   Chicon
+*   Choux (blanc, frisé, ...)
+*   Courge et potimarron
+*   Échalote
+*   Épinard
+*   Fenouil
+*   Navet
+*   Panais
+*   Poireau
+*   Pomme de terre
+*   Radis noir
+*   Rutabaga
+*   Salade (laitue, mâche, ...)
+*   Salsifis
+*   Topinambour
+- # Fruits
+	- De Belgique: 
 	  
 	  *   Kaki
 	  *   Poire
