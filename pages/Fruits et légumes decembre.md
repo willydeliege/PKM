@@ -24,26 +24,25 @@
   *   Salsifis
   *   Topinambour
 - Fruits
-  **De Belgique** : 
-  
-  *   Kaki
-  *   Poire
-  *   Pomme
-  *   Châtaigne
-  
-   **D'ailleurs** : 
-  
-  *   Ananas
-  *   Avocat
-  *   Banane
-  *   Citron
-  *   Clémentine et mandarine
-  *   Fruit de la passion
-  *   Grenade
-  *   Litchi
-  *   Mandarine
-  *   Mangue
-  *   Orange
-  *   Orange sanguine
-  *   Pamplemousse
-  *   Papaye [Les fruits et légumes de saison en décembre - RTBF Actus](https://www.rtbf.be/article/les-fruits-et-legumes-de-saison-en-decembre-10647966)
+	- **De Belgique** : 
+	  
+	  *   Kaki
+	  *   Poire
+	  *   Pomme
+	  *   Châtaigne
+	- **D'ailleurs** : 
+	  
+	  *   Ananas
+	  *   Avocat
+	  *   Banane
+	  *   Citron
+	  *   Clémentine et mandarine
+	  *   Fruit de la passion
+	  *   Grenade
+	  *   Litchi
+	  *   Mandarine
+	  *   Mangue
+	  *   Orange
+	  *   Orange sanguine
+	  *   Pamplemousse
+	  *   Papaye [Les fruits et légumes de saison en décembre - RTBF Actus](https://www.rtbf.be/article/les-fruits-et-legumes-de-saison-en-decembre-10647966)
