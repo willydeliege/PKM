@@ -1,4 +1,4 @@
-# Légumes 
+## Légumes 
 
 
 
@@ -23,8 +23,8 @@
 *   Salade (laitue, mâche, ...)
 *   Salsifis
 *   Topinambour
-- # Fruits
-	- De Belgique: 
+- ## Fruits
+	- ## De Belgique:  
 	  
 	  *   Kaki
 	  *   Poire
