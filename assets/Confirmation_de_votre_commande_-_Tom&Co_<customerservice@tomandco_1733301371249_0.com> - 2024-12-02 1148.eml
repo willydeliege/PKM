@@ -1,0 +1,320 @@
+Delivered-To: frederic.willem@gmail.com
+Received: by 2002:a05:7108:2289:b0:3dc:a9a0:5d5b with SMTP id i9csp2709267gdb;
+        Mon, 2 Dec 2024 02:48:06 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IG1vUVrlLrOuTHMf/k3ZbEDgjGJuQ6UhYl9vYCybKnfwmfKHXAury0PKom1AMgPpEt+edrs
+X-Received: by 2002:a05:690c:6703:b0:6d4:4a0c:fcf0 with SMTP id 00721157ae682-6ef37233cf4mr260721667b3.20.1733136486626;
+        Mon, 02 Dec 2024 02:48:06 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1733136486; cv=none;
+        d=google.com; s=arc-20240605;
+        b=XeHAtW9ZKjv3rTNbN1JswH2fPJF/RPs99aRJIt6SXQBhp1jc6VACbir7nJonWCT9X/
+         iLdG9XanXlKtUZRV/3+e7FJUwSZNnL1FlENXTTzICD6M7oUbIIcOusn5nd5cCqi+R6I6
+         LOE0HgDiqtrkFgQDnI5Vw682QDBg1aAFG3zIo82U6Ydnk++wH/dy4HRwdwTCV8uSsiFJ
+         A6kwfc1coDoLpyYsh6JPOS9HKdpWbHmY2YleKWwgFI3cFEI2UfqaV6nub0yeYoVLWXFv
+         SgyJb0iK3QD+pNuVWTEfmY8SVOdPYSruCx2B5lUP7zYrRpajTAQqz+mke7gw/jJ3kKG3
+         tUVw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:date:feedback-id:message-id:to:subject:from
+         :dkim-signature:dkim-signature;
+        bh=ub9KGpV77APMBrc/VqZj3vBQs4tZybR4h/Uw/Dw/TUs=;
+        fh=s/5WJV9qFsTuWZeTWjBh3rC9cfbP7+SARd3KCQwGpME=;
+        b=XrGLbFM9cR2kCgy4rfktR/ibqWBF8dPbiYVb2/zqyOfDdUMP/AOPjTBHEvsRaA2Msl
+         EOGmick/BwwkAuP0dFW7HUs57HZE5XHdFLU7LOYc/d/TDBikuRrcOQu3WN1vfHwmCTQ2
+         LcwT2sKC6fwLzMjKWA5w2kTLEyrqsDZ2YrePBIaf7ZXvXgAFEQlvFm0wSYknhypqhcvK
+         WwvRvtuSV2dFlJPlujpfXA1IxJ+WREZquyYOEEiTEVXUDmaNc84u6w7L8UInU4m3aiG7
+         bRsZbKCLT9Bc1Fle/Ln9Y6XHSP8aTqAzJ0AkcKJ3i+q+u7qb22SsD/jJf9LhDsu7k8OX
+         SbWw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mandrillapp.com header.s=mte1 header.b=mKXv0oP7;
+       dkim=pass header.i=@tomandco.com header.s=mte1 header.b=b50SgeKO;
+       spf=pass (google.com: domain of bounce-md_30258074.674d9066.v1-07817e6b86f84e86bb71abc23f104d05@mandrillapp.com designates 198.2.145.32 as permitted sender) smtp.mailfrom=bounce-md_30258074.674d9066.v1-07817e6b86f84e86bb71abc23f104d05@mandrillapp.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=tomandco.com
+Return-Path: <bounce-md_30258074.674d9066.v1-07817e6b86f84e86bb71abc23f104d05@mandrillapp.com>
+Received: from mail145-32.atl61.mandrillapp.com (mail145-32.atl61.mandrillapp.com. [198.2.145.32])
+        by mx.google.com with ESMTPS id 00721157ae682-6ef4db3225esi78016337b3.81.2024.12.02.02.48.06
+        for <frederic.willem@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 02 Dec 2024 02:48:06 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-md_30258074.674d9066.v1-07817e6b86f84e86bb71abc23f104d05@mandrillapp.com designates 198.2.145.32 as permitted sender) client-ip=198.2.145.32;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mandrillapp.com header.s=mte1 header.b=mKXv0oP7;
+       dkim=pass header.i=@tomandco.com header.s=mte1 header.b=b50SgeKO;
+       spf=pass (google.com: domain of bounce-md_30258074.674d9066.v1-07817e6b86f84e86bb71abc23f104d05@mandrillapp.com designates 198.2.145.32 as permitted sender) smtp.mailfrom=bounce-md_30258074.674d9066.v1-07817e6b86f84e86bb71abc23f104d05@mandrillapp.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=tomandco.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mandrillapp.com;
+	s=mte1; t=1733136486; x=1733396986;
+	bh=ub9KGpV77APMBrc/VqZj3vBQs4tZybR4h/Uw/Dw/TUs=;
+	h=From:Subject:To:Message-Id:Feedback-ID:Date:MIME-Version:
+	 Content-Type:CC:Date:Subject:From;
+	b=mKXv0oP7nobwbzsK30U4lVFp+0GXazl0ksBJCC5GC1p6/BS/1KdHRCCEraW929+I3
+	 oLD8DA2XuueN9IKShF/XnqXD9AUhAJsgDV+CAyjHWtLOIwLmhN9CbaBBtP0+ENSctK
+	 wSP5lzGeCejv2/eT+IBqiz1goB6mtSTF1ftWKD2ZemBMnrr0NzQ4RUioPBWqjSrwqf
+	 uALzkdX+OYsi+ZhlefHp2FYSSYp532ArQfGFtkkrPVcRru16SUYrpD3o/YF5lwNbs1
+	 tZxanzmU2Lpy6wPHZcT0jPEnAZcXkCO4C6vY+ncezXoFoLj9Ox1nVBKB2LlGN6Nd6Y
+	 b8kJHqs7AC/tA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tomandco.com;
+	s=mte1; t=1733136486; x=1733396986; i=customerservice@tomandco.com;
+	bh=ub9KGpV77APMBrc/VqZj3vBQs4tZybR4h/Uw/Dw/TUs=;
+	h=From:Subject:To:Message-Id:Feedback-ID:Date:MIME-Version:
+	 Content-Type:CC:Date:Subject:From;
+	b=b50SgeKODDDWskHR3ieVtNsYP1GX6W8Yt8QVW6EtIuZcGLzsvpr3DkPq1ZODS+DNd
+	 QbHvQNbtaaZjPJXctp+ZF4deVQ0fUSp3UbPQ3cOcEyQ+PFBq6dNYrF7jep0ix57Ma7
+	 D81S9zJXG181TCwk0hv/TDw7CLlitsbPk8zg1OM0LpEkESXQXTGfdDK6frRcHzLhEN
+	 YaAyIC6Jhjnx9Spdi90hxBZehTzgK20wVGDai+m1x4wvhl0LoJEAzJj4xiJ4xjcrR8
+	 KJmd7f7LbCqzsoLvjCRQkhvNDGFguBQwZqgs+CbGYxovFxAiZDyd1A1Y24YYK7gPpl
+	 fjENUhMRAUaOA==
+Received: from pmta06.mandrill.prod.atl01.rsglab.com (localhost [127.0.0.1])
+	by mail145-32.atl61.mandrillapp.com (Mailchimp) with ESMTP id 4Y20qp3MJbzP0K30R
+	for <frederic.willem@gmail.com>; Mon,  2 Dec 2024 10:48:06 +0000 (GMT)
+From: Tom&Co <customerservice@tomandco.com>
+Subject: =?utf-8?Q?Confirmation=20de=20votre=20commande?=
+Received: from [185.135.13.68] by mandrillapp.com id 07817e6b86f84e86bb71abc23f104d05; Mon, 02 Dec 2024 10:48:06 +0000
+To: "Louis Willem" <frederic.willem@gmail.com>
+Message-Id: <b7b5e369abebbe7b2b9398f987cdfb1b@tomandco.com>
+X-Native-Encoded: 1
+X-Report-Abuse: =?UTF-8?Q?Please=20forward=20a=20copy=20of=20this=20message,=20including=20all=20headers,=20to=20abuse@mandrill.com.=20You=20can=20also=20report=20abuse=20here:=20https://mandrillapp.com/contact/abuse=3Fid=3D30258074.07817e6b86f84e86bb71abc23f104d05?=
+X-Mandrill-User: md_30258074
+Feedback-ID: 30258074:30258074.20241202:md
+Date: Mon, 02 Dec 2024 10:48:06 +0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="_av-qsJc-eErZGg5UsrMlDbeaQ"
+
+--_av-qsJc-eErZGg5UsrMlDbeaQ
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+<div style=3D"font-family:arial; font-size:12px;">
+
+    Bonjour Louis,
+    <br>
+    <br>
+    Nous avons bien re=C3=A7u votre commande du 2 d=C3=A9c. 2024, 11:47.<br=
+>
+    <br>
+    Num=C3=A9ro de commande: 134882<br>
+    <br>
+    Votre commande sera trait=C3=A9e dans les plus brefs d=C3=A9lais.<br>
+    <br>
+    Vous pouvez suivre le statut de votre commande via le lien suivant: htt=
+ps://www.tomandco.com/fr-be/account/order/s7SBkj6Y1qWRarH06roT_FNg7mctoBKD<=
+br>
+    <br>
+    <strong>Informations sur votre commande:</strong><br>
+    <br>
+
+    <table border=3D"0" style=3D"font-family:Arial, Helvetica, sans-serif; =
+font-size:12px;">
+        <tr>
+            <td bgcolor=3D"#F7F7F2" style=3D"border-bottom:1px solid #ccccc=
+c;"><strong>SKU</strong></td>
+            <td bgcolor=3D"#F7F7F2" style=3D"border-bottom:1px solid #ccccc=
+c;"><strong>Description</strong></td>
+            <td bgcolor=3D"#F7F7F2" style=3D"border-bottom:1px solid #ccccc=
+c;"><strong>Quantit=C3=A9</strong></td>
+            <td bgcolor=3D"#F7F7F2" style=3D"border-bottom:1px solid #ccccc=
+c;"><strong>Prix</strong></td>
+            <td bgcolor=3D"#F7F7F2" style=3D"border-bottom:1px solid #ccccc=
+c;"><strong>Total</strong></td>
+        </tr>
+
+                                                            <tr>
+                    <td>204368</td>
+                    <td><img src=3D"https://www.tomandco.com/media/28/6c/cc=
+/1732024611/363263182550748032_FR_2-0.png" width=3D"75" height=3D"auto"/></=
+td>
+                    <td style=3D"text-align: center">1</td>
+                    <td>70,69=C2=A0=E2=82=AC</td>
+                    <td>70,69=C2=A0=E2=82=AC</td>
+                </tr>
+
+                                        </table>
+
+    
+                
+    <p>
+        <br>
+        <br>
+                    Frais de livraison: 0,00=C2=A0=E2=82=AC<br>
+        
+        Total: 58,42=C2=A0=E2=82=AC<br>
+        <br>
+    </p>
+
+    <p>
+                    <strong>Mode de livraison:</strong> ClickAndDeliver<br>
+            <br>
+            <br>
+            </p>
+
+    <p>
+                            <strong>Adresse de facturation:</strong><br>
+            -<br>
+            Louis Willem <br>
+            Rue Dieudonn=C3=A9 Jacobs 60 Boite 13 <br>
+            4420 Saint-Nicolas<br>
+            </p>
+
+    <p>
+                    <strong>Adresse de livraison:</strong><br>
+            -<br>
+            Frederic Willem<br>
+            Rue Dieudonn=C3=A9 Jacobs 60 Boite 13 <br>
+            4420 Saint-Nicolas<br>
+            <br>
+                        <br/>
+    </p>
+    <p>Vous pouvez retrouver le statut de votre commande =C3=A0 n'importe q=
+uel moment sur notre site dans le rubrique "Mon compte" - "Mes commandes": =
+<a href=3D"https://www.tomandco.com/fr-be/account/order/s7SBkj6Y1qWRarH06ro=
+T_FNg7mctoBKD"></p>
+    <p>N'h=C3=A9sitez pas =C3=A0 contacter notre service client si vous ave=
+z la moindre question =F0=9F=98=8A.</p>
+
+
+    <p> Rappel: si vous avez pass=C3=A9 votre commande comme invit=C3=A9 vo=
+us n'aurez pas acc=C3=A8s au suivi de votre commande. </p>
+    <br>
+</div>
+
+
+--_av-qsJc-eErZGg5UsrMlDbeaQ
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<div style=3D"background-color:#005E56;margin:0;padding:0;">
+    <table align=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+" style=3D"font-size:14px;font-family:'Open sans', Arial, sans-serif;width:=
+100%;border-collapse:collapse;">
+        <tbody>
+            <tr>
+                <td align=3D"center" style=3D"font-size:0;text-align:center=
+;vertical-align:top;border-collapse:collapse;padding:20px 0;">
+                    =C2=A0=C2=A0=C2=A0
+                </td>
+            </tr>
+        </tbody>
+    </table>
+<div align=3D"center" style=3D"text-align:center;background-color:#005E56;m=
+ax-width:600px;margin:0 auto;padding:0;border-bottom:20px solid #005E56;">
+    <img src=3D"https://www.tomandco.com/media/82/ba/2f/1700662239/tomandco=
+-logo.png" style=3D"width:254px;text-decoration:none;margin-bottom:14px;bor=
+der-width:0;line-height:100%;" alt=3D"logo.jpg" />
+</div></div>
+
+<div style=3D"font-family:arial; font-size:12px;">
+
+    Bonjour Louis,
+    <br>
+    <br>
+    Nous avons bien re=C3=A7u votre commande du 2 d=C3=A9c. 2024, 11:47.<br=
+>
+    <br>
+    Num=C3=A9ro de commande: 134882<br>
+    <br>
+    Votre commande sera trait=C3=A9e dans les plus brefs d=C3=A9lais.<br>
+    <br>
+    Vous pouvez suivre le statut de votre commande via le lien suivant: htt=
+ps://www.tomandco.com/fr-be/account/order/s7SBkj6Y1qWRarH06roT_FNg7mctoBKD<=
+br>
+    <br>
+    <strong>Informations sur votre commande:</strong><br>
+    <br>
+
+    <table border=3D"0" style=3D"font-family:Arial, Helvetica, sans-serif; =
+font-size:12px;">
+        <tr>
+            <td bgcolor=3D"#F7F7F2" style=3D"border-bottom:1px solid #ccccc=
+c;"><strong>SKU</strong></td>
+            <td bgcolor=3D"#F7F7F2" style=3D"border-bottom:1px solid #ccccc=
+c;"><strong>Description</strong></td>
+            <td bgcolor=3D"#F7F7F2" style=3D"border-bottom:1px solid #ccccc=
+c;"><strong>Quantit=C3=A9</strong></td>
+            <td bgcolor=3D"#F7F7F2" style=3D"border-bottom:1px solid #ccccc=
+c;"><strong>Prix</strong></td>
+            <td bgcolor=3D"#F7F7F2" style=3D"border-bottom:1px solid #ccccc=
+c;"><strong>Total</strong></td>
+        </tr>
+
+                                                            <tr>
+                    <td>204368</td>
+                    <td><img src=3D"https://www.tomandco.com/media/28/6c/cc=
+/1732024611/363263182550748032_FR_2-0.png" width=3D"75" height=3D"auto"/></=
+td>
+                    <td style=3D"text-align: center">1</td>
+                    <td>70,69=C2=A0=E2=82=AC</td>
+                    <td>70,69=C2=A0=E2=82=AC</td>
+                </tr>
+
+                                        </table>
+
+    
+                
+    <p>
+        <br>
+        <br>
+                    Frais de livraison: 0,00=C2=A0=E2=82=AC<br>
+        
+        Total: 70,69=C2=A0=E2=82=AC<br>
+        <br>
+    </p>
+
+    <p>
+                    <strong>Mode de livraison:</strong> ClickAndDeliver<br>
+            <br>
+            <br>
+            </p>
+
+    <p>
+                            <strong>Adresse de facturation:</strong><br>
+            -<br>
+            Louis Willem <br>
+            Rue Dieudonn=C3=A9 Jacobs 60 Boite 13 <br>
+            4420 Saint-Nicolas<br>
+            </p>
+
+    <p>
+                    <strong>Adresse de livraison:</strong><br>
+            -<br>
+            Frederic Willem<br>
+            Rue Dieudonn=C3=A9 Jacobs 60 Boite 13 <br>
+            4420 Saint-Nicolas<br>
+            <br>
+                        <br/>
+    </p>
+    <p>Vous pouvez retrouver le statut de votre commande =C3=A0 n'importe q=
+uel moment sur notre site dans le rubrique "Mon compte" - "Mes commandes": =
+<a href=3D"https://www.tomandco.com/fr-be/account/order/s7SBkj6Y1qWRarH06ro=
+T_FNg7mctoBKD"></p>
+    <p>N'h=C3=A9sitez pas =C3=A0 contacter notre service client si vous ave=
+z la moindre question =F0=9F=98=8A.</p>
+
+
+    <p> Rappel: si vous avez pass=C3=A9 votre commande comme invit=C3=A9 vo=
+us n'aurez pas acc=C3=A8s au suivi de votre commande. </p>
+    <br>
+</div><div style=3D"background-color:#005E56;margin:0;padding:0;">
+    <table align=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+" style=3D"font-size:14px;font-family:'Open sans', Arial, sans-serif;width:=
+100%;border-collapse:collapse;">
+        <tbody>
+            <tr>
+                <td align=3D"center" style=3D"font-size:0;text-align:center=
+;vertical-align:top;border-collapse:collapse;padding:20px 0;">
+                    =C2=A0=C2=A0=C2=A0
+                </td>
+            </tr>
+        </tbody>
+    </table>
+<div align=3D"center" style=3D"text-align:center;background-color:#005E56;m=
+ax-width:600px;margin:0 auto;padding:0;border-bottom:20px solid #005E56;">
+    <img src=3D"https://www.tomandco.com/media/82/ba/2f/1700662239/tomandco=
+-logo.png" style=3D"width:254px;text-decoration:none;margin-bottom:14px;bor=
+der-width:0;line-height:100%;" alt=3D"logo.jpg" />
+</div></div>
+
+<img src=3D"https://mandrillapp.com/track/open.php?u=3D30258074&id=3D07817e=
+6b86f84e86bb71abc23f104d05" height=3D"1" width=3D"1" alt=3D"">
+
+--_av-qsJc-eErZGg5UsrMlDbeaQ--
+
