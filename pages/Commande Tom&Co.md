@@ -1,4 +1,4 @@
-phone:: +3292981772
+phone:: +32 9 298 17 72
 
 - LATER Livraison
   SCHEDULED: <2024-12-04 Wed>
