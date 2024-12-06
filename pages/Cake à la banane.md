@@ -16,9 +16,7 @@ type:: [[cooking/dessert]]
   
   * Jus de citron 1
 - Instructions
-  Préchauffer le four à 200 °C (th. 6-7).  
-    
-  Blanchir les oeufs et le sucre à l'aide d'un fouet, puis ajouter la farine, le beurre fondu et la levure. Finir en mélangeant avec les bananes écrasées à la fourchette et le jus de citron. Beurrer le moule à cake, le remplir de mélange puis cuire 30 à 45 min.  
-  Démouler le cake tiède et le laisser refroidir.
-  
-   [Recette Cake moelleux à la banane](https://www.atelierdeschefs.fr/recettes/5029/cake-moelleux-a-la-banane/)
+	- Préchauffer le four à 200 °C (th. 6-7).
+	- Blanchir les oeufs et le sucre à l'aide d'un fouet, puis ajouter la farine, le beurre fondu et la levure. Finir en mélangeant avec les bananes écrasées à la fourchette et le jus de citron. Beurrer le moule à cake, le remplir de mélange puis cuire 30 à 45 min.
+	- Démouler le cake tiède et le laisser refroidir.
+	- [Recette Cake moelleux à la banane](https://www.atelierdeschefs.fr/recettes/5029/cake-moelleux-a-la-banane/)
