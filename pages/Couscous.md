@@ -1,23 +1,10 @@
 - Ingredients
 	- 200 g de pois chiches
 	- 1 courgette
-	- 3carottes](https://www.marmiton.org/shopping/choisir-et-cuisiner-les-carottes-pour-leurs-nombreuses-qualites-s4044996.html)
-	  
-	  [
-	  
-	  ![](https://assets.afcdn.com/recipe/20170607/67459_origin.jpg)
-	  
-	  ](https://www.marmiton.org/shopping/tomate-bien-choisir-et-consommer-ce-fruit-d-ete-s4043903.html)
-	  
-	  [1.5 tomate](https://www.marmiton.org/shopping/tomate-bien-choisir-et-consommer-ce-fruit-d-ete-s4043903.html)
-	  
-	  ![](https://assets.afcdn.com/recipe/20240703/152492_origin.png)
-	  
-	  1 cube de bouillon de boeuf
-	  
-	  ![](https://assets.afcdn.com/recipe/20170607/67510_origin.jpg)
-	  
-	  1 cuillère à café de harissa
+	- 3carottes
+	- 1 boite de tomates
+	- 1 cube de bouillon de boeuf
+	- 1 cuillère à café de harissa
 	  
 	  ![](https://assets.afcdn.com/recipe/20170607/67395_origin.jpg)
 	  
