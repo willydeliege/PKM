@@ -1,3 +1,4 @@
+- :
 - Ingredients
 	- 200 g de pois chiches
 	- 1 courgette
@@ -26,24 +27,20 @@
 		  
 		  ![](https://assets.afcdn.com/recipe/20170607/67437_w40h40c1.jpg)![](https://assets.afcdn.com/recipe/20240703/152492_w40h40c1.png)![](https://assets.afcdn.com/recipe/20170621/69132_w40h40c1.jpg)
 		  
-		   En attendant, lavez et coupez les courgettes en cubes et égouttez les pois chiches. 
-		  
-		  Étape 5
+		   En attendant, lavez et coupez les courgettes en cubes et égouttez les pois chiches.
+		- Étape 5
 		  
 		  ![](https://assets.afcdn.com/recipe/20170607/67437_w40h40c1.jpg)![](https://assets.afcdn.com/recipe/20170621/69132_w40h40c1.jpg)
 		  
-		   Une fois les 25 mn écoulées, évacuez la vapeur de votre autocuiseur, ouvrez et rajouter les courgettes et les pois chiches. 
+		   Une fois les 25 mn écoulées, évacuez la vapeur de votre autocuiseur, ouvrez et rajouter les courgettes et les pois chiches.
+		- Étape 6
 		  
-		  Étape 6
-		  
-		   Remettez au feu : comptez 10 mn de cuisson une fois votre autocuiseur sous pression. 
-		  
-		  Étape 7
+		   Remettez au feu : comptez 10 mn de cuisson une fois votre autocuiseur sous pression.
+		- Étape 7
 		  
 		  ![](https://assets.afcdn.com/recipe/20170607/67395_w40h40c1.jpg)
 		  
-		   Faites cuire vos merguez sur un grill ou à la poêle, mais pas avec les légumes. 
+		   Faites cuire vos merguez sur un grill ou à la poêle, mais pas avec les légumes.
+		- Étape 8
 		  
-		  Étape 8
-		  
-		   Servez accompagné d'une semoule fine. [Couscous poulet et merguez facile : Recette de Couscous poulet et merguez facile](https://www.marmiton.org/recettes/recette_couscous-poulet-et-merguez-facile_17751.aspx)
+		   Servez accompagné d'une semoule fine.
