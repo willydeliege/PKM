@@ -23,9 +23,9 @@ src:: [Couscous poulet et merguez facile : Recette de Couscous poulet et merguez
 	- Étape 4
 	  En attendant, lavez et coupez les courgettes en cubes et égouttez les pois chiches.
 	- Étape 5
-	   Une fois les 25 mn écoulées, évacuez la vapeur de votre autocuiseur, ouvrez et rajouter les courgettes et les pois chiches.
+	   Rajouter les courgettes et les pois chiches.
 	- Étape 6
-	   Remettez au feu : comptez 10 mn de cuisson une fois votre autocuiseur sous pression.
+	   Remettez au feu : comptez 20 mn.
 	- Étape 7
 	   Faites cuire vos merguez sur un grill ou à la poêle, mais pas avec les légumes.
 	- Étape 8
