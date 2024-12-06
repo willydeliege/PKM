@@ -21,7 +21,7 @@ src:: [Couscous poulet et merguez facile : Recette de Couscous poulet et merguez
 		  
 		  ![](https://assets.afcdn.com/recipe/20220114/127365_w40h40c1.png)![](https://assets.afcdn.com/recipe/20170621/69122_w40h40c1.jpg)![](https://assets.afcdn.com/recipe/20240703/152492_w40h40c1.png)![](https://assets.afcdn.com/recipe/20170607/67606_w40h40c1.jpg)![](https://assets.afcdn.com/recipe/20170607/67459_w40h40c1.jpg)![](https://assets.afcdn.com/recipe/20170607/67370_w40h40c1.jpg)![](https://assets.afcdn.com/recipe/20170607/67703_w40h40c1.jpg)![](https://assets.afcdn.com/recipe/20210118/117379_w40h40c1.jpg)![](https://assets.afcdn.com/recipe/20170607/67510_w40h40c1.jpg)
 		  
-		   Dans un autocuiseur, versez 3 cuillères à soupe d'huile d'olive. Mettez à chauffer et faites-y dorer les pilons de poulet. Quand ils sont dorés, versez l'équivalent d'1 litre d'eau et ajouter les cubes de bouillon de boeuf, le concentré de tomate, les carottes, navets et tomates, les épices à couscous et l'harissa.
+		   Dans une autocuiseur, versez 3 cuillères à soupe d'huile d'olive. Mettez à chauffer et faites-y dorer les pilons de poulet. Quand ils sont dorés, versez l'équivalent d'1 litre d'eau et ajouter les cubes de bouillon de boeuf, le concentré de tomate, les carottes, navets et tomates, les épices à couscous et l'harissa.
 		- Étape 3
 		  
 		   Fermez votre autocuiseur et compter 25 mn de cuisson une fois que celui-ci est monté en pression.
