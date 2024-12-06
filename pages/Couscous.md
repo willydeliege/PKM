@@ -1,7 +1,7 @@
 - Ingredients
 	- 200 g de pois chiches
 	- 1 courgette
-	- 3carottes
+	- 3 carottes
 	- 1 boite de tomates
 	- 1 cube de bouillon de boeuf
 	- 1 cuillère à café de harissa
