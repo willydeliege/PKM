@@ -1,6 +1,6 @@
 phone:: +32 9 298 17 72
 
-- DONE Livraison
+- LATER Livraison
   SCHEDULED: <2024-12-06 Fri 14:00>
   id:: 6752744e-c8ac-41c0-af4e-31195c6be2ed
   :LOGBOOK:
