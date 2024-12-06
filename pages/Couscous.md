@@ -1,16 +1,4 @@
-- [Version veggie](/recettes/recette_couscous-vegetarien-facile_62233.aspx)
-  
-  <div class="recipe-ingredients\_\_qt-counter <%=size%>"> <div class="recipe-ingredients\_\_qt-counter\_\_increment recipe-ingredients\_\_qt-counter\_\_increment-minus minus">−</div> <div class="recipe-ingredients\_\_qt-counter\_\_value\_container unit-<%=withUnit%>"> <input class="recipe-ingredients\_\_qt-counter\_\_value title-5" type="text" value="<%=value%>" min="<%=min%>" max="<%=max%>" aria-label="counter" > <span class="recipe-ingredients\_\_qt-counter\_unit"><%=unit%></span> </div> <div class="recipe-ingredients\_\_qt-counter\_\_increment recipe-ingredients\_\_qt-counter\_\_increment-plus plus">+</div> </div> <div class="quantity-counter"> <div class="quantity-counter\_\_action minus">−</div> <div class="quantity-counter\_\_value"> <input class="recipe-ingredients\_\_qt-counter\_\_value title-5" type="text" value="<%=value%>" min="<%=min%>" max="<%=max%>" aria-label="counter" > <div class="quantity-counter\_\_unit"><%=unit%></div> </div> <div class="quantity-counter\_\_action plus">+</div> </div>
-  
-  −
-  
-   personnes
-  
-  +
-  
-  ![](https://assets.afcdn.com/recipe/20170621/69132_origin.jpg)
-  
-  200 g de pois chiches
+- + 200 g de pois chiches
   
   [
   
