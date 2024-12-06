@@ -1,0 +1,1789 @@
+Delivered-To: frederic.willem@gmail.com
+Received: by 2002:a05:7108:43d6:b0:3dc:a9a0:5d5b with SMTP id v22csp504279gdu;
+        Thu, 5 Dec 2024 13:59:30 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGRaLWhwFXs/2oDUvNSyLtqMOxtWWVgdf/9iP/a/2j5XOcbq2cF/E0ONW8YA1Qu3nxk29nZ
+X-Received: by 2002:a05:622a:d3:b0:466:a04c:e9db with SMTP id d75a77b69052e-46734d1356emr13303611cf.33.1733435970430;
+        Thu, 05 Dec 2024 13:59:30 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1733435970; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Bf9cjKI1qrq0P9kziNRZ8FrAVWM0OrIPBZY0FLCCbof2cPZwq8HmXF/iGhs9FnyRbN
+         vjsbKeEnJk186JNpvTUhgXvd1zrkh23W3KwjpCv1Ci2SPvfXWjKpvl5Wk7Re293J9ojw
+         dntBWf0VzY4Pb3YEq9nzv/k4Nz8AFIA2oHlObhW9dAYpw6tWWZ5VCWMMQLquLhnHtjVm
+         qz9J1Z1/FLjUfcP9oziiunso/55yRtMPAbzg7zPvrbD2fHiCqj/edp2uLMtPpaObgXAc
+         We+aXQrR1tlVxDVbrz9Q/eXN/sWyq/6wCWLyp5qTs1i7BSXc+1zor8X0K8q+WoDT5dU/
+         t7hw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:message-id:reply-to:mime-version:list-help:date:subject
+         :to:from:dkim-signature:dkim-signature;
+        bh=4FLmByM0Cd/RVK0OExloUQemqZQ9Wz02VnvyLX1RRw8=;
+        fh=omT8BIlAkZ5ZoP5x3NguSpohbgcqO9wECZ2wk1JoVic=;
+        b=Y+crZeamjWVdApRBa7lPKQODt07xu/nyRzDDeZcZUy0poh+iX30foZvRNgm2XYvIZL
+         Qy2VI52wjrtc6/x/xadBlZWmcJy9g/7y2QmGaE6XUzn/6f6MMPEnc7YDIdBjrgyYQ2vr
+         esMlVDZ3mP15ARV3F+Fca5pXnC1gc+ZcQKZMCdwcRu640uNKf3DtrsHDqXXqB67AsvC0
+         /OU4TRR0O4hdUm/GAY64wJMqYPnnB7nyiJJ7TiQRDzMz4Z7yvNOK3hto7YylABoKztpC
+         Wr/il/6DEZY32Pbf8FyIW5BUSaQVp2/+GJ1eFMzOtTgZ5kdrwK/2foLzlCpCHwBgatyO
+         djZg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@edm.postnl.be header.s=200608 header.b=C7sAQN8m;
+       dkim=pass header.i=@s1.y.mc.salesforce.com header.s=fbldkim1 header.b="NDN3/ULy";
+       spf=pass (google.com: domain of bounce-114_html-330901814-4639533-10966728-6672260@bounce.edm.postnl.be designates 136.147.142.229 as permitted sender) smtp.mailfrom=bounce-114_HTML-330901814-4639533-10966728-6672260@bounce.edm.postnl.be;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=edm.postnl.be
+Return-Path: <bounce-114_HTML-330901814-4639533-10966728-6672260@bounce.edm.postnl.be>
+Received: from mta3.edm.postnl.nl (mta3.edm.postnl.nl. [136.147.142.229])
+        by mx.google.com with ESMTPS id d75a77b69052e-46729800f5asi31539211cf.500.2024.12.05.13.59.30
+        for <frederic.willem@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 05 Dec 2024 13:59:30 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-114_html-330901814-4639533-10966728-6672260@bounce.edm.postnl.be designates 136.147.142.229 as permitted sender) client-ip=136.147.142.229;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@edm.postnl.be header.s=200608 header.b=C7sAQN8m;
+       dkim=pass header.i=@s1.y.mc.salesforce.com header.s=fbldkim1 header.b="NDN3/ULy";
+       spf=pass (google.com: domain of bounce-114_html-330901814-4639533-10966728-6672260@bounce.edm.postnl.be designates 136.147.142.229 as permitted sender) smtp.mailfrom=bounce-114_HTML-330901814-4639533-10966728-6672260@bounce.edm.postnl.be;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=edm.postnl.be
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=edm.postnl.be;
+ h=From:To:Subject:Date:List-Help:MIME-Version:Reply-To:Message-ID:Content-Type;
+ i=notificatie@edm.postnl.be;
+ bh=4FLmByM0Cd/RVK0OExloUQemqZQ9Wz02VnvyLX1RRw8=;
+ b=C7sAQN8mtTA169/irrEV6Bh4+VLr6jHDcBT6Lq2AeXWZfT2vvDR2DcarpOvOFtJobHRekN0Bw063
+   IDfnPQ1cx13QuBerxp1iuDZBA7kShN7cnYxRohyg7kjCm2CVTQ/skkoBU1XPDYGvDkPcyX9FBrku
+   WbkUMbscneUjKASL0XI=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=fbldkim1; d=s1.y.mc.salesforce.com;
+ h=From:To:Subject:Date:List-Help:MIME-Version:Reply-To:Message-ID:Content-Type;
+ bh=4FLmByM0Cd/RVK0OExloUQemqZQ9Wz02VnvyLX1RRw8=;
+ b=NDN3/ULy/hRMtDv+Yr6GEJMgWIXpWEHh1FKMQR0zyWauNIrhsYMZJyqiynzIuJ5oyo+lRDnJMQFP
+   mLn4lu70rQjct9I6aiDZqf7yTeB8y9jqCWHCYvEtUp5jGZYufSK9kdPM70PqtAfvad2G3wDLticP
+   YoPBa0/X4LZFWJlp6BGy9zoVoSbraSV/NoFz29Mh+wHj8eGKKGPLwNqSt+ISIQN/n4tX+BQJp/YM
+   MdTz86zC3NMM3Z/hnkFmDXBqqUGFdd1QHET7VFVvX0GY7Hap1K1sK6ijz5pn06UOUqZ+mCy7zI9D
+   /V67kRdhQvUSOOXfBiE5zt8Qr4mRzmh6t9k7aA==
+Received: by mta3.edm.postnl.nl id ha8h442fmd4g for <frederic.willem@gmail.com>; Thu, 5 Dec 2024 21:59:30 +0000 (envelope-from <bounce-114_HTML-330901814-4639533-10966728-6672260@bounce.edm.postnl.be>)
+From: "PostNL" <notificatie@edm.postnl.be>
+To: <frederic.willem@gmail.com>
+Subject: =?UTF-8?Q?Dit_is_de_bezorgtijd_van_je_pakket_-_Votre_colis_sera_l?=
+ =?UTF-8?Q?ivr=C3=A9_aux_horaires_suivants?=
+Date: Thu, 05 Dec 2024 15:59:29 -0600
+List-Help: <https://click.edm.postnl.nl/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiIxMDk2NjcyOCIsInMiOiIzMzA5MDE4MTQiLCJsaWQiOiIxMTQiLCJqIjoiNDYzOTUzMyIsImpiIjoiNjY3MjI2MCIsImQiOiIxMDE4NiJ9.ULs6FRmmNy4pQ8_1CJd2slkQ1J2Kx9_j2wS0hJpZlbM>
+MIME-Version: 1.0
+Reply-To: "PostNL" <reply-4639533-114_HTML-330901814-10966728-6672260@edm.postnl.nl>
+x-messageKey: 9aa1f7bb-4eba-4bbd-b0c6-d382b72df74d
+X-Delivery: Transactional
+X-SFMC-Stack: 1
+x-job: 10966728_4639533
+Message-ID: <1c015e7e-b5f3-42c5-90ad-1a50111ee2bf@ind1s01mta1384.xt.local>
+Feedback-ID: 10966728:4639533:136.147.142.229:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="tRdvYMyxbARf=_?:"
+
+This is a multi-part message in MIME format.
+
+--tRdvYMyxbARf=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Wij zijn PostNL en we hebben iets voor je | PostNL
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+ 
+
+
+
+
+
+ 
+
+https://click.edm.postnl.nl/?qs=a0dac8a49a5589169a1d3e5b874a5724b3329eb11ee03da84f9b907f579ff7916094cbba0d0ca0a9067039b15694368303b8eb5b656c73f63bd46268d08a97f4 
+
+ https://view.edm.postnl.nl/?qs=2bc965116ebb608fb55cd74768393b2d5e12ee8171512946595caddf57e7d42ee6504c8853f5b660be26932e676d666b78531a90d6819881460409740e4e076d1b734257216186985ad70aa517b84a6c442f46c3d06efbbc 
+Bekijk de online versie 
+
+ 
+
+
+
+
+
+ Het is bijna zover! 
+
+
+ 
+
+
+ 
+Version française ci-dessous 
+
+
+
+  
+
+ 
+
+https://click.edm.postnl.nl/?qs=a0dac8a49a55891670f52182fea5fb47b42219d2d01d79c377a2f49cd3916f59458b0fdc021a44285bd9d200245a16bc6b9e529a07e9365a93a994b59c1a9921 
+
+ 
+
+ 
+
+
+
+
+
+
+We bezorgen je pakket vrijdag 6 december tussen 13:00 en 17:00
+
+
+ 
+ 
+
+
+ 
+
+Bezorgadres
+
+
+ 
+
+
+ 
+
+
+ Willem
+ 
+ Rue Dieudonne Jacobs 60 Boite 13
+
+ 4420 Saint-Nicolas
+
+
+ 
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Afzender
+
+Pharmapets - Vetostore
+
+
+Barcode
+
+ 
+
+
+
+
+https://click.edm.postnl.nl/?qs=a0dac8a49a5589169e862af8de8f301a10c15ebc0630e859b934414e90ec1b6e984e5dae5fbb3357344712c2195922016e77db32dbf83f1598c3c3b9000309bd 
+3SFQCR5636597 
+
+
+ 
+
+
+
+
+
+
+
+
+Tot snel,
+
+ PostNL
+
+
+
+ Heb je even?
+
+Om onze dienstverlening te verbeteren, zijn we benieuwd naar jouw mening.
+
+https://click.edm.postnl.nl/?qs=a0dac8a49a558916b01ee979c129cb1c903a48130b3342f2616415be0146fbea4c654f053f33292163e28cd0b2f01e697af209fb0abfc02356e8e5c1306bd1a3 standaard BE AtNext_zending_ontvangen_postnl_niet_te_wijzigen_2&email=frederic.willem@gmail.com&mail_url=https://view.edm.postnl.nl/?qs=2bc965116ebb608fb55cd74768393b2d5e12ee8171512946595caddf57e7d42ee6504c8853f5b660be26932e676d666b78531a90d6819881460409740e4e076d1b73425721618698f117f81b7e243eba16e41e85390564bc&lang=nl 
+
+https://click.edm.postnl.nl/?qs=a0dac8a49a5589167d5223435bbce924bf792e863db2dbedd79461f216849cd8776c6bbac78baebdcf3eb5628a62220a3b4f82ce158402d985d8b82041409114 standaard BE AtNext_zending_ontvangen_postnl_niet_te_wijzigen_2&email=frederic.willem@gmail.com&mail_url=https://view.edm.postnl.nl/?qs=2bc965116ebb608fb55cd74768393b2d5e12ee8171512946595caddf57e7d42ee6504c8853f5b660be26932e676d666b78531a90d6819881460409740e4e076d1b73425721618698f117f81b7e243eba16e41e85390564bc&lang=nl 
+
+ 
+
+
+
+
+https://click.edm.postnl.nl/?qs=a0dac8a49a558916a4394d61e790f7496e227200cb78c5ae7ad68415a87405667807c3e204ec785716bc54116f09454e8bcfab017a587da8a46bc429a8627087 
+
+Évitez le phishing. Vérifiez que l’adresse e-mail se termine par postnl.be.
+ 
+
+Nous y sommes presque ! 
+
+
+
+  
+
+
+
+https://click.edm.postnl.nl/?qs=a0dac8a49a55891619086dea033a5f02d8abf746e6ebd105e9775b0fe9cffbeb9c651d05bcf0930a900a1dca0eefd14c792fdbd770928febb3d6b9c028c203ac 
+
+ 
+
+ 
+
+
+
+
+
+
+Nous livrerons votre colis vendredi 6 décembre entre 13:00 et 17:00
+
+
+ 
+ 
+
+
+ 
+
+Adresse de livraison
+
+
+ 
+
+
+ 
+
+
+ Willem
+ 
+ Rue Dieudonne Jacobs 60 Boite 13
+
+ 4420 Saint-Nicolas
+
+
+ 
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expéditeur
+
+Pharmapets - Vetostore
+
+
+Code à barre
+
+ 
+
+
+
+
+https://click.edm.postnl.nl/?qs=a0dac8a49a558916f233bb822a760b0c02a9ac3aba61293aba600dba78d7b69fdb08ad15e17f2df4481f2e42541621e078c38fb292bafab4a75b04490bc717e4 
+3SFQCR5636597 
+
+
+ 
+
+
+
+
+
+
+
+
+ À bientôt,
+
+L'équipe PostNL
+
+
+
+ Avez-vous une minute ?
+
+Afin d'améliorer nos services, nous aimerions connaître votre avis.
+
+https://click.edm.postnl.nl/?qs=a0dac8a49a558916b01ee979c129cb1c903a48130b3342f2616415be0146fbea4c654f053f33292163e28cd0b2f01e697af209fb0abfc02356e8e5c1306bd1a3 standaard BE AtNext_zending_ontvangen_postnl_niet_te_wijzigen&email=frederic.willem@gmail.com&mail_url=https://view.edm.postnl.nl/?qs=2bc965116ebb608fb55cd74768393b2d5e12ee8171512946595caddf57e7d42ee6504c8853f5b660be26932e676d666b78531a90d6819881460409740e4e076d1b73425721618698f117f81b7e243eba16e41e85390564bc&lang=fr 
+
+https://click.edm.postnl.nl/?qs=a0dac8a49a5589167d5223435bbce924bf792e863db2dbedd79461f216849cd8776c6bbac78baebdcf3eb5628a62220a3b4f82ce158402d985d8b82041409114 standaard BE AtNext_zending_ontvangen_postnl_niet_te_wijzigen&email=frederic.willem@gmail.com&mail_url=https://view.edm.postnl.nl/?qs=2bc965116ebb608fb55cd74768393b2d5e12ee8171512946595caddf57e7d42ee6504c8853f5b660be26932e676d666b78531a90d6819881460409740e4e076d1b73425721618698f117f81b7e243eba16e41e85390564bc&lang=fr 
+
+ 
+
+
+
+
+ 
+ 
+
+
+ 
+ Veilig omgaan met e-mails
+Kijk uit voor phishing: valse e-mails van oplichters. Hebben we persoonlijke gegevens van je nodig? Of vragen we je om te betalen? Dan sturen we je altijd eerst naar een website van PostNL. Controleer dit goed. Op onze 
+https://click.edm.postnl.nl/?qs=a0dac8a49a558916d1aded7eba3814085cd081edc6da5626ad3815e8d9bff39c20fa2d8549478ea320e990ebabb79b86792553089005f455c5f9bc968796c2fb 
+phishingpagina  lees je hoe je phishing herkent en voorkomt.
+
+
+ Volg je pakket in de PostNL-app 
+ 
+
+https://click.edm.postnl.nl/?qs=a0dac8a49a55891692b6b42732b80b077ef050f530ce8acd74e663f29d8f6ff8260b60796411ec7514205d01995db74946520f3bee6796979fe8081763dfaa52 
+
+https://click.edm.postnl.nl/?qs=a0dac8a49a5589165dd6261c411d162e247ad9035c0c0c6114bb1abacd61011cb37c76922c21656c5a2266e893f4126adabbc0105b561da935289ee9f2bea6d1 
+
+
+  
+  
+ 
+
+
+ Volg ons
+ 
+https://click.edm.postnl.nl/?qs=a0dac8a49a558916d4b16c4491014d765ca726684f23b17839e74cadd7986a90e84cf591e701715d2c54d0b16422d130e27379247d0cf334fa660e4b124678f2 
+
+https://click.edm.postnl.nl/?qs=a0dac8a49a55891616b174ba87edaacc762f8dc85ab58b59558180513ba68afedc006c724043f03f34684cbebe588521353b36d2aa25d660de39bbc2167307b5 
+
+https://click.edm.postnl.nl/?qs=a0dac8a49a558916de7d28ec4fc608808550cc717fff45cc8001498ce0e033b856a27e6e367b8b2941cff715bda79dad5d2d6e36e41c625bc4364872cf8f00fb 
+
+
+  
+ 
+
+https://click.edm.postnl.nl/?qs=a0dac8a49a558916590a18057011defca9ecc26b9f430f93391769f2d8c80c6969fdec5cf1384618f7f7bb32ea21043e540ded24400bd348ab84cb5c02b2e8ee 
+Privacyverklaring         
+ 
+https://click.edm.postnl.nl/?qs=a0dac8a49a55891623169423f455cb2079e362e71deb864024cf3055fe826e1163a9bfd81bd0dc64906918f478a1604055734e74fa3aacac8ee1364e2e454abb 
+Algemene voorwaarden 
+
+
+ (c) 2024 PostNL - alle rechten voorbehouden
+ 
+
+
+
+
+ 
+
+
+
+--tRdvYMyxbARf=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html lang="nl" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+  <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <meta name="theme-color" content="#3440b6">
+ <meta property="og:title" content="Wij zijn PostNL en we hebben iets voor je | PostNL"/>
+ <meta property="og:image" content="https://www.postnl.nl/img/logo.png"/>
+ <meta property="og:site_name" content="PostNL"/>
+ <meta name="twitter:description" content="Jouw postzaken regel je snel en eenvoudig online. Vind alle informatie over pakketten, tarieven, postcodes en actuele aanbiedingen van PostNL. Ook zakelijk." />
+ <meta name="twitter:title" content="Wij zijn PostNL en we hebben iets voor je" />
+ <meta name="twitter:image" content="https://www.postnl.nl/img/logo.png" />
+ <meta property="og:description" content="Jouw postzaken regel je snel en eenvoudig online. Vind alle informatie over pakketten, tarieven, postcodes en actuele aanbiedingen van PostNL. Ook zakelijk." />
+ <meta property="og:url" content="https://view.edm.postnl.nl/?qs=2bc965116ebb608fb55cd74768393b2d5e12ee8171512946595caddf57e7d42ee6504c8853f5b660be26932e676d666b78531a90d681988131152ad89c35ddbf"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+    <meta name="x-apple-disable-message-reformatting">
+    <!--target dark mode-->
+    <meta name="color-scheme" content="light dark">
+    <meta name="color-schemes" content="light dark only">
+ <link rel="icon" type="image/ico" href="https://www.postnl.nl/favicon-postnl-32.png" />
+ <title>Wij zijn PostNL en we hebben iets voor je | PostNL</title>
+  <!-- Allow for better image rendering on Windows hi-DPI displays. -->
+  <!--[if mso]>   <noscript>    <xml>     <o:OfficeDocumentSettings>      <o:AllowPNG />      <o:PixelsPerInch>96</o:PixelsPerInch>     </o:OfficeDocumentSettings>    </xml>   </noscript>   <![endif]-->
+  <!---->
+  <!-- Reset Styles -->
+  <style>
+   * {
+    box-sizing: border-box
+   }
+
+   body,
+   .ev-body,
+   .ev-wrapper {
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important
+   }
+
+   body,
+   div,
+   td,
+   th,
+   ul,
+   ol,
+   li,
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6,
+   p {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    font-weight: normal;
+    font-style: normal;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none
+   }
+
+   table {
+    /* removes cellspacing, cellpadding and border for all tables */
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: 0
+   }
+
+   td,
+   th {
+    text-align: left;
+    vertical-align: top
+   }
+
+   img {
+    /* smoother, better quality images */
+    -ms-interpolation-mode: bicubic;
+    vertical-align: middle;
+    height: auto;
+    line-height: 100%;
+    border: 0
+   }
+
+   .responsive-td {
+    /* td that wraps around the whole email, excl header and footer */
+    width: 100% !important;
+    display: block !important;
+    padding: 0 !important;
+   }
+
+   a,
+   a:link,
+   a:visited,
+   a:hover {
+    color: #3D43E6;
+   }
+
+   a:hover {
+    text-decoration: underline !important;
+   }
+
+   a.phonenumber {
+    pointer-events: none;
+    cursor: default
+   }
+
+   #outlook a {
+    padding: 0
+   }
+
+   .h2-link {
+    color: #F56400 !important;
+    text-decoration: none !important;
+   }
+
+   .h2-link:hover {
+    text-decoration: underline !important;
+   }
+    
+  .h3-link {
+    color: #F56400 !important;
+    text-decoration: none !important;
+   }
+
+   .h3-link:hover {
+    text-decoration: underline !important;
+   }   
+
+   .img-radius {
+    border-radius: 6px 6px 6px 6px !important;
+   }
+  </style>
+  <!-- Webfonts -->
+  <style>
+   @font-face {
+    font-family: 'ABC-ROM';
+    font-style: normal;
+ font-display: swap;
+    font-weight: 400;
+ src: local('ABC-ROM'), url(https://cdn.postnl.nl/fonts/ABCROM-Bold.woff2) format('woff2');   
+ mso-font-alt: 'Arial';
+    mso-generic-font-family: swiss;
+   }
+
+   @font-face {
+    font-family: 'Hanken-Grotesk';
+    font-style: normal;
+ font-display: swap;
+    font-weight: 400;
+ src: local('Hanken-Grotesk'), url(https://cdn.postnl.nl/fonts/Hanken-Grotesk.woff2) format('woff2');    
+ mso-font-alt: 'Arial';
+    mso-generic-font-family: swiss;
+   }
+
+  </style>
+  <!-- Responsive Styles -->
+  <style>
+   @media only screen and (max-width: 720px) {
+    .w25pc {
+     min-width: 25% !important;
+     width: 25% !important;
+     max-width: 25% !important
+    }
+
+    .w33pc {
+     min-width: 33.3333% !important;
+     width: 33.3333% !important;
+     max-width: 33.3333% !important
+    }
+
+    .w50pc {
+     min-width: 50% !important;
+     width: 50% !important;
+     max-width: 50% !important
+    }
+
+    .w80pc {
+     min-width: 80% !important;
+     width: 80% !important;
+     max-width: 80% !important
+    }
+
+    .w100pc {
+     min-width: 100% !important;
+     width: 100% !important;
+     max-width: 100% !important
+    }
+
+    .height-auto {
+     height: auto !important
+    }
+
+    .imgW234 {
+     min-width: 234px !important;
+     width: 234px !important;
+     max-width: 234px !important
+    }
+
+    /*
+.hide-on-mobile {
+display: none !important
+}
+.show-on-mobile {
+display: block !important;
+width: auto !important;
+max-height: inherit !important;
+overflow: visible !important;
+float: none !important
+}
+*/
+    a.phonenumber {
+     pointer-events: auto !important;
+     cursor: auto !important
+    }
+
+    .inline {
+     display: inline !important
+    }
+
+    .block {
+     display: block !important
+    }
+
+    .inline-block {
+     display: inline-block !important
+    }
+
+    .align-left {
+     text-align: left !important
+    }
+
+    .align-center {
+     text-align: center !important
+    }
+
+    .align-right {
+     text-align: right !important
+    }
+
+    .valign-top {
+     vertical-align: top !important
+    }
+
+    .valign-middle {
+     vertical-align: middle !important
+    }
+
+    .valign-bottom {
+     vertical-align: bottom !important
+    }
+
+    .left {
+     float: left !important
+    }
+
+    .center {
+     margin: 0 auto !important
+    }
+
+    .right {
+     float: right !important
+    }
+
+    .p0 {
+     padding: 0 !important
+    }
+
+    .pt0 {
+     padding-top: 0 !important
+    }
+
+    .pr0 {
+     padding-right: 0 !important
+    }
+
+    .pb0 {
+     padding-bottom: 0 !important
+    }
+
+    .pl0 {
+     padding-left: 0 !important
+    }
+
+    .pt8 {
+     padding-top: 8px !important
+    }
+
+    .pb8 {
+     padding-bottom: 8px !important
+    }
+
+    .pt12 {
+     padding-top: 12px !important
+    }
+
+    .pb12 {
+     padding-bottom: 12px !important
+    }
+
+    .p24 {
+     padding: 24px !important
+    }
+
+    .pt24 {
+     padding-top: 24px !important
+    }
+
+    .pr24 {
+     padding-right: 24px !important
+    }
+
+    .pb24 {
+     padding-bottom: 24px !important
+    }
+
+    .pl24 {
+     padding-left: 24px !important
+    }
+
+    .m0 {
+     margin: 0 !important
+    }
+
+    .mt0 {
+     margin-top: 0 !important
+    }
+
+    .mr0 {
+     margin-right: 0 !important
+    }
+
+    .mb0 {
+     margin-bottom: 0 !important
+    }
+
+    .ml0 {
+     margin-left: 0 !important
+    }
+
+    .img-radius {
+     border-radius: 0 !important;
+    }
+   }
+  </style>
+  <style>
+   /* Set different max-width for buttons to display full width only on screens of 430px and smaller */
+   @media only screen and (max-width: 430px) {
+    .w100pc-mobile {
+     min-width: 100% !important;
+     width: 100% !important;
+     max-width: 100% !important
+    }
+   }
+  </style>
+  <!-- DARK MODE STYLING This media query checks whether or not the user prefers the “dark” color scheme and, if they do, it will trigger any CSS properties included in the curly braces of the media query. Works in: Apple Mail on MacOS, Apple Mail on iOS 13+ and works partially in: Outlook.com, Outlook 2019 for MacOS, Outlook app on iOS -->
+  <style>
+   @media (prefers-color-scheme: dark) {
+
+    /* Shows Dark Mode-Only Content, Like Images */
+    .dark-img {
+     display: block !important;
+     width: auto !important;
+     overflow: visible !important;
+     float: none !important;
+     max-height: inherit !important;
+     max-width: inherit !important;
+     line-height: auto !important;
+     margin-top: 0px !important;
+     visibility: inherit !important;
+    }
+
+    /* Hides Light Mode-Only Content, Like Images */
+    .light-img {
+     display: none;
+     display: none !important;
+    }
+
+    /* Custom Dark Mode Background Color and borders */
+    .darkmode {
+     /* body and wrapping div */
+     background-color: #1F1E2F !important;
+    }
+
+    .darkmode2 {
+     /* footer and receipt block: totaal */
+     background-color: #2C2B40 !important;
+ -webkit-text-fill-color: #FFFFFF !important;
+
+    }
+
+    .darkmode3 {
+     /* blue button */
+     background-color: #5555D7 !important;
+     color: #FFFFFF !important;
+    }
+
+    .darkmode4 {
+     /* ghost button */
+     color: #6F95F6 !important;
+     border: 1px solid #6F95F6 !important;
+    }
+ .darkmode5 {
+     /* Grey background */
+  background-color: #2C2B40 !important;
+     color: #FFFFFF !important;
+  
+    }
+
+    .dark-border {
+     /* all borders except divider */
+     border: 1px solid #51545B !important;
+    }
+
+    .dark-divider-border {
+     /* border in divider block */
+     border-top-color: #86889D !important;
+    }
+
+    .no-border {
+     /* receipt block: totaal */
+     border: none !important;
+    }
+
+    /* Custom Dark Mode Font Colors */
+    h1 {
+     color: #FFFFFF !important;
+    }
+
+    h2 {
+     color: #F56400 !important;
+    }
+
+    h3,
+    h4 {
+     color: #F56400 !important;
+    }
+
+    p {
+     color: #FFFFFF !important;
+    }
+
+    a {
+     color: #8A8AFF !important;
+    }
+
+    /* Custom Dark Mode Text Link Color */
+    .link {
+     color: #8A8AFF !important;
+    }
+
+    .footer a.link {
+     color: #8A8AFF !important;
+    }
+   }
+
+   /* Copy dark mode styles for Outlook.com and Outlook on android */
+   /* Shows Dark Mode-Only Content, Like Images */
+   [data-ogsc] .dark-img {
+    display: block !important;
+    width: auto !important;
+    overflow: visible !important;
+    float: none !important;
+    max-height: inherit !important;
+    max-width: inherit !important;
+    line-height: auto !important;
+    margin-top: 0px !important;
+    visibility: inherit !important;
+   }
+
+   /* Hides Light Mode-Only Content, Like Images */
+   [data-ogsc] .light-img {
+    display: none;
+    display: none !important;
+   }
+
+   /* Custom Dark Mode Background Color and borders */
+   [data-ogsc] .darkmode {
+    background-color: #232323 !important;
+   }
+
+   [data-ogsc] .darkmode2 {
+    background-color: #2C2B40 !important;
+ -webkit-text-fill-color: #FFFFFF !important;
+
+   }
+
+   [data-ogsc] .darkmode3 {
+    background-color: #5555D7 !important;
+    color: #FFFFFF !important;
+   }
+
+   [data-ogsc] .darkmode4 {
+    color: #6F95F6 !important;
+    border: 1px solid #6F95F6 !important;
+   }
+
+   [data-ogsc] .dark-border {
+    border: 1px solid #51545B !important;
+   }
+
+   [data-ogsc] .dark-divider-border {
+    border-top-color: #51545B !important;
+   }
+
+   [data-ogsc] .no-border {
+    border: none !important;
+   }
+
+   /* Custom Dark Mode Font Colors */
+   [data-ogsc] h3,
+   [data-ogsc] h4,
+   [data-ogsc] p,
+   [data-ogsc] ol li {
+    color: #F56400 !important;
+   }
+
+   [data-ogsc] h1 {
+    color: #FFFFFF !important;
+   }
+
+   [data-ogsc] h2 {
+    color: #F56400 !important;
+   }
+
+   [data-ogsc] a {
+    color: #8A8AFF !important;
+   }
+
+   /* Custom Dark Mode Text Link Color */
+   [data-ogsc] .link {
+    color: #8A8AFF !important;
+   }
+
+   [data-ogsc] .footer a.link {
+    color: #8A8AFF !important;
+   }
+   }
+  </style>
+  <!-- Specific iOS Date/Phonenumber Reset Styles -->
+  <style>
+   a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+   }
+  </style>
+  <!-- Specific Gmail Styles, including Date/Phonenumber/Links Reset -->
+  <style>
+   u+.ev-body a {
+    color: inherit;
+    text-decoration: inherit
+   }
+
+   @media only screen and (max-width: 719px) {
+
+    u+.ev-body,
+    div>u+.ev-body {
+     width: 100vw !important;
+     min-width: 100vw !important;
+     margin: 0 !important;
+     padding: 0 !important
+    }
+
+    div>u+.ev-body {
+     width: inherit !important;
+     min-width: inherit !important;
+    }
+   }
+
+   /* Necessary when using interactive objects */
+   @media screen and (max-width:9999px) {
+    u+.ev-body .ev-fallback {
+     display: block !important;
+     max-height: none
+    }
+
+    u+.ev-body .ev-interactive {
+     display: none !important
+    }
+   }
+  </style>
+  <!-- Specific Yahoo!Mail Targeting -->
+  <style>
+   .& .ev-wrapper,
+   .& .yahoo-fix-height {
+    /* fix bug where Yahoo mail transforms height to min-height */
+    display: grid
+   }
+
+   /* Necessary when using interactive objects */
+   .yahoo-fix {}
+
+   .& .ev-fallback {
+    display: block !important;
+    max-height: none
+   }
+
+   .& .ev-interactive {
+    display: none !important
+   }
+  </style>
+  <!-- Specific Samsung Mail App Targeting -->
+  <style>
+   @media screen and (-webkit-min-device-pixel-ratio: 0) {
+
+    /* fix bug where Samsung scales or zooms the email */
+    #MessageViewBody,
+    #MessageWebViewDiv {
+     margin: 0 !important;
+     zoom: 1 !important
+    }
+
+    /* Necessary when using interactive objects */
+    #MessageViewBody .ev-fallback {
+     display: block !important
+    }
+
+    #MessageViewBody .ev-interactive {
+     display: none !important
+    }
+
+    #MessageViewBody .ev-samsung {
+     display: none !important
+    }
+   }
+  </style>
+  <!-- Specific Outlook App Targeting. Outlook App adds attribute [data-outlook-cycle] to body tag, so any CSS to target Outlook App goes here -->
+  <style>
+   body[data-outlook-cycle] {
+    min-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+   }
+
+   body[data-outlook-cycle] .outlook-overflow-scaling,
+   body[data-outlook-cycle] .ev-wrapper {
+    width: 100vw !important;
+    min-width: 100vw !important;
+    height: auto !important;
+    display: block !important;
+    transform: scale(1) !important
+   }
+
+   /* Necessary when using interactive objects */
+   body[data-outlook-cycle] .ev-fallback {
+    display: block !important
+   }
+
+   body[data-outlook-cycle] .ev-interactive {
+    display: none !important
+   }
+  </style>
+
+  <!-- emailht.ml 20230314 -->
+  <style>
+   @media only screen and (max-width: 720px) {
+    .imgW234 {
+     min-width: 234px !important;
+     width: 234px !important;
+     max-width: 234px !important
+    }
+
+    .display-none {
+     display: none !important;
+    }
+
+    .display-block {
+     display: block !important;
+    }
+   }
+  </style>
+  <meta name="color-schemes" content="light dark only">
+  <style>
+   @media (prefers-color-scheme: dark) {
+    .promo:not([class^="x_"]) {
+     background-color: #2C2B40 !important;
+     background-image: linear-gradient(#2C2B40, #2C2B40) !important
+    }
+
+    .promo-content:not([class^="x_"]) {
+     background-color: #2C2B40 !important;
+     background-image: linear-gradient(#232323, #2C2B40) !important
+    }
+
+    .promo-content:not([class^="x_"]) h2,
+    .promo-content:not([class^="x_"]) p {
+     color: #D4D9E3 !important;
+     -webkit-text-fill-color: #D4D9E3 !important
+    }
+
+    .spark-background:not([class^="x_"]) {
+     background-color: #D16300 !important;
+     background-image: linear-gradient(#D16300, #D16300) !important
+    }
+
+    .spark-corner:not([class^="x_"]) {
+     background-color: #f7c78a !important;
+     background-image: linear-gradient(#f7c78a, #f7c78a) !important
+    }
+
+    .button-primary:not([class^="x_"]) {
+     background-color: #6F95F6 !important;
+     background-image: linear-gradient(#6F95F6, #6F95F6) !important;
+     color: #232323 !important;
+     -webkit-text-fill-color: #232323 !important
+    }
+   }
+
+   [data-ogsb] .promo {
+    background-color: #080808 !important;
+    background-image: linear-gradient(#080808, #080808) !important
+   }
+
+   [data-ogsb] .promo-content {
+    background-color: #2C2B40 !important;
+    background-image: linear-gradient(#232323, #2C2B40) !important
+   }
+
+   [data-ogsb] .promo-content h2,
+   [data-ogsb] .promo-content p {
+    color: #D4D9E3 !important;
+    -webkit-text-fill-color: #D4D9E3 !important
+   }
+
+   [data-ogsb] .spark-background {
+    background-color: #D16300 !important;
+    background-image: linear-gradient(#D16300, #D16300) !important
+   }
+
+   [data-ogsb] .spark-corner {
+    background-color: #f7c78a !important;
+    background-image: linear-gradient(#f7c78a, #f7c78a) !important
+   }
+
+   [data-ogsb] .button-primary {
+    background-color: #6F95F6 !important;
+    background-image: linear-gradient(#6F95F6, #6F95F6) !important;
+    color: #232323 !important;
+    -webkit-text-fill-color: #232323 !important
+   }
+  </style>
+  <!-- corrections in Outlook, if something doesn't look OK in Outlook, you can target it here. Classes outlook-pb20 andf outlook-pb12 reduce padding in blocks receipt and stamp -->
+  <!--[if mso]>   <style>    sup {     font-size: 100% !important    }     .outlook-pb20 {     padding-bottom: 20px !important    }     .outlook-pb12 {     padding: 20px 16px 12px 16px !important    }   </style>   <![endif]-->
+ <body class="ev-body darkmode" bgcolor="#ffffff" style="background-color:#ffffff;">
+  <div style="font-size:0; line-height:0;">
+   <img src="https://click.edm.postnl.nl/open.aspx?ffcb10-fe8e1076766d017e76-fe2f17757d61047e761574-fe5815707c62027a771c-ff69157171-fe321773756d047c7d1574-fe9212767266067b75&d=10186&bmt=0" width="1" height="1" alt="">
+    
+  </div>
+  <div role="article" aria-roledescription="email" aria-label="Email van PostNL" xml:lang="nl" lang="nl" class="ev-wrapper darkmode">
+   <center>
+ <!-- Content block for AMP Script  -->
+ <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--Template AMP-->
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Script voor de afzender-->
+
+
+<!--Pilot pincodevalidatie aan de deurScript-->
+</td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--Laad het logging blok-->
+<table role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper" width="100%" cellspacing="0" cellpadding="0"><tr><td class="stylingblock-content-wrapper camarker-inner"></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--Laad het subjectline blok-->
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--VOOR TEAM VOLGEN. Vul hieronder de juiste subjectline per notificatie in of voeg nieuwe toe. In te vullen/veranderen door team Volgen-->
+
+<!--EINDE VOOR TEAM VOLGEN--></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--Laad het titel blok-->
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--VOOR TEAM VOLGEN. Vul de juiste titel per notificatie in of voeg nieuwe toe. In te vullen/veranderen door team Volgen-->
+
+<!--EINDE VOOR TEAM VOLGEN--></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--Toont het introductie blok-->
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--Toont het introductie blok-->
+ 
+<table role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper" width="100%" cellspacing="0" cellpadding="0"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- VOOR TEAM VOLGEN-->
+
+
+<!--EINDE VOOR TEAM VOLGEN--></td></tr></table>
+</td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--Laad het RaiseError blok-->
+<table role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper" width="100%" cellspacing="0" cellpadding="0"><tr><td class="stylingblock-content-wrapper camarker-inner"></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--GTL basis informatie-->
+ </td></tr></table>
+ <!-- Content block for AntiPhishingCode. This is only for Consumers  -->
+ <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+
+
+</td></tr></table></td></tr></table>
+ <!-- Content block for Header with Logo and webversion url  -->
+<table role="presentation" align="center" style="width: 720px; margin: 0 auto" class="w100pc">
+<tr>
+<td class="pl24 pr24" style="padding: 16px 40px 12px">
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table role="presentation" style="width: 100%">
+        <tr>
+         <td style="padding: 0 0 6px; width: 70px">
+        <a href="https://click.edm.postnl.nl/?qs=a0dac8a49a558916aef1b83b82ead2fa5d3f97b409f7e0416eb4bd37b353256a5d9ad3d9ae5b2eebfed65b4e1146ed4cd9e381863b65ae56b6d027852d500d85" target="_blank" title="PostNL Belgie" ><img src="https://image.edm.postnl.nl/lib/fe5815707c62027a771c/m/5/Logo_2x.png" alt="PostNL" width="60"></a>
+         </td>
+         <td class="p0" style="padding: 0 10px 6px 6px; vertical-align: middle; text-align: right">
+          <p style="font-family:'Hanken-Grotesk', Arial, sans-serif; font-size:13px; line-height:21px; color:#3D43E6; margin: 0; font-weight:400;"> <a href="https://view.edm.postnl.nl/?qs=2bc965116ebb608fb55cd74768393b2d5e12ee8171512946595caddf57e7d42ee6504c8853f5b660be26932e676d666b78531a90d6819881460409740e4e076d1b734257216186982046a04e6177ce96d8ea149e4f9ea74c" target="_blank" style="color: #3D43E6; text-decoration: none;" title="Webversie" >Bekijk de online versie</a></p>
+         </td>
+        </tr>
+       </table></td></tr></table></td></tr></table>
+</td>
+</tr>
+</table>
+    
+ <!-- Content block for H1 Title  -->
+<table role="presentation" align="center" style="width: 720px; margin: 0 auto" class="w100pc">
+            <tr>
+              <td>
+                <table role="presentation" align="center" style="width: 720px; margin: 0 auto" class="w100pc">
+            <tr>
+              <td>
+                <table role="presentation" style="width: 100%">
+                  <tbody>
+                    <tr>
+                      <td class="responsive-td" valign="top" style="width: 100%;">
+ <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table role="presentation" style="width: 720px; margin: 0 auto" class="w100pc" align="center">
+<tr><td class="pl24 pr24" style="padding: 12px 40px">
+<table role="presentation" style="width: 100%;">
+<tr><td>
+   <h1 style="margin: 0; font-family:'ABC-ROM', Arial, sans-serif; font-size: 46px; line-height: 41px; mso-line-height-alt: 41px; color: #001A73; font-weight:700">Het is bijna zover! </h1>
+</td></tr></table>
+</td></tr></table>
+</td></tr></table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </table>
+              </td>
+            </tr>
+          </table>    
+ <!-- Content block for MainContent  -->
+ <table role="presentation" align="center" style="width: 720px; margin: 0 auto" class="w100pc">
+            <tr>
+              <td>
+                <table role="presentation" align="center" style="width: 720px; margin: 0 auto" class="w100pc">
+            <tr>
+              <td>
+                <table role="presentation" style="width: 100%">
+                  <tbody>
+                    <tr>
+                      <td class="responsive-td" valign="top" style="width: 100%; padding-bottom: 12px;">
+      <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table role="presentation" style="width: 720px; margin: 0 auto" class="w100pc" align="center"><tr><td class="pl24 pr24" style="padding: 12px 40px"><table role="presentation" style="width: 100%"><tr><td><table role="presentation" style="width: 80%" class="w100pc"><tr><td>
+<p style="margin: 0; font-family:'Hanken-Grotesk', Arial, sans-serif;font-size: 16px; line-height: 26px; mso-line-height-alt: 26px; color: #1F1E2F; font-weight:400; text-align:center;">
+<a href="#FRversion" class="link" target="_self" title="Version française ci-dessous" alias="Version française ci-dessous" style="color: #3D43E6; text-decoration: none;">Version française ci-dessous</a>
+</p>
+</td></tr></table></td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+<table role="presentation" style="width: 720px; margin: 0 auto" class="w100pc" align="center">
+<tr><td class="pl24 pr24" style="padding: 12px 40px">   
+<table role="presentation" style="width: 100%" class="w100pc">
+<tr><td>
+        
+
+  
+<a class="link" href="https://click.edm.postnl.nl/?qs=a0dac8a49a55891677ca4aaf687e4cef47c6b223e0940aa9ae315291f46da3ad4b8a80830d78fd07667d7926e2465b2d25d54a104407ddccaade5713645d6e6d" target="_blank" titel="Afb 3SFQCR5636597"  style="color: #3D43E6; text-decoration: none;">
+  <img src="https://image.edm.postnl.nl/lib/fe5815707c62027a771c/m/6/ontvangen_door_postnl.png" alt="PostNL track & trace informatie" style="width: 200px; max-width: 220px;" width="200"></a>
+    
+
+ 
+
+
+
+</td></tr></table>
+</td></tr></table>
+<table role="presentation" style="width: 720px; margin: 0 auto" class="w100pc" align="center">
+<tr><td class="pl24 pr24" style="padding: 12px 40px">
+<table role="presentation" style="width: 100%">
+<tr><td>
+<table role="presentation" style="width: 80%" class="w100pc">
+<tr><td colspan="2" style="padding-bottom: 8px">
+<h2 style="font-family: 'Hanken-Grotesk', Arial, sans-serif; margin: 0 0 8px 0; font-size: 27px; line-height: 26px;text-align: left;color: #e75204; font-weight:700;">We bezorgen je pakket vrijdag 6 december tussen 13:00 en 17:00</h2>
+</td></tr>
+ <tr>
+ <td colspan="2" style="padding: 8px 0 4px 0">
+  <p style="margin: 0; font-family:'Hanken-Grotesk', Arial, sans-serif;font-size: 16px; line-height: 26px; mso-line-height-alt: 26px; color: #1F1E2F; font-weight:400">
+   
+   </p>
+  </td>
+ </tr>
+ 
+<tr>
+<td colspan="2" style="padding: 8px 0 4px 0">
+<p style="margin: 0; font-family:'Hanken-Grotesk', Arial, sans-serif;font-size: 16px; line-height: 26px; mso-line-height-alt: 26px; color: #1F1E2F; font-weight:700">Bezorgadres<br></p>
+</td></tr>
+<tr><td>
+<table role="presentation" class="w100pc">
+<tr><td style="width: 28px" valign="top">
+<img alt="Locatie" src="https://image.edm.postnl.nl/lib/fe5415707c63007a7d13/m/1/location_2x_png.png" style="width: 28px;" width="28">
+ 
+</td>
+<td valign="top">
+<p style="margin: 0; font-family:'Hanken-Grotesk', Arial, sans-serif;font-size: 16px; line-height: 26px; mso-line-height-alt: 26px; color: #1F1E2F; font-weight:400">
+ 
+
+
+  Willem<br>
+  
+  Rue Dieudonne Jacobs&nbsp;60&nbsp;Boite 13<br>
+  4420&nbsp;Saint-Nicolas
+
+
+ 
+
+
+</p>
+</td></tr></table>
+</td></tr>
+ 
+ </table>
+</td></tr></table>
+</td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--Toont de meerdere productmeldingen blok.-->
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+
+</td></tr></table>
+<!--Toont de datum productmeldingen blok.-->
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--VOOR TEAM VOLGEN. Vul de juiste productmelding in of voeg nieuwe toe. Onderstaande bevat de datum format in de toekomst. In te vullen/veranderen door team Volgen-->
+
+<!--EINDE VOOR TEAM VOLGEN-->
+
+
+</td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table role="presentation" style="width: 720px; margin: 0 auto" class="w100pc" align="center"><tr><td class="pl24 pr24" style="padding: 12px 40px"><table role="presentation" style="width: 100%"><tr><td><table role="presentation" style="width: 80%" class="w100pc"><tr><td>
+<p style="margin: 0; font-family:'Hanken-Grotesk', Arial, sans-serif;font-size: 16px; line-height: 26px; mso-line-height-alt: 26px; color: #1F1E2F; font-weight:400">
+ <strong>Afzender</strong><br>
+Pharmapets - Vetostore</p>
+</td></tr></table></td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table role="presentation" style="width: 720px; margin: 0 auto" class="w100pc" align="center"><tr><td class="pl24 pr24" style="padding: 12px 40px"><table role="presentation" style="width: 100%"><tr><td><table role="presentation" style="width: 80%" class="w100pc"><tr><td>
+<p style="margin: 0; font-family:'Hanken-Grotesk', Arial, sans-serif;font-size: 16px; line-height: 26px; mso-line-height-alt: 26px; color: #1F1E2F; font-weight:400">
+ <strong>Barcode</strong><br>
+ 
+
+
+
+<a class="link" href="https://click.edm.postnl.nl/?qs=a0dac8a49a5589161e0f055e5e545cb834db1ee660adb526a379aba0235c4acb74d3d1c8576155ccb4a7aa74b606ab9812bd22cd7a18a14801e4ae88e6972bfd" target="_blank" titel="Btn 3SFQCR5636597"  style="color: #3D43E6; text-decoration: none;">3SFQCR5636597</a>
+
+
+ 
+
+
+
+
+</p>
+</td></tr></table></td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table role="presentation" style="width: 720px; margin: 0 auto" class="w100pc" align="center"><tr><td class="pl24 pr24" style="padding: 12px 40px"><table role="presentation" style="width: 100%"><tr><td><table role="presentation" style="width: 80%" class="w100pc"><tr><td>
+<p style="margin: 0; font-family:'Hanken-Grotesk', Arial, sans-serif;font-size: 16px; line-height: 26px; mso-line-height-alt: 26px; color: #1F1E2F; font-weight:400">
+Tot snel,<br>
+ PostNL</p>
+</td></tr></table></td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table role="presentation" class="w100pc" style="width: 720px; margin: 0 auto" width="100%" align="center"><tr><td class="pl0 pr0" style="padding: 12px 0;" valign="top" align="center">
+<table role="presentation" class="w100pc" width="640" align="center"><tr><td class="dark-divider-border" style="border-top-width: 1px; border-top-style: solid; border-top-color: #D4D9E3; font-size: 2px; line-height: 2px; height: 2px;" valign="middle" height="2" align="center">&nbsp; </td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--Close Alert NL-->
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+           <table role="presentation" align="center" style="width: 720px; margin: 0 auto" class="w100pc"><tr><td class="pl24 pr24 pt24 pb24" style="padding: 12px 40px">
+<table role="presentation" style="width: 100%"><tr><td style="padding-bottom:12px">
+<table role="presentation" style="width: 80%" class="w100pc"><tr>
+<td style="padding-bottom: 26px">
+<h4 style="font-family: 'Hanken-Grotesk', Arial, sans-serif; margin: 0 0 8px 0; font-size: 24px; line-height: 25px;text-align: left;color: #1F1E2F; font-weight:700">Heb je even?</h4>
+<p style="font-family: 'Hanken-Grotesk', Arial, sans-serif; margin: 0; font-size: 16px; line-height: 26px;text-align: left;color: #1F1E2F;  font-weight:400">
+Om onze dienstverlening te verbeteren, zijn we benieuwd naar jouw mening.</p>
+</td></tr></table>
+<table align="left" role="presentation"><tr><td align="center" valign="top" style="padding: 0 12px 0 0">
+<!--light mode icon -->
+<a href="https://click.edm.postnl.nl/?qs=a0dac8a49a5589162f2d8e67f1213992fed3f8e39e73a7b278ab8e63c0f16c05ea433c9f3841cad2d1153ebef26cd9dbffbfed83ee63d2f5432f415eafad4614" target="_blank"  title="positief">
+<img class="light-img" src="https://image.edm.postnl.nl/lib/fe5415707c63007a7d13/m/1/satisfied_light.png" alt="tevreden" width="30" height="30" style="font-size: 12px; line-height: 14px; font-family: 'PostNL-Light', Arial, sans-serif; color: #3440B6;">
+<!--dark mode logo image-->
+<!--[if !mso]><! -->
+<div class="dark-img" style="display:none; overflow:hidden; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+<img src="https://image.edm.postnl.nl/lib/fe5415707c63007a7d13/m/1/satisfied_dark.png" width="30" height="30" alt="positief" style="font-size: 12px; line-height: 14px; font-family: 'PostNL-Light', Arial, sans-serif; color: #6F95F6;" border="0">
+</div>
+<!--<![endif]--></a>
+</td>
+<td valign="top" align="center">
+<!--light mode icon -->
+<a href="https://click.edm.postnl.nl/?qs=a0dac8a49a55891686ff75b0a297a758af3dcfa2267f496d8fba23d48480b238b6213c0a105e32f7df7011d52a52880f6155ef4dad798236a8017771683ea8c5" target="_blank"  title="negatief">
+<img class="light-img" src="https://image.edm.postnl.nl/lib/fe5415707c63007a7d13/m/1/unsatisfied_light.png" alt="niet tevreden" width="30" height="30" style="font-size: 12px; line-height: 14px; font-family: 'PostNL-Light', Arial, sans-serif; color: #3440B6;">
+<!--dark mode logo image-->
+<!--[if !mso]><! -->
+<div class="dark-img" style="display:none; overflow:hidden; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+<img src="https://image.edm.postnl.nl/lib/fe5415707c63007a7d13/m/1/unsatisfied_dark.png" width="30" height="30" alt="niet tevreden" style="font-size: 12px; line-height: 14px; font-family: 'PostNL-Light', Arial, sans-serif; color: #6F95F6;" border="0">
+</div><!--<![endif]--></a>
+</td></tr></table>
+</td></tr></table>
+</td></tr></table> 
+
+</td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table role="presentation" class="w100pc" style="width: 720px; margin: 0 auto" width="100%" align="center"><tr><td class="pl0 pr0" style="padding: 12px 0;" valign="top" align="center">
+<table role="presentation" class="w100pc" width="640" align="center"><tr><td class="dark-divider-border" style="border-top-width: 1px; border-top-style: solid; border-top-color: #D4D9E3; font-size: 2px; line-height: 2px; height: 2px;" valign="middle" height="2" align="center">&nbsp; </td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><a id="FRversion"></a><table role="presentation" style="width: 720px; margin: 0 auto" class="w100pc" align="center">
+<tr><td class="pl24 pr24" style="padding: 12px 40px">
+<table role="presentation" style="width: 100%">
+                  <tr>
+                    <td style="padding: 10px 0 6px; text-align: left; width: 70px;">
+                      <a href="https://click.edm.postnl.nl/?qs=a0dac8a49a5589166848ea3c6a3385127132fc101289fe97366b423d5d5b8bbd3f1da9956a4dcf85fac33d539043951e26fe171d14bf21f2048514ba9499b567" target="_blank" title="PostNL" >
+                        <img src="https://image.edm.postnl.nl/lib/fe5415707c63007a7d13/m/1/Logo_2x_png.png" alt="PostNL" width="60">
+                      </a>
+                    </td>
+                    <td class="pt4 pb0" style="padding: 20px 10px 6px 6px; text-align: left">
+                      <p style="margin: 0; font-family:'Hanken-Grotesk', Arial, sans-serif;font-size: 16px; line-height: 26px; mso-line-height-alt: 26px; color: #1F1E2F; font-weight:400">Évitez le phishing. Vérifiez que l’adresse e-mail se termine par postnl.be.
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+</td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table role="presentation" style="width: 720px; margin: 0 auto" class="w100pc" align="center">
+<tr><td class="pl24 pr24" style="padding: 12px 40px">
+<table role="presentation" style="width: 100%;">
+<tr><td>
+   <h1 style="margin: 0; font-family:'ABC-ROM', Arial, sans-serif; font-size: 46px; line-height: 41px; mso-line-height-alt: 41px; color: #001A73; font-weight:700">Nous y sommes presque ! </h1>
+</td></tr></table>
+</td></tr></table>
+</td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+<table role="presentation" style="width: 720px; margin: 0 auto" class="w100pc" align="center">
+<tr><td class="pl24 pr24" style="padding: 12px 40px">   
+<table role="presentation" style="width: 100%" class="w100pc">
+<tr><td>
+      
+
+
+<a class="link" href="https://click.edm.postnl.nl/?qs=a0dac8a49a558916bc14adb91360154cfa97bf7e432217007c2dded26a41f0243820552d8cf41bf681d775302a169768c59962bdc701c8c85681b8d35d4103b6" target="_blank" titel="Afb 3SFQCR5636597"  style="color: #3D43E6; text-decoration: none;">
+  <img src="https://image.edm.postnl.nl/lib/fe5815707c62027a771c/m/6/ontvangen_door_postnl.png" alt="Informations de suivi et de traçabilité PostNL" style="width: 200px; max-width: 220px;" width="200"></a>
+     
+
+ 
+
+
+
+</td></tr></table>
+</td></tr></table>
+<table role="presentation" style="width: 720px; margin: 0 auto" class="w100pc" align="center">
+<tr><td class="pl24 pr24" style="padding: 12px 40px">
+<table role="presentation" style="width: 100%">
+<tr><td>
+<table role="presentation" style="width: 80%" class="w100pc">
+<tr><td colspan="2" style="padding-bottom: 8px">
+<h2 style="font-family: 'Hanken-Grotesk', Arial, sans-serif; margin: 0 0 8px 0; font-size: 27px; line-height: 26px;text-align: left;color: #e75204; font-weight:700;">Nous livrerons votre colis vendredi 6 décembre entre 13:00 et 17:00</h2>
+</td></tr>
+ <tr>
+ <td colspan="2" style="padding: 8px 0 4px 0">
+  <p style="margin: 0; font-family:'Hanken-Grotesk', Arial, sans-serif;font-size: 16px; line-height: 26px; mso-line-height-alt: 26px; color: #1F1E2F; font-weight:400">
+   
+   </p>
+  </td>
+ </tr>
+ 
+<tr>
+<td colspan="2" style="padding: 8px 0 4px 0">
+<p style="margin: 0; font-family:'Hanken-Grotesk', Arial, sans-serif;font-size: 16px; line-height: 26px; mso-line-height-alt: 26px; color: #1F1E2F; font-weight:700">Adresse de livraison<br></p>
+</td></tr>
+<tr><td>
+<table role="presentation" class="w100pc">
+<tr><td style="width: 28px" valign="top">
+<img alt="Locatie" src="https://image.edm.postnl.nl/lib/fe5415707c63007a7d13/m/1/location_2x_png.png" style="width: 28px;" width="28">
+ 
+</td>
+<td valign="top">
+<p style="margin: 0; font-family:'Hanken-Grotesk', Arial, sans-serif;font-size: 16px; line-height: 26px; mso-line-height-alt: 26px; color: #1F1E2F; font-weight:400">
+ 
+
+
+  Willem<br>
+  
+  Rue Dieudonne Jacobs&nbsp;60&nbsp;Boite 13<br>
+  4420&nbsp;Saint-Nicolas
+
+
+ 
+
+
+</p>
+</td></tr></table>
+</td></tr>
+ 
+ </table>
+</td></tr></table>
+</td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--Toont de meerdere productmeldingen blok.-->
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+
+</td></tr></table>
+<!--Toont de datum productmeldingen blok.-->
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--VOOR TEAM VOLGEN. Vul de juiste productmelding in of voeg nieuwe toe. Onderstaande bevat de datum format in de toekomst. In te vullen/veranderen door team Volgen-->
+
+<!--EINDE VOOR TEAM VOLGEN-->
+
+
+</td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table role="presentation" style="width: 720px; margin: 0 auto" class="w100pc" align="center"><tr><td class="pl24 pr24" style="padding: 12px 40px"><table role="presentation" style="width: 100%"><tr><td><table role="presentation" style="width: 80%" class="w100pc"><tr><td>
+<p style="margin: 0; font-family:'Hanken-Grotesk', Arial, sans-serif;font-size: 16px; line-height: 26px; mso-line-height-alt: 26px; color: #1F1E2F; font-weight:400">
+ <strong>Expéditeur</strong><br>
+Pharmapets - Vetostore</p>
+</td></tr></table></td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table role="presentation" style="width: 720px; margin: 0 auto" class="w100pc" align="center"><tr><td class="pl24 pr24" style="padding: 12px 40px"><table role="presentation" style="width: 100%"><tr><td><table role="presentation" style="width: 80%" class="w100pc"><tr><td>
+<p style="margin: 0; font-family:'Hanken-Grotesk', Arial, sans-serif;font-size: 16px; line-height: 26px; mso-line-height-alt: 26px; color: #1F1E2F; font-weight:400">
+ <strong>Code à barre</strong><br>
+ 
+
+
+
+<a class="link" href="https://click.edm.postnl.nl/?qs=a0dac8a49a5589162b3c2c1bad50b12a04ed94c45cacc566e7ea927869abd1d41ee593e3d609c203b3f3110ef91258413672791cf2333795a16ba8d0d2b5e915" target="_blank" titel="Btn 3SFQCR5636597"  style="color: #3D43E6; text-decoration: none;">3SFQCR5636597</a>
+
+
+ 
+
+
+
+
+</p>
+</td></tr></table></td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table role="presentation" style="width: 720px; margin: 0 auto" class="w100pc" align="center"><tr><td class="pl24 pr24" style="padding: 12px 40px"><table role="presentation" style="width: 100%"><tr><td><table role="presentation" style="width: 80%" class="w100pc"><tr><td>
+<p style="margin: 0; font-family:'Hanken-Grotesk', Arial, sans-serif;font-size: 16px; line-height: 26px; mso-line-height-alt: 26px; color: #1F1E2F; font-weight:400">
+ À bientôt,<br>
+L'équipe PostNL</p>
+</td></tr></table></td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table role="presentation" class="w100pc" style="width: 720px; margin: 0 auto" width="100%" align="center"><tr><td class="pl0 pr0" style="padding: 12px 0;" valign="top" align="center">
+<table role="presentation" class="w100pc" width="640" align="center"><tr><td class="dark-divider-border" style="border-top-width: 1px; border-top-style: solid; border-top-color: #D4D9E3; font-size: 2px; line-height: 2px; height: 2px;" valign="middle" height="2" align="center">&nbsp; </td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--Close Alert FR-->
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+           <table role="presentation" align="center" style="width: 720px; margin: 0 auto" class="w100pc"><tr><td class="pl24 pr24 pt24 pb24" style="padding: 12px 40px">
+<table role="presentation" style="width: 100%"><tr><td style="padding-bottom:12px">
+<table role="presentation" style="width: 80%" class="w100pc"><tr>
+<td style="padding-bottom: 26px">
+<h4 style="font-family: 'Hanken-Grotesk', Arial, sans-serif; margin: 0 0 8px 0; font-size: 24px; line-height: 25px;text-align: left;color: #1F1E2F; font-weight:700">Avez-vous une minute ?</h4>
+<p style="font-family: 'Hanken-Grotesk', Arial, sans-serif; margin: 0; font-size: 16px; line-height: 26px;text-align: left;color: #1F1E2F;  font-weight:400">
+Afin d'améliorer nos services, nous aimerions connaître votre avis.</p>
+</td></tr></table>
+<table align="left" role="presentation"><tr><td align="center" valign="top" style="padding: 0 12px 0 0">
+<!--light mode icon -->
+<a href="https://click.edm.postnl.nl/?qs=a0dac8a49a5589161f74cdc96fae91ab0a1000b601b96667f19a592ef1e7bd6d486fdf8751fc47b7af6888aced9b4bccae17fced0901013763486bcb8834307b" target="_blank"  title="positief">
+<img class="light-img" src="https://image.edm.postnl.nl/lib/fe5415707c63007a7d13/m/1/satisfied_light.png" alt="tevreden" style="font-size: 12px; line-height: 14px; font-family: 'PostNL-Light', Arial, sans-serif; color: #3440B6;" width="30" height="30">
+<!--dark mode logo image-->
+<!--[if !mso]><! -->
+<div class="dark-img" style="display:none; overflow:hidden; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+<img src="https://image.edm.postnl.nl/lib/fe5415707c63007a7d13/m/1/satisfied_dark.png" alt="positief" style="font-size: 12px; line-height: 14px; font-family: 'PostNL-Light', Arial, sans-serif; color: #6F95F6;" width="30" height="30" border="0">
+</div>
+<!--<![endif]--></a>
+</td>
+<td valign="top" align="center">
+<!--light mode icon -->
+<a href="https://click.edm.postnl.nl/?qs=a0dac8a49a55891612ef38555e0b75b22cd6b86ce6de470ef165a0797d949e31e9dbceeef7bb856f0bf6f202ee89f0900a009eea1e3e2f74a52a6250b19a3bd6" target="_blank"  title="negatief">
+<img class="light-img" src="https://image.edm.postnl.nl/lib/fe5415707c63007a7d13/m/1/unsatisfied_light.png" alt="niet tevreden" style="font-size: 12px; line-height: 14px; font-family: 'PostNL-Light', Arial, sans-serif; color: #3440B6;" width="30" height="30">
+<!--dark mode logo image-->
+<!--[if !mso]><! -->
+<div class="dark-img" style="display:none; overflow:hidden; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+<img src="https://image.edm.postnl.nl/lib/fe5415707c63007a7d13/m/1/unsatisfied_dark.png" alt="niet tevreden" style="font-size: 12px; line-height: 14px; font-family: 'PostNL-Light', Arial, sans-serif; color: #6F95F6;" width="30" height="30" border="0">
+</div><!--<![endif]--></a>
+</td></tr></table>
+</td></tr></table>
+</td></tr></table> 
+
+</td></tr></table></td></tr></table>
+                        
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </table>
+              </td>
+            </tr>
+          </table>    
+
+ <!-- Content block Footer  -->
+    
+          <table class="w100pc darkmode2" role="presentation" style="width: 100%; background: background:#F1F1F2;">
+            <tr>
+              <td align="center">
+                <center>
+                  <table class="w100pc darkmode2" role="presentation" style="width: 100%; background: #F1F1F2">
+                    <tr>
+                      <td>
+                        <center>
+                          <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+ <table class="w100pc darkmode2" role="presentation" style="width: 100%; background: #F1F1F2">
+                <tr>
+                    <td align="center">
+      <center><table class="w100pc" role="presentation" style="width: 720px; margin: 0 auto">
+                    <tr>
+                      <th style="width: 514px" class="w100pc block">
+                        <table role="presentation" style="width: 100%">
+                          <tr>
+                            <td class="pl24 pr24 pb8" style="padding: 32px 24px 16px 40px">
+                              <table role="presentation" style="width: 100%">                           
+                                <tr>
+                                  <td>
+                                    <h4 style="font-family:'Hanken-Grotesk', Arial, sans-serif; font-size:19px; line-height:24px; color:#27324C; margin:8px 0 4px 0;">Veilig omgaan met e-mails</h4>
+                                    <p style="font-family:'Hanken-Grotesk', Arial, sans-serif; font-size:14px; line-height:20px; color:#27324C; margin:0 0 8px 0; text-align: left;">Kijk uit voor phishing: valse e-mails van oplichters. Hebben we persoonlijke gegevens van je nodig? Of vragen we je om te betalen? Dan sturen we je altijd eerst naar een website van PostNL. Controleer dit goed. Op onze <a href="https://click.edm.postnl.nl/?qs=a0dac8a49a5589163380f9200b662c67b5d6a2f5ec91f5b62ff0ed9fec9a23c0c1c01b6311450e6944f021dbe7bd12826f65ff90677479617557a83580ac5d76" target="_blank" title="onze phishingpagina" style="color: #3D43E6; text-decoration: underline;" >phishingpagina</a> lees je hoe je phishing herkent en voorkomt.</p>
+                                  </td>
+                                </tr>
+          <tr>
+                                  <td>
+                                    <h4 style="font-family:'Hanken-Grotesk', Arial, sans-serif; font-size:19px; line-height:24px; color:#27324C; margin: 8px 0 8px 0;"> Volg je pakket in de PostNL-app 
+                                    </h4>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <table role="presentation" align="left">
+                                      <tr>
+                                        <td style="padding: 0 12px 8px 0">
+                                          <a href="https://click.edm.postnl.nl/?qs=a0dac8a49a5589165978e4835ade9a00f1319549d265f1ae6930b586b0efa0e7311aa5eab637b7d0dc5b3cdb5393310cec89e0da3669ede74e534facf42a504e" target="_blank"  title="Download on the App Store"> <img src="https://image.edm.postnl.nl/lib/fe5415707c63007a7d13/m/1/appStore_2x.png" alt="Download on the App Store" style="width: 120px" width="120"> </a>
+                                        </td>
+                                        <td>
+                                          <a href="https://click.edm.postnl.nl/?qs=a0dac8a49a55891671097278028a372ca2916a5a6b6ce70ea768f5012b44403e168cfda988e5931b75bea35c4130b8883f6d851ad3b1a38414c15e109152c4ad" target="_blank"  title="Get it on Google Play"> <img src="https://image.edm.postnl.nl/lib/fe5415707c63007a7d13/m/1/playStore_2x.png" alt="Get it on Google Play" style="width: 135px" width="135"> </a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                                             
+                                <tr>
+                                  <td style="font-size:1px;line-height:1px;mso-line-height-rule: exactly" align="left">&nbsp;
+                                  </td>
+                                </tr>             
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </th>
+                      <th style="width: 182px" class="w100pc block">
+                        <table class="w100pc" role="presentation" style="width: 182px;" align="right">
+                          <tr>
+                            <td class="pr24 pl24 pt8 pb24" style="padding: 32px 40px 32px 0" align="right">
+                              <h4 style="font-family:'Hanken-Grotesk', Arial, sans-serif; font-size:19px; line-height:24px; text-align: left;color:#27324C; margin:0 0 10px 0; padding:0;">
+                                Volg ons
+                              </h4>
+                              <table role="presentation" align="left">
+                                <tr>
+                                  <td valign="top" align="center">
+                                    <!--light mode icon -->
+                                    <a href="https://click.edm.postnl.nl/?qs=a0dac8a49a5589169d9716eeaba43b89dee2d685af14ec4223d1b67d57da6309da47b102b0b3fcbedf379bf3b58862e4e0de64e2705d2e3b178a2d5991c18b43" target="_blank"  title="Facebook"><img class="light-img" src="https://image.edm.postnl.nl/lib/fe5415707c63007a7d13/m/1/facebook_light.png" alt="facebook" style="font-size: 12px; line-height: 14px; font-family: 'Hanken-Grotesk', Arial, sans-serif; color: #3440B6;" width="26" height="26">
+                                      <!--dark mode logo image-->
+                                      <!--[if !mso]><! -->
+                                      <div class="dark-img" style="display:none; overflow:hidden; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+                                        <img src="https://image.edm.postnl.nl/lib/fe5415707c63007a7d13/m/1/facebook_dark.png" alt="facebook" style="font-size: 12px; line-height: 14px; font-family: 'Hanken-Grotesk', Arial, sans-serif; color: #6F95F6;" width="26" height="26" border="0">
+                                      </div>
+                                      <!--<![endif]--></a>
+                                  </td>
+                                  <td style="padding: 0 7px" valign="top" align="center">
+                                    <!--light mode icon -->
+                                    <a href="https://click.edm.postnl.nl/?qs=a0dac8a49a55891600b8f12f1922e03c88b64722294fb5c28b449f54170096903bc4739b6e9e7a8f4ca8f804bbf0b6a1273bacfa8c72c70f6b71ec533e3cbbd4" target="_blank"  title="LinkedIn"><img class="light-img" src="https://image.edm.postnl.nl/lib/fe5415707c63007a7d13/m/1/linkedin_light.png" alt="linkedin" style="font-size: 12px; line-height: 14px; font-family: 'Hanken-Grotesk', Arial, sans-serif; color: #3440B6;" width="26" height="26">
+                                      <!--dark mode logo image-->
+                                      <!--[if !mso]><! -->
+                                      <div class="dark-img" style="display:none; overflow:hidden; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+                                        <img src="https://image.edm.postnl.nl/lib/fe5415707c63007a7d13/m/1/linkedin_dark.png" alt="linkedin" style="font-size: 12px; line-height: 14px; font-family: 'Hanken-Grotesk', Arial, sans-serif; color: #6F95F6;" width="26" height="26" border="0">
+                                      </div>
+                                      <!--<![endif]--></a>
+                                  </td>
+                                  <td valign="top" align="center">
+                                    <!--light mode icon -->
+                                    <a href="https://click.edm.postnl.nl/?qs=a0dac8a49a558916a8674ad52a779037ebe3de2933326493b260fc2929075a0020b23184e73349c691568cf16dcb0f70a1108051ad74a66f1f19f98ccf646762" target="_blank"  title="Instagram"><img class="light-img" src="https://image.edm.postnl.nl/lib/fe5415707c63007a7d13/m/1/instagram_light.png" alt="instagram" style="font-size: 12px; line-height: 14px; font-family: 'Hanken-Grotesk', Arial, sans-serif; color: #3440B6;" width="26" height="26">
+                                      <!--dark mode logo image-->
+                                      <!--[if !mso]><! -->
+                                      <div class="dark-img" style="display:none; overflow:hidden; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+                                        <img src="https://image.edm.postnl.nl/lib/fe5415707c63007a7d13/m/1/instagram_dark.png" alt="instagram" style="font-size: 12px; line-height: 14px; font-family: 'Hanken-Grotesk', Arial, sans-serif; color: #6F95F6;" width="26" height="26" border="0">
+                                      </div>
+                                      <!--<![endif]--></a>
+
+                                  </td>
+
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </th>
+                    </tr>
+                  </table>   </center>
+                    </td>
+                </tr>
+            </table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"> <table class="w100pc darkmode2" role="presentation" style="width: 100%; background: #F1F1F2">
+                <tr>
+                    <td align="center">
+      <center><table role="presentation" class="w100pc" style="width: 720px; margin: 0 auto" width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+  <tr>
+    <td class="pl0 pr0" style="padding: 0;" valign="top" align="center">
+      <table role="presentation" class="w100pc" width="640" cellspacing="0" cellpadding="0" border="0" align="center">
+        <tr>
+          <td class="dark-divider-border" style="border-top-width: 1px; border-top-style: solid; border-top-color: #D4D9E3; font-size: 2px; line-height: 2px; height: 2px;" valign="middle" height="2" align="center">&nbsp; 
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table class="w100pc" role="presentation" style="width: 720px; margin: 0 auto">
+                            <tr>
+                              <td class="pl24 pr24" style="padding: 24px 40px 24px 40px">
+                                <table class="w100pc footer" role="presentation" style="width: 100%">
+                                  <tr>
+                                    <th style="width: 350px" class="w100pc block">
+                                      <table role="presentation" style="width: 100%">
+                                        <tr>
+                                          <td>
+                                            <p style="font-family: 'Hanken-Grotesk', Arial, sans-serif; margin: 0 0 10px; font-size: 14px; line-height: 20px;text-align: left;color: #27324C;">
+                                              <a href="https://click.edm.postnl.nl/?qs=a0dac8a49a5589166eeb68dceac4387fe340a7696f70c26742ade4a4d115ffacc50b27e7abd77b94e9417fb93e2462030232b11a9b4dc62a092cbe81ae89ef5a" target="_blank"  title="Privacyverklaring" style="color: #3D43E6; text-decoration: underline;">Privacyverklaring</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                              <a href="https://click.edm.postnl.nl/?qs=a0dac8a49a558916ebb6b2ecf890c766d6f22fce2b5bf90f8205a2f94e72d4aef51d863122ecbb06472fb82639ec180d83830892e9cf0672fc7f65f18d3b0da7" target="_blank"  title="Algemene voorwaarden" style="color: #3D43E6; text-decoration: underline;">Algemene voorwaarden</a>
+                                            </p>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </th>
+                                    <th style="width: 290px" class="w100pc block">
+                                      <table role="presentation" style="width: 100%">
+                                        <tr>
+                                          <td>
+                                            <p class="align-left" style="font-family: 'Hanken-Grotesk', Arial, sans-serif; margin: 0 0 10px; font-size: 14px; line-height: 20px;text-align: right;color: #27324C;">
+                                              &copy; 2024 PostNL - alle rechten voorbehouden
+                                            </p>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </th>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>     </center>
+                    </td>
+                </tr>
+            </table></td></tr></table></td></tr></table></td></tr></table>
+                        </center> 
+                      </td>
+                    </tr>
+                  </table>   
+                </center>
+              </td>
+            </tr>
+          </table>        
+ </center>
+  </div>
+ </body>
+</head>
+</html>
+
+--tRdvYMyxbARf=_?:--
+
