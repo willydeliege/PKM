@@ -1,4 +1,6 @@
-- :
+type:: [[cooking/plat]]
+src:: [Couscous poulet et merguez facile : Recette de Couscous poulet et merguez facile](https://www.marmiton.org/recettes/recette_couscous-poulet-et-merguez-facile_17751.aspx)
+
 - Ingredients
 	- 200 g de pois chiches
 	- 1 courgette
