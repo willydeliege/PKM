@@ -18,6 +18,7 @@ title:: Cake aux pommes
 	- Pelez les pommes et coupez-les en fins quartiers (1/2 cm d'épaisseur).  
 	  id:: 67553f9f-39cb-47c7-bd60-0ea87db313d7
 	- Dans un saladier, fouettez les oeufs avec le sucre jusqu'à ce que le mélange blanchisse.
-	- Ajoutez le beurre fondu, la farine, la levure chimique et versez le lait. Mélangez.  Ajoutez les pommes dans la pâte. Mélangez à nouveau.
+	- Ajoutez le beurre fondu, la farine, la levure chimique et versez le lait. Mélangez.
+	- Ajoutez les pommes dans la pâte. Mélangez à nouveau.
 	- Beurrez et farinez un moule à cake. Versez-y la préparation.
 	- Enfournez pour 40 min.
