@@ -1,5 +1,6 @@
 type:: [[cooking/dessert]]
-src::  [Cake aux pommes facile et rapide ](https://www.femmeactuelle.fr/cuisine/recettes/dessert/cake-aux-pommes-13236)
+src:: [Cake aux pommes facile et rapide ](https://www.femmeactuelle.fr/cuisine/recettes/dessert/cake-aux-pommes-13236)
+title:: Cake aux pommes
 
 - Ingredients
   id:: 67553da9-33af-40d3-8229-f98ce367ba51
