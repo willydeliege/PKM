@@ -1,6 +1,9 @@
+type:: [[cooking/dessert]]
+
 - Ingredients
   id:: 67553da9-33af-40d3-8229-f98ce367ba51
-- 6 personnes
+  
+   6 personnes
   
   *   2Belles pommes
   *   200g Farine
