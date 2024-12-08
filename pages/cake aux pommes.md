@@ -11,4 +11,4 @@ type:: [[cooking/dessert]]
   *   80g Beurre fondu
   *   3Oeufs
   *   1Tasse à café de lait
-  *   1cuil. à café Levure chimique [Cake aux pommes facile et rapide : découvrez les recettes de cuisine de Femme Actuelle Le MAG](https://www.femmeactuelle.fr/cuisine/recettes/dessert/cake-aux-pommes-13236)
+  *   1cuil. à café Levure chimique [Cake aux pommes facile et rapide ](https://www.femmeactuelle.fr/cuisine/recettes/dessert/cake-aux-pommes-13236)
