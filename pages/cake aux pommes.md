@@ -13,3 +13,5 @@ src::  [Cake aux pommes facile et rapide ](https://www.femmeactuelle.fr/cuisine/
   *   3Oeufs
   *   1Tasse à café de lait
   *   1cuil. à café Levure chimique
+- Pelez les pommes et coupez-les en fins quartiers (1/2 cm d'épaisseur).  Dans un saladier, fouettez les oeufs avec le sucre jusqu'à ce que le mélange blanchisse. Ajoutez le beurre fondu, la farine, la levure chimique et versez le lait. Mélangez.  Ajoutez les pommes dans la pâte. Mélangez à nouveau.  Beurrez et farinez un moule à cake. Versez-y la préparation.  Enfournez pour 40 min. [Cake aux pommes facile et rapide : découvrez les recettes de cuisine de Femme Actuelle Le MAG](https://www.femmeactuelle.fr/cuisine/recettes/dessert/cake-aux-pommes-13236)
+  id:: 67553f9f-39cb-47c7-bd60-0ea87db313d7
