@@ -1,2 +1,2 @@
-- [Brico](https://www.brico.be/fr/makers/cart)
-- /link
+- [Brico](https://www.brico.be/fr/salle-de-bain-toilettes/robinets-salle-de-bain-toilettes/robinets-de-baignoire/ba027/)
+- [Amazon](https://www.amazon.com.be/mitigeur-baignoire/s?k=mitigeur+baignoire)
