@@ -222,8 +222,8 @@
             [(contains? #{"NOW" "DOING"} ?marker)]
             [?h :block/page ?p]]
     :inputs [:14d :today]
-    :group-by-page? true
-    :collapsed? true}
+    :group-by-page? false
+    :collapsed? false}
    {:title "📅 NEXT"
     :query [:find (pull ?h [*])
             :in $ ?start ?next

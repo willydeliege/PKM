@@ -208,7 +208,13 @@
  ;; The "NEXT" query returns tasks with "NOW", "LATER", or "TODO" status.
  :default-queries
  {:journals
-  [{:title "🔨 NOW"
+  [{:title [:b "🔥 Today's Tasks"]
+ :query [:find (pull ?b [*]) :in $ ?day :where 
+          [?b :block/marker ?m] 
+          [(contains? #{"TODO" "DOING" "NOW" "LATER"} ?m)] 
+          (or [?b :block/scheduled ?day] [?b :block/deadline ?day]) ] 
+ :inputs [:today]}
+   {:title "🔨 NOW"
     :query [:find (pull ?h [*])
             :in $ ?start ?today
             :where
@@ -228,9 +234,9 @@
             [(contains? #{"LATER" "TODO"} ?marker)]
             [?h :block/page ?p]]
     :inputs [:today :7d-after]
-    :group-by-page? true
+    :group-by-page? false
     :collapsed? false}
-   {:title [:h3 "🔥 Overdue"]
+   {:title [:h3 "⚠️ Overdue"]
       :query [:find (pull ?block [*])
               :in $ ?start ?next
               :where
@@ -242,7 +248,7 @@
 				(or-join [?block]
                    (and
                      [?block :block/marker ?marker]
-                     [(contains? #{"LATER" "DOING"} ?marker)]
+                     [(contains? #{"LATER" "DOING" "NOW" "TODO"} ?marker)]
                    )
                    (and 
                    		(not [?block :block/marker _])
@@ -255,11 +261,9 @@
 
               [(> ?d ?start)]
               [(< ?d ?next)]]
-              :result-transform (fn [result]
-                        (sort-by (fn [h]
-                                   (or (get h :block/scheduled) (get h :block/deadline))) result))
       :inputs [:90d-before :0d-before]
-      :collapsed? false},
+      :group-by-page? true
+      :collapsed? false}
     ]}
 
 
@@ -448,4 +452,5 @@
  :builtin-pages? false}
  :ui/show-brackets? false
  :journal/page-title-format "yyyy/MM/dd"
- :editor/preferred-pasting-file? true}
+ :editor/preferred-pasting-file? true
+ :editor/logical-outdenting? true}
