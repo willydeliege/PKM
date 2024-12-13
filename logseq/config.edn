@@ -234,7 +234,7 @@
             [(contains? #{"LATER" "TODO"} ?marker)]
             [?h :block/page ?p]]
     :inputs [:today :7d-after]
-    :group-by-page? true
+    :group-by-page? false
     :collapsed? false}
    {:title [:h3 "⚠️ Overdue"]
       :query [:find (pull ?block [*])
