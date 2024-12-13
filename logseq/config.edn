@@ -262,7 +262,7 @@
               [(> ?d ?start)]
               [(< ?d ?next)]]
       :inputs [:90d-before :0d-before]
-      :group-by-page? true
+      :group-by-page? false
       :collapsed? false}
     ]}
 
