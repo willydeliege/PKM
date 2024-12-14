@@ -211,7 +211,6 @@
   [{:title [:b "🔥 Today's Tasks"]
  :query [:find (pull ?b [*]) :in $ ?day :where 
           [?b :block/marker ?m] 
-          [(contains? #{"TODO" "DOING" "NOW" "LATER"} ?m)] 
           (or [?b :block/scheduled ?day] [?b :block/deadline ?day]) ] 
  :inputs [:today]}
    {:title "🔨 NOW"
