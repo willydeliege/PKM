@@ -210,8 +210,7 @@
  {:journals
   [{:title [:b "🔥 Today's Tasks"]
  :query [:find (pull ?b [*]) :in $ ?day :where 
-          [?b :block/marker ?m] 
-          (or [?b :block/scheduled ?day] [?b :block/deadline ?day]) ] 
+          (or [?b :block/scheduled ?day] [?b :block/deadline ?day]) ]
  :inputs [:today]}
    {:title "🔨 NOW"
     :query [:find (pull ?h [*])
