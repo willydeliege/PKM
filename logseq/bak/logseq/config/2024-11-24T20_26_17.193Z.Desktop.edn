@@ -222,8 +222,8 @@
             [(contains? #{"NOW" "DOING"} ?marker)]
             [?h :block/page ?p]]
     :inputs [:14d :today]
-    :group-by-page? false
-    :collapsed? false}
+    :group-by-page? true
+    :collapsed? true}
    {:title "📅 NEXT"
     :query [:find (pull ?h [*])
             :in $ ?start ?next
@@ -234,7 +234,7 @@
             [(contains? #{"LATER" "TODO"} ?marker)]
             [?h :block/page ?p]]
     :inputs [:today :7d-after]
-    :group-by-page? false
+    :group-by-page? true
     :collapsed? false}
    {:title [:h3 "⚠️ Overdue"]
       :query [:find (pull ?block [*])
@@ -261,8 +261,11 @@
 
               [(> ?d ?start)]
               [(< ?d ?next)]]
+              :result-transform (fn [result]
+                        (sort-by (fn [h]
+                                   (or (get h :block/scheduled) (get h :block/deadline))) result))
       :inputs [:90d-before :0d-before]
-      :group-by-page? false
+      :group-by-page? true
       :collapsed? false}
     ]}
 
@@ -452,5 +455,4 @@
  :builtin-pages? false}
  :ui/show-brackets? false
  :journal/page-title-format "yyyy/MM/dd"
- :editor/preferred-pasting-file? true
- :editor/logical-outdenting? true}
+ :editor/preferred-pasting-file? true}
