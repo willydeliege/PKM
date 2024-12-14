@@ -1,5 +1,5 @@
 type:: [[Contacts]]
-alias:: [[Célia]]
+alias:: Célia
 birthday:: [[2001/12/06]]
 
 - CANCELED ask [[Célia]] pour intermarché 
