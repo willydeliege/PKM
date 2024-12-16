@@ -1,21 +1,18 @@
-- DONE Médicaments
+- LATER Médicaments
   SCHEDULED: <2024-12-23 Mon ++1w>
   :PROPERTIES:
-  :done-ms: 1734336193578
-  :END:
   :LOGBOOK:
-  - State "DONE" from "LATER" [2024-11-25 Mon 06:38]
-  CLOCK: [2024-12-02 Mon 06:08:28]--[2024-12-02 Mon 06:19:49] =>  00:11:21
-  - State "DONE" from "LATER" [2024-12-02 Mon 06:20]
-  CLOCK: [2024-12-09 Mon 06:05:28]--[2024-12-09 Mon 06:11:53] =>  00:06:25
-  CLOCK: [2024-12-09 Mon 06:12:26]--[2024-12-09 Mon 06:12:27] =>  00:00:01
-  CLOCK: [2024-12-16 Mon 06:12:02]--[2024-12-16 Mon 06:22:04] =>  00:10:02
-  - State "DONE" from "LATER" [2024-12-16 Mon 09:02]
-  - State "DONE" from "LATER" [2024-12-16 Mon 09:03]
+  * State "DONE" from "LATER" [2024-12-16 Mon 09:05]
+  :END:
   CLOCK: [2024-12-16 Mon 09:03:12]--[2024-12-16 Mon 09:03:13] =>  00:00:01
+  :END:
+  :done-ms: 1734336193578
   :END:
   {{renderer better-tasks}}
   - [ ] l-thyroxine 100 _1 matin -- séparé_
+  :LOGBOOK:
+  * State "DONE" from "LATER" [2024-12-16 Mon 09:05]
+  :END:
   - [ ] cordarone 200 _1 matin_ *!!! ⚠️ PAS LE WEEK-END*
   - [ ] forzaten 20/5 _1 matin_
   - [ ] eliquis 5 _1 matin 1 soir_
