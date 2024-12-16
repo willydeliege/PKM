@@ -1,6 +1,5 @@
 - LATER Médicaments
   SCHEDULED: <2024-12-23 Mon ++1w>
-  done-ms:: 1734338263745
   completed:: [[2024/12/16]]
   :LOGBOOK:
   * State "DONE" from "LATER" [2024-12-16 Mon 09:29]
