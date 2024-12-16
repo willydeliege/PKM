@@ -1,4 +1,4 @@
-- DONE Médicaments
+- LATER Médicaments
   SCHEDULED: <2024-12-23 Mon ++1w>
   done-ms:: 1734338263745
   completed:: [[2024/12/16]]
