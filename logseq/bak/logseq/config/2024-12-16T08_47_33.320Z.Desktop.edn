@@ -210,9 +210,8 @@
  {:journals
   [{:title [:b "🔥 Today's Tasks"]
  :query [:find (pull ?b [*]) :in $ ?day :where 
-          [?b :block/marker ?m] 
-          [(contains? #{"TODO" "DOING" "NOW" "LATER"} ?m)] 
-          (or [?b :block/scheduled ?day] [?b :block/deadline ?day]) ] 
+          (or [?b :block/scheduled ?day] [?b :block/deadline ?day])
+          :inputs [:today]]
  :inputs [:today]}
    {:title "🔨 NOW"
     :query [:find (pull ?h [*])
@@ -222,8 +221,8 @@
             [(contains? #{"NOW" "DOING"} ?marker)]
             [?h :block/page ?p]]
     :inputs [:14d :today]
-    :group-by-page? true
-    :collapsed? true}
+    :group-by-page? false
+    :collapsed? false}
    {:title "📅 NEXT"
     :query [:find (pull ?h [*])
             :in $ ?start ?next
@@ -234,7 +233,7 @@
             [(contains? #{"LATER" "TODO"} ?marker)]
             [?h :block/page ?p]]
     :inputs [:today :7d-after]
-    :group-by-page? true
+    :group-by-page? false
     :collapsed? false}
    {:title [:h3 "⚠️ Overdue"]
       :query [:find (pull ?block [*])
@@ -262,7 +261,7 @@
               [(> ?d ?start)]
               [(< ?d ?next)]]
       :inputs [:90d-before :0d-before]
-      :group-by-page? true
+      :group-by-page? false
       :collapsed? false}
     ]}
 

@@ -360,11 +360,11 @@
  ;; :ignored-page-references-keywords #{:author :website}
 
  ;; logbook configuration.
- ;; :logbook/settings
- ;; {:with-second-support? false ;limit logbook to minutes, seconds will be eliminated
- ;;  :enabled-in-all-blocks true ;display logbook in all blocks after timetracking
- ;;  :enabled-in-timestamped-blocks false ;don't display logbook at all
- ;; }
+ :logbook/settings
+  {:with-second-support? false ;limit logbook to minutes, seconds will be eliminated
+  :enabled-in-all-blocks true ;display logbook in all blocks after timetracking
+  :enabled-in-timestamped-blocks true ;don't display logbook at all
+  }
 
  ;; Mobile photo upload configuration.
  ;; :mobile/photo
