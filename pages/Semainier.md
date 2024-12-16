@@ -1,4 +1,9 @@
-- DONE Médicaments
+- Médicaments
+  :LOGBOOK:
+  CLOCK: [2024-12-16 Mon 09:13:42]--[2024-12-16 Mon 09:13:43] =>  00:00:01
+  :END:
+done-ms:: 1734336823697
+
 	- [ ] l-thyroxine 100 _1 matin -- séparé_
 	- [ ] cordarone 200 _1 matin_ *!!! ⚠️ PAS LE WEEK-END*
 	- [ ] forzaten 20/5 _1 matin_
