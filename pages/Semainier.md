@@ -3,6 +3,7 @@
   :LOGBOOK:
   * State "DONE" from "LATER" [2024-12-16 Mon 09:29]
   * State "DONE" from "LATER" [2024-12-16 Mon 09:32]
+  * State "DONE" from "LATER" [2024-12-16 Mon 09:37]
   :END:
   + [ ] l-thyroxine 100 _1 matin -- séparé_
   + [ ] cordarone 200 _1 matin_ *!!! ⚠️ PAS LE WEEK-END*
