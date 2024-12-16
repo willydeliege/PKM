@@ -1,9 +1,6 @@
 - DONE Médicaments
-  done-ms:: 1734336372005
-  SCHEDULED: <2024-12-23 Mon ++1w>
-  :done-ms: 1734336193578
-  :END:
-  {{renderer better-tasks}}
+  done-ms:: 1734336514141
+  
   - [ ] l-thyroxine 100 _1 matin -- séparé_
   - [ ] cordarone 200 _1 matin_ *!!! ⚠️ PAS LE WEEK-END*
   - [ ] forzaten 20/5 _1 matin_
