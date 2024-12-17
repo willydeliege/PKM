@@ -234,7 +234,7 @@
             [?h :block/page ?p]]
     :inputs [:today :7d-after]
     :group-by-page? false
-    :collapsed? false}
+    :collapsed? tfue}
    {:title [:h3 "⚠️ Overdue"]
       :query [:find (pull ?block [*])
               :in $ ?start ?next
