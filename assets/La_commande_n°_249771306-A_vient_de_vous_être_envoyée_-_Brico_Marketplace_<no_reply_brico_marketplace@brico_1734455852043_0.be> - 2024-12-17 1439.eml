@@ -1,0 +1,599 @@
+Delivered-To: frederic.willem@gmail.com
+Received: by 2002:a05:7108:b684:b0:3dc:a9a0:5d5b with SMTP id pb4csp238726gdb;
+        Tue, 17 Dec 2024 05:39:22 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IElVuUZvvCO/e9Jy5OrRwc6RTPgu/1KaRC+YNtzWyY1u9EC/8otl/jLeZfMQWoF6F5t2Pnq
+X-Received: by 2002:a5d:6c65:0:b0:385:f17b:de54 with SMTP id ffacd0b85a97d-388da380c91mr3478123f8f.5.1734442762325;
+        Tue, 17 Dec 2024 05:39:22 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1734442762; cv=none;
+        d=google.com; s=arc-20240605;
+        b=amcRoJmzOhXj/mzWuaXLxEJdj81phPps99YSdPepzbY5HXbIzTN4eBCm80ByK79Ld5
+         Ic/ky5w9L1kPupiUH6joGkFHVJaVZ3Rq+8rdhfrPH45sZFftnuyZc5cgiviSNGudGpb/
+         L0IshvWd0tzJvn/UeKnEkX9EEB7AlMIbHPdwWn5X6SXblvg4sMpIGaOF8N3/noh7GQQ+
+         PzWDnaXu/+nQcVoy3+7xbrutFIoUPHFjKp6MtB9dP6OpOr7igxMFSL9R43QwNvjrw70I
+         bxqcZd/g+zCL6iukoKBU3HDTwIRQX6nlV6nhrCp3aHGJupt4eBxnRIUrjq/REM8L1GJP
+         XRwA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:xvar:mime-version:subject:message-id:to:from:date
+         :dkim-signature:dkim-signature;
+        bh=hEqRE6nhG3oFwSxsX29MDReP1LEQe55qvEomY2EalkI=;
+        fh=sBt9Jl+WfPZMk9pCknzILW+wINNmh0ii1Uq021oxfqo=;
+        b=WfxHyeyxjpau+wv7HghlooS/wKzlCxPypPzLa3KY//iYAEOudUE3JnX+YzmDJpHMDQ
+         EMkgJCW1ETq0zKSkgLxzzdN4ib1QGtOrpfF1Mx2oaOTWyAqaxLFQ4EeZtjGJCfNWbtCZ
+         pPYFFd2jaiRumRoPr2gj4U51zGzpj3DYE+pxsILFCcNTBNaQJx4G/o1q6DkV4St9yhAa
+         cpbQ2iT5s2AfP5PJfr3sR6LrgFwb0iALvz2ZlcZaOPjYOTQicX9Z+/XsIvmmpoz0FSO0
+         ZsivQArgtz1YRd9kBOWKWQv3dqWPO0Rwy16h/E5LW/5wm91bGoCaHK7MFaPFXEu6du8j
+         beiw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@brico.be header.s=eptuhtzwhwqnhc2iv2sp5zg74hjhma2w header.b="Wt/363Tf";
+       dkim=pass header.i=@amazonses.com header.s=uku4taia5b5tsbglxyj6zym32efj7xqv header.b=ChRpfFLw;
+       spf=pass (google.com: domain of 01020193d4d83ca8-e8a67ccd-ac7b-4a8f-80b0-6c3b29fda7d4-000000@eu-west-1.amazonses.com designates 54.240.7.23 as permitted sender) smtp.mailfrom=01020193d4d83ca8-e8a67ccd-ac7b-4a8f-80b0-6c3b29fda7d4-000000@eu-west-1.amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=brico.be
+Return-Path: <01020193d4d83ca8-e8a67ccd-ac7b-4a8f-80b0-6c3b29fda7d4-000000@eu-west-1.amazonses.com>
+Received: from a7-23.smtp-out.eu-west-1.amazonses.com (a7-23.smtp-out.eu-west-1.amazonses.com. [54.240.7.23])
+        by mx.google.com with ESMTPS id 5b1f17b1804b1-4362554853csi71595465e9.6.2024.12.17.05.39.22
+        for <frederic.willem@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 17 Dec 2024 05:39:22 -0800 (PST)
+Received-SPF: pass (google.com: domain of 01020193d4d83ca8-e8a67ccd-ac7b-4a8f-80b0-6c3b29fda7d4-000000@eu-west-1.amazonses.com designates 54.240.7.23 as permitted sender) client-ip=54.240.7.23;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@brico.be header.s=eptuhtzwhwqnhc2iv2sp5zg74hjhma2w header.b="Wt/363Tf";
+       dkim=pass header.i=@amazonses.com header.s=uku4taia5b5tsbglxyj6zym32efj7xqv header.b=ChRpfFLw;
+       spf=pass (google.com: domain of 01020193d4d83ca8-e8a67ccd-ac7b-4a8f-80b0-6c3b29fda7d4-000000@eu-west-1.amazonses.com designates 54.240.7.23 as permitted sender) smtp.mailfrom=01020193d4d83ca8-e8a67ccd-ac7b-4a8f-80b0-6c3b29fda7d4-000000@eu-west-1.amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=brico.be
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=eptuhtzwhwqnhc2iv2sp5zg74hjhma2w; d=brico.be; t=1734442761;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type;
+	bh=9Il+X32X+ShDrE7BCwUExYaRniKnxKPP6X4m7JCvZ4Q=;
+	b=Wt/363TfH1svXEsjYvYg4VoXeqGDmDVTZ8cVhLJv4Za2bcAzxFHIzVJmqwBp/EN4
+	Z8+qc5putwBXmOi5V0NoHtecwYcy8RdeDIkjSt/cCYE55bfH7a5TruN2gSczSD9feci
+	QroZO2VPj6kftwBGhLz6UO+Gzt1+pxDZsWk3A/gg=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=uku4taia5b5tsbglxyj6zym32efj7xqv; d=amazonses.com; t=1734442761;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Feedback-ID;
+	bh=9Il+X32X+ShDrE7BCwUExYaRniKnxKPP6X4m7JCvZ4Q=;
+	b=ChRpfFLwEx5R6n0DiF3CEnwPZ+U6eeyTgAu9afp5JNkEuZ2IRFjABppTCG5TNGY/
+	7t45+m2gMUHB40P9k/eA1J64+X5Fo+J/0tY5HL6Dpfjuf76FmXCpdbpyRgIWrgz4cTg
+	w1s9E8kkj2KsQT+yuTS8aUUMNxAr2esoTGcjOuXg=
+Date: Tue, 17 Dec 2024 13:39:21 +0000
+From: Brico Marketplace <no_reply_brico_marketplace@brico.be>
+To: frederic.willem@gmail.com
+Message-ID: <01020193d4d83ca8-e8a67ccd-ac7b-4a8f-80b0-6c3b29fda7d4-000000@eu-west-1.amazonses.com>
+Subject: =?utf-8?Q?La_commande_n=C2=B0_249771306-A?=
+ =?utf-8?Q?_vient_de_vous_=C3=AAtre_envoy=C3=A9e?=
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_12509_1597590450.1734442760881"
+XVAR: BRICO_OR18
+X-Mirakl-Email-Id: 5020847
+Feedback-ID: ::1.eu-west-1.vw2ovOeMjNUAskX/cONe72E1FZSIbqaUX4emjjEemsU=:AmazonSES
+X-SES-Outgoing: 2024.12.17-54.240.7.23
+
+------=_Part_12509_1597590450.1734442760881
+Content-Type: multipart/related; 
+	boundary="----=_Part_12510_2094072837.1734442760881"
+
+------=_Part_12510_2094072837.1734442760881
+Content-Type: text/html;charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en">
+
+<head><style>
+    /* Static variables */
+    .ubuntu {
+        font-family: Ubuntu, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    .rubrik {
+        font-family: RubrikNew-Bold, Rubrik, Ubuntu, sans-serif;
+        font-style: normal;
+        font-weight: 700;
+    }
+
+    .size-10 {
+        font-size: 10px;
+        line-height: 14px;
+    }
+
+    .size-11 {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .size-12 {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .size-14 {
+        font-size: 12px;
+        line-height: 21px;
+    }
+
+    .size-16 {
+        font-size: 16px;
+        line-height: 24px;
+
+    }
+
+    .bold {
+        font-weight: 700;
+    }
+
+    .black {
+        color: black;
+    }
+
+    .white {
+        color: white;
+    }
+
+    .grey {
+        color: #696f6a;
+    }
+
+    /* Backgrounds */
+    .bg-white {
+        background: white;
+    }
+
+    .bg-black {
+        background: black;
+    }
+
+    .bg-grey {
+        background: #7B7C7A;
+    }
+
+    .bg-yellow {
+        background: #FFDC00;
+    }
+
+    .bg-blue {
+        background: #395CF9
+    }
+
+    .bg-green {
+        background: #289b37;
+    }
+
+    .no-margin {
+        margin: 0;
+    }
+</style>
+<style>
+    a {
+        color: inherit;
+        text-decoration-line: underline;
+    }
+
+    .link {
+        color: #ee4444;
+        text-decoration-line: underline;
+    }
+
+    .break {
+        height: 16px;
+    }
+</style>
+
+<style>
+    @media all {
+        .wrapper {
+            background-color: #eeede9;
+        }
+
+        .body {
+            width: 100%;
+            max-width: 640px;
+            margin-top: 16px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .body > div, .body .nav, .body .banner, .body .message, .body .acti=
+on, .body .footer {
+            margin-bottom: 16px;
+            padding-left: 48px;
+            padding-right: 48px;
+        }
+
+        /* Navbar */
+        .nav {
+            padding: 32px 0;
+            align-items: center;
+            background-color: #7B7C7A;
+            display: flex;
+        }
+
+        .nav-logo {
+            display: inline-block;
+            vertical-align: middle;
+            height: 28px;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            float: right;
+            line-height: 28px;
+            padding-left: 10px;
+            text-align: end;
+            width: 100%;
+            font-weight: 700;
+        }
+
+        .nav-links a.not-first {
+            border-left: 1px solid white;
+        }
+
+        .nav-links a {
+            padding: 0 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Banner */
+        .banner {
+            padding: 32px 0;
+            width: calc(100% - 96px);
+        }
+
+        .banner-message {
+            display: table-cell;
+            font-size: 48px;
+            line-height: 52px;
+            vertical-align: middle;
+        }
+
+        .fr {
+            font-size: 40px;
+            line-height: 52px;
+        }
+
+        .banner-logo {
+            display: table-cell;
+            vertical-align: middle;
+            padding-left: 32px;
+            height: 185px;
+            width: 185px;
+        }
+
+        .banner-logo img {
+            height: 185px;
+            width: 185px;
+        }
+
+        /* Message */
+        .message {
+            padding: 48px 0;
+        }
+
+        .message-header {
+            font-size: 28px;
+            line-height: 32px;
+        }
+
+        .message-body {
+            padding: 32px 0 24px;
+        }
+
+        .message-body a {
+            color: #ee4444;
+        }
+
+        .message-body h3 {
+            margin-bottom: 0;
+        }
+
+        .action {
+            padding: 32px 0;
+            text-align: center;
+        }
+
+        .action-header div {
+            display: inline-block;
+            height: 24px;
+            vertical-align: middle;
+            padding-bottom: 4px;
+        }
+
+        .action-header .ubuntu {
+            font-size: 17px;
+        }
+
+        .action-message p {
+            margin: 0;
+        }
+
+        .action-message a {
+            color: #413F37;
+        }
+
+        .no-reply {
+            padding: 16px 0;
+            text-align: center;
+        }
+
+        .footer {
+            line-height: 20px;
+            padding: 12px 0 48px;
+            text-align: center;
+        }
+
+        .footer a.not-first {
+            border-left: 1px solid #979392;
+        }
+
+        .footer a {
+            display: inline;
+            text-align: center;
+            padding: 0 12px;
+            text-decoration: underline;
+            color: #696f6a;
+        }
+
+        .shipping-summary {
+            width: 100%;
+            text-align: left;
+
+        }
+
+        .shipping-date {
+            width: 152px;
+        }
+
+        .shipping-summary th {
+            text-transform: uppercase;
+        }
+
+        .receipt {
+            width: 100%;
+            margin: 24px 0;
+            text-align: left;
+            border: 1px solid #eeede9;
+            position: relative;
+        }
+
+        .receipt-header {
+            padding: 12px 16px;
+            line-height: 16px;
+            vertical-align: middle;
+            background-color: #eeede9;
+        }
+
+        .receipt-products {
+            color: #413f33;
+            padding: 16px;
+        }
+
+        .address-box {
+            border: 1px solid #eeede9;
+            text-align: center;
+            color: #413f33;
+            padding: 24px 16px;
+        }
+
+        .address {
+            margin-top: 10px;
+            line-height: 21px;
+            letter-spacing: 0.25px;
+        }
+    }
+
+
+    @media only screen and (max-width: 640px) {
+        body {
+            max-width: 640px;
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        .body > div, .body .nav, .body .banner, .body .message, .body .acti=
+on, .body .footer {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        /* Banner */
+        .banner {
+            display: table;
+            padding: 16px 0;
+            width: calc(100% - 32px);
+        }
+
+        .banner-message {
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+        .fr {
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        .banner-logo {
+            display: table-cell;
+            vertical-align: middle;
+            padding-left: 16px;
+            height: 100px;
+            width: 100px;
+        }
+
+        .banner-logo img {
+            height: 100px;
+            width: 100px;
+        }
+
+        .footer > div {
+            padding: 0 49px;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <div class=3D"wrapper">
+        <div class=3D"body">
+            <div class=3D'nav'>
+    <div class=3D'nav-logo'>
+        <img src=3D"https://vdm.praxiscdn.nl/logos/png/brico.png"
+             height=3D'28'
+             alt=3D'brico logo'
+             class=3D'ubuntu size-12 white'
+        >
+        <img src=3D"https://vdm.praxiscdn.nl/logos/png/brico-planit.png"
+             height=3D'28'
+             alt=3D'brico planit logo'
+             class=3D'ubuntu size-12 white'
+             style=3D'margin-left: 16px;'
+        >
+    </div>
+    <div class=3D'nav-links ubuntu size-11 white'>
+        <a href=3D"https://www.brico.be/fr/makers/login">
+            Mon&nbsp;compte
+        </a>
+        <a href=3D"https://www.brico.be/fr/store-finder" class=3D"not-first=
+">
+            Magasins
+        </a>
+        <a href=3D"https://www.brico.be/fr/makers/t/tous-les-services" clas=
+s=3D"not-first">
+            Les&nbsp;services
+        </a>
+    </div>
+</div>
+
+            <div class=3D"banner bg-yellow">
+                <div class=3D"banner-message fr rubrik white">
+                    Votre commande est en cours d'acheminement
+                </div>
+                <div class=3D"banner-logo">
+  <img src=3D"https://vdm.praxiscdn.nl/logos/png/shipped.png" alt=3D'banner=
+ icon' class=3D'ubuntu size-12 white'>
+</div>
+            </div>
+            <div class=3D"message bg-white">
+                <div class=3D"message-header rubrik bold">
+                    Cher(e) Louis,
+                </div>
+                <div class=3D"message-body ubuntu size-16">
+                    <p>
+                        Votre commande <span class=3D'link'><a href=3D"http=
+s://www.brico.be/fr/makers/order-status">249771306-A</a></span>
+                        est en cours d'acheminement.
+                    </p>
+
+ <tr>
+                            <td align=3D"left">
+                               <table width=3D"100%" cellspacing=3D"0" cell=
+padding=3D"0">
+                                <tr>
+                                    <td width=3D"120" valign=3D"top" class=
+=3D"body-text" align=3D"left" style=3D"font-family: Ubuntu, 'Trebuchet MS',=
+ Helvetica, Arial, sans-serif; font-size: 10px; color: #696f6a; line-height=
+: 24px; padding:16px 0 0 0; width: 120px;">
+                                        <strong>Command=C3=A9 le</strong><b=
+r />
+                                        <span class=3D"body-text" style=3D"=
+font-size: 14px; font-weight: bold; color: #333333">16/12/2024</span>
+                                    </td>
+                                        <td valign=3D"top" class=3D"body-te=
+xt" align=3D"left" style=3D"font-family: Ubuntu, 'Trebuchet MS', Helvetica,=
+ Arial, sans-serif; font-size: 10px; color: #696f6a; line-height: 24px; pad=
+ding:16px 0 0 0;">
+                                            <strong>Suivi de commande</stro=
+ng><br />
+                                                <a href=3D"https://my.dhlpa=
+rcel.nl/home/tracktrace/CH022415557DE/4420/" style=3D"color: #ee4444; text-=
+decoration: underline; font-size: 14px; font-weight: bold;">Track & Trace</=
+a>
+                                        </td>
+                                </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                    <div class=3D"receipt">
+                        <div class=3D'receipt-header ubuntu size-14 grey'>V=
+endu par Crosseacdfr
+                        </div>
+                        <div class=3D'receipt-body grey size-14'>
+                            <div class=3D'receipt-products'>
+                                <div class=3D'rubrik'>Robinet de Baignoire =
+AURALUM PRO Chrom=C3=A9 5 Fonctions Douchette =C3=A0 Main</div>
+                                <div class=3D'ubuntu'>Num=C3=A9ro: 1</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=3D"address-box size-14">
+                        <div class=3D'rubrik'>Votre adresse de livraison :<=
+/div>
+                        <div class=3D'ubuntu address'>
+                            <div>Louis Willem</div>
+                            <div>Rue Dieudonn=C3=A9 Jacobs 60 bo=C3=AEte 13=
+</div>
+                            <div></div>
+                            <div>4420 Saint-Nicolas</div>
+                        </div>
+                    </div>
+                </div>
+                <div class=3D"message-disclaimer ubuntu size-12 grey">
+    Un article achet=C3=A9 aupr=C3=A8s de Partenaires Commerciaux ne peut p=
+as =C3=AAtre retourn=C3=A9 dans un magasin Brico. Vous pouvez
+    annuler une commande dans votre aper=C3=A7u des commandes. Les articles=
+ sur mesure (par exemple, portes, d=C3=A9coration de
+    fen=C3=AAtre) ou les produits vivants ne peuvent pas =C3=AAtre retourn=
+=C3=A9s.
+</div>
+            </div>
+            <div class=3D"action bg-yellow">
+                <div class=3D"action-header">
+                    <div id=3D"action-logo">
+                        <img src=3D"https://vdm.praxiscdn.nl/logos/png/chat=
+.png" class=3D"black" alt=3D'chat icon'
+                            class=3D'ubuntu size-12' height=3D'24' width=3D=
+'24'>
+                    </div>
+                    <div class=3D" ubuntu size-16 bold">
+                        Question ou retour
+                    </div>
+                </div>
+
+                <div class=3D"action-message ubuntu size-16">
+                    <p>
+                        Via votre <a href=3D"https://www.brico.be/fr/makers=
+/order-status">aper=C3=A7u de commande</a> ,vous pouvez poser une question =
+au partenaire commercial ou enregistrer un retour.
+                    </p>
+                </div>
+            </div>
+            <div class=3D'no-reply ubuntu size-12 white bg-black'>
+    <b>VEUILLEZ NOTER</b> =E2=80=94 Ceci est un message automatique. Merci =
+de ne pas r=C3=A9pondre.
+</div>
+            <div class=3D"footer ubuntu size-12 grey">
+    <div>
+        <a href=3D"https://www.brico.be/fr/makers/t/contact-fr">Contact</a>
+        <a href=3D"https://www.brico.be/fr/conditions-generales-partenaires=
+" class=3D"not-first">Conditions g=C3=A9n=C3=A9rales partenaires de vente</=
+a>
+        <a href=3D"https://www.brico.be/fr/makers/foire-aux-questions-vie-p=
+rivee" class=3D"not-first">Politique de confidentialit=C3=A9</a>
+    </div>
+</div>
+
+        </div>
+    </div>
+</body>
+
+</html>
+------=_Part_12510_2094072837.1734442760881--
+
+------=_Part_12509_1597590450.1734442760881--
