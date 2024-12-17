@@ -12,7 +12,7 @@
   CLOCK: [2024-12-16 Mon 16:09:52]--[2024-12-16 Mon 16:09:54] =>  00:00:02
   :END:
   + [ ] l-thyroxine 100 _1 matin -- séparé_
-  + [ ] cordarone 200 _1 matin_ *!!! ⚠️ PAS LE WEEK-END*
+  + [ ] cordarone 200 _1 matin_ *!!⚠️ PAS LE WEEK-END*
   + [ ] forzaten 20/5 _1 matin_
   + [ ] eliquis 5 _1 matin 1 soir_
   + [ ] duastenide/tamsulosine 0,5/0,4 _1 soir_
