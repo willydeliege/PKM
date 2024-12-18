@@ -22,25 +22,3 @@ tags:: [[SendToLogseq]]
   * 20 cl de [crème liquide](https://lafourche.fr/products/naturavenir-creme-entiere-liquide-sterilisee-uht-bio-3x20cl/#ae549)
   * [Gros sel](https://lafourche.fr/products/morel-le-chantoux-sel-gris-marin-igp-1kg/#ae549)
   * [Poivre](https://lafourche.fr/products/la-fourche-poivre-noir-en-grains-bio-0-5kg/#ae549)
-  
-  Ils l’ont fait !
-  
-  Et n’oubliez pas de me partager votre résultat, en ajoutant votre plus belle photo sur Instragram avec le hashtag [#programmementor](https://www.instagram.com/explore/tags/programmementor/). Vous serez peut-être sélectionnés pour participer à la prochaine recette en direct.
-  
-  Mon Matériel
-  
-  Pour garder à vie le meilleur de nos fabricants Français.
-  
-  ![image](https://philippe-etchebest.com/wp-content/uploads/2018/10/materiel-mentor.png){:width 245 :height 163}
-  
-  Le livret des petits gourmets
-  
-  Pour cuisiner avec vos enfants, j’ai créé un livret composé de 12 recettes faciles et de saison.
-  
-  ![image](https://philippe-etchebest.com/wp-content/uploads/2020/10/Mentor-livret-des-petits-gourmets.png){:width 245 :height 245}
-  
-  Ma Méthode
-  
-  Pour appliquer mes principes dans votre cuisine
-  
-  ![image](https://philippe-etchebest.com/wp-content/uploads/2020/08/thumb-pilier-mentor.png){:width 295 :height 295}
