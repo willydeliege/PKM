@@ -2,6 +2,7 @@ page:: [La blanquette de veau - Philippe Etchebest](https://philippe-etchebest.c
 tags:: [[SendToLogseq]]
 
 - Un de vos plats préférés : la blanquette de veau.
+- {{video https://www.youtube.com/watch?v=xn1BTnRmEb8}}
 - Liste des ingrédients (6 personnes) :
   
   * 1 kg de veau (épaule, collier …)
