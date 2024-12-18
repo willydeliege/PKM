@@ -5,4 +5,4 @@
 	- Livraison
 	  SCHEDULED: <2024-12-31 Tue>
 	- [La commande n° 249771306-A vient de vous être envoyée - Brico Marketplace <no_reply_brico_marketplace@brico.be> - 2024-12-17 1439.eml](../assets/La_commande_n°_249771306-A_vient_de_vous_être_envoyée_-_Brico_Marketplace_<no_reply_brico_marketplace@brico_1734455852043_0.be> - 2024-12-17 1439.eml)
-	- [Livraison DHL](https://my.dhlecommerce.nl/home/tracktrace/CH022415557DE/4420/)
+	- LATER [Livraison DHL](https://my.dhlecommerce.nl/home/tracktrace/CH022415557DE/4420/)
