@@ -9,6 +9,7 @@
 }
 
 .done {
-  color: grey; /* Changes the text color to grey */
-    opacity: 0.5; /* Makes the element semi-transparent *
+  /* color: grey; /\* Changes the text color to grey *\/ */
+  opacity: 0.8; /* Makes the element semi-transparent */
+  text-decoration: none;
 }
