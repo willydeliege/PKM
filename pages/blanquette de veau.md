@@ -54,8 +54,7 @@ Temps de cuisson
   \- Sel et poivre du moulin.
   
   Valeur Énergétique
-  
-  Préparation de la recette
+- Préparation de la recette
   
   1. Placez **la viande de veau** dans une cocotte et couvrez d'eau froide. Portez à ébullition, égouttez et rincez la viande.
   2. Remettez la viande dans la cocotte et couvrez d'eau froide.
