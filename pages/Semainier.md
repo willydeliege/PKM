@@ -1,5 +1,4 @@
-- LATER Médicaments
-  SCHEDULED: <2024-12-23 Mon ++1w>
+- Médicaments
   completed:: [[2024/12/16]]
   :LOGBOOK:
   * State "DONE" from "LATER" [2024-12-16 Mon 09:29]
@@ -10,6 +9,8 @@
   * State "DONE" from "LATER" [2024-12-16 Mon 09:49]
   * State "DONE" from "LATER" [2024-12-16 Mon 16:09]
   CLOCK: [2024-12-16 Mon 16:09:52]--[2024-12-16 Mon 16:09:54] =>  00:00:02
+  * State "DONE" from "LATER" [2024-12-18 Wed 11:34]
+  CLOCK: [2024-12-18 Wed 11:34:49]--[2024-12-18 Wed 11:34:52] =>  00:00:03
   :END:
   + [ ] l-thyroxine 100 _1 matin -- séparé_
   + [ ] cordarone 200 _1 matin_ *!!⚠️ PAS LE WEEK-END*
