@@ -11,6 +11,6 @@
 .done {
   color: grey; /* Changes the text color to grey */
   opacity: 0.7; /* Makes the element semi-transparent *
-  text-decoration: none;
+  text-decoration: unset;
 
 }
