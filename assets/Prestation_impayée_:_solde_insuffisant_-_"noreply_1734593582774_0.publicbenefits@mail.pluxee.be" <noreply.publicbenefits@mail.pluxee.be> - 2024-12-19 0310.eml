@@ -1,0 +1,418 @@
+Delivered-To: frederic.willem@gmail.com
+Received: by 2002:a05:7108:b684:b0:3dc:a9a0:5d5b with SMTP id pb4csp1412229gdb;
+        Wed, 18 Dec 2024 18:10:26 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEWuJhTeA5LC4xrclZUfyBPGX0Z0r7V5kH1wdRm573Ca9v5EmqMwzO4s7TkorTsCS0v6rf2
+X-Received: by 2002:a5d:64af:0:b0:386:4a0c:fe17 with SMTP id ffacd0b85a97d-38a19b16527mr1546056f8f.27.1734574226448;
+        Wed, 18 Dec 2024 18:10:26 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1734574226; cv=none;
+        d=google.com; s=arc-20240605;
+        b=ao9E3PnOWnrJ1Po8Tl56OjnnmC+lPBjDN033wRwEjoY+BWjvCZusDmBrxseq7COo74
+         r/yKWOhGFuN0o55clmcDdWAJbkLzB3z9jkMBpWRU8k7MI8/wMfvQ4UWs4vSqYIzHLYhi
+         VqaWGhQzLJB6DPOvm50NTchTkKyh0+bbwuWo9mH6joCXdnlk6ZqcYFl7wu6GpS1DDx3o
+         Xb25vyCeSDWdKGYIDcXMMOix9AoPRpIaFS1HRcaBR0RKG8nl2Y0rArJmeq/Vl6NIFYFs
+         ieefkPFBUvduu4WgyJdHztmuBTetVrUw1/UdHmYP8z27ZbhwiQlE8tlve/OretOh3L3Q
+         b5OQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:content-transfer-encoding:list-unsubscribe:from
+         :list-unsubscribe-post:date:feedback-id:origin-messageid:message-id
+         :subject:to:dkim-signature;
+        bh=ptB/Qj1Y6Ir4W87bT7qhdM+tTneNfZsctoNqCvV77RY=;
+        fh=omT8BIlAkZ5ZoP5x3NguSpohbgcqO9wECZ2wk1JoVic=;
+        b=kWV8UX9vzYGigV32TeopSU6xJaF4Zen3Lgf4yCuMRT/oWd87Y/YgmN30a1ByaH6I4u
+         qD9LyDvsRP+kfIg6+fq2kVcWEwlnF5D7FgDNXru8/cxRb6xghKjr8z0jFuIeH6e8vVLV
+         ufnHuKGdSFBMsGyBk3xsRmRJWgAvorEo3hiXp9w7EvgmZwDHJSWScPmx8p8NmC6dy7XK
+         ZpHcp2dLsyxX81piiDC4tAQU3ANoZyOUhvr5QtCh8ts1LjHP5Q+JRxIbXjgNChrZf+tQ
+         BZYZzY9TcO9oD1uX5SjfWIi0nVvlAr8JAgCBZYH6lqeUFAkjR7YsEKihv0X46RvHPpTJ
+         PzeA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mail.pluxee.be header.s=mail header.b=tH5Sa6sR;
+       spf=pass (google.com: domain of bounces-185393902-noreply.publicbenefits=mail.pluxee.be@sharedtransac-p100-i249.d.tsp1-brevo.net designates 212.146.244.249 as permitted sender) smtp.mailfrom="bounces-185393902-noreply.publicbenefits=mail.pluxee.be@sharedtransac-p100-i249.d.tsp1-brevo.net";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=pluxee.be
+Return-Path: <bounces-185393902-noreply.publicbenefits=mail.pluxee.be@sharedtransac-p100-i249.d.tsp1-brevo.net>
+Received: from sharedtransac-p100-i249.d.tsp1-brevo.net (sharedtransac-p100-i249.d.tsp1-brevo.net. [212.146.244.249])
+        by mx.google.com with ESMTPS id ffacd0b85a97d-38a1c8b858dsi165665f8f.423.2024.12.18.18.10.26
+        for <frederic.willem@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 18 Dec 2024 18:10:26 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces-185393902-noreply.publicbenefits=mail.pluxee.be@sharedtransac-p100-i249.d.tsp1-brevo.net designates 212.146.244.249 as permitted sender) client-ip=212.146.244.249;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mail.pluxee.be header.s=mail header.b=tH5Sa6sR;
+       spf=pass (google.com: domain of bounces-185393902-noreply.publicbenefits=mail.pluxee.be@sharedtransac-p100-i249.d.tsp1-brevo.net designates 212.146.244.249 as permitted sender) smtp.mailfrom="bounces-185393902-noreply.publicbenefits=mail.pluxee.be@sharedtransac-p100-i249.d.tsp1-brevo.net";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=pluxee.be
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mail.pluxee.be;
+ q=dns/txt; s=mail; bh=ptB/Qj1Y6Ir4W87bT7qhdM+tTneNfZsctoNqCvV77RY=;
+ h=from:subject:date:to:mime-version:content-type:content-transfer-encoding:list-unsubscribe:x-csa-complaints:list-unsubscribe-post:message-id:x-sib-id:feedback-id;
+        b=tH5Sa6sRShW3ZV3JSrI4D2enKkTtCFx3C3WqRvOqD/reOtkfDq+mGTcBTflVNC4V677wfzOWMPJe
+        CiuIk7Mq1mCk8E/LCJ/CdjeOsOenoexKCzvyBAJELp6+JHqtCZrXgs1UwYo1dr61btAD984OE+Ss
+        4jPQ/K7GdwXpKQDKTfk=
+To: <frederic.willem@gmail.com>
+Subject: =?utf-8?q?Prestation_impay=C3=A9e_:_solde_insuffisant?=
+X-sib-id: G1CCrvIx2wHHgXPeT7tMAeVjPTA2KN8ehH6dRMGvzlWbXRsjEE-L9R1SoJg-18lwMlI2Ip0HFOrbReXwd1j73lKilgib-odZKIZuEu6EqSdpypiqJgHz3JRXh7cT65SFVdsT4Z32OvkZyjoQ9delTHxR_sDaj6v2xv6qJsZFgITmW7LWFVCT
+Message-Id: <202412190210.65435720305@smtp-relay.mailin.fr>
+Origin-messageId: <202412190210.65435720305@smtp-relay.mailin.fr>
+Feedback-ID: 212.146.244.249:5210817_-1:5210817:Sendinblue
+X-CSA-Complaints: csa-complaints@eco.de
+X-Mailin-EID: MTg1MzkzOTAyfmZyZWRlcmljLndpbGxlbUBnbWFpbC5jb21%2BPDIwMjQxMjE5MDIxMC42NTQzNTcyMDMwNUBzbXRwLXJlbGF5Lm1haWxpbi5mcj5%2Bc2hhcmVkdHJhbnNhYy1wMTAwLWkyNDkuZC50c3AxLWJyZXZvLm5ldA%3D%3D
+Date: Thu, 19 Dec 2024 02:10:25 +0000
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+From: "noreply.publicbenefits@mail.pluxee.be" <noreply.publicbenefits@mail.pluxee.be>
+List-Unsubscribe: <https://fcbaibh.r.bh.d.sendibt3.com/tr/un/li/VMGIc2wTgqTon5R9zPbVWhMF3WHLyzyMIbZ8G5vus0pf_fsMAsXsx7aRUwZu8uiKZCtzsP_ifnhHgv8Oexq5JB-WAraxzwRWAXwxX3hPlZoHaOs1kEHppkXVgcQReF40x0ZYQRNtKrYCO97A7yJy-h3DcsCwvbUzZ0rUknZjLnQE3ERcAnI4DIoAeucd6N8VKnG6DWMsixcgc9HQw87GHUU5v3eNiQtq1igw9Glv5B_taU3l0YUlmuz7m6gMe151NZ9ArEohQZM9>
+Content-Type:text/html; charset=UTF-8
+Content-Transfer-Encoding:quoted-printable
+Mime-Version:1.0
+X-Api-Version:v3
+
+<!-- windwardreports ver: 23.1.1.4 (.net), jvm: 1.8. os: Windows 10, osver:=
+ 10.0, user: Sodexo--><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transiti=
+onal//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"/>
+<meta http-equiv=3D"Content-Language" content=3D"en"/>
+<style type=3D"text/css">
+p {
+font-family:Calibri;
+font-size:11.0pt;
+color:#000000;
+margin-top:0.0pt;
+margin-bottom:8.0pt;
+line-height:1,1;
+margin-right:0.0pt;
+border:0 none;
+text-align:left;
+text-indent:0.0pt;
+}
+p.s1 {
+font-family:Calibri;
+font-size:11.0pt;
+color:#000000;
+margin-top:0.0pt;
+margin-bottom:8.0pt;
+line-height:1,1;
+margin-right:0.0pt;
+border:0 none;
+text-align:left;
+text-indent:0.0pt;
+}
+table {
+background-color:#FFFFFF;
+border-collapse:collapse;
+border:0 none;
+}
+td {
+border:0 none;
+padding-left:5.4pt;
+padding-right:5.4pt;
+vertical-align:top;
+}
+p.s5 {
+font-family:Calibri;
+font-size:11.0pt;
+color:#000000;
+margin-top:0.0pt;
+margin-bottom:0.0pt;
+line-height:1,1;
+margin-right:0.0pt;
+border:0 none;
+text-align:left;
+text-indent:0.0pt;
+}
+p.s7 {
+font-family:Calibri;
+font-size:11.0pt;
+color:#000000;
+margin-top:0.0pt;
+margin-bottom:0.0pt;
+line-height:1,1;
+margin-right:0.0pt;
+border:0 none;
+text-align:left;
+text-indent:0.0pt;
+}
+table {
+background-color:#FFFFFF;
+border-collapse:collapse;
+border:1pt solid #000000;
+}
+td {
+border:0 none;
+padding-left:5.4pt;
+padding-right:5.4pt;
+vertical-align:top;
+}
+table {
+background-color:#FFFFFF;
+border-collapse:collapse;
+border:1pt solid #000000;
+}
+td {
+border:0 none;
+padding-left:5.4pt;
+padding-right:5.4pt;
+vertical-align:top;
+}
+table {
+background-color:#FFFFFF;
+border-collapse:collapse;
+border:0 none;
+}
+td {
+border:0 none;
+padding-left:5.4pt;
+padding-right:5.4pt;
+vertical-align:top;
+}
+table {
+background-color:#FFFFFF;
+border-collapse:collapse;
+border:1pt solid #000000;
+}
+td {
+border:0 none;
+padding-left:5.4pt;
+padding-right:5.4pt;
+vertical-align:top;
+}
+p.s18 {
+font-family:Calibri;
+font-size:11.0pt;
+color:#000000;
+margin-top:0.0pt;
+margin-bottom:0.0pt;
+line-height:1,0;
+margin-right:0.0pt;
+border:0 none;
+text-align:left;
+text-indent:0.0pt;
+}
+p.s20 {
+font-family:Calibri;
+font-size:11.0pt;
+color:#000000;
+margin-top:0.0pt;
+margin-bottom:0.0pt;
+line-height:1,0;
+margin-right:0.0pt;
+border:0 none;
+text-align:left;
+text-indent:0.0pt;
+}
+IMG.centered{
+	display: block;
+	margin-left: auto;
+	margin-right: auto
+}IMG.right{
+	float:right;
+}IMG.left{
+	float:left;
+}
+#container {
+	width:698px;
+	margin:0px auto;
+}
+</style>
+</head>
+<body><img width=3D"1" height=3D"1" src=3D"https://fcbaibh.r.bh.d.sendibt3.=
+com/tr/op/eu0EOnkCy6nIsJSfFLOkVimL6FtIA6iWT-7c7l9-YItHiA1l1pqEpjFmeN7mOUu3V=
+ooGy0nslMUa3I5bBjjNVeb2yEpkVGEc1CyQodtP1c_haSQIt1ONXHjR8MOOOZdqrBXPwI0DNcVT=
+Mv16WUvWrFIhi8Il4ZFCeZi7efhqO2bw_zc26RroF074JquGwc0JY6CdJLxT0z3xjl4_sNwdIhx=
+1lFwwyQ0VgnsWDkV2" style=3D"display:none"/><div id=3D"container">
+<table align=3D"center" style=3D"width:707px; border:0 none; "><tbody><tr>
+<td style=3D"padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; "=
+><table style=3D"width:100%; border:0 none; "><tbody><tr>
+<td style=3D"width:30%; padding-left:5.4pt; padding-right:5.4pt; vertical-a=
+lign:middle; background-color: #2F3A48; "><p style=3D"margin-top:6.0pt; mar=
+gin-bottom:0.0pt; line-height:1,1; text-align:center; "><span style=3D"font=
+-size:14.0pt; font-family:&#39;TT Travels&#39;; color: #FFFFFF;"><b style=
+=3D"font-family:TT Travels; font-size:14.0pt; color:#FFFFFF; ">TITRES-SERVI=
+CES</b></span></p></td>
+<td style=3D"width:22%; padding-left:5.4pt; padding-right:5.4pt; vertical-a=
+lign:middle; background-color: #2F3A48; ">
+<p style=3D"margin-bottom:0.0pt; line-height:1,1; text-align:right; "><span=
+ style=3D"color: #FFFFFF;"><img src=3D"https://fcbaibh.r.bh.d.sendibt3.com/=
+im/5210817/9c6ffe0c2ade0a89baea2d3cf699e9c470e3ae50dfdee3df265374c749680481=
+.png?e=3DM3SPAgQ2fiAXSn5fbq336211OBc6BMKh0QpWJPNSPGQUv8AbevWZQ2zgsi4EDW8nuw=
+zcQ4xVkxCm8xgUVExEhVNiyIKqIkqmhxtp0xtj1P9k1elNRIyRj7kIQYsLCcs9FyVOIPGNLfYvv=
+_ms2C5l97szwrE2__0-b8mHRk0fHeP7jnwb8lgdQrVqkFCzxC0hbwNjRbd6owkaCGHEeqWPVO9h=
+C4D9cXEp9mQLp7ejDeszOLyT8uwCJHnyFaUl0FC6vEbc22x89aEcq8be7O1UBaBNgqt1iF02TQ"=
+ width=3D"91" height=3D"26"/></span></p></td>
+<td style=3D"width:17%; padding-left:5.4pt; padding-right:5.4pt; vertical-a=
+lign:middle; background-color: #2F3A48; ">
+<p style=3D"margin-bottom:0.0pt; line-height:1,1; text-align:right; "><span=
+ style=3D"color: #FFFFFF;"><img src=3D"https://fcbaibh.r.bh.d.sendibt3.com/=
+im/5210817/30db93df103932f63ef4b824d7ab8a25edaf5e0cf413da2c2d78259ee8d402dc=
+.png?e=3DzQMP4vzYF2sh_ky9k7iwJxI-9Lzai8xEH3RlMzegrQ_bycL9B9UyDK8WlEKdPyFIn7=
+T7tJ2djXns7EST0GId4rVSetgw1S-HrLl7O0rwyjelXI2KYc3bmmMtFt5dnkg4qWW9zGgBRdVn3=
+zEmFHCY-WQ8P8tBKrKVyfxrlv9h9auiIEreV7XnsteNJR9qSHnW7-k4vbCVc54M0nvWo3_0WiA1=
+EmQv6Dud7BWs6Pq18tSU484593m25xTlT4SmdIzMjr1RnVMItC0Wne7URwQejs52RKdyeK3q3oJ=
+I" width=3D"38" height=3D"38"/></span></p></td>
+<td style=3D"width:30%; padding-left:5.4pt; padding-right:5.4pt; vertical-a=
+lign:middle; background-color: #2F3A48; ">
+<p style=3D"margin-top:6.0pt; margin-bottom:6.0pt; line-height:1,08; text-a=
+lign:right; "><span style=3D"color: #FFFFFF;"><img src=3D"https://fcbaibh.r=
+.bh.d.sendibt3.com/im/5210817/00b95f61f356cfd72e09075e3e95e8b23e6fa6124f646=
+eea1fb4f5dec8c295d9.png?e=3DwBPlE2B4g-cF8Czzp2UkYBhtjDp8hpSGdzFspaTYLr-i4mN=
+3R5hHW14mAaLCdrBqvhghNY3oQi759AmOApV36cCEwdsSRbvAsADMK09PGI4u6QbCqRFBhxirDN=
+wYq7_xOXxE0MyQ5SCex6mZe_Ei9eBEq_rE2LZBkOq7RsjwnCfTMLVuqduOpbN0V9BfNLE_4oLNJ=
+YzpYrWx3-x9YA1dm5_IKBhnv8mKunndwgvnrPhfe2K6wScKWIgVgyDnesGQ3JkK5S3sftgrPWb-=
+zaadKdNK9P6lyHSr" width=3D"106" height=3D"30"/></span></p></td></tr></tbody=
+></table>
+<p style=3D"margin-top:6.0pt; margin-bottom:6.0pt; "> <span style=3D"font-f=
+amily:&#39;Arial&#39;, sans-serif;"><b style=3D"font-family:Arial; ">VOTRE =
+NUM=C3=89RO D&#39;UTILISATEUR : </b></span><span style=3D"font-family:&#39;=
+Arial&#39;, sans-serif;"><b style=3D"font-family:Arial; ">190242275469</b><=
+/span></p>
+<table style=3D"width:100%; border:0 none; "><tbody><tr>
+<td style=3D"padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; b=
+ackground-color: #E71336; "><p style=3D"margin-top:6.0pt; margin-bottom:6.0=
+pt; text-align:center; "><span style=3D"font-size:16.0pt; font-family:&#39;=
+Arial&#39;, sans-serif; color: #FFFFFF;">La prestation n&#39;a pas pu =C3=
+=AAtre pay=C3=A9e</span></p></td></tr></tbody></table>
+<p style=3D"margin-top:12.0pt; margin-bottom:6.0pt; margin-right:62.65pt; "=
+><span style=3D"font-size:10.5pt; font-family:&#39;Arial&#39;, sans-serif;"=
+>Monsieur Willem</span><span style=3D"font-size:10.5pt; font-family:&#39;Ar=
+ial&#39;, sans-serif; color: #242424;">,=C2=A0</span></p>
+<p style=3D"margin-top:6.0pt; margin-bottom:6.0pt; margin-right:62.65pt; ">=
+<span style=3D"font-size:10.5pt; font-family:&#39;Arial&#39;, sans-serif; c=
+olor: #242424;">Nous tenons =C3=A0 vous informer que nous n&#39;avons pas =
+=C3=A9t=C3=A9 en mesure de payer la prestation effectu=C3=A9e en date du</s=
+pan><span style=3D"font-size:10.5pt; font-family:&#39;Arial&#39;, sans-seri=
+f; color: #242424;"> </span><span style=3D"font-size:10.5pt; font-family:&#=
+39;Arial&#39;, sans-serif;">11 D=C3=A9cembre 2024</span><span style=3D"font=
+-size:10.5pt; font-family:&#39;Arial&#39;, sans-serif; color: #242424;">.</=
+span></p>
+<p style=3D"margin-bottom:0.0pt; margin-right:62.65pt; "><span style=3D"fon=
+t-size:10.5pt; font-family:&#39;Arial&#39;, sans-serif; color: #242424;">En=
+ effet vous ne disposez plus d&#39;aucun titre-service.</span></p>
+<p style=3D"margin-top:6.0pt; margin-bottom:0.0pt; margin-right:62.65pt; ">=
+<span style=3D"font-size:10.5pt; font-family:&#39;Arial&#39;, sans-serif; c=
+olor: #242424;">Nous attirons votre attention sur le fait qu&#39;=C3=A0 ce =
+jour il reste un total de</span><span style=3D"font-size:10.5pt; font-famil=
+y:&#39;Arial&#39;, sans-serif; color: #242424;"> </span><span style=3D"font=
+-size:10.5pt; font-family:&#39;Arial&#39;, sans-serif;">4</span><span style=
+=3D"font-size:10.5pt; font-family:&#39;Arial&#39;, sans-serif; color: #2424=
+24;"> heure(s)</span><span style=3D"font-size:10.5pt; font-family:&#39;Aria=
+l&#39;, sans-serif; color: #242424;">=C2=A0de=C2=A0prestation</span><span s=
+tyle=3D"font-size:10.5pt; font-family:&#39;Arial&#39;, sans-serif; color: #=
+242424;">(s)</span><span style=3D"font-size:10.5pt; font-family:&#39;Arial&=
+#39;, sans-serif; color: #242424;"> impay=C3=A9e</span><span style=3D"font-=
+size:10.5pt; font-family:&#39;Arial&#39;, sans-serif; color: #242424;">(s).=
+</span></p>
+<p style=3D"margin-top:6.0pt; margin-bottom:0.0pt; margin-right:62.65pt; ">=
+<span style=3D"font-size:10.5pt; font-family:&#39;Arial&#39;, sans-serif; c=
+olor: #242424;">Nous vous prions donc de vous r=C3=A9approvisionner en titr=
+es-services =C3=A9lectroniques au plus vite.</span></p>
+<p style=3D"margin-top:6.0pt; margin-bottom:0.0pt; margin-right:62.65pt; ">=
+<span style=3D"font-size:10.5pt; font-family:&#39;Arial&#39;, sans-serif; c=
+olor: #242424;">A cet effet, nous vous invitons =C3=A0 effectuer un paiemen=
+t sur le compte bancaire correspondant =C3=A0 la R=C3=A9gion wallonne BE15 =
+0017 7247 4330 (commande de minimum 1=C2=A0titre-service) en mentionnant en=
+ communication structur=C3=A9e, votre num=C3=A9ro d&#39;utilisateur : +++</=
+span><span style=3D"font-size:10.5pt; font-family:&#39;Arial&#39;, sans-ser=
+if;">190242275469</span><span style=3D"font-size:10.5pt; font-family:&#39;A=
+rial&#39;, sans-serif; color: #242424;">+++</span></p>
+<p style=3D"margin-top:6.0pt; margin-bottom:0.0pt; margin-right:62.65pt; ">=
+<span style=3D"font-size:10.5pt; font-family:&#39;Arial&#39;, sans-serif; c=
+olor: #242424;">Nous restons =C3=A0 votre enti=C3=A8re disposition pour tou=
+t renseignement compl=C3=A9mentaire.</span></p>
+<p style=3D"margin-top:12.0pt; margin-bottom:12.0pt; margin-right:62.65pt; =
+"><span style=3D"font-size:10.5pt; font-family:&#39;Arial&#39;, sans-serif;=
+ color: #242424;">Cordialement,</span></p>
+<p style=3D"margin-bottom:12.0pt; margin-right:62.65pt; "><span style=3D"fo=
+nt-size:10.5pt; font-family:&#39;Arial&#39;, sans-serif; color: #242424;">L=
+e service c</span><span style=3D"font-size:10.5pt; font-family:&#39;Arial&#=
+39;, sans-serif; color: #242424;">lient=C3=A8le titre-service</span><span s=
+tyle=3D"font-size:10.5pt; font-family:&#39;Arial&#39;, sans-serif; color: #=
+242424;"> Pluxee Belgium</span></p>
+<p style=3D"margin-bottom:6.0pt; margin-right:62.65pt; "><span style=3D"fon=
+t-size:10.5pt; font-family:&#39;Arial&#39;, sans-serif; color: #A68989;"><b=
+ style=3D"font-family:Arial; font-size:10.5pt; color:#A68989; ">Besoin d&#3=
+9;aide ?</b></span><span style=3D"font-size:10.5pt; font-family:&#39;Arial&=
+#39;, sans-serif; color: #242424;"> Retrouvez toute l&#39;information relat=
+ive=C2=A0aux titres-services sur <a href=3D"https://fcbaibh.r.bh.d.sendibt3=
+.com/tr/cl/uduCp5ZOgsgx0avScdAcBshXdRwtkH6D4a3N015Mr19rJJZLYqmxF8GfJLklpEFt=
+MPz_eGR_AA2V7a6uPIZXqvrUE__VSiblukED_nT0w0vhEWmfu1PfH5lxWCSJXopO1-W8Iv5By7v=
+olI0oVVBEuvI7I98cbPaqkEzksYoaVZz4H0VZZE7kGNafmCbgpjdede9gmYhAKSfl_Oxyk0du3f=
+HwVG1RF1jboYhEhEUHkMwBsCaUGqDJ-tMTeA2HhW3JuC6uVd5H2ZwS6z6PCMCzWp5PNZ47U3B2z=
+adY2FWvJA" style=3D"color:#242424;"></a></span><a href=3D"https://fcbaibh.r=
+.bh.d.sendibt3.com/tr/cl/t0LOFLUCkF_Qxov1PDWHfzqSYAz466UlFZoMAVCX3NiV2TtCMq=
+w_wLoWuiNnpZG4Sma-P8NlYgSM93jtTol4XIYb1iEBHcmJc1e9jkJq7yU-yysGf77JIbXbYEQWh=
+8TDrwrwP-qfrXq6Q7wBh6Ri51FP-KhD3OtcmZBF-ztaaHqloNTqR4LEG2tGrTtpch5MZ3WL1iG5=
+oTTMPcYYQ_YUKwHruV17hn4T0kdE8IcDJU2kX5LBjjWfH3tMMagymlSACz85MO_sjPu4KWtiAmo=
+VAbvhqdQXJyJJ1QI2Pu8YrA" style=3D"color:#242424;"><span style=3D"font-size:=
+10.5pt; font-family:&#39;Arial&#39;, sans-serif; color: #E51937;"><b style=
+=3D"font-family:Arial; font-size:10.5pt; color:#E51937; "><u style=3D"font-=
+family:Arial; font-size:10.5pt; color:#E51937; ">notre site.</u></b></span>=
+</a><span style=3D"font-size:10.5pt; font-family:&#39;Arial&#39;, sans-seri=
+f; color: #E51937;"><b><u></u></b></span></p>
+<table align=3D"center" style=3D"width:100%; border:0 none; "><tbody><tr>
+<td colspan=3D"3" style=3D"width:100%; height:10.8pt; padding:5.4pt; vertic=
+al-align:middle; background-color: #E71336; "><p style=3D"margin-top:6.0pt;=
+ margin-bottom:0.0pt; line-height:1,1; text-align:center; "><span style=3D"=
+font-size:9.0pt; font-family:&#39;TT Travels extra bold&#39;, serif; color:=
+ #FFFFFF;"><b style=3D"font-family:TT Travels extra bold; font-size:9.0pt; =
+color:#FFFFFF; "><a name=3D"_Hlk150935366">Un geste pour notre</a></b></spa=
+n><a name=3D"_Hlk150935366"><span style=3D"font-size:9.0pt; font-family:&#3=
+9;TT Travels extra bold&#39;, serif; color: #FFFFFF;"><b style=3D"font-fami=
+ly:TT Travels extra bold; font-size:9.0pt; color:#FFFFFF; "> plan=C3=A8te=
+=C2=A0</b></span><span style=3D"font-size:9.0pt; font-family:&#39;Wingdings=
+&#39;; color: #FFFFFF;"><b style=3D"font-family:Wingdings; font-size:9.0pt;=
+ color:#FFFFFF; ">=EF=83=A8</b></span><span style=3D"font-size:9.0pt; font-=
+family:&#39;TT Travels extra bold&#39;, serif; color: #FFFFFF;"> </span><sp=
+an style=3D"font-size:9.0pt; font-family:&#39;TT Travels extra bold&#39;, s=
+erif; color: #FFFFFF;">Si vous n=E2=80=99avez plus besoin de cet email, sup=
+primez-le</span><span style=3D"font-size:9.0pt; font-family:&#39;TT Travels=
+ extra bold&#39;, serif; color: #FFFFFF;">.</span></a></p>
+<p style=3D"margin-bottom:0.0pt; line-height:1,1; text-align:center; "><spa=
+n style=3D"font-size:9.0pt; font-family:&#39;TT Travels extra bold&#39;, se=
+rif; color: #FFFFFF;">Conserver des emails consomme de l=E2=80=99=C3=A9nerg=
+ie</span></p></td></tr><tr>
+<td style=3D"width:30%; height:10.8pt; padding:5.4pt; vertical-align:middle=
+; background-color: #444545; ">
+<p style=3D"margin-bottom:0.0pt; line-height:1,1; text-align:center; "><img=
+ src=3D"https://fcbaibh.r.bh.d.sendibt3.com/im/5210817/00b95f61f356cfd72e09=
+075e3e95e8b23e6fa6124f646eea1fb4f5dec8c295d9.png?e=3DTJeU9lsYCzyjVPWfEUe8Hf=
+m2ahcbd-4IAUFn0PeoI6KSQKQDbcgOAOXxLEOk8RE6iz4aSFc1xBHnado--qTkCEfaYXTzOqkVV=
+uVRqO7pWuMbisEkasq4P4UEGmKMFpD1_SBFeyCp85Fk4qsfPsYCMnHhbzrB-RKrKH65FSMeygCL=
+gQimqEbenUCvC8t0lLQOni7JVtr2wJvDfmAKr4wnPrOqowZX_gOMEt5EW16MLUsmBg1r4Va_TPS=
+mlQ-37XvCHQNiTaMdafIRA8_mMkYzpqcQg-2bGlYZ" width=3D"113" height=3D"32"/></p=
+></td>
+<td style=3D"width:39%; height:10.8pt; padding:5.4pt; vertical-align:middle=
+; background-color: #444545; ">
+<p style=3D"margin-top:12.0pt; margin-bottom:0.0pt; line-height:1,1; text-a=
+lign:center; "><span style=3D"font-size:9.0pt; font-family:&#39;TT Travels =
+extra bold&#39;, serif; color: #FFFFFF;">Pluxee Belgium SA<br/>Rue Ravenste=
+in 36, 1000 Bruxelles</span></p></td>
+<td style=3D"width:29%; height:10.8pt; padding:5.4pt; vertical-align:middle=
+; background-color: #444545; ">
+<p style=3D"margin-bottom:0.0pt; line-height:1,1; text-align:center; "><a h=
+ref=3D"https://fcbaibh.r.bh.d.sendibt3.com/tr/cl/3UonjNG_lFqjoQZBHKmBDr70EL=
+uy_a2cb3uRhMma_NycLpV1rfxkX8fP9dR95O_di3YTerLo_-UkGHZY6bN0vlCPx8BN3HW7ZXROp=
+BmVsyF4H_9tBzHkE4OkcRFzTVtbxgmxvaX0Q77W6yPEXh8PjJ2k3sa2K1-ULrxH3oAeyIRB6eID=
+N8n4GQXU6T7E138iVlIZuvq-VCq0uCTN0_a1YiYDaTCY5wFlBpP0mSh_1xd9GOUYsZ4-bVlGEzh=
+OVXI19LiwoqHLq5vQJ9A2aJnCO45G61a2Qm_oqXEDVoZgOzBT9zLsrLM1-L7yS8wAh7lbx1fsiO=
+MQ" style=3D"color:#000000;"><img src=3D"https://fcbaibh.r.bh.d.sendibt3.co=
+m/im/5210817/d87fb242fdf4af55255f6a364fad71ace2e986c5d5cf73d7866821d0c04489=
+1e.png?e=3D_HS2-5vp6CdvTYw9xV2tKcHExaEZwLHeW0VN_g0dmXr3Fs__SVuGG6oGB9W4K7OD=
+kl9naiaZZO4PRVf4J2967Ui68ThzV0ZBXP8FRsBafAEJZbOPlUwPERwb3LvLbrvmtWy--mZ0EJ7=
+tBFG04Llw0SSfrOnAAJsCSiHFkI8h7NGi7M_wX9yQ51JZ3WU9aKYpHno7HOx_o8YMKOt9BaIzSZ=
+0vhZ_6bI1B5KlhUlIJ_112ECxSKjgNuKT1KykoJXssAKc27g7IZ2d_VeQootB2Fbip6dULl2PYK=
+ssx-ZwU-sg" width=3D"59" height=3D"59"/></a></p></td></tr><tr>
+<td colspan=3D"3" style=3D"width:100%; height:10.8pt; padding:5.4pt; vertic=
+al-align:middle; background-color: #444545; ">
+<p style=3D"margin-bottom:0.0pt; line-height:1,1; margin-right:-6.5pt; text=
+-align:center; text-indent:5.6pt; "><span style=3D"font-size:7.5pt; font-fa=
+mily:&#39;TT Travels extra bold&#39;, serif; color: #FFFFFF;">Nous vous env=
+oyons uniquement des communications officielles, il n&#39;est donc pas poss=
+ible de vous d=C3=A9sabonner afin de ne pas manquer d&#39;information impor=
+tante.</span></p></td></tr></tbody></table>
+<p style=3D"margin-bottom:0.0pt; text-align:center; "><span style=3D"font-s=
+ize:1.0pt;">__</span></p>
+<p style=3D"margin-bottom:0.0pt; margin-right:62.65pt; "><span style=3D"fon=
+t-size:6.0pt; font-family:&#39;Arial&#39;, sans-serif;">Communication n=C2=
+=B05</span><span style=3D"font-size:6.0pt; font-family:&#39;Arial&#39;, san=
+s-serif;">023/062023</span></p></td></tr></tbody></table>
+<p style=3D"margin-bottom:12.0pt; "><br/></p>
+</div>
+
+
+</body></html>
