@@ -1,3 +1,4 @@
+@import url("https://cdn.jsdelivr.net/gh/bad3r/logseq-nord-theme@latest/custom.min.css");
 .embed-page .mr-3 {
   cursor: pointer;
 }
@@ -11,5 +12,4 @@
 .done {
   /* color: grey; /\* Changes the text color to grey *\/ */
   opacity: 0.7; /* Makes the element semi-transparent */
-  text-decoration: none;
 }
