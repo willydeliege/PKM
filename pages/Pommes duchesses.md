@@ -1,3 +1,4 @@
+type:: [[cooking/accompagnement]]
 page:: [Recette Pommes duchesse - Blog de MaSpatule.com](https://www.maspatule.com/blog/2021/10/28/recette-pommes-duchesse/?)
 tags:: [[SendToLogseq]]
 
