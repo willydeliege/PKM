@@ -49,28 +49,4 @@ Temps total : 1 heure 30 minutes
 5. Pochez de jolies pommes duchesse sur une plaque recouverte d’un papier cuisson. 
 6. Enfournez pendant 10 à 15 minutes. Servez aussitôt !
 
- Gourmande dégustation ! 
-
-![image](https://www.maspatule.com/blog/wp-content/uploads/2021/10/P1170626-1440x1081.jpg){:width 736 :height 553}
-
-Si vous réalisez cette recette pommes duchesse, n’hésitez pas à nous identifier sur les réseaux sociaux avec [@MaSpatule](https://www.instagram.com/p/B71Kv1SHw6x/) ou [#MaSpatule](https://twitter.com/maspatule?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor) pour partager la gourmandise avec nous 🙂 
-
-210 gourmands lui ont donné la note de 4,9 !
-
-**Vous aurez besoin de ces ustensiles de cuisine pour réaliser la recette pommes duchesse :**
-
-![image](https://www.maspatule.com/img/p/2/7/8/3/0/27830-home.jpg){:width 129 :height 129}
-
-45.90 €
-
-![image](https://www.maspatule.com/img/p/3/8/5/7/8/38578-home.jpg){:width 129 :height 129}
-
-3.60 €
-
-![image](https://www.maspatule.com/img/p/1/0/8/4/7/10847-home.jpg){:width 129 :height 129}
-
-22.40 €
-
-![image](https://www.maspatule.com/img/p/3/5/7/7/5/35775-home.jpg){:width 129 :height 129}
-
-10.90 €
+ Gourmande dégustation !
