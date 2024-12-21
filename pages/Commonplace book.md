@@ -1,4 +1,4 @@
 - {{video https://www.youtube.com/watch?v=dY8Fu4rEnWs}}
 	- {{youtube-timestamp 80}} Don't copy
-		- rewrite quotus wi
+		- rewrite quotes with your own words
 -
