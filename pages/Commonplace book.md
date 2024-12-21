@@ -1,3 +1,3 @@
 - {{video https://www.youtube.com/watch?v=dY8Fu4rEnWs}}
-	- {{youtube-timestamp 73}}
+	- {{youtube-timestamp 80}} D
 -
