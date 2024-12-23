@@ -12,7 +12,7 @@
   * State "DONE" from "LATER" [2024-12-18 Wed 11:34]
   CLOCK: [2024-12-18 Wed 11:34:49]--[2024-12-18 Wed 11:34:52] =>  00:00:03
   :END:
-  + [ ] l-thyroxine 100 _1 matin -- séparé_
+  + [x] l-thyroxine 100 _1 matin -- séparé_
   + [ ] cordarone 200 _1 matin_ *!!⚠️ PAS LE WEEK-END*
   + [ ] forzaten 20/5 _1 matin_
   + [ ] eliquis 5 _1 matin 1 soir_
