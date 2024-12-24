@@ -1,5 +1,5 @@
 title:: "Magret de Canard Sauce à l'échalote | Repas de Noël ou Nouvel an 🎄❄️"
-source:: "https://www.youtube.com/watch?v=iTnOS9mQcW8"
+page:: [Recette Pommes duchesse - Blog de MaSpatule.com](https://www.maspatule.com/blog/2021/10/28/recette-pommes-duchesse/?) "https://www.youtube.com/watch?v=iTnOS9mQcW8"
 author:: [[Paul Aux Fourneaux]]
 published:: 2023-12-15
 created:: 2024-12-24
