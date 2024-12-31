@@ -1,2 +1,2 @@
 type:: pharnacie
-tel:: 04/233.96.56
+phone::  04/233.96.56
