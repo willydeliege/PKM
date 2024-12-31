@@ -1,0 +1,2 @@
+type:: pharnacie
+teli::
