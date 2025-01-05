@@ -1,6 +1,7 @@
 - [Nouilles au poulet et aux poivrons : Recette de Nouilles au poulet et aux poivrons](https://www.marmiton.org/recettes/recette_nouilles-au-poulet-et-aux-poivrons_308387.aspx)
 	- URL:: [Nouilles au poulet et aux poivrons : Recette de Nouilles au poulet et aux poivrons](https://www.marmiton.org/recettes/recette_nouilles-au-poulet-et-aux-poivrons_308387.aspx)
 	  Date:: [[2025/01/05]]
+	  type:: [[cooking/plat]]
 	- [Accueil](https://www.marmiton.org/) > [Recettes](https://www.marmiton.org/recettes) > [plat principal](https://www.marmiton.org/recettes/index/categorie/plat-principal/) > [pâtes, riz, semoule](https://www.marmiton.org/recettes/index/categorie/pates-riz-semoule/) > [autres pâtes](https://www.marmiton.org/recettes/index/categorie/autres-pates/) > Nouilles au poulet et aux poivrons
 	- ![image](../assets/sendToLogseq/1736071220406-capture.webp)
 	- 30 min
