@@ -1,0 +1,978 @@
+Delivered-To: frederic.willem@gmail.com
+Received: by 2002:a05:7108:b684:b0:3dc:a9a0:5d5b with SMTP id pb4csp11442356gdb;
+        Sun, 5 Jan 2025 01:49:43 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFIukMghWgdT0cTFQSmRQMdDflNHfzRbmbaO+45Hck8jLxgCCVG/KDiCpgfsmaQOke+70SL
+X-Received: by 2002:ac8:7d94:0:b0:468:f722:d44c with SMTP id d75a77b69052e-46a4a8e4512mr825166391cf.21.1736070583386;
+        Sun, 05 Jan 2025 01:49:43 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1736070583; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Dv/zvv90p7fXE1y7r/NwOQWk6X4C1L8Mlb+MhAQnPY6yBgFdngau9gnwXvJYXTfAhw
+         WC45YAJHmfe3m/fT9eRwsJ3O/fd8JctOHfWLRV/ojMIAtxOU0/g1POrg1kN/nEtj/hZe
+         +gwu43XzUHtDYBcsEFq/p1BfjuJN5HTytgJIWl0kG1O0oqJAG72g798eVr5EBHRqx5lY
+         jlLYpi6NMmFsL4y8ELPyTPX8EEihYc+NuTBG4XWvD3bta+mtA5LUmV61ifQEhWijglk2
+         5wy0rGM6I/6S2UQ4c5fT2KW2p+gEzZJ6mGZJepV9jWX5lOIRzMRFqVztm0xN1Yz8dagv
+         lkVQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:reply-to:date:mime-version:message-id:subject:from
+         :dkim-signature:dkim-signature;
+        bh=8akz+HxtMLQNNfhUU0K8j6Vd9K+L8IxkDA1lhfJf2TM=;
+        fh=sBt9Jl+WfPZMk9pCknzILW+wINNmh0ii1Uq021oxfqo=;
+        b=im5TtWLhkDThqzTQB3RL2hnHqCsXXZF7ERE6/mpmHNppWLHf1u2PmxWwvkTsE/QrnQ
+         q+g8C5b3JR3xldL5FwwoKfoKXupl6smTJVTNvq12ijyU92I3ihLWnP4l6HNwl5+HOw6T
+         v8Z7tnD37S40vI0amQHGqkbKA1Y+ZHGaYnXj17Tgwa8ptcf5L2JkCA1LBGdc9jGya4IQ
+         B+82PAqprK6Stn8MOnQy6+mXbeu5y6tbcdB8gzApMoPXbn9gsQ+5Lch1452jC/jwPQoS
+         eyo61D0vrkPCvCyg1+BBip4x7NUSZ+aAOZ/vb40sng0jw2T2tBhCy54xN8rWqBRY8YuY
+         Ufaw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@lemonsqueezy-mail.com header.s=s1 header.b=Xr1+FM02;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Gqs12Uwb;
+       spf=pass (google.com: domain of bounces+23547640-a7c9-frederic.willem=gmail.com@em1608.lemonsqueezy-mail.com designates 149.72.52.217 as permitted sender) smtp.mailfrom="bounces+23547640-a7c9-frederic.willem=gmail.com@em1608.lemonsqueezy-mail.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=lemonsqueezy-mail.com
+Return-Path: <bounces+23547640-a7c9-frederic.willem=gmail.com@em1608.lemonsqueezy-mail.com>
+Received: from o1.ptr8778.lemonsqueezy-mail.com (o1.ptr8778.lemonsqueezy-mail.com. [149.72.52.217])
+        by mx.google.com with ESMTPS id d75a77b69052e-46a3eb9894asi436201301cf.255.2025.01.05.01.49.42
+        for <frederic.willem@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 05 Jan 2025 01:49:43 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+23547640-a7c9-frederic.willem=gmail.com@em1608.lemonsqueezy-mail.com designates 149.72.52.217 as permitted sender) client-ip=149.72.52.217;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@lemonsqueezy-mail.com header.s=s1 header.b=Xr1+FM02;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Gqs12Uwb;
+       spf=pass (google.com: domain of bounces+23547640-a7c9-frederic.willem=gmail.com@em1608.lemonsqueezy-mail.com designates 149.72.52.217 as permitted sender) smtp.mailfrom="bounces+23547640-a7c9-frederic.willem=gmail.com@em1608.lemonsqueezy-mail.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=lemonsqueezy-mail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lemonsqueezy-mail.com;
+	h=from:subject:mime-version:reply-to:x-feedback-id:to:content-type:cc:
+	content-type:from:subject:to;
+	s=s1; bh=8akz+HxtMLQNNfhUU0K8j6Vd9K+L8IxkDA1lhfJf2TM=;
+	b=Xr1+FM02MklYuQrd7oEBzFgceeAFpg9Qc0Vs5szl3MlQg9oeeUaLQvbLzRmXNeKuDLzM
+	zoGZrAsu1EVbbfSH8b6ibzFwSNm830sZM/2hjXozXnAYhe25w0Pd9X1h+HJqcQZ/qNj0PJ
+	miVdcGfBEwmIgrYVmEtTqyczpnzn/X9ULm8yitMpTyk8uncnC52Oa+V4Mx3omXi0Fcabpl
+	KoWmuIOmY0e21IEZQrKDTV3ZcnTU/yd1Z94s4iJ322DeksEbTR9232loGZD0qA2m7IV3GV
+	DVnM93YwRC/imA01E47rgcwtQIOkn+Su5TmPbsy0WnGtP+/ksXzIVK4lDVO1jbcQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=from:subject:mime-version:reply-to:x-feedback-id:to:content-type:cc:
+	content-type:from:subject:to;
+	s=smtpapi; bh=8akz+HxtMLQNNfhUU0K8j6Vd9K+L8IxkDA1lhfJf2TM=;
+	b=Gqs12Uwb64ReOGEQ2QpOUAG0+sfqm0APEW4bsevq8bQRpP3A8TDx3BZx6N1hr/z96Adm
+	wmzMQ7s2QrZwPE1RuSmtiX/YZlG8KN5/3ejXq2sP9rB3VJcKbQVUzknJ9qbpJzfVR8n+OL
+	4i67NDibrMxnSE4r46TD+mKcjODXMsdgA=
+Received: by recvd-6cffb68cb5-fjc5w with SMTP id recvd-6cffb68cb5-fjc5w-1-677A55B5-7
+	2025-01-05 09:49:41.524784226 +0000 UTC m=+4451279.763866460
+Received: from [127.0.0.1] (unknown)
+	by geopod-ismtpd-34 (SG) with ESMTP
+	id CfR08Qb6R8yvuR2NAcCH6g
+	for <frederic.willem@gmail.com>;
+	Sun, 05 Jan 2025 09:49:41.476 +0000 (UTC)
+From: "Dytes Studio (via Lemon Squeezy)" <hello@lemonsqueezy-mail.com>
+Subject: Your Send to Logseq: Web Clipper for Logseq (One-time Payment)
+ receipt
+Message-ID: <1e7f190903a408e2561f7492fbcd5918@lemonsqueezy-mail.com>
+MIME-Version: 1.0
+Date: Sun, 05 Jan 2025 09:49:41 +0000 (UTC)
+Reply-To: Dytes Studio <dytes.studio@gmail.com>
+X-Feedback-ID: 23547640:SG
+X-SG-EID: 
+ =?us-ascii?Q?u001=2E1MsSIHDXNBVRbkerozcEKf0BeDOa41zUY9NMQR+yrfLoKTI+9qkiV2u=2FT?=
+ =?us-ascii?Q?8WjEgRkAcZ0KRGRLrIGAUb626BhGvIWtAhfP8AF?=
+ =?us-ascii?Q?XgwcXPdY5cAFXwTm7OdmY96AV3Cx1o6vNH8Mrex?=
+ =?us-ascii?Q?uuNRlevoLdZaa=2FAK+xNkoUeKiXwFMf1nPm9ivDH?=
+ =?us-ascii?Q?4P9Q44wwWrUvYULylMyA4qraX3gEzxTWhPUsU9W?=
+ =?us-ascii?Q?sRgrEIL8OOR+PwCdjOGlpbdzifnbeMwXOPigo=2Fa?=
+ =?us-ascii?Q?uFG9FBU1ZrqVndUOqevytH1y8t1WKnYMXAsyhOC?=
+ =?us-ascii?Q?XLdx0SEo=3D?=
+To: frederic.willem@gmail.com
+X-Entity-ID: u001.23imnolABxq24ytGQiVTow==
+Content-Type: multipart/alternative; boundary=IWl4Q5oi
+
+--IWl4Q5oi
+Content-Type: text/plain; charset=iso-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<div class=3D"ls-header">
+    <div class=3D"ls-header-logo-container">
+        <a href=3D"https://url9196.lemonsqueezy-mail.com/ls/click?upn=3Du00=
+1.5P5E5ZdLNcqQ8CduXpF-2BvreIM6c-2FqnpJkf67qEodl1AiCPtfvF8A8Kznd7S3oFcERnNR_=
+Ene3zQb0Zc21f1d-2B9U2eSGY-2FEAxr1-2FpK-2FKuswIxPdgLM5gG3wtPJRdxBKpWoFIIL69W=
+EGxaslWpUy72C1b9Ko-2FHh791eyP-2BTeFTALuOQ2LR7JFP9le8HPY9xHh6dVEXbMeZz9lE0Zp=
+iVoyY00c0ZX9YWrEmIl4OtjLrzrcp5v8zeWoDo1hf9vhv11KThAb3Ew4Tk9Y60mWPRah-2Frrao=
+pdQ-3D-3D target=3D"_blank">
+            <img src=3D"https://url9196.lemonsqueezy-mail.com/ls/click?upn=
+=3Du001.5P5E5ZdLNcqQ8CduXpF-2Bvuy08cF8FvV89HUdcEH9c-2B-2BkFt99XUg-2FYpVke2s=
+-2F29LhP8kp80LtIa3GaxnHsqlFNzrsWGYlCN3kBuPy2jfO-2BtA-3DM_Ru_Ene3zQb0Zc21f1d=
+-2B9U2eSGY-2FEAxr1-2FpK-2FKuswIxPdgLM5gG3wtPJRdxBKpWoFIIL69WEGxaslWpUy72C1b=
+9Ko7OedAng9MQqrV26O9oDS4K51mndJlpmxuioF-2FWRNmndDvFTQcccC27t9lMLLOo9tp574Ct=
+qd5XQ6oIdLppZHbtfHhp4qBBypp9weuaTM2p1AcRacrjCln0nzPMndM3YWA-3D-3D class=3D"=
+ls-header-logo"
+                 alt=3D"Lemon Squeezy">
+        </a>
+    </div>
+            <div class=3D"ls-header-order-confirmation">
+            Order Confirmation
+        </div>
+    </div>
+
+# Thanks for your order!
+
+**Order #:** 8578339
+**Date:** 5 Jan 2025, 9:49
+**Payment:**
+$18.03
+from MASTERCARD &bullet;&bullet;&bullet;&bullet; 2839
+
+   =20
+       =20
+                                       =20
+                               =20
+                   =20
+                       =20
+                   =20
+               =20
+                               =20
+                    Send to Logseq: Web Clipper for Logseq
+                                        One-time Payment
+                                   =20
+               =20
+                                            $14.90
+                                   =20
+           =20
+                   =20
+   =20
+
+   =20
+       =20
+                       =20
+               =20
+                    Subtotal
+               =20
+               =20
+                    $14.90
+               =20
+           =20
+                                   =20
+               =20
+                    VAT(21.00%)
+               =20
+               =20
+                    $3.13
+               =20
+           =20
+                       =20
+               =20
+                    Total
+               =20
+               =20
+                    $18.03
+               =20
+           =20
+       =20
+   =20
+
+    License key:
+        5631C239-B72D-4D12-8A26-E6E1C795A428
+   =20
+
+    Thank you for purchasing Send to Logseq!   We hope you love it! =20
+
+To activate your pro features,  go to extension options page and activate  =
+with your purchasing Email and  license key.
+
+If you have any questions or need help getting started, please don't hesita=
+te to reach out to our team at  dyes.studio@gmail.com or by replying to thi=
+s email.
+
+View Order: https://url9196.lemonsqueezy-mail.com/ls/click?upn=3Du001.5P5E5=
+ZdLNcqQ8CduXpF-2BvoaKdB4Vv173aAn-2BUlr8bsDaHvogdpsyawsSEi1J1grUY3xMP8ed-2FQ=
+QN11yLIqBMIWtwvKozzP17Z4zzFZ1wVjxIQng0FhkM7zy-2FD4xkS7dqJFN-2BVRszdxybI4unD=
+ofH8LixZsqb0kb9MbH2rR9HvvItmHPIYZIVbymZOL6vnw0hQDptqxZxxuTLVlGGK-2FZfD9LLHi=
+BETPEb1bZgEUvuI8gcqD41-2FcsS-2FRLaH9E0WMcTpGdI_Ene3zQb0Zc21f1d-2B9U2eSGY-2F=
+EAxr1-2FpK-2FKuswIxPdgLM5gG3wtPJRdxBKpWoFIIL69WEGxaslWpUy72C1b9Ko9FNQgpnI9B=
+phrOGrxIIHIud9f3hTi8dYfwCVMp-2BCJRQskmoJXOJsolcMVInIZI4PgYji9LLVF6EE-2B3zhr=
+2R9gB-2B6CH08E9JY6cwhx7PTzpqRE1vB1roBPtPlKsnXpAvIA-3D-3D
+
+    This payment will appear as LEMSQZY* DYTES on your bank or card stateme=
+nt.
+
+    Need help with your payment or order?
+    Visit Lemon Squeezy Support or reply to this email.
+
+    Need an invoice for your records?
+    Generate an invoice
+
+Merchant of Record services provided to Dytes Studio by Lemon Squeezy
+
+Terms
+=A0
+=B7
+=A0
+Privacy
+=A0
+=B7
+=A0
+Help
+
+=A9 2025 Lemon Squeezy, LLC
+222 Main Street Suite 500, Salt Lake City, UT 84101
+
+
+--IWl4Q5oi
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html style=3D"background-color: #F7F7F8 !important; color: #121217 !import=
+ant;"><body style=3D"box-sizing: border-box; position: relative; font-famil=
+y: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Sego=
+e UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emo=
+ji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; -we=
+bkit-text-size-adjust: none; background-color: #F7F7F8; color: #25252D; hei=
+ght: 100%; line-height: 2; margin: 0; padding: 0; width: 100% !important; -=
+webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">
+<div class=3D"ls-header" style=3D"box-sizing: border-box; position: relativ=
+e; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSys=
+temFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Ap=
+ple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-si=
+ze: 16px; line-height: 2; background-color: #ffffff; padding: 16px 24px; di=
+splay: flex; align-items: center; justify-content: space-between; width: 10=
+0%;">
+    <div class=3D"ls-header-logo-container" style=3D"box-sizing: border-box=
+; position: relative; font-family: Inter, ui-sans-serif, system-ui, -apple-=
+system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto S=
+ans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto C=
+olor Emoji; font-size: 16px; line-height: 2; padding: 4px 0;">
+        <a href=3D"https://url9196.lemonsqueezy-mail.com/ls/click?upn=3Du00=
+1.5P5E5ZdLNcqQ8CduXpF-2BvreIM6c-2FqnpJkf67qEodl1DFAmXuVOIZJBK7LO-2FsMOMjZ_w=
+s_Ene3zQb0Zc21f1d-2B9U2eSGY-2FEAxr1-2FpK-2FKuswIxPdgLM5gG3wtPJRdxBKpWoFIIL6=
+9WEGxaslWpUy72C1b9Ko65C-2BArGtkdvMMNum-2FiEolg9ervq5CeUrn6b3KpyNWMuTfwFNobk=
+a0Zne1LOwDRGcCoTLffdMraZWHBVGRL4EFV-2BWTYXtv-2FXJn98-2FiMtLrLdMe0YkUevx1A8o=
+LvdOzSD5w-3D-3D" target=3D"_blank" style=3D"box-sizing: border-box; positio=
+n: relative; font-family: Inter, ui-sans-serif, system-ui, -apple-system, B=
+linkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans=
+-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoj=
+i; font-size: 16px; line-height: 2; color: #7047EB !important; border-color=
+: #7047EB !important; text-decoration: none;">
+            <img src=3D"https://assets.lemonsqueezy.com/img/ls-header-logo.=
+png" class=3D"ls-header-logo" alt=3D"Lemon Squeezy" style=3D"box-sizing: bo=
+rder-box; position: relative; font-family: Inter, ui-sans-serif, system-ui,=
+ -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial=
+, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol=
+, Noto Color Emoji; font-size: 16px; line-height: 2; max-width: 100%; borde=
+r: none; width: 182px; height: auto;">
+        </a>
+    </div>
+            <div class=3D"ls-header-order-confirmation" style=3D"box-sizing=
+: border-box; position: relative; font-family: Inter, ui-sans-serif, system=
+-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, A=
+rial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Sy=
+mbol, Noto Color Emoji; padding: 4px 12px; background: #F7F7F8; color: #6C6=
+C89; border-radius: 8px; font-size: 13px; font-weight: 400; line-height: 24=
+px;">
+            Order Confirmation
+        </div>
+    </div>
+
+
+
+
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0" style=3D"box-sizing: border-box; position: relative; font-family: I=
+nter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI=
+, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, =
+Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; line-he=
+ight: 2;">
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8=
+" style=3D"box-sizing: border-box; position: relative; font-family: Inter, =
+ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Robo=
+to, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe =
+UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; line-height: =
+2;">
+    <title style=3D"box-sizing: border-box; position: relative; font-family=
+: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe=
+ UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoj=
+i, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; line=
+-height: 2;"></title>
+    <meta name=3D"robots" content=3D"noindex, nofollow" style=3D"box-sizing=
+: border-box; position: relative; font-family: Inter, ui-sans-serif, system=
+-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, A=
+rial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Sy=
+mbol, Noto Color Emoji; font-size: 16px; line-height: 2;">
+    <link rel=3D"preconnect" href=3D"https://fonts.googleapis.com" style=3D=
+"box-sizing: border-box; position: relative; font-family: Inter, ui-sans-se=
+rif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvet=
+ica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, =
+Segoe UI Symbol, Noto Color Emoji; font-size: 16px; line-height: 2;">
+    <link rel=3D"preconnect" href=3D"https://fonts.gstatic.com" crossorigin=
+ style=3D"box-sizing: border-box; position: relative; font-family: Inter, u=
+i-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Robot=
+o, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe U=
+I Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; line-height: 2=
+;">
+    <link href=3D"https://fonts.googleapis.com/css2?family=3DInter:wght@400=
+;500;600;700&amp;display=3Dswap" rel=3D"stylesheet" style=3D"box-sizing: bo=
+rder-box; position: relative; font-family: Inter, ui-sans-serif, system-ui,=
+ -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial=
+, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol=
+, Noto Color Emoji; font-size: 16px; line-height: 2;">
+
+
+        <style type=3D"text/css">
+            :root, .body,.inner-body, .wrapper, .inner-header {
+                background-color: #F7F7F8 !important;
+                color: #121217 !important;
+            }
+            h1,h2,h3,h4,h5,h6 {
+                color: #121217 !important;
+            }
+            p {
+                color: #121217 !important;
+            }
+            a {
+                color: #7047EB !important;
+                border-color: #7047EB !important;
+            }
+            hr {
+                background-color: #121217 !important;
+            }
+            .button-primary {
+                background: #7047EB !important;
+                color: #FFFFFF !important;
+            }
+            .body {
+                border: none !important;
+            }
+            .footer-wide.footer-wide {
+                background-color: #FFFFFF !important;
+                color: #6C6C89 !important;
+            }
+
+            .footer-wide.footer-wide p, .footer-wide.footer-wide a {
+                color: #6C6C89 !important;
+            }
+
+            .variant-name {
+                color: #6C6C89 !important;
+            }
+
+            .order-summary-table, .order-refunded-table, .affiliate-referra=
+l-table {
+                border-color: #121217 !important;
+            }
+
+            @media only screen and (max-width: 456px) {
+                .inner-header,
+                .inner-body {
+                    width: 100% !important;
+                }
+
+                .footer {
+                    width: 100% !important;
+                }
+            }
+        </style>
+
+<table class=3D"wrapper" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" style=3D"box-sizing: border-box; position: relative;=
+ font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSyste=
+mFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Appl=
+e Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size=
+: 16px; line-height: 2; background-color: #F7F7F8 !important; color: #12121=
+7 !important; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premai=
+ler-width: 100%; margin: 0; padding: 0; width: 100%;">
+    <tr>
+        <td align=3D"center" style=3D"box-sizing: border-box; position: rel=
+ative; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMa=
+cSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif=
+, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; fon=
+t-size: 16px; line-height: 2;">
+            <table class=3D"content" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; positio=
+n: relative; font-family: Inter, ui-sans-serif, system-ui, -apple-system, B=
+linkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans=
+-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoj=
+i; font-size: 16px; line-height: 2; -premailer-cellpadding: 0; -premailer-c=
+ellspacing: 0; -premailer-width: 100%; margin: 0; padding: 0; width: 100%;"=
+>
+                <tr>
+<td class=3D"header" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" sty=
+le=3D"box-sizing: border-box; position: relative; font-family: Inter, ui-sa=
+ns-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, H=
+elvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Em=
+oji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; line-height: 2;">
+<table class=3D"inner-header" align=3D"center" width=3D"464" cellpadding=3D=
+"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box=
+; position: relative; font-family: Inter, ui-sans-serif, system-ui, -apple-=
+system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto S=
+ans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto C=
+olor Emoji; font-size: 16px; line-height: 2; background-color: #F7F7F8 !imp=
+ortant; color: #121217 !important; -premailer-cellpadding: 0; -premailer-ce=
+llspacing: 0; -premailer-width: 456px; border-color: #e8e5ef; border-radius=
+: 2px; border-width: 1px; margin: 0 auto; padding: 0; width: 456px;">
+<tr>
+<td class=3D"content-cell" style=3D"box-sizing: border-box; position: relat=
+ive; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacS=
+ystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, =
+Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-=
+size: 16px; line-height: 2; max-width: 100vw; padding-left: 16px; padding-r=
+ight: 16px; padding-top: 56px; padding-bottom: 40px;">
+<a href=3D"https://url9196.lemonsqueezy-mail.com/ls/click?upn=3Du001.5P5E5Z=
+dLNcqQ8CduXpF-2BvpXp3Zkz9WxRZaUUcYDbHKl25AT-2BeN2VL97joh7RAIKkaXvz_Ene3zQb0=
+Zc21f1d-2B9U2eSGY-2FEAxr1-2FpK-2FKuswIxPdgLM5gG3wtPJRdxBKpWoFIIL69WEGxaslWp=
+Uy72C1b9Ko4rTPI27sp3q3BD61cQ-2FuaIN8IEI8ILsDd1Csd1Sd7-2F4Izm1LEh4CtyK8QyUbx=
+lxCfR-2FIZyPTxUxZSFfKfwcKo-2BSc79MqJzGzYMLuXg3MPoGwWiawePfRz4AbbDquRpUeA-3D=
+-3D" style=3D"box-sizing: border-box; position: relative; font-family: Inte=
+r, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, R=
+oboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Seg=
+oe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; line-heigh=
+t: 2; color: #7047EB !important; border-color: #7047EB !important; font-wei=
+ght: 600; text-decoration: none; display: inline-block;">
+        <img src=3D"https://eu.ui-avatars.com/api/?name=3DDytes+Studio&amp;=
+length=3D1&amp;background=3D7047EB&amp;color=3Dfff&amp;size=3D64&amp;rounde=
+d=3Dtrue" class=3D"store-avatar" alt=3D"Dytes Studio" style=3D"box-sizing: =
+border-box; position: relative; font-family: Inter, ui-sans-serif, system-u=
+i, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Ari=
+al, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symb=
+ol, Noto Color Emoji; font-size: 16px; line-height: 2; max-width: 100%; bor=
+der: none; width: 64px; height: 64px; border-radius: 64px; object-fit: cove=
+r;">
+    </a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+                <!-- Email Body -->
+                <tr>
+                    <td class=3D"body" width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" style=3D"box-sizing: border-box; position: relative; font-fa=
+mily: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, S=
+egoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color =
+Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; =
+line-height: 2; background-color: #F7F7F8 !important; color: #121217 !impor=
+tant; border: none !important; -premailer-cellpadding: 0; -premailer-cellsp=
+acing: 0; -premailer-width: 100%; border-bottom: 1px solid #F7F7F8; border-=
+top: 1px solid #F7F7F8; margin: 0; padding: 0; width: 100%;">
+                        <table class=3D"inner-body" align=3D"center" width=
+=3D"456" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D=
+"box-sizing: border-box; position: relative; font-family: Inter, ui-sans-se=
+rif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvet=
+ica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, =
+Segoe UI Symbol, Noto Color Emoji; font-size: 16px; line-height: 2; backgro=
+und-color: #F7F7F8 !important; color: #121217 !important; -premailer-cellpa=
+dding: 0; -premailer-cellspacing: 0; -premailer-width: 456px; border-color:=
+ #e8e5ef; border-radius: 2px; border-width: 1px; margin: 0 auto; padding: 0=
+; width: 456px;">
+                            <!-- Body content -->
+                            <tr>
+                                <td class=3D"content-cell" style=3D"box-siz=
+ing: border-box; position: relative; font-family: Inter, ui-sans-serif, sys=
+tem-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue=
+, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI=
+ Symbol, Noto Color Emoji; font-size: 16px; line-height: 2; max-width: 100v=
+w; padding-left: 16px; padding-right: 16px;">
+                                    <h1 style=3D"box-sizing: border-box; po=
+sition: relative; font-family: Inter, ui-sans-serif, system-ui, -apple-syst=
+em, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,=
+ sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color=
+ Emoji; color: #121217 !important; font-weight: 500; line-height: 1.5; marg=
+in-bottom: 24px; font-size: 24px; margin-top: 0; text-align: left;">Thanks =
+for your order!</h1>
+<p style=3D"box-sizing: border-box; position: relative; font-family: Inter,=
+ ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Rob=
+oto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe=
+ UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; color: #1212=
+17 !important; line-height: 28px; margin-bottom: 24px; margin-top: 0; text-=
+align: left;"><strong style=3D"box-sizing: border-box; position: relative; =
+font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystem=
+Font, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple=
+ Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size:=
+ 16px; line-height: 2; font-weight: 600;">Order #:</strong> 8578339<br>
+<strong style=3D"box-sizing: border-box; position: relative; font-family: I=
+nter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI=
+, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, =
+Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; line-he=
+ight: 2; font-weight: 600;">Date:</strong> 5 Jan 2025, 9:49<br>
+<strong style=3D"box-sizing: border-box; position: relative; font-family: I=
+nter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI=
+, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, =
+Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; line-he=
+ight: 2; font-weight: 600;">Payment:</strong>
+$18.03
+from MASTERCARD =E2=80=A2=E2=80=A2=E2=80=A2=E2=80=A2 2839<br></p>
+<div class=3D"table order-items-table" style=3D"box-sizing: border-box; pos=
+ition: relative; font-family: Inter, ui-sans-serif, system-ui, -apple-syste=
+m, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, =
+sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color =
+Emoji; font-size: 16px; line-height: 2;">
+    <table style=3D"box-sizing: border-box; position: relative; font-family=
+: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe=
+ UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoj=
+i, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; line=
+-height: 2; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premaile=
+r-width: 100%; width: 100%; margin: 20px 0;">
+        <tbody style=3D"box-sizing: border-box; position: relative; font-fa=
+mily: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, S=
+egoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color =
+Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; =
+line-height: 2;">
+                                        <tr>
+                                <td align=3D"left" width=3D"96" style=3D"bo=
+x-sizing: border-box; position: relative; font-family: Inter, ui-sans-serif=
+, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica=
+ Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Seg=
+oe UI Symbol, Noto Color Emoji; font-size: 16px; line-height: 2; margin: 0;=
+ vertical-align: top;">
+                    <div class=3D"product-thumb" style=3D"box-sizing: borde=
+r-box; position: relative; font-family: Inter, ui-sans-serif, system-ui, -a=
+pple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, N=
+oto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, N=
+oto Color Emoji; font-size: 16px; line-height: 2; width: 80px; height: 60px=
+; border-radius: 8px; overflow: hidden; background-color: #F7F7F8; margin-r=
+ight: 16px;">
+                        <img src=3D"https://cdn.lemonsqueezy.com/media/8578=
+3/5cb08848-9257-4730-bb9e-2b1408c90627.png?fit=3Dcontain&amp;format=3Dauto&=
+amp;height=3D100&amp;ixlib=3Dphp-3.3.1&amp;width=3D100" alt=3D"" style=3D"b=
+ox-sizing: border-box; position: relative; font-family: Inter, ui-sans-seri=
+f, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetic=
+a Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Se=
+goe UI Symbol, Noto Color Emoji; font-size: 16px; line-height: 2; max-width=
+: 100%; width: 80px; height: 60px; object-fit: cover;">
+                    </div>
+                </td>
+                                <td align=3D"left" style=3D"box-sizing: bor=
+der-box; position: relative; font-family: Inter, ui-sans-serif, system-ui, =
+-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial,=
+ Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,=
+ Noto Color Emoji; font-size: 16px; line-height: 2; margin: 0; vertical-ali=
+gn: top;">
+                    <strong style=3D"box-sizing: border-box; position: rela=
+tive; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMac=
+SystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,=
+ Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font=
+-size: 16px; line-height: 2; font-weight: 600;">Send to Logseq: Web Clipper=
+ for Logseq</strong>
+                                        <div class=3D"variant-name" style=
+=3D"box-sizing: border-box; position: relative; font-family: Inter, ui-sans=
+-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Hel=
+vetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoj=
+i, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; line-height: 2; colo=
+r: #6C6C89 !important;">One-time Payment</div>
+                                    </td>
+                <td align=3D"right" style=3D"box-sizing: border-box; positi=
+on: relative; font-family: Inter, ui-sans-serif, system-ui, -apple-system, =
+BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, san=
+s-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emo=
+ji; font-size: 16px; line-height: 2; margin: 0; vertical-align: top;">
+                                            <strong style=3D"box-sizing: bo=
+rder-box; position: relative; font-family: Inter, ui-sans-serif, system-ui,=
+ -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial=
+, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol=
+, Noto Color Emoji; font-size: 16px; line-height: 2; font-weight: 600;">$14=
+.90</strong>
+                                    </td>
+            </tr>
+                    </tbody>
+    </table>
+</div>
+<div class=3D"table order-summary-table" style=3D"box-sizing: border-box; p=
+osition: relative; font-family: Inter, ui-sans-serif, system-ui, -apple-sys=
+tem, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans=
+, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Colo=
+r Emoji; font-size: 16px; line-height: 2; border-color: #121217 !important;=
+ margin-bottom: 24px; border-top: 1px solid #25252D; border-bottom: 1px sol=
+id #25252D;">
+    <table style=3D"box-sizing: border-box; position: relative; font-family=
+: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe=
+ UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoj=
+i, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; line=
+-height: 2; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premaile=
+r-width: 100%; margin: 16px auto; width: 100%;">
+        <tbody style=3D"box-sizing: border-box; position: relative; font-fa=
+mily: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, S=
+egoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color =
+Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; =
+line-height: 2;">
+                        <tr>
+                <td align=3D"left" style=3D"box-sizing: border-box; positio=
+n: relative; font-family: Inter, ui-sans-serif, system-ui, -apple-system, B=
+linkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans=
+-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoj=
+i; font-size: 16px; line-height: 2; margin: 0; vertical-align: top; padding=
+-top: 0; padding-bottom: 0;">
+                    Subtotal
+                </td>
+                <td align=3D"right" style=3D"box-sizing: border-box; positi=
+on: relative; font-family: Inter, ui-sans-serif, system-ui, -apple-system, =
+BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, san=
+s-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emo=
+ji; font-size: 16px; line-height: 2; margin: 0; vertical-align: top; paddin=
+g-top: 0; padding-bottom: 0;">
+                    $14.90
+                </td>
+            </tr>
+                                    <tr>
+                <td align=3D"left" style=3D"box-sizing: border-box; positio=
+n: relative; font-family: Inter, ui-sans-serif, system-ui, -apple-system, B=
+linkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans=
+-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoj=
+i; font-size: 16px; line-height: 2; margin: 0; vertical-align: top; padding=
+-top: 0; padding-bottom: 0;">
+                    VAT(21.00%)
+                </td>
+                <td align=3D"right" style=3D"box-sizing: border-box; positi=
+on: relative; font-family: Inter, ui-sans-serif, system-ui, -apple-system, =
+BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, san=
+s-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emo=
+ji; font-size: 16px; line-height: 2; margin: 0; vertical-align: top; paddin=
+g-top: 0; padding-bottom: 0;">
+                    $3.13
+                </td>
+            </tr>
+                        <tr>
+                <td align=3D"left" style=3D"box-sizing: border-box; positio=
+n: relative; font-family: Inter, ui-sans-serif, system-ui, -apple-system, B=
+linkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans=
+-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoj=
+i; font-size: 16px; line-height: 2; margin: 0; vertical-align: top; padding=
+-top: 0; padding-bottom: 0;">
+                    <strong style=3D"box-sizing: border-box; position: rela=
+tive; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMac=
+SystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,=
+ Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font=
+-size: 16px; line-height: 2; font-weight: 600;">Total</strong>
+                </td>
+                <td align=3D"right" style=3D"box-sizing: border-box; positi=
+on: relative; font-family: Inter, ui-sans-serif, system-ui, -apple-system, =
+BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, san=
+s-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emo=
+ji; font-size: 16px; line-height: 2; margin: 0; vertical-align: top; paddin=
+g-top: 0; padding-bottom: 0;">
+                    <strong style=3D"box-sizing: border-box; position: rela=
+tive; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMac=
+SystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,=
+ Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font=
+-size: 16px; line-height: 2; font-weight: 600;">$18.03</strong>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p style=3D"box-sizing: border-box; position: relative; font-family: Inter,=
+ ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Rob=
+oto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe=
+ UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; color: #1212=
+17 !important; line-height: 28px; margin-bottom: 24px; margin-top: 0; text-=
+align: left;">
+    <strong style=3D"box-sizing: border-box; position: relative; font-famil=
+y: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Sego=
+e UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emo=
+ji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; lin=
+e-height: 2; font-weight: 600;">License key:</strong><br>
+        5631C239-B72D-4D12-8A26-E6E1C795A428<br>
+    </p>
+<p style=3D"box-sizing: border-box; position: relative; font-family: Inter,=
+ ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Rob=
+oto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe=
+ UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; color: #1212=
+17 !important; line-height: 28px; margin-bottom: 24px; margin-top: 0; text-=
+align: left;">
+    Thank you for purchasing Send to Logseq!   We hope you love it! =20
+</p>
+<p style=3D"box-sizing: border-box; position: relative; font-family: Inter,=
+ ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Rob=
+oto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe=
+ UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; color: #1212=
+17 !important; line-height: 28px; margin-bottom: 24px; margin-top: 0; text-=
+align: left;">To activate your pro features,  go to extension options page =
+and activate  with your purchasing Email and  license key.</p>
+<p style=3D"box-sizing: border-box; position: relative; font-family: Inter,=
+ ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Rob=
+oto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe=
+ UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; color: #1212=
+17 !important; line-height: 28px; margin-bottom: 24px; margin-top: 0; text-=
+align: left;">If you have any questions or need help getting started, pleas=
+e don't hesitate to reach out to our team at  dyes.studio@gmail.com or by r=
+eplying to this email.</p>
+
+<table class=3D"action" align=3D"center" width=3D"100%" cellpadding=3D"0" c=
+ellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; pos=
+ition: relative; font-family: Inter, ui-sans-serif, system-ui, -apple-syste=
+m, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, =
+sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color =
+Emoji; font-size: 16px; line-height: 2; -premailer-cellpadding: 0; -premail=
+er-cellspacing: 0; -premailer-width: 100%; margin: 32px auto; padding: 0; t=
+ext-align: center; width: 100%;">
+<tr>
+<td align=3D"center" style=3D"box-sizing: border-box; position: relative; f=
+ont-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemF=
+ont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple =
+Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: =
+16px; line-height: 2;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"box-sizing: border-box; position: relative; font=
+-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont=
+, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Col=
+or Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16p=
+x; line-height: 2;">
+<tr>
+<td align=3D"center" style=3D"box-sizing: border-box; position: relative; f=
+ont-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemF=
+ont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple =
+Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: =
+16px; line-height: 2;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"box-sizing: border-box; position: relative; font=
+-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont=
+, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Col=
+or Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16p=
+x; line-height: 2;">
+<tr>
+<td style=3D"box-sizing: border-box; position: relative; font-family: Inter=
+, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Ro=
+boto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Sego=
+e UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; line-height=
+: 2;">
+<a href=3D"https://url9196.lemonsqueezy-mail.com/ls/click?upn=3Du001.5P5E5Z=
+dLNcqQ8CduXpF-2BvoaKdB4Vv173aAn-2BUlr8bsDaHvogdpsyawsSEi1J1grUY3xMP8ed-2FQQ=
+N11yLIqBMIWtwvKozzP17Z4zzFZ1wVjxIQng0FhkM7zy-2FD4xkS7dqJFN-2BVRszdxybI4unDo=
+fH8LixZsqb0kb9MbH2rR9HvvItmHPIYZIVbymZOL6vnw0hQDptqxZxxuTLVlGGK-2FZfD9LLHiB=
+ETPEb1bZgEUvuI8gcqD41-2FcsS-2FRLaH9E0WMcTjFIL_Ene3zQb0Zc21f1d-2B9U2eSGY-2FE=
+Axr1-2FpK-2FKuswIxPdgLM5gG3wtPJRdxBKpWoFIIL69WEGxaslWpUy72C1b9KoxpwfOFtxlub=
+UuLcN9xvGXcWl0qd-2BkXkYxWpu6v2dpx-2FlefgyONyj4RSu7vkHUTdnVL679kVFlFUR-2FlrR=
+R-2FGv0qO6WJtd3LqQKG4SHEI36ynY75YR6lyUmMRNWa4uW00ZA-3D-3D" class=3D"button =
+button-primary" target=3D"_blank" rel=3D"noopener" style=3D"box-sizing: bor=
+der-box; position: relative; font-family: Inter, ui-sans-serif, system-ui, =
+-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial,=
+ Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,=
+ Noto Color Emoji; line-height: 2; border-color: #7047EB !important; backgr=
+ound: #7047EB !important; color: #FFFFFF !important; width: 100%; font-size=
+: 16px; font-weight: 600; border-radius: 8px; text-align: center; padding: =
+8px 24px; margin: 0; cursor: pointer; -webkit-text-size-adjust: none; displ=
+ay: block; overflow: hidden; text-decoration: none; background-color: #7047=
+EB;">View Order =E2=86=92</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr style=3D"box-sizing: border-box; position: relative; font-family: Inter=
+, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Ro=
+boto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Sego=
+e UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; line-height=
+: 2; background-color: #121217 !important; background: #25252D; height: 1px=
+; border: 0; margin-bottom: 24px;">
+<p style=3D"box-sizing: border-box; position: relative; font-family: Inter,=
+ ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Rob=
+oto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe=
+ UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; color: #1212=
+17 !important; line-height: 28px; margin-bottom: 24px; margin-top: 0; text-=
+align: left;">
+    This payment will appear as <strong style=3D"box-sizing: border-box; po=
+sition: relative; font-family: Inter, ui-sans-serif, system-ui, -apple-syst=
+em, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,=
+ sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color=
+ Emoji; font-size: 16px; line-height: 2; font-weight: 600;">LEMSQZY* DYTES<=
+/strong> on your bank or card statement.
+</p>
+<p style=3D"box-sizing: border-box; position: relative; font-family: Inter,=
+ ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Rob=
+oto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe=
+ UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; color: #1212=
+17 !important; line-height: 28px; margin-bottom: 24px; margin-top: 0; text-=
+align: left;">
+    Need help with your payment or order?<br>
+    <a href=3D"https://url9196.lemonsqueezy-mail.com/ls/click?upn=3Du001.5P=
+5E5ZdLNcqQ8CduXpF-2BvreIM6c-2FqnpJkf67qEodl1BvAtWn-2FNJuyEIxT3eovu7RFQBs_En=
+e3zQb0Zc21f1d-2B9U2eSGY-2FEAxr1-2FpK-2FKuswIxPdgLM5gG3wtPJRdxBKpWoFIIL69WEG=
+xaslWpUy72C1b9KoyV2m1LjdKTfruMTZ5Qc3Z9pA0znAp-2FjpKcrQTzOztijOoJILGACo8sTfQ=
+Lo3FHKKbU-2F5KS8ctKWyNz-2BWhELKlen56UwbRYZIJPjR93MvxjMY2e1Excf6Nm-2BGffymUr=
+bzg-3D-3D" style=3D"box-sizing: border-box; position: relative; font-family=
+: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe=
+ UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoj=
+i, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; line=
+-height: 2; color: #7047EB !important; border-color: #7047EB !important; te=
+xt-decoration: none; border-bottom: 1px solid #7047EB;">Visit Lemon Squeezy=
+ Support</a> or reply to this email.
+</p>
+<p style=3D"box-sizing: border-box; position: relative; font-family: Inter,=
+ ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Rob=
+oto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe=
+ UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; color: #1212=
+17 !important; line-height: 28px; margin-bottom: 24px; margin-top: 0; text-=
+align: left;">
+    Need an invoice for your records?<br>
+    <a href=3D"https://url9196.lemonsqueezy-mail.com/ls/click?upn=3Du001.5P=
+5E5ZdLNcqQ8CduXpF-2BvoaKdB4Vv173aAn-2BUlr8bsDaHvogdpsyawsSEi1J1grUY3xMP8ed-=
+2FQQN11yLIqBMIWtwvKozzP17Z4zzFZ1wVjyVSsWdpdoi0f6TRP3HLYN1Gdda99VlAADt-2F7SF=
+Ru2woxy8-2BOPkefNSzeUt64dQvDjzyt4OlUkX9N3ZkXDAeBSvF9q7blCwP-2BC-2FPZpHX4Sz8=
+l-2B8awg-2B48RHM2JHnD3udFmU10-2Fu9D9a9xfsu81h9dYr6_ps_Ene3zQb0Zc21f1d-2B9U2=
+eSGY-2FEAxr1-2FpK-2FKuswIxPdgLM5gG3wtPJRdxBKpWoFIIL69WEGxaslWpUy72C1b9KoyY4=
+q-2BOjJ-2Bw-2FHT6fJeKlg2XAAlpilrnvGHwPf-2FLHRQ02VdbvjsiMjAYP-2Fx0Rz-2BUOCEU=
+kV6S-2Bhsvo2Yv4q6rRRysZvGHN5gnVzn1EUAa7Odr-2F78uabS7eOrfF3IPxBB7Ipw-3D-3D" =
+style=3D"box-sizing: border-box; position: relative; font-family: Inter, ui=
+-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto=
+, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI=
+ Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; line-height: 2;=
+ color: #7047EB !important; border-color: #7047EB !important; text-decorati=
+on: none; border-bottom: 1px solid #7047EB;">Generate an invoice</a>
+</p>
+<br>
+
+
+                                   =20
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+<td class=3D"footer footer-wide" width=3D"100%" cellpadding=3D"0" cellspaci=
+ng=3D"0" style=3D"box-sizing: border-box; position: relative; font-family: =
+Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe U=
+I, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,=
+ Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; line-h=
+eight: 2; -premailer-cellpadding: 0; -premailer-cellspacing: 0; margin: 0 a=
+uto; padding: 0; background-color: #FFFFFF !important; color: #6C6C89 !impo=
+rtant; -premailer-width: 100%; background: #ffffff; width: 100%; padding-to=
+p: 56px; padding-bottom: 56px;">
+<table class=3D"inner-footer" align=3D"center" width=3D"464" cellpadding=3D=
+"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box=
+; position: relative; font-family: Inter, ui-sans-serif, system-ui, -apple-=
+system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto S=
+ans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto C=
+olor Emoji; font-size: 16px; line-height: 2; -premailer-cellpadding: 0; -pr=
+emailer-cellspacing: 0; -premailer-width: 456px; border-color: #e8e5ef; bor=
+der-radius: 2px; border-width: 1px; margin: 0 auto; padding: 0; width: 456p=
+x; background-color: transparent;">
+<tr>
+<td class=3D"content-cell" style=3D"box-sizing: border-box; position: relat=
+ive; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacS=
+ystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, =
+Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-=
+size: 16px; line-height: 2; max-width: 100vw; padding-left: 16px; padding-r=
+ight: 16px;">
+<div class=3D"powered-by-lemonsqueezy" style=3D"box-sizing: border-box; pos=
+ition: relative; font-family: Inter, ui-sans-serif, system-ui, -apple-syste=
+m, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, =
+sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color =
+Emoji; font-size: 16px; line-height: 2;">
+<a href=3D"https://url9196.lemonsqueezy-mail.com/ls/click?upn=3Du001.5P5E5Z=
+dLNcqQ8CduXpF-2BvreIM6c-2FqnpJkf67qEodl1CUCL3ZWjClejGOZbyb7JjUo5lR_Ene3zQb0=
+Zc21f1d-2B9U2eSGY-2FEAxr1-2FpK-2FKuswIxPdgLM5gG3wtPJRdxBKpWoFIIL69WEGxaslWp=
+Uy72C1b9Ko2TMRCnB-2BU-2Bmll50u7Jh0d2pQESOv1LNGC6CUjtEmvBITJaAjCxLOlQiVj-2Bp=
+w-2FZhFTPc470BmNoy-2Fs3ZeOaXwYJ6z8DIeNaEDf1ONk4U0Xf4U0In87BlXkKcSiCQiyAi-2F=
+g-3D-3D" target=3D"_blank" class=3D"footer-logo" style=3D"box-sizing: borde=
+r-box; position: relative; font-family: Inter, ui-sans-serif, system-ui, -a=
+pple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, N=
+oto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, N=
+oto Color Emoji; font-size: 16px; line-height: 2; border-color: #7047EB !im=
+portant; text-decoration: underline; color: #6C6C89 !important;">
+<img src=3D"https://assets.lemonsqueezy.com/img/email-logo-2.png" alt=3D"Le=
+mon Squeezy" style=3D"box-sizing: border-box; position: relative; font-fami=
+ly: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Seg=
+oe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Em=
+oji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; font-size: 16px; li=
+ne-height: 2; max-width: 100%; border: none; display: block; width: 182px; =
+height: auto; vertical-align: middle; margin: 0 auto;">
+</a>
+<div class=3D"mor-copy" style=3D"box-sizing: border-box; position: relative=
+; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSyst=
+emFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, App=
+le Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; max-widt=
+h: 356px; margin: 12px auto 24px; color: #6C6C89; text-align: center; font-=
+size: 13px; line-height: 24px;">
+<p style=3D"box-sizing: border-box; position: relative; font-family: Inter,=
+ ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Rob=
+oto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe=
+ UI Emoji, Segoe UI Symbol, Noto Color Emoji; margin-top: 0; font-size: 14p=
+x; line-height: 24px; color: #6C6C89 !important; text-align: center; margin=
+-bottom: 0;">
+Merchant of Record services provided to Dytes Studio by Lemon Squeezy
+</p>
+<p style=3D"box-sizing: border-box; position: relative; font-family: Inter,=
+ ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Rob=
+oto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe=
+ UI Emoji, Segoe UI Symbol, Noto Color Emoji; margin-top: 0; font-size: 14p=
+x; line-height: 24px; color: #6C6C89 !important; text-align: center; margin=
+-bottom: 0;">
+<a href=3D"https://url9196.lemonsqueezy-mail.com/ls/click?upn=3Du001.5P5E5Z=
+dLNcqQ8CduXpF-2BvreIM6c-2FqnpJkf67qEodl1DQQCP2lYd40CxlXTySQ4EMg11nI6IynN8I2=
+fo0SN7IYg-3D-3DKH3t_Ene3zQb0Zc21f1d-2B9U2eSGY-2FEAxr1-2FpK-2FKuswIxPdgLM5gG=
+3wtPJRdxBKpWoFIIL69WEGxaslWpUy72C1b9Ko4VIn2K4lfuEpmDzbnJXmbIpWRJyOGy32eEv7V=
+A6xAbHKPGMvEqWgACSeR-2BMTpZuuBN30AMvYYcXIK6-2Bq4oD6XAU2hI0PoGsITs37x7lu-2FJ=
+-2FNKWYXmTxSyhMRQJcA9jnFA-3D-3D" target=3D"_blank" class=3D"hover:text-wedg=
+es-gray-900" style=3D"box-sizing: border-box; position: relative; font-fami=
+ly: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Seg=
+oe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Em=
+oji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; border-color: #7047=
+EB !important; color: #6C6C89 !important; font-size: 14px; line-height: 24p=
+x; text-decoration: none; vertical-align: middle;">Terms</a>
+=C2=A0
+=C2=B7
+=C2=A0
+<a href=3D"https://url9196.lemonsqueezy-mail.com/ls/click?upn=3Du001.5P5E5Z=
+dLNcqQ8CduXpF-2BvreIM6c-2FqnpJkf67qEodl1Bn3bTl73Wqrquk69TzniLzNW3j_Ene3zQb0=
+Zc21f1d-2B9U2eSGY-2FEAxr1-2FpK-2FKuswIxPdgLM5gG3wtPJRdxBKpWoFIIL69WEGxaslWp=
+Uy72C1b9Ko4LUYMCx6gTVnwZ4-2Bqweb66l6N4MRUcAU4IQMocDp7t9Bk5ZK2cO8CqHi8Dt7nzj=
+EY9XSgQUbuqfjbtvvU4K17-2FJ6gnwI6-2FmWGDe5FdlPdXbRPz7msHScZ-2Bq6FTJ42VyFw-3D=
+-3D" target=3D"_blank" class=3D"hover:text-wedges-gray-900" style=3D"box-si=
+zing: border-box; position: relative; font-family: Inter, ui-sans-serif, sy=
+stem-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neu=
+e, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe U=
+I Symbol, Noto Color Emoji; border-color: #7047EB !important; color: #6C6C8=
+9 !important; font-size: 14px; line-height: 24px; text-decoration: none; ve=
+rtical-align: middle;">Privacy</a>
+=C2=A0
+=C2=B7
+=C2=A0
+<a href=3D"https://url9196.lemonsqueezy-mail.com/ls/click?upn=3Du001.5P5E5Z=
+dLNcqQ8CduXpF-2BvreIM6c-2FqnpJkf67qEodl1BvAtWn-2FNJuyEIxT3eovu7R9Tr0_Ene3zQ=
+b0Zc21f1d-2B9U2eSGY-2FEAxr1-2FpK-2FKuswIxPdgLM5gG3wtPJRdxBKpWoFIIL69WEGxasl=
+WpUy72C1b9KoxoHvnwV6sn8Ptz5GFlvb-2FOlga8ChOCJe5BRdQL7PwK0oDjDaAIeVuKOjwzjcm=
+ijIeucBWnzl4vWTVj3Cb7KfbVX7611FTrAMz4j02lxgRy6mznUsrI9rcE9JTnn4YeZyA-3D-3D"=
+ target=3D"_blank" class=3D"hover:text-wedges-gray-900" style=3D"box-sizing=
+: border-box; position: relative; font-family: Inter, ui-sans-serif, system=
+-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, A=
+rial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Sy=
+mbol, Noto Color Emoji; border-color: #7047EB !important; color: #6C6C89 !i=
+mportant; font-size: 14px; line-height: 24px; text-decoration: none; vertic=
+al-align: middle;">Help</a>
+</p>
+</div>
+</div>
+<p style=3D"box-sizing: border-box; position: relative; font-family: Inter,=
+ ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Rob=
+oto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe=
+ UI Emoji, Segoe UI Symbol, Noto Color Emoji; margin-top: 0; font-size: 14p=
+x; line-height: 24px; color: #6C6C89 !important; text-align: center; margin=
+-bottom: 0;">=C2=A9 2025 Lemon Squeezy, LLC<br>
+222 Main Street Suite 500, Salt Lake City, UT 84101</p>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+<img src=3D"https://url9196.lemonsqueezy-mail.com/wf/open?upn=3Du001.fP47MG=
+jnHCFq9iPJgeS0otFWovEg-2BmgZRkEn-2B0Rap8vVDZ7xi1f17j8hLlBXprUkBuRU6dwgA4x0A=
+lB5SenM-2F6eW4pHVHtjdLyDbVB2Xz9P7W0EOmf91IlfM3BMfDP6yPcBBu7h2rBOTzvdP7fDOG1=
+tFIPwm0h9KkebH154hNuv26eSaoD0-2BR3rZeXQTSKQtG28bhlL89-2BSdQes0zJfapZfsg8w-2=
+Fw8xnVJEZJL0z0xI-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body></html>
+--IWl4Q5oi--
+
