@@ -1,0 +1,1056 @@
+Delivered-To: frederic.willem@gmail.com
+Received: by 2002:a05:7108:92c6:b0:3dc:a9a0:5d5b with SMTP id hs6csp5198706gdb;
+        Sat, 18 Jan 2025 10:44:52 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHEoHgcnSccDUKL8lRL14DJaHv8b3p7OPzPWVDcST6XQA9ZZcJguRJSLbjHp5fUXBV86+So
+X-Received: by 2002:a05:6a00:944a:b0:725:ce39:4516 with SMTP id d2e1a72fcca58-72d8c752504mr23109824b3a.7.1737225892240;
+        Sat, 18 Jan 2025 10:44:52 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1737225892; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Ze5CwPMWtsMAJCkSowTj7XWeWfG3AGQZPB8USNltYkvDutU77PlbIZtdX109+9cQ29
+         3d78ByNEeZa+wZZMvREBLmdLHxl9DcgqC+FPLsyQVHGFkllKHGWy4KD8sTpCXEb6iM57
+         ytU3231wJOcaKhT1V/u+A/pZZN4lG1KlwYWNLSJDmOoqbEm9ittPmOD6DrSeK+6WMBbf
+         1BXFoS3Z0ja8L6dJ4CLpTcp1qFyxvyQ500NMKmSNf9Y+OPDjxxHXWrzRJ7U/C60Lz6kd
+         xI9Z1YNvjdFk9hmgqmvt0TIeyXwm1hX0mQEQVv5ZE1IBNgVZT4T9AylMxMl4mq239AZ6
+         ol/w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=message-id:mime-version:date:reply-to:to:from:subject
+         :dkim-signature:dkim-signature;
+        bh=S9mAN7CL6+e3CIA/JdUKu+JO1uqn3ZElWu2pT5LGjQ8=;
+        fh=0tsbzeVBBQ9zKjTwPk5LgNtovsXXWq0dZtBKg6ZRT8g=;
+        b=atOnhD6tCS3zih1SFShCgTA4ol+SmJrsAnJDORt5K1Al7yvC/C7HYhV7fzYXhPUCTy
+         7LtYUo+EEHeYV1Bq6yR1rOHWqFoJ8RyoefoLvNEWWnrvYCJSWTQyqL1AlTAh41z6OLTW
+         TR+pa8cvsbRR93nKtnRNnhGhbLDQrEUBSryMF6wBlnLZQJY0OQfMcceM+bd40+gEeKCx
+         DirftaSkTJYS46YPtEgA24+t1ru/psS3Va0ZPOTeyTiN6EXW+uhqprvSQ4kz1pCB70+d
+         +DM01sPZoWkmte9k4VsiTBkAWy61bDgh8DIugH15IWqTWuSM3JzXWNZOahZBRpEaecql
+         Bv7w==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mail.totalenergies.be header.s=cm header.b=XVr+dNqt;
+       dkim=pass header.i=@cmail2.com header.s=cs2013 header.b=WhQy+vf2;
+       spf=pass (google.com: domain of totalenergiespowergasbelgium-tdhyxud1l1r@cmail20.com designates 203.55.21.17 as permitted sender) smtp.mailfrom=TotalEnergiesPowerGasBelgium-tdhyxud1l1r@cmail20.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=mail.totalenergies.be
+Return-Path: <TotalEnergiesPowerGasBelgium-tdhyxud1l1r@cmail20.com>
+Received: from mx17.a.outbound.createsend.com (mx17.a.outbound.createsend.com. [203.55.21.17])
+        by mx.google.com with ESMTPS id d2e1a72fcca58-72dab9c9478si6161333b3a.228.2025.01.18.10.44.50
+        for <frederic.willem@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 18 Jan 2025 10:44:52 -0800 (PST)
+Received-SPF: pass (google.com: domain of totalenergiespowergasbelgium-tdhyxud1l1r@cmail20.com designates 203.55.21.17 as permitted sender) client-ip=203.55.21.17;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mail.totalenergies.be header.s=cm header.b=XVr+dNqt;
+       dkim=pass header.i=@cmail2.com header.s=cs2013 header.b=WhQy+vf2;
+       spf=pass (google.com: domain of totalenergiespowergasbelgium-tdhyxud1l1r@cmail20.com designates 203.55.21.17 as permitted sender) smtp.mailfrom=TotalEnergiesPowerGasBelgium-tdhyxud1l1r@cmail20.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=mail.totalenergies.be
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=cm; d=mail.totalenergies.be;
+ h=Subject:From:To:Reply-To:Date:MIME-Version:Content-Type:Message-ID;
+ i=care.no-reply@mail.totalenergies.be;
+ bh=S9mAN7CL6+e3CIA/JdUKu+JO1uqn3ZElWu2pT5LGjQ8=;
+ b=XVr+dNqtyGglMlDeUEdNLo6BJd8wTLMo6DY8daQP2rMgVajOFXryeJIlyOUuDmh99vsrPODNj868
+   CcsN6pXoEHUHU3Xc4y4u/la6vqD+XcE0t38m22S5ecmX/+kzIOP+LslWDqduzBcm8SL0ntPQXC9R
+   6NM7Ci3bYtNjpy9GGrQ=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=cs2013; d=cmail2.com;
+ h=Subject:From:To:Reply-To:Date:MIME-Version:Content-Type:Message-ID;
+ bh=S9mAN7CL6+e3CIA/JdUKu+JO1uqn3ZElWu2pT5LGjQ8=;
+ b=WhQy+vf2zxLANSksSR1pQ45xpfY/uFxIkoHtK3fqdkXdE+yKuhxP9Lz5ycBBe14xuAvqkhC5jsXD
+   RAAB20Y7ovQisJ4wjFN5eYe6THaD+bA6J9YWI5VaEqn/wylc0GfoafbmZ68hpnYnWSwJDSfFk1AB
+   pbt2CgdFgBiQUPsCGvk=
+Subject: =?utf-8?Q?=e2=9c=94=ef=b8=8fVotre_relev?=
+  =?utf-8?Q?=c3=a9_d'index_en_quelques_minutes?=
+From: "TotalEnergies Power & Gas Belgium" 
+	<care.no-reply@mail.totalenergies.be> 
+To: "frederic.willem@gmail.com" <frederic.willem@gmail.com>
+Reply-To: Index.no-reply@totalenergies.be
+Date: Sun, 19 Jan 2025 05:44:48 +1100
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_c8ead025-554f-4334-ae50-46a9ee425ca4_"; charset=utf-8
+X-Mailer: Create Send
+X-Complaints-To: abuse@cmail20.com
+X-Createsend-Tx: 1
+X-Tx-Signature: 4b55f2a2-d5cc-11ef-89de-6fe0da588b54.r.
+Message-ID: <cm.0544488227031.tdhyxud.l.r.4b55f2a2d5cc11ef89de6fe0da588b54@cmail20.com>
+
+--_c8ead025-554f-4334-ae50-46a9ee425ca4_
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Mon espace [https://my.totalenergies.be/fr/particuliers]
+
+Bonjour =
+LOUIS=
+=
+ =
+WILLEM=
+=
+,
+
+Nous avons re=C3=A7u une estimation de votre relev=C3=A9 d'index pour votre=
+ =
+=
+=
+ =C3=A9lectricit=C3=A9 =
+=
+=
+ de la part de votre gestionnaire de r=C3=A9seau. Deux cas de figure peuven=
+t expliquer cette situation : soit vous n'avez pas communiqu=C3=A9 votre in=
+dex, soit il n'a pas =C3=A9t=C3=A9 relev=C3=A9 par  votre gestionnaire de r=
+=C3=A9seau.
+
+En fonction de votre situation, l=E2=80=99index estim=C3=A9 par votre gesti=
+onnaire de r=C3=A9seau nous a =C3=A9t=C3=A9 transmis pour une des raisons s=
+uivantes :
+
+vous =C3=AAtes fourni par TotalEnergies et votre mois de relev=C3=A9 d=E2=80=
+=99index annuel vient d=E2=80=99=C3=AAtre d=C3=A9pass=C3=A9, il s=E2=80=99a=
+git donc de l=E2=80=99index annuel sur base duquel sera =C3=A9tablie votre =
+facture de r=C3=A9gularisation annuelle ;vous =C3=AAtes fourni depuis peu p=
+ar TotalEnergies, il s=E2=80=99agit donc de l=E2=80=99index de d=C3=A9part =
+sur base duquel TotalEnergies commencera =C3=A0 vous facturer ;vous n'=C3=AA=
+tes plus client TotalEnergies, il s=E2=80=99agit donc de l=E2=80=99index de=
+ cl=C3=B4ture sur base duquel sera =C3=A9tablie votre facture de r=C3=A9gul=
+arisation de cl=C3=B4ture.
+
+Mais rassurez-vous, il n'est pas trop tard. Vous avez jusqu'au =
+=
+08/02/2025=
+=
+ pour nous communiquer votre index du compteur =
+000084016-CONT2457458=
+=
+=
+=
+=
+=E2=80=8B.
+
+Pourquoi est-ce important de nous communiquer votre relev=C3=A9 d'index ?
+
+Il est utilis=C3=A9 pour calculer votre consommation et donc le montant de =
+votre facture de r=C3=A9gularisation. Autant payer pour de l'=C3=A9nergie q=
+ue vous avez utilis=C3=A9e, non ?
+
+Communiquez-nous votre index pour l'adresse =
+Rue Dieudonn=C3=A9 Jacobs 60 13, 4420 Montegn=C3=A9e=
+=
+ en compl=C3=A9tant le formulaire ci-dessous. Cela ne prend que quelques mi=
+nutes.
+
+Je communique mon index [http://=
+=
+=
+https://www.totalenergies.be/fr/consumptions/estimated-index/ELECTRICITY/67=
+69dc88-d439-11ef-b890-506b8dd44cdf=
+]     O=C3=B9 trouver votre index ?
+
+La s=C3=A9rie de chiffres sur votre compteur vous indique votre consommatio=
+n. Si vous avez un doute, n'h=C3=A9sitez pas =C3=A0 consulter  notre guide =
+[https://totalenergies.be/fr/particuliers/aide-et-contact/questions-freque=
+ntes/electricite-gaz/mon-compteur/les-index/comment-relever-mes-index] pour=
+ =C3=AAtre s=C3=BBr de fournir les bonnes informations.
+
+Merci pour votre confiance.
+
+L=E2=80=99=C3=A9quipe TotalEnergies
+
+TotalEnergies Power & Gas Belgium S.A.
+
+Rue Saint-Laurent 54
+
+4000 Li=C3=A8ge
+
+TVA: BE 0859 655 570 - RPM Li=C3=A8ge
+
+IBAN : BE38 0015 0942 4272 =E2=80=93 BIC : GEBABEBB
+
+[http://www.totalenergies.be]
+
+--_c8ead025-554f-4334-ae50-46a9ee425ca4_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www=
+=2Ew3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html style=3D"margin: 0;pad=
+ding: 0;" xmlns=3D"http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title></title>
+    <!--[if !mso]><!--><meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3D=
+edge"><!--<![endif]-->
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width"><style type=3D=
+"text/css">
+@media only screen and (min-width: 620px){.column{}.wrapper{min-width:600px=
+ !important}.wrapper h1{}.wrapper h1{font-size:26px !important;line-height:=
+34px !important}.wrapper h2{}.wrapper h2{font-size:22px !important;line-hei=
+ght:31px !important}.wrapper h3{}.wrapper h3{font-size:18px !important;line=
+-height:26px !important}.wrapper .size-8,.wrapper .size-8-m,.wrapper .size-=
+8-l{font-size:8px !important;line-height:14px !important}.wrapper .size-8-m=
+{line-height:16px !important}.wrapper .size-8-l{line-height:24px !important=
+}.wrapper .size-9,.wrapper .size-9-m,.wrapper .size-9-l{font-size:9px !impo=
+rtant;line-height:16px !important}.wrapper .size-9-m{line-height:18px !impo=
+rtant}.wrapper .size-9-l{line-height:27px !important}.wrapper .size-10,.wra=
+pper .size-10-m,.wrapper .size-10-l{font-size:10px !important;line-height:1=
+8px !important}.wrapper .size-10-m{line-height:20px !important}.wrapper=20
+=2Esize-10-l{line-height:30px !important}.wrapper .size-11,.wrapper .size-11-=
+m,.wrapper .size-11-l{font-size:11px !important;line-height:19px !important=
+}.wrapper .size-11-m{line-height:22px !important}.wrapper .size-11-l{line-h=
+eight:33px !important}.wrapper .size-12,.wrapper .size-12-m,.wrapper .size-=
+12-l{font-size:12px !important;line-height:19px !important}.wrapper .size-1=
+2-m{line-height:24px !important}.wrapper .size-12-l{line-height:36px !impor=
+tant}.wrapper .size-13,.wrapper .size-13-m,.wrapper .size-13-l{font-size:13=
+px !important;line-height:21px !important}.wrapper .size-13-m{line-height:2=
+6px !important}.wrapper .size-13-l{line-height:39px !important}.wrapper .si=
+ze-14,.wrapper .size-14-m,.wrapper .size-14-l{font-size:14px !important;lin=
+e-height:21px !important}.wrapper .size-14-m{line-height:28px !important}.w=
+rapper .size-14-l{line-height:42px !important}.wrapper .size-15,.wrapper=20
+=2Esize-15-m,.wrapper .size-15-l{font-size:15px !important;line-height:23px !=
+important}.wrapper .size-15-m{line-height:30px !important}.wrapper .size-15=
+-l{line-height:45px !important}.wrapper .size-16,.wrapper .size-16-m,.wrapp=
+er .size-16-l{font-size:16px !important;line-height:24px !important}.wrappe=
+r .size-16-m{line-height:32px !important}.wrapper .size-16-l{line-height:48=
+px !important}.wrapper .size-17,.wrapper .size-17-m,.wrapper .size-17-l{fon=
+t-size:17px !important;line-height:26px !important}.wrapper .size-17-m{line=
+-height:34px !important}.wrapper .size-17-l{line-height:51px !important}.wr=
+apper .size-18,.wrapper .size-18-m,.wrapper .size-18-l{font-size:18px !impo=
+rtant;line-height:26px !important}.wrapper .size-18-m{line-height:36px !imp=
+ortant}.wrapper .size-18-l{line-height:54px !important}.wrapper .size-20,.w=
+rapper .size-20-m,.wrapper .size-20-l{font-size:20px=20
+!important;line-height:28px !important}.wrapper .size-20-m{line-height:40px=
+ !important}.wrapper .size-20-l{line-height:60px !important}.wrapper .size-=
+22,.wrapper .size-22-m,.wrapper .size-22-l{font-size:22px !important;line-h=
+eight:31px !important}.wrapper .size-22-m{line-height:44px !important}.wrap=
+per .size-22-l{line-height:66px !important}.wrapper .size-24,.wrapper .size=
+-24-m,.wrapper .size-24-l{font-size:24px !important;line-height:32px !impor=
+tant}.wrapper .size-24-m{line-height:48px !important}.wrapper .size-24-l{li=
+ne-height:72px !important}.wrapper .size-26,.wrapper .size-26-m,.wrapper .s=
+ize-26-l{font-size:26px !important;line-height:34px !important}.wrapper .si=
+ze-26-m{line-height:52px !important}.wrapper .size-26-l{line-height:78px !i=
+mportant}.wrapper .size-28,.wrapper .size-28-m,.wrapper .size-28-l{font-siz=
+e:28px !important;line-height:36px !important}.wrapper=20
+=2Esize-28-m{line-height:56px !important}.wrapper .size-28-l{line-height:84px=
+ !important}.wrapper .size-30,.wrapper .size-30-m,.wrapper .size-30-l{font-=
+size:30px !important;line-height:38px !important}.wrapper .size-30-m{line-h=
+eight:60px !important}.wrapper .size-30-l{line-height:90px !important}.wrap=
+per .size-32,.wrapper .size-32-m,.wrapper .size-32-l{font-size:32px !import=
+ant;line-height:40px !important}.wrapper .size-32-m{line-height:64px !impor=
+tant}.wrapper .size-32-l{line-height:96px !important}.wrapper .size-34,.wra=
+pper .size-34-m,.wrapper .size-34-l{font-size:34px !important;line-height:4=
+3px !important}.wrapper .size-34-m{line-height:68px !important}.wrapper .si=
+ze-34-l{line-height:102px !important}.wrapper .size-36,.wrapper .size-36-m,=
+=2Ewrapper .size-36-l{font-size:36px !important;line-height:43px !important}.=
+wrapper .size-36-m{line-height:72px !important}.wrapper=20
+=2Esize-36-l{line-height:108px !important}.wrapper .size-40,.wrapper .size-40=
+-m,.wrapper .size-40-l{font-size:40px !important;line-height:47px !importan=
+t}.wrapper .size-40-m{line-height:80px !important}.wrapper .size-40-l{line-=
+height:120px !important}.wrapper .size-44,.wrapper .size-44-m,.wrapper .siz=
+e-44-l{font-size:44px !important;line-height:50px !important}.wrapper .size=
+-44-m{line-height:88px !important}.wrapper .size-44-l{line-height:132px !im=
+portant}.wrapper .size-48,.wrapper .size-48-m,.wrapper .size-48-l{font-size=
+:48px !important;line-height:54px !important}.wrapper .size-48-m{line-heigh=
+t:96px !important}.wrapper .size-48-l{line-height:144px !important}.wrapper=
+ .size-56,.wrapper .size-56-m,.wrapper .size-56-l{font-size:56px !important=
+;line-height:60px !important}.wrapper .size-56-m{line-height:112px !importa=
+nt}.wrapper .size-56-l{line-height:168px !important}.wrapper=20
+=2Esize-64,.wrapper .size-64-m,.wrapper .size-64-l{font-size:64px !important;=
+line-height:68px !important}.wrapper .size-64-m{line-height:128px !importan=
+t}.wrapper .size-64-l{line-height:192px !important}.wrapper .size-72,.wrapp=
+er .size-72-m,.wrapper .size-72-l{font-size:72px !important;line-height:76p=
+x !important}.wrapper .size-72-m{line-height:144px !important}.wrapper .siz=
+e-72-l{line-height:216px !important}.wrapper .size-80,.wrapper .size-80-m,.=
+wrapper .size-80-l{font-size:80px !important;line-height:84px !important}.w=
+rapper .size-80-m{line-height:160px !important}.wrapper .size-80-l{line-hei=
+ght:240px !important}.wrapper .size-96,.wrapper .size-96-m,.wrapper .size-9=
+6-l{font-size:96px !important;line-height:100px !important}.wrapper .size-9=
+6-m{line-height:192px !important}.wrapper .size-96-l{line-height:288px !imp=
+ortant}.wrapper .size-112,.wrapper .size-112-m,.wrapper=20
+=2Esize-112-l{font-size:112px !important;line-height:116px !important}.wrappe=
+r .size-112-m{line-height:224px !important}.wrapper .size-112-l{line-height=
+:336px !important}.wrapper .size-128,.wrapper .size-128-m,.wrapper .size-12=
+8-l{font-size:128px !important;line-height:132px !important}.wrapper .size-=
+128-m{line-height:256px !important}.wrapper .size-128-l{line-height:384px !=
+important}.wrapper .size-144,.wrapper .size-144-m,.wrapper .size-144-l{font=
+-size:144px !important;line-height:148px !important}.wrapper .size-144-m{li=
+ne-height:288px !important}.wrapper .size-144-l{line-height:432px !importan=
+t}}
+</style>
+    <meta name=3D"x-apple-disable-message-reformatting">
+    <style type=3D"text/css">
+=2Emain, .mso {
+  margin: 0;
+  padding: 0;
+}
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+* {
+  line-height: inherit;
+}
+[x-apple-data-detectors] {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+=2Ewrapper .footer__share-button a:hover,
+=2Ewrapper .footer__share-button a:focus {
+  color: #ffffff !important;
+}
+=2Ewrapper .footer__share-button a.icon-white:hover,
+=2Ewrapper .footer__share-button a.icon-white:focus {
+  color: #ffffff !important;
+}
+=2Ewrapper .footer__share-button a.icon-black:hover,
+=2Ewrapper .footer__share-button a.icon-black:focus {
+  color: #000000 !important;
+}
+=2Ebtn a:hover,
+=2Ebtn a:focus,
+=2Efooter__share-button a:hover,
+=2Efooter__share-button a:focus,
+=2Eemail-footer__links a:hover,
+=2Eemail-footer__links a:focus {
+  opacity: 0.8;
+}
+=2Epreheader,
+=2Eheader,
+=2Elayout,
+=2Ecolumn {
+  transition: width 0.25s ease-in-out, max-width 0.25s ease-in-out;
+}
+=2Epreheader td {
+  padding-bottom: 8px;
+}
+=2Elayout,
+div.header {
+  max-width: 400px !important;
+  -fallback-width: 95% !important;
+  width: calc(100% - 20px) !important;
+}
+div.preheader {
+  max-width: 360px !important;
+  -fallback-width: 90% !important;
+  width: calc(100% - 60px) !important;
+}
+=2Esnippet,
+=2Ewebversion {
+  Float: none !important;
+}
+=2Estack .column {
+  max-width: 400px !important;
+  width: 100% !important;
+}
+=2Efixed-width.has-border {
+  max-width: 402px !important;
+}
+=2Efixed-width.has-border .layout__inner {
+  box-sizing: border-box;
+}
+=2Esnippet,
+=2Ewebversion {
+  width: 50% !important;
+}
+=2Emso .layout__edges {
+  font-size: 0;
+}
+=2Elayout-fixed-width,
+=2Emso .layout-full-width {
+  background-color: #ffffff;
+}
+@media only screen and (min-width: 620px) {
+  .column,
+  .gutter {
+    display: table-cell;
+    Float: none !important;
+    vertical-align: top;
+  }
+  div.preheader,
+  .email-footer {
+    max-width: 560px !important;
+    width: 560px !important;
+  }
+  .snippet,
+  .webversion {
+    width: 280px !important;
+  }
+  div.header,
+  .layout,
+  .one-col .column {
+    max-width: 600px !important;
+    width: 600px !important;
+  }
+  .fixed-width.has-border,
+  .fixed-width.x_has-border,
+  .has-gutter.has-border,
+  .has-gutter.x_has-border {
+    max-width: 602px !important;
+    width: 602px !important;
+  }
+  .two-col .column {
+    max-width: 300px !important;
+    width: 300px !important;
+  }
+  .three-col .column,
+  .column.narrow,
+  .column.x_narrow {
+    max-width: 200px !important;
+    width: 200px !important;
+  }
+  .column.wide,
+  .column.x_wide {
+    width: 400px !important;
+  }
+  .two-col.has-gutter .column,
+  .two-col.x_has-gutter .column {
+    max-width: 290px !important;
+    width: 290px !important;
+  }
+  .three-col.has-gutter .column,
+  .three-col.x_has-gutter .column,
+  .has-gutter .narrow {
+    max-width: 188px !important;
+    width: 188px !important;
+  }
+  .has-gutter .wide {
+    max-width: 394px !important;
+    width: 394px !important;
+  }
+  .two-col.has-gutter.has-border .column,
+  .two-col.x_has-gutter.x_has-border .column {
+    max-width: 292px !important;
+    width: 292px !important;
+  }
+  .three-col.has-gutter.has-border .column,
+  .three-col.x_has-gutter.x_has-border .column,
+  .has-gutter.has-border .narrow,
+  .has-gutter.x_has-border .narrow {
+    max-width: 190px !important;
+    width: 190px !important;
+  }
+  .has-gutter.has-border .wide,
+  .has-gutter.x_has-border .wide {
+    max-width: 396px !important;
+    width: 396px !important;
+  }
+}
+@supports (display: flex) {
+  @media only screen and (min-width: 620px) {
+    .fixed-width.has-border .layout__inner {
+      display: flex !important;
+    }
+  }
+}
+/***
+* Mobile Styles
+*
+* 1. Overriding inline styles
+*/
+@media(max-width: 619px) {
+  .email-flexible-footer .left-aligned-footer .column,
+  .email-flexible-footer .center-aligned-footer,
+  .email-flexible-footer .right-aligned-footer .column {
+    max-width: 100% !important; /* [1] */
+    text-align: center !important; /* [1] */
+    width: 100% !important; /* [1] */
+  }
+  .flexible-footer-logo {
+    margin-left: 0px !important; /* [1] */
+    margin-right: 0px !important; /* [1] */
+  }
+  .email-flexible-footer .left-aligned-footer .flexible-footer__share-butto=
+n__container,
+  .email-flexible-footer .center-aligned-footer .flexible-footer__share-but=
+ton__container,
+  .email-flexible-footer .right-aligned-footer .flexible-footer__share-butt=
+on__container {
+    display: inline-block;
+    margin-left: 5px !important; /* [1] */
+    margin-right: 5px !important; /* [1] */
+  }
+  .email-flexible-footer__additionalinfo--center {
+    text-align: center !important; /* [1] */
+  }
+ =20
+  .email-flexible-footer .left-aligned-footer table,
+  .email-flexible-footer .center-aligned-footer table,
+  .email-flexible-footer .right-aligned-footer table {
+    display: table !important; /* [1] */
+    width: 100% !important; /* [1] */
+  }
+  .email-flexible-footer .footer__share-button,
+  .email-flexible-footer .email-footer__additional-info {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and=
+ (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-rat=
+io: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min=
+-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .fblike {
+    background-image: url(https=
+://i7.cmail19.com=
+/static/eb/master/13-the-blueprint-3/images/fblike@2x.png) !important;
+  }
+  .tweet {
+    background-image: url(https=
+://i9.cmail19.com=
+/static/eb/master/13-the-blueprint-3/images/tweet@2x.png) !important;
+  }
+  .linkedinshare {
+    background-image: url(https=
+://i8.cmail19.com=
+/static/eb/master/13-the-blueprint-3/images/lishare@2x.png) !important=
+;
+  }
+  .forwardtoafriend {
+    background-image: url(https=
+://i10.cmail19.com=
+/static/eb/master/13-the-blueprint-3/images/forward@2x.png) !importan=
+t;
+  }
+}
+@media (max-width: 321px) {
+  .fixed-width.has-border .layout__inner {
+    border-width: 1px 0 !important;
+  }
+  .layout,
+  .stack .column {
+    min-width: 320px !important;
+    width: 320px !important;
+  }
+  .border {
+    display: none;
+  }
+  .has-gutter .border {
+    display: table-cell;
+  }
+}
+=2Ecmctbl--inline table {
+  border-collapse: collapse;
+}
+</style>
+   =20
+  <!--[if !mso]><!--><style type=3D"text/css">
+@import url(https://fonts.googleapis.com/css?family=3DRoboto:400,700,400ita=
+lic,700italic);
+</style><link href=3D"https://fonts.googleapis.com/css?family=3DRoboto:400,=
+700,400italic,700italic" rel=3D"stylesheet" type=3D"text/css"><!--<![endif=
+]--><style type=3D"text/css">
+=2Emain,.mso{background-color:#f5f5f5}.logo a:hover,.logo a:focus{color:#1e2e=
+3b !important}.footer-logo a:hover,.footer-logo a:focus{color:#372d1b !impo=
+rtant}.mso .layout-has-border{border-top:1px solid #c2c2c2;border-bottom:1p=
+x solid #c2c2c2}.mso .layout-has-bottom-border{border-bottom:1px solid #c2c=
+2c2}.mso .border{background-color:#c2c2c2}.mso h1{}.mso h1{font-size:26px !=
+important;line-height:34px !important}.mso h2{}.mso h2{font-size:22px !impo=
+rtant;line-height:31px !important}.mso h3{}.mso h3{font-size:18px !importan=
+t;line-height:26px !important}.mso .layout__inner{}.mso .footer__share-butt=
+on p{}.mso .footer__share-button p{font-family:Roboto,Tahoma,sans-serif}
+</style><!--[if mso]><style type=3D"text/css" emb-not-inline>
+=2Emso div{border:0 none white !important}.mso .w560 .divider{}.mso .w560 .di=
+vider{Margin-left:260px !important;Margin-right:260px !important}.mso .w360=
+ .divider{}.mso .w360 .divider{Margin-left:160px !important;Margin-right:16=
+0px !important}.mso .w260 .divider{}.mso .w260 .divider{Margin-left:110px !=
+important;Margin-right:110px !important}.mso .w160 .divider{}.mso .w160 .di=
+vider{Margin-left:60px !important;Margin-right:60px !important}.mso .w60 .d=
+ivider{}.mso .w60 .divider{Margin-left:10px !important;Margin-right:10px !i=
+mportant}.mso .w354 .divider{}.mso .w354 .divider{Margin-left:157px !import=
+ant;Margin-right:157px !important}.mso .w250 .divider{}.mso .w250 .divider{=
+Margin-left:105px !important;Margin-right:105px !important}.mso .w148 .divi=
+der{}.mso .w148 .divider{Margin-left:54px !important;Margin-right:54px !imp=
+ortant}.mso .size-8,.mso .size-8-m,.mso .size-8-l{font-size:8px=20
+!important;line-height:14px !important}.mso .size-8-m{line-height:16px !imp=
+ortant}.mso .size-8-l{line-height:24px !important}.mso .size-9,.mso .size-9=
+-m,.mso .size-9-l{font-size:9px !important;line-height:16px !important}.mso=
+ .size-9-m{line-height:18px !important}.mso .size-9-l{line-height:27px !imp=
+ortant}.mso .size-10,.mso .size-10-m,.mso .size-10-l{font-size:10px !import=
+ant;line-height:18px !important}.mso .size-10-m{line-height:20px !important=
+}.mso .size-10-l{line-height:30px !important}.mso .size-11,.mso .size-11-m,=
+=2Emso .size-11-l{font-size:11px !important;line-height:19px !important}.mso =
+=2Esize-11-m{line-height:22px !important}.mso .size-11-l{line-height:33px !im=
+portant}.mso .size-12,.mso .size-12-m,.mso .size-12-l{font-size:12px !impor=
+tant;line-height:19px !important}.mso .size-12-m{line-height:24px !importan=
+t}.mso .size-12-l{line-height:36px !important}.mso .size-13,.mso=20
+=2Esize-13-m,.mso .size-13-l{font-size:13px !important;line-height:21px !impo=
+rtant}.mso .size-13-m{line-height:26px !important}.mso .size-13-l{line-heig=
+ht:39px !important}.mso .size-14,.mso .size-14-m,.mso .size-14-l{font-size:=
+14px !important;line-height:21px !important}.mso .size-14-m{line-height:28p=
+x !important}.mso .size-14-l{line-height:42px !important}.mso .size-15,.mso=
+ .size-15-m,.mso .size-15-l{font-size:15px !important;line-height:23px !imp=
+ortant}.mso .size-15-m{line-height:30px !important}.mso .size-15-l{line-hei=
+ght:45px !important}.mso .size-16,.mso .size-16-m,.mso .size-16-l{font-size=
+:16px !important;line-height:24px !important}.mso .size-16-m{line-height:32=
+px !important}.mso .size-16-l{line-height:48px !important}.mso .size-17,.ms=
+o .size-17-m,.mso .size-17-l{font-size:17px !important;line-height:26px !im=
+portant}.mso .size-17-m{line-height:34px !important}.mso=20
+=2Esize-17-l{line-height:51px !important}.mso .size-18,.mso .size-18-m,.mso .=
+size-18-l{font-size:18px !important;line-height:26px !important}.mso .size-=
+18-m{line-height:36px !important}.mso .size-18-l{line-height:54px !importan=
+t}.mso .size-20,.mso .size-20-m,.mso .size-20-l{font-size:20px !important;l=
+ine-height:28px !important}.mso .size-20-m{line-height:40px !important}.mso=
+ .size-20-l{line-height:60px !important}.mso .size-22,.mso .size-22-m,.mso =
+=2Esize-22-l{font-size:22px !important;line-height:31px !important}.mso .size=
+-22-m{line-height:44px !important}.mso .size-22-l{line-height:66px !importa=
+nt}.mso .size-24,.mso .size-24-m,.mso .size-24-l{font-size:24px !important;=
+line-height:32px !important}.mso .size-24-m{line-height:48px !important}.ms=
+o .size-24-l{line-height:72px !important}.mso .size-26,.mso .size-26-m,.mso=
+ .size-26-l{font-size:26px !important;line-height:34px !important}.mso=20
+=2Esize-26-m{line-height:52px !important}.mso .size-26-l{line-height:78px !im=
+portant}.mso .size-28,.mso .size-28-m,.mso .size-28-l{font-size:28px !impor=
+tant;line-height:36px !important}.mso .size-28-m{line-height:56px !importan=
+t}.mso .size-28-l{line-height:84px !important}.mso .size-30,.mso .size-30-m=
+,.mso .size-30-l{font-size:30px !important;line-height:38px !important}.mso=
+ .size-30-m{line-height:60px !important}.mso .size-30-l{line-height:90px !i=
+mportant}.mso .size-32,.mso .size-32-m,.mso .size-32-l{font-size:32px !impo=
+rtant;line-height:40px !important}.mso .size-32-m{line-height:64px !importa=
+nt}.mso .size-32-l{line-height:96px !important}.mso .size-34,.mso .size-34-=
+m,.mso .size-34-l{font-size:34px !important;line-height:43px !important}.ms=
+o .size-34-m{line-height:68px !important}.mso .size-34-l{line-height:102px =
+!important}.mso .size-36,.mso .size-36-m,.mso .size-36-l{font-size:36px=20
+!important;line-height:43px !important}.mso .size-36-m{line-height:72px !im=
+portant}.mso .size-36-l{line-height:108px !important}.mso .size-40,.mso .si=
+ze-40-m,.mso .size-40-l{font-size:40px !important;line-height:47px !importa=
+nt}.mso .size-40-m{line-height:80px !important}.mso .size-40-l{line-height:=
+120px !important}.mso .size-44,.mso .size-44-m,.mso .size-44-l{font-size:44=
+px !important;line-height:50px !important}.mso .size-44-m{line-height:88px =
+!important}.mso .size-44-l{line-height:132px !important}.mso .size-48,.mso =
+=2Esize-48-m,.mso .size-48-l{font-size:48px !important;line-height:54px !impo=
+rtant}.mso .size-48-m{line-height:96px !important}.mso .size-48-l{line-heig=
+ht:144px !important}.mso .size-56,.mso .size-56-m,.mso .size-56-l{font-size=
+:56px !important;line-height:60px !important}.mso .size-56-m{line-height:11=
+2px !important}.mso .size-56-l{line-height:168px !important}.mso=20
+=2Esize-64,.mso .size-64-m,.mso .size-64-l{font-size:64px !important;line-hei=
+ght:68px !important}.mso .size-64-m{line-height:128px !important}.mso .size=
+-64-l{line-height:192px !important}.mso .size-72,.mso .size-72-m,.mso .size=
+-72-l{font-size:72px !important;line-height:76px !important}.mso .size-72-m=
+{line-height:144px !important}.mso .size-72-l{line-height:216px !important}=
+=2Emso .size-80,.mso .size-80-m,.mso .size-80-l{font-size:80px !important;lin=
+e-height:84px !important}.mso .size-80-m{line-height:160px !important}.mso =
+=2Esize-80-l{line-height:240px !important}.mso .size-96,.mso .size-96-m,.mso =
+=2Esize-96-l{font-size:96px !important;line-height:100px !important}.mso .siz=
+e-96-m{line-height:192px !important}.mso .size-96-l{line-height:288px !impo=
+rtant}.mso .size-112,.mso .size-112-m,.mso .size-112-l{font-size:112px !imp=
+ortant;line-height:116px !important}.mso .size-112-m{line-height:224px=20
+!important}.mso .size-112-l{line-height:336px !important}.mso .size-128,.ms=
+o .size-128-m,.mso .size-128-l{font-size:128px !important;line-height:132px=
+ !important}.mso .size-128-m{line-height:256px !important}.mso .size-128-l{=
+line-height:384px !important}.mso .size-144,.mso .size-144-m,.mso .size-144=
+-l{font-size:144px !important;line-height:148px !important}.mso .size-144-m=
+{line-height:288px !important}.mso .size-144-l{line-height:432px !important=
+}.mso .cmctbl table td,.mso .cmctbl table th{Margin-left:20px !important;Ma=
+rgin-right:20px !important}.mso .cmctbl- -inline,.mso .cmctbl{padding-left:=
+20px !important;padding-right:20px !important}.mso .cmctbl- -inline table,.=
+mso .cmctbl=20
+table{mso-table-lspace:0pt;mso-table-rspace:0pt;mso-line-height-rule:exactl=
+y}.size-8,.size-9{mso-text-raise:9px}.size-34,h1{mso-text-raise:13px}.size-=
+36{mso-text-raise:14px}.size-40{mso-text-raise:16px}.size-44{mso-text-raise=
+:17px}.size-48{mso-text-raise:18px}.size-56{mso-text-raise:22px}.size-64{ms=
+o-text-raise:25px}.size-72{mso-text-raise:28px}.size-80{mso-text-raise:32px=
+}.size-96{mso-text-raise:40px}.size-112{mso-text-raise:46px}.size-128{mso-t=
+ext-raise:54px}.size-144{mso-text-raise:58px}.size-11-m,.size-12-m{mso-text=
+-raise:6px}.size-13-m,.size-14-m{mso-text-raise:7px}.size-15-m,.size-16-m,.=
+size-8-l{mso-text-raise:8px}.size-17-m,.size-18-m{mso-text-raise:9px}.size-=
+20-m,.size-10-l{mso-text-raise:10px}.size-22-m,.size-11-l{mso-text-raise:11=
+px}.size-24-m,.size-12-l{mso-text-raise:12px}.size-26-m,.size-13-l{mso-text=
+-raise:13px}.size-28-m,.size-14-l{mso-text-raise:14px}.size-30-m,.size-15-l=
+{mso-text-raise:15px}.size-32-m,.size-16-l{mso-text-raise:16px}.size-34-m,.=
+size-17-l{mso-text-raise:17px}.size-36-m,.size-18-l{mso-text-raise:18px}.si=
+ze-40-m,.size-20-l{mso-text-raise:20px}.size-44-m,.size-22-l{mso-text-raise=
+:22px}.size-48-m,.size-24-l{mso-text-raise:24px}.size-26-l{mso-text-raise:2=
+6px}.size-56-m,.size-28-l{mso-text-raise:28px}.size-30-l{mso-text-raise:30p=
+x}.size-64-m,.size-32-l{mso-text-raise:32px}.size-34-l{mso-text-raise:34px}=
+=2Esize-72-m,.size-36-l{mso-text-raise:36px}.size-80-m,.size-40-l{mso-text-ra=
+ise:40px}.size-44-l{mso-text-raise:44px}.size-96-m,.size-48-l{mso-text-rais=
+e:48px}.size-112-m,.size-56-l{mso-text-raise:56px}.size-128-m,.size-64-l{ms=
+o-text-raise:64px}.size-144-m,.size-72-l{mso-text-raise:72px}.size-80-l{mso=
+-text-raise:80px}.size-96-l{mso-text-raise:96px}.size-112-l{mso-text-raise:=
+112px}.size-128-l{mso-text-raise:128px}.size-144-l{mso-text-raise:144px}=0D
+</style><![endif]--></head>
+<!--[if mso]>
+  <body class=3D"mso">
+<![endif]-->
+<!--[if !mso]><!-->
+  <body class=3D"main full-padding" style=3D"margin: 0;padding: 0;-webkit-t=
+ext-size-adjust: 100%;">
+<!--<![endif]-->
+    <table class=3D"wrapper" style=3D"border-collapse: collapse;table-layou=
+t: fixed;min-width: 320px;width: 100%;background-color: #f5f5f5;" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation"><tbody><tr><td>
+      <div role=3D"banner">
+        <div class=3D"preheader" style=3D"Margin: 0 auto;max-width: 560px;m=
+in-width: 280px; width: 280px;width: calc(28000% - 167440px);">
+          <div style=3D"border-collapse: collapse;display: table;width: 100=
+%;">
+          <!--[if mso]><table align=3D"center" class=3D"preheader" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation"><tr><td style=3D"width: =
+280px" valign=3D"top"><![endif]-->
+            <div class=3D"snippet" style=3D"display: table-cell;Float: left=
+;font-size: 12px;line-height: 19px;max-width: 280px;min-width: 140px; width=
+: 140px;width: calc(14000% - 78120px);padding: 10px 0 5px 0;color: red;font=
+-family: Roboto,Tahoma,sans-serif;">
+             =20
+            </div>
+          <!--[if mso]></td><td style=3D"width: 280px" valign=3D"top"><![=
+endif]-->
+            <div class=3D"webversion" style=3D"display: table-cell;Float: l=
+eft;font-size: 12px;line-height: 19px;max-width: 280px;min-width: 139px; wi=
+dth: 139px;width: calc(14100% - 78680px);padding: 10px 0 5px 0;text-align: =
+right;color: red;font-family: Roboto,Tahoma,sans-serif;">
+             =20
+            </div>
+          <!--[if mso]></td></tr></table><![endif]-->
+          </div>
+        </div>
+       =20
+      </div>
+      <div>
+      <div class=3D"layout fixed-width stack" style=3D"Margin: 0 auto;max-w=
+idth: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);o=
+verflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+        <div class=3D"layout__inner" style=3D"border-collapse: collapse;dis=
+play: table;width: 100%;background-color: #ffffff;">
+        <!--[if mso]><table align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation"><tr class=3D"layout-fixed-width" style=3D"back=
+ground-color: #ffffff;"><td style=3D"width: 200px" valign=3D"top" class=3D"=
+w160"><![endif]-->
+          <div class=3D"column narrow" style=3D"text-align: left;color: #00=
+0;font-size: 14px;line-height: 21px;font-family: Roboto,Tahoma,sans-serif;F=
+loat: left;max-width: 320px;min-width: 200px; width: 320px;width: calc(7220=
+0px - 12000%);">
+         =20
+            <div style=3D"Margin-left: 20px;Margin-right: 20px;Margin-top: =
+24px;">
+      <div style=3D"mso-line-height-rule: exactly;line-height: 7px;font-siz=
+e: 1px;">&nbsp;</div>
+    </div>
+         =20
+        <div style=3D"font-size: 12px;font-style: normal;font-weight: norma=
+l;line-height: 19px;" align=3D"center">
+          <img class=3D"gnd-corner-image gnd-corner-image-center gnd-corner=
+-image-bottom" style=3D"border: 0;display: block;height: auto;width: 100%;m=
+ax-width: 133px;" alt=3D"" width=3D"133" src=3D"https=
+:/=
+/i1.cmail19.com=
+/ei/r/82/297/9CC/210211/csfinal/total-energies-l=
+ogo-9903cf03cf01453c.png">
+        </div>
+     =20
+          </div>
+        <!--[if mso]></td><td style=3D"width: 400px" valign=3D"top" class=3D=
+"w360"><![endif]-->
+          <div class=3D"column wide" style=3D"text-align: left;color: #000;=
+font-size: 14px;line-height: 21px;font-family: Roboto,Tahoma,sans-serif;Flo=
+at: left;max-width: 400px;min-width: 320px; width: 320px;width: calc(8000% =
+- 47600px);">
+         =20
+            <div style=3D"Margin-left: 20px;Margin-right: 20px;Margin-top: =
+24px;">
+      <div style=3D"mso-line-height-rule: exactly;line-height: 13px;font-si=
+ze: 1px;">&nbsp;</div>
+    </div>
+         =20
+            <div style=3D"Margin-left: 20px;Margin-right: 20px;Margin-botto=
+m: 24px;">
+      <div style=3D"mso-line-height-rule: exactly;line-height: 46px;font-si=
+ze: 1px;">&nbsp;</div>
+    </div>
+         =20
+          </div>
+        <!--[if mso]></td></tr></table><![endif]-->
+        </div>
+      </div>
+ =20
+      <div class=3D"layout one-col fixed-width stack" style=3D"Margin: 0 au=
+to;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167=
+400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-wo=
+rd;">
+        <div class=3D"layout__inner" style=3D"border-collapse: collapse;dis=
+play: table;width: 100%;background-color: #ffffff;">
+        <!--[if mso]><table align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation"><tr class=3D"layout-fixed-width" style=3D"back=
+ground-color: #ffffff;"><td style=3D"width: 600px" class=3D"w560"><![endif=
+]-->
+          <div class=3D"column" style=3D"text-align: left;color: #000;font-=
+size: 14px;line-height: 21px;font-family: Roboto,Tahoma,sans-serif;">
+       =20
+            <div style=3D"Margin-left: 20px;Margin-right: 20px;Margin-top: =
+24px;">
+      <div style=3D"mso-line-height-rule: exactly;line-height: 5px;font-siz=
+e: 1px;">&nbsp;</div>
+    </div>
+       =20
+            <div style=3D"Margin-left: 20px;Margin-right: 20px;">
+      <div style=3D"mso-line-height-rule: exactly;line-height: 20px;font-si=
+ze: 1px;">&nbsp;</div>
+    </div>
+       =20
+            <div style=3D"Margin-left: 20px;Margin-right: 20px;">
+      <div class=3D"btn btn--flat btn--medium" style=3D"Margin-bottom: 20px=
+;text-align: right;">
+        <!--[if !mso]><!--><a style=3D"border-radius: 0;display: inline-bl=
+ock;font-size: 12px;font-weight: bold;line-height: 22px;padding: 10px 20px;=
+text-align: center;text-decoration: none !important;transition: opacity 0.1=
+s ease-in;color: #ffffff !important;background-color: red;font-family: Robo=
+to, Tahoma, sans-serif;" href=3D"https://lampiris.cmail19.com=
+/t=
+/n/r-l-4b55f2a2d5cc11ef89de6fe0da588b54-l-r-r-l/">Mon espa=
+ce client</a><!--<![endif]-->
+      <!--[if mso]><p style=3D"line-height:0;margin:0;">&nbsp;</p><v:rect =
+xmlns:v=3D"urn:schemas-microsoft-com:vml" href=3D"https://lampiris.=
+cmail19.com=
+/t/n/r-l-4b55f2a2d5cc11ef89de6fe0da588b54-l=
+-r-r-l/" style=3D"width:103.5pt" fillcolor=3D"red" stroke=3D"f"><v:textbox =
+style=3D"mso-fit-shape-to-text:t" inset=3D"0pt,7.5pt,0pt,7.5pt"><center sty=
+le=3D"font-size:12px;line-height:22px;color:#FFFFFF;font-family:Roboto,Taho=
+ma,sans-serif;font-weight:bold;mso-line-height-rule:exactly;mso-text-raise:=
+2px">Mon espace client</center></v:textbox></v:rect><![endif]--></div>
+    </div>
+       =20
+            <div style=3D"Margin-left: 20px;Margin-right: 20px;">
+      <div style=3D"mso-line-height-rule: exactly;line-height: 10px;font-si=
+ze: 1px;">&nbsp;</div>
+    </div>
+       =20
+            <div style=3D"Margin-left: 20px;Margin-right: 20px;">
+      <div style=3D"mso-line-height-rule: exactly;mso-text-raise: 11px;vert=
+ical-align: middle;">
+        <p style=3D"Margin-top: 0;Margin-bottom: 0;">Bonjour =
+=
+LOUIS=
+=
+ =
+WILLEM=
+=
+,</p><p style=3D"Margin-top: 20px;Margin-bottom: 0;">Nous avons re&#231;u u=
+ne <span style=3D"text-decoration: inherit;color: #ff0000;"><strong>estimat=
+ion de votre relev&#233; d'index</strong></span>&nbsp;pour votre =
+=
+=
+ &#233;lectricit&#233; =
+=
+=
+ de la part de votre gestionnaire de r&#233;seau. Deux cas de figure peuven=
+t expliquer cette situation&nbsp;: soit vous n'avez pas communiqu&#233; vot=
+re index, soit il n'a pas &#233;t&#233; relev&#233; par&nbsp; votre gestion=
+naire de r&#233;seau.</p><p style=3D"Margin-top: 20px;Margin-bottom: 0;">En=
+ fonction de votre situation, l&#8217;index estim&#233; par votre gestionna=
+ire de r&#233;seau nous a &#233;t&#233; transmis pour une des raisons suiva=
+ntes&nbsp;:</p><ul style=3D"Margin-top: 20px;Margin-bottom: 0;Margin-left: =
+24px;padding:=20
+0;list-style-type: disc;"><li style=3D"Margin-top: 20px;Margin-bottom: 0;Ma=
+rgin-left: 0;"><em>vous &#234;tes fourni par TotalEnergies et votre mois de=
+ relev&#233; d&#8217;index annuel vient d&#8217;&#234;tre d&#233;pass&#233;=
+, il s&#8217;agit donc de l&#8217;index annuel sur base duquel sera &#233;t=
+ablie votre facture de r&#233;gularisation annuelle&nbsp;;</em></li><li sty=
+le=3D"Margin-top: 0;Margin-bottom: 0;Margin-left: 0;"><em>vous &#234;tes fo=
+urni depuis peu par TotalEnergies, il s&#8217;agit donc de l&#8217;index de=
+ d&#233;part sur base duquel TotalEnergies commencera &#224; vous facturer&=
+nbsp;;</em></li><li style=3D"Margin-top: 0;Margin-bottom: 0;Margin-left: 0;=
+"><em>vous n'&#234;tes plus client TotalEnergies, il s&#8217;agit donc de l=
+&#8217;index de cl&#244;ture sur base duquel sera &#233;tablie votre factur=
+e de r&#233;gularisation de cl&#244;ture.</em></li></ul><p style=3D"Margin-=
+top:=20
+20px;Margin-bottom: 0;"><strong><span style=3D"text-decoration: inherit;col=
+or: #ff0000;">Mais rassurez-vous, il n'est pas trop tard !&nbsp;</span></st=
+rong></p><p style=3D"Margin-top: 20px;Margin-bottom: 0;">Vous avez jusqu'au=
+&nbsp;<span style=3D"text-decoration: inherit;color: #565656;"><strong>=
+08/02/2025=
+=
+</strong></span><strong><span style=3D"text-decoration: inherit;color: #565=
+656;"> </span></strong>pour nous communiquer votre&nbsp;index du compteur<s=
+pan style=3D"text-decoration: inherit;color: #565656;"><strong> =
+=
+000084016-CONT2457458=
+=
+=
+=
+=
+.</strong></span></p><p style=3D"Margin-top: 20px;Margin-bottom: 20px;">Com=
+muniquez-nous votre index pour l'adresse&nbsp;=
+Rue Dieudonn=C3=A9 Jacobs 60 13, 4420 Montegn=C3=A9e=
+=
+ en compl&#233;tant le formulaire ci-dessous.&nbsp;Cela ne prend que quelqu=
+es minutes.&nbsp;</p>
+      </div>
+    </div>
+       =20
+            <div style=3D"Margin-left: 20px;Margin-right: 20px;">
+      <div class=3D"btn btn--flat btn--large" style=3D"Margin-bottom: 20px;=
+text-align: center;">
+        <!--[if !mso]><!--><a style=3D"border-radius: 0;display: inline-bl=
+ock;font-size: 14px;font-weight: bold;line-height: 24px;padding: 12px 24px;=
+text-align: center;text-decoration: none !important;transition: opacity 0.1=
+s ease-in;color: #ffffff !important;background-color: red;font-family: Robo=
+to, Tahoma, sans-serif;" href=3D"https://lampiris.cmail19.com=
+/t=
+/n/r-l-4b55f2a2d5cc11ef89de6fe0da588b54-l-y-r-l/">Je commu=
+nique mon index</a><!--<![endif]-->
+      <!--[if mso]><p style=3D"line-height:0;margin:0;">&nbsp;</p><v:rect =
+xmlns:v=3D"urn:schemas-microsoft-com:vml" href=3D"https://lampiris.=
+cmail19.com=
+/t/n/r-l-4b55f2a2d5cc11ef89de6fe0da588b54-l=
+-y-r-l/" style=3D"width:163.5pt" fillcolor=3D"red" stroke=3D"f"><v:textbox =
+style=3D"mso-fit-shape-to-text:t" inset=3D"0pt,9pt,0pt,9pt"><center style=3D=
+"font-size:14px;line-height:24px;color:#FFFFFF;font-family:Roboto,Tahoma,sa=
+ns-serif;font-weight:bold;mso-line-height-rule:exactly;mso-text-raise:1.5px=
+">Je communique mon index</center></v:textbox></v:rect><![endif]--></div>
+    </div>
+       =20
+            <div style=3D"Margin-left: 20px;Margin-right: 20px;">
+      <div style=3D"mso-line-height-rule: exactly;mso-text-raise: 11px;vert=
+ical-align: middle;">
+        <h2 class=3D"size-14" style=3D"Margin-top: 0;Margin-bottom: 0;font-=
+style: normal;font-weight: normal;color: #285aff;font-size: 14px;line-heigh=
+t: 21px;" lang=3D"x-size-14"><strong><span style=3D"text-decoration: inheri=
+t;color: #ff0000;">O&#249; trouver votre index ?&nbsp;</span></strong></h2>=
+<p style=3D"Margin-top: 16px;Margin-bottom: 20px;">La&nbsp;s&#233;rie de&nb=
+sp;chiffres sur votre compteur vous indique&nbsp;votre consommation. Si vou=
+s avez un doute, n'h&#233;sitez pas &#224; consulter <a style=3D"text-decor=
+ation: underline;transition: opacity 0.1s ease-in;color: red;" href=3D"http=
+s://lampiris.cmail19.com=
+/t/n/r-l-4b55f2a2d5cc11ef89de6fe0da588b=
+54-l-j-r-l/">notre guide</a> pour &#234;tre s&#251;r de fo=
+urnir les bonnes informations.&nbsp;</p>
+      </div>
+    </div>
+       =20
+            <div style=3D"Margin-left: 20px;Margin-right: 20px;">
+      <div style=3D"mso-line-height-rule: exactly;mso-text-raise: 11px;vert=
+ical-align: middle;">
+        <p style=3D"Margin-top: 0;Margin-bottom: 0;"><span style=3D"text-de=
+coration: inherit;color: #ff0000;"><strong>Nous sommes toujours &#224; vos =
+c&#244;t&#233;s. </strong></span></p><p style=3D"Margin-top: 20px;Margin-bo=
+ttom: 0;">Des questions ? Rendez-vous dans <a style=3D"text-decoration: und=
+erline;transition: opacity 0.1s ease-in;color: red;" href=3D"https://lampir=
+is.cmail19.com=
+/t/n/r-l-4b55f2a2d5cc11ef89de6fe0da588b54-=
+l-t-r-l/">Mon espace client</a>, consultez <a style=3D"text-decor=
+ation: underline;transition: opacity 0.1s ease-in;color: red;" href=3D"http=
+s://lampiris.cmail19.com=
+/t/n/r-l-4b55f2a2d5cc11ef89de6fe0da588b=
+54-l-i-r-l/">nos FAQ sur les relev&#233;s de compteur</a>,=
+ r&#233;guli&#232;rement mises &#224; jour ou discutez avec nos Experts &#2=
+33;nergie via notre <a style=3D"text-decoration: underline;transition: opac=
+ity 0.1s=20
+ease-in;color: red;" href=3D"https://lampiris.cmail19.com=
+/t/n/r=
+-l-4b55f2a2d5cc11ef89de6fe0da588b54-l-d-r-l/">chat</a>.&nb=
+sp;</p><p style=3D"Margin-top: 20px;Margin-bottom: 0;">Bien cordialement,</=
+p><p style=3D"Margin-top: 20px;Margin-bottom: 20px;"><strong>Votre &#233;qu=
+ipe TotalEnergies</strong></p>
+      </div>
+    </div>
+       =20
+            <div style=3D"Margin-left: 20px;Margin-right: 20px;Margin-botto=
+m: 24px;">
+      <div style=3D"mso-line-height-rule: exactly;line-height: 20px;font-si=
+ze: 1px;">&nbsp;</div>
+    </div>
+       =20
+          </div>
+        <!--[if mso]></td></tr></table><![endif]-->
+        </div>
+      </div>
+ =20
+      </div>
+      <div role=3D"contentinfo"><div style=3D"line-height:0px;font-size:0px=
+;" id=3D"footer-top-spacing">&nbsp;</div><div class=3D"layout email-flexibl=
+e-footer email-footer" style=3D"Margin: 0 auto;max-width: 600px;min-width: =
+320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-wor=
+d;word-wrap: break-word;word-break: break-word;" id=3D"footer-content">
+      <div class=3D"layout__inner left-aligned-footer" style=3D"border-coll=
+apse: collapse;display: table;width: 100%;">
+        <!--[if mso]><table align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation"><tr class=3D"layout-email-footer"><![endif]--=
+>
+        <!--[if mso]><td><table cellpadding=3D"0" cellspacing=3D"0"><![en=
+dif]-->
+        <!--[if mso]><td valign=3D"top"><![endif]-->
+          <div class=3D"column" style=3D"text-align: left;font-size: 12px;l=
+ine-height: 19px;color: red;font-family: Roboto,Tahoma,sans-serif;display: =
+none;">
+      <div class=3D"footer-logo emb-logo-margin-box" style=3D"font-size: 26=
+px;line-height: 32px;Margin-top: 10px;Margin-bottom: 20px;color: #7b663d;fo=
+nt-family: Roboto,Tahoma,sans-serif;" align=3D"center">
+        <div emb-flexible-footer-logo align=3D"center"></div>
+      </div>
+    </div>
+        <!--[if mso]></td><![endif]-->
+        <!--[if mso]><td valign=3D"top"><![endif]-->
+          <div class=3D"column" style=3D"text-align: left;font-size: 12px;l=
+ine-height: 19px;color: red;font-family: Roboto,Tahoma,sans-serif;display: =
+none;">
+      <div style=3D"margin-left: 0;margin-right: 0;Margin-top: 10px;Margin-=
+bottom: 10px;">
+        <div class=3D"footer__share-button">
+         =20
+         =20
+         =20
+         =20
+        </div>
+      </div>
+    </div>
+        <!--[if mso]></td><![endif]-->
+        <!--[if mso]><td valign=3D"top"><![endif]-->
+          <table style=3D"border-collapse: collapse;table-layout: fixed;dis=
+play: inline-block;width: 600px;" cellpadding=3D"0" cellspacing=3D"0"><tbod=
+y><tr><td><div class=3D"column js-footer-additional-info" style=3D"text-ali=
+gn: left;font-size: 12px;line-height: 19px;color: red;font-family: Roboto,T=
+ahoma,sans-serif;width: 600px;">
+      <div style=3D"margin-left: 0;margin-right: 0;Margin-top: 10px;Margin-=
+bottom: 10px;">
+        <div class=3D"email-footer__additional-info" style=3D"font-size: 12=
+px;line-height: 19px;margin-bottom: 18px;margin-top: 0px;">
+          <div bind-to=3D"address"><p class=3D"email-flexible-footer__addit=
+ionalinfo--center" style=3D"Margin-top: 0;Margin-bottom: 0;"><span style=3D=
+"text-decoration: inherit;color: #000000;">TotalEnergies Power &amp; Gas Be=
+lgium S.A.<br>
+Rue Saint-Laurent 54<br>
+4000 Li&#232;ge<br>
+TVA: BE 0859 655 570 - RPM Li&#232;ge<br>
+IBAN : BE38 0015 0942 4272 &#8211; BIC : GEBABEBB<br>
+<a style=3D"text-decoration: underline;transition: opacity 0.1s ease-in;col=
+or: red;" href=3D"https://lampiris.cmail19.com=
+/t/n/r-l-4b55f2a2=
+d5cc11ef89de6fe0da588b54-l-h-r-l/">www.totalenergies.be</a=
+></span></p></div>
+        </div>
+       =20
+       =20
+        <div class=3D"email-footer__additional-info" style=3D"font-size: 12=
+px;line-height: 19px;margin-bottom: 15px;Margin-top: 18px;">
+         =20
+        </div>
+        <!--[if mso]>&nbsp;<![endif]-->
+      </div>
+    </div></td></tr></tbody></table>
+        <!--[if mso]></table></td><![endif]-->
+        <!--[if mso]></td></tr></table><![endif]-->
+      </div>
+    </div><div style=3D"line-height:40px;font-size:40px;" id=3D"footer-bott=
+om-spacing">&nbsp;</div></div>
+     =20
+    </td></tr></tbody></table>
+  <style type=3D"text/css">
+@media (max-width:619px){.email-flexible-footer .left-aligned-footer .colum=
+n,.email-flexible-footer .center-aligned-footer,.email-flexible-footer .rig=
+ht-aligned-footer .column{max-width:100% !important;text-align:center !impo=
+rtant;width:100% !important}.flexible-footer-logo{margin-left:0px !importan=
+t;margin-right:0px !important}.email-flexible-footer .left-aligned-footer .=
+flexible-footer__share-button__container,.email-flexible-footer .center-ali=
+gned-footer .flexible-footer__share-button__container,.email-flexible-foote=
+r .right-aligned-footer .flexible-footer__share-button__container{display:i=
+nline-block;margin-left:5px !important;margin-right:5px !important}.email-f=
+lexible-footer__additionalinfo--center{text-align:center !important}.email-=
+flexible-footer .left-aligned-footer table,.email-flexible-footer .center-a=
+ligned-footer table,.email-flexible-footer .right-aligned-footer=20
+table{display:table !important;width:100% !important}.email-flexible-footer=
+ .footer__share-button,.email-flexible-footer .email-footer__additional-inf=
+o{margin-left:20px;margin-right:20px}}
+</style><img style=3D"visibility: hidden !important; display: block !import=
+ant; height:1px !important; width:1px !important; border: 0 !important; mar=
+gin: 0 !important; padding: 0 !important" src=3D"https://lampiris.=
+cmail19.com=
+/t/n/r-o-4b55f2a2d5cc11ef89de6fe0da588b54-l-=
+l/o.gif" width=3D"1" height=3D"1" border=3D"0" alt=3D"">
+</body></html>
+
+
+
+--_c8ead025-554f-4334-ae50-46a9ee425ca4_--
