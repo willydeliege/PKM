@@ -210,8 +210,8 @@
  {:journals
   [{:title [:b "🔥 Today's Tasks"]
  :query [:find (pull ?b [*]) :in $ ?day :where 
-          [?b :block/marker ?m] 
-          (or [?b :block/scheduled ?day] [?b :block/deadline ?day]) ] 
+          (or [?b :block/scheduled ?day] [?b :block/deadline ?day])
+          :inputs [:today]]
  :inputs [:today]}
    {:title "🔨 NOW"
     :query [:find (pull ?h [*])
@@ -234,7 +234,7 @@
             [?h :block/page ?p]]
     :inputs [:today :7d-after]
     :group-by-page? false
-    :collapsed? false}
+    :collapsed? true}
    {:title [:h3 "⚠️ Overdue"]
       :query [:find (pull ?block [*])
               :in $ ?start ?next
@@ -360,11 +360,11 @@
  ;; :ignored-page-references-keywords #{:author :website}
 
  ;; logbook configuration.
- ;; :logbook/settings
- ;; {:with-second-support? false ;limit logbook to minutes, seconds will be eliminated
- ;;  :enabled-in-all-blocks true ;display logbook in all blocks after timetracking
- ;;  :enabled-in-timestamped-blocks false ;don't display logbook at all
- ;; }
+ :logbook/settings
+  {:with-second-support? false ;limit logbook to minutes, seconds will be eliminated
+  :enabled-in-all-blocks true ;display logbook in all blocks after timetracking
+  :enabled-in-timestamped-blocks true ;don't display logbook at all
+  }
 
  ;; Mobile photo upload configuration.
  ;; :mobile/photo
