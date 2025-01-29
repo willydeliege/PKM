@@ -1,0 +1,397 @@
+Delivered-To: frederic.willem@gmail.com
+Received: by 2002:a05:7108:7f01:b0:3dc:a9a0:5d5b with SMTP id iq1csp3182206gdb;
+        Tue, 28 Jan 2025 05:45:05 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IH2mm//UxAc2Jla/E8V0umI4GwKL0og7OjehWbaqD/JBd8CTcuPfOEQUOuDGEtlISKGxFA4
+X-Received: by 2002:ac8:578e:0:b0:467:492b:617f with SMTP id d75a77b69052e-46e12b859aamr669512701cf.40.1738071905686;
+        Tue, 28 Jan 2025 05:45:05 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1738071905; cv=none;
+        d=google.com; s=arc-20240605;
+        b=BEV7liWM+k6Pteioc2Hy8fG9pVec27MsXcTgVkoE2pZdttpFTf5RCTDzAmBRKtTNjj
+         H5Tg1pLMYZvUrrqa2dd2+h+lsPmY/yjQ6eyhMzCJOefVj/ytHLHnoW9CmKl9nneWdPEe
+         o95xO6SXcusqhMs818eROAshQSqEya/0VAmWr56bCB/unu8WVfN0PzKvAOuoX6qCfVRr
+         wrOp32QdeBxAjBozlva5Hd5FbA7aUx4y0qPhfWT/xJFrZzoWCGD0w3mq0wiKEdShxiVj
+         IcldKq4QgXHPZkpX4jntYdGY/gdLj+lWOITtknLE83nws3W211n9gk28U9ceKhwYtWQh
+         mhMw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:mime-version:subject:message-id:to:reply-to:from:date
+         :dkim-signature:dkim-signature;
+        bh=ML9dAN1qfRs4jkO8yeLmBDerUh+/gBwuo6PcDr/7ij8=;
+        fh=sBt9Jl+WfPZMk9pCknzILW+wINNmh0ii1Uq021oxfqo=;
+        b=UmVtQlOCQr/njZmBiZ/UazlZMJKvltBDoyXOe6Nz9BvUWNm0MVkmB3EoCYUddort1E
+         UleVHU5orS7lxor5qwqTlxkwdxazAPB3n+aArEC6vy3jCUb1GGs1k6C4hN7QWyLcFi+h
+         yt1yUzJJPtBQS0dvJkTCH9jAzMzjwms1PKr2GI1aspq6b3sXRV2Cvjtu4ZfYEpREnJ72
+         SeB/Hok3J5vj/hE3zvDliUlHS9Sib3c13My4bmI44uCDceTCM+KZCa+5/WGNVeZGF4Fc
+         7u4v94ZinUWwRaf5gQ4N210yNss+fH/J/qtoKv7vZlK6QMNMuKN0zlf2hUQsE+Yo9pGl
+         Rdww==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@codingame.com header.s=vvyipd3e25cam7dptlj6ozg25t7s54b2 header.b=kY0I5uYO;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=ZI6H6890;
+       spf=pass (google.com: domain of 01000194ad289419-401fa090-8ac9-4a83-b511-c91ce2e13c47-000000@emailing.codingame.com designates 54.240.11.98 as permitted sender) smtp.mailfrom=01000194ad289419-401fa090-8ac9-4a83-b511-c91ce2e13c47-000000@emailing.codingame.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=codingame.com
+Return-Path: <01000194ad289419-401fa090-8ac9-4a83-b511-c91ce2e13c47-000000@emailing.codingame.com>
+Received: from a11-98.smtp-out.amazonses.com (a11-98.smtp-out.amazonses.com. [54.240.11.98])
+        by mx.google.com with ESMTPS id 6a1803df08f44-6e205362a87si128497046d6.126.2025.01.28.05.45.05
+        for <frederic.willem@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 28 Jan 2025 05:45:05 -0800 (PST)
+Received-SPF: pass (google.com: domain of 01000194ad289419-401fa090-8ac9-4a83-b511-c91ce2e13c47-000000@emailing.codingame.com designates 54.240.11.98 as permitted sender) client-ip=54.240.11.98;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@codingame.com header.s=vvyipd3e25cam7dptlj6ozg25t7s54b2 header.b=kY0I5uYO;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=ZI6H6890;
+       spf=pass (google.com: domain of 01000194ad289419-401fa090-8ac9-4a83-b511-c91ce2e13c47-000000@emailing.codingame.com designates 54.240.11.98 as permitted sender) smtp.mailfrom=01000194ad289419-401fa090-8ac9-4a83-b511-c91ce2e13c47-000000@emailing.codingame.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=codingame.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=vvyipd3e25cam7dptlj6ozg25t7s54b2; d=codingame.com; t=1738071905;
+	h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type;
+	bh=OiClZYeevhi3/LuDSny0kcxp2ARn2vDJW39DX+5uYrw=;
+	b=kY0I5uYORs9xWl3AP39GJHPDGoUCkd1XUZohf/HZo8B+UCGzBHPKof6uObmTdf5x
+	N2ItUdCZpPGu1sbzrs3Xs8h/jZy1t+XtLo0dGBGnLThw+A+fFOZfuG88XifRBnIc8wg
+	o9ubnoYtz6CmzpvrgI9dbvBrU0uEygX56jmdOfkchQaGENCEH2vY4RliS5RiJFliQCB
+	gc8pTk4L5XMSkwkZCu1Q9UXHu/Yq9RH7rbUR3a4hZbbv/zUBqhqoT6m9ac9zS2f+wmV
+	4f6uCWbLT83HwhLYP218iqj4nwZJ49C2Z8Ne/PKZx7ljvceCmw1+6TeynwI+4cL7s3X
+	oLqdlxHErA==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1738071905;
+	h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:Feedback-ID;
+	bh=OiClZYeevhi3/LuDSny0kcxp2ARn2vDJW39DX+5uYrw=;
+	b=ZI6H6890jxRym6rrthTdO1x6DQTJdo76fY9Uy2g6xM5j6OEqhTpnt1tDg6lO+hWY
+	Xfo3jq67XA27cQQRb78t7aMWfB05nT+hfZ8EWbCKc5h0nIStycoGmkWwKAvdMf/DkLs
+	XNxVHr7L/WvS2eeOGTafBz7tdC1yJg8s5yL2vI4g=
+Date: Tue, 28 Jan 2025 13:45:05 +0000
+From: The CodinGame Team <community@codingame.com>
+Reply-To: community@codingame.com
+To: frederic.willem@gmail.com
+Message-ID: <01000194ad289419-401fa090-8ac9-4a83-b511-c91ce2e13c47-000000@email.amazonses.com>
+Subject: =?UTF-8?Q?CodinGame_&_CoderPad_tech_hiri?=
+ =?UTF-8?Q?ng_survey_2025:_the_results_=F0=9F=93=8A?=
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_328684_185576229.1738071163205"
+Feedback-ID: ::1.us-east-1.p7wQsMMJKDUXwGnrHN7YOmvsdgoP3aDJajrvK4B5DHw=:AmazonSES
+X-SES-Outgoing: 2025.01.28-54.240.11.98
+
+------=_Part_328684_185576229.1738071163205
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_328685_856021975.1738071163205"
+
+------=_Part_328685_856021975.1738071163205
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<https://www.codingame.com/servlet/mlinkservlet?lmid=3D1931957360pUcKU&ltpl=
+=3D0&link=3Dhttps%3A%2F%2Fwww.codingame.com%2F%3Futm_medium%3Demail%26amp%3=
+Butm_source%3Dtl%26amp%3Butm_campaign%3D23-Q1-Email-ThoughtLeadership-AWR-A=
+ll-Global-survey-2023%26amp%3Butm_content%3Dcg-community>
+ Survey results=20
+ January 2025=20
+
+ Our =E2=80=9CState of Tech Hiring in 2025=E2=80=9D report is live!=20
+
+ At the end of last year, we invited you to take part in our annual survey.=
+ We=20
+asked you all about what it means to be a developer today.
+
+ We=E2=80=99ve analyzed the 5,000 responses that came in, and we=E2=80=99re=
+ ready to share the=20
+results. Some key takeaways were:
+
+ * 76% of developers find GenAI useful but GenAI is not allowed in most=20
+technical interviews.=20
+ * 78% of recruiters still include degree requirements in job postings, and=
+=20
+72% of candidates don=E2=80=99t think resume accurately showcase their skil=
+ls.=20
+ * 90% of developers say that technical interviews are the best setting to=
+=20
+showcase their skills, and call for more realistic questions.  Want to lear=
+n=20
+more about technologies, interviews, business priorities for 2025?
+
+ Check out the full report here:=20
+READ THE REPORT=20
+<https://www.codingame.com/servlet/mlinkservlet?lmid=3D1931957360pUcKU&ltpl=
+=3D2&link=3Dhttps%3A%2F%2Fcoderpad.io%2Fsurvey-reports%2Fcoderpad-and-codin=
+game-state-of-tech-hiring-2025%2F%3Futm_medium%3Dwebref%26amp%3Butm_source%=
+3Dcodingame%26amp%3Butm_campaign%3D24-Q4-WebRef-CodinGame-ACQ-Eng-Global-st=
+ate-tech-hiring-2025%26amp%3Butm_content%3D>
+ Happy New Year!=20
+ The CodinGame team=20
+
+=20
+<https://www.codingame.com/servlet/mlinkservlet?lmid=3D1931957360pUcKU&ltpl=
+=3D3&link=3Dhttps%3A%2F%2Ftwitter.com%2Fcodingame>
+=20
+<https://www.codingame.com/servlet/mlinkservlet?lmid=3D1931957360pUcKU&ltpl=
+=3D4&link=3Dhttps%3A%2F%2Fwww.instagram.com%2Fcodingame_official%2F>
+=20
+<https://www.codingame.com/servlet/mlinkservlet?lmid=3D1931957360pUcKU&ltpl=
+=3D5&link=3Dhttps%3A%2F%2Fgithub.com%2FCodinGame>
+=20
+<https://www.codingame.com/servlet/mlinkservlet?lmid=3D1931957360pUcKU&ltpl=
+=3D6&link=3Dhttps%3A%2F%2Fwww.twitch.tv%2Fcodingame>
+=C2=A9 CodinGame 2023=20
+ No longer want to receive these emails? Unsubscribe here=20
+<https://www.codingame.com/servlet/mlinkservlet?lmid=3D1931957360pUcKU&ltpl=
+=3D7&link=3Dhttps%3A%2F%2Fwww.codingame.com%2Fservlet%2Funsubscribe%2F6c799=
+d8362cb79c5d1ea8496a8f19fdf5832331%2F4e29cfb9c2d9f5771ccd03cd5e660912774f75=
+7b%2Finstant%2Fother>
+ or manage your notifications=20
+<https://www.codingame.com/servlet/mlinkservlet?lmid=3D1931957360pUcKU&ltpl=
+=3D8&link=3Dhttps%3A%2F%2Fwww.codingame.com%2Fservlet%2Funsubscribe%2F6c799=
+d8362cb79c5d1ea8496a8f19fdf5832331%2F4e29cfb9c2d9f5771ccd03cd5e660912774f75=
+7b>
+ .
+------=_Part_328685_856021975.1738071163205
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html>
+ <head>
+  <meta charset=3D"UTF-8">
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+  <style type=3D"text/CSS">
+        body {
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09=09-webkit-text-size-adjust:100%;=20
+=09=09=09-ms-text-size-adjust:100%;
+=09=09
+            background-color: #efefef;=20
+            color: #ffffff;=20
+            font-family: Arial, Helvetica, sans-serif;=20
+            font-size: 12px;
+=09=09}
+=09=09
+=09=09table {
+=09=09=09padding:0;
+=09=09=09margin:0;
+=09=09}
+
+=09=09td {
+=09=09=09padding:0;
+=09=09=09margin:0;
+=09=09}
+       =20
+=09=09img {
+=09=09=09margin: 0;
+=09=09=09padding: 0;
+=09=09=09/*display:block;*/
+=09=09=09-ms-interpolation-mode: bicubic;
+=09=09=09border:none;
+=09=09=09outline:none;
+=09=09}
+
+=09=09a, a:link, a:visited {
+=09=09=09text-decoration: none;
+=09=09=09border-style:none;
+=09=09=09border:0;
+=09=09=09padding:0;
+=09=09=09margin:0;
+=09=09=09color: #f9b700;
+=09=09}
+=09=09
+        .ExternalClass {width: 100%;}
+        p {margin:0; padding:0; margin-bottom:0;}
+=09=09a:link.linkfollow, a:visited.linkfollow {color: #f9b700;}
+=09=09a:link.linkview, a:visited.linkview {color: #f9b700;}
+  </style>
+ </head>
+ <body bgcolor=3D"#efefef" style=3D"margin: 0;padding: 0;-webkit-text-size-=
+adjust: 100%;-ms-text-size-adjust: 100%;">
+  <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" bg=
+color=3D"#efefef" align=3D"center" style=3D"font-family: Arial, Helvetica, =
+sans-serif;color: #ffffff;">
+   <tbody>
+    <tr>
+     <td>&nbsp;</td>
+    </tr>
+    <tr align=3D"center">
+     <td align=3D"center">
+      <!-- Main table: fixed width of 600px; -->
+      <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"600"=
+ style=3D"text-align: center; margin: auto;font-size: 14px;color: #ffffff" =
+bgcolor=3D"#192126">
+       <!-- //////// Header -->
+       <tbody>
+        <tr>
+         <td>
+          <table style=3D"color: #ffffff" width=3D"600">
+           <tbody>
+            <tr align=3D"left">
+             <td style=3D"padding: 40px; font-size: 25px;width: 220px" widt=
+h=3D"220">
+              <a href=3D"https://www.codingame.com/servlet/mlinkservlet?lmi=
+d=3D1931957360pUcKU&amp;ltpl=3D0&amp;link=3Dhttps%3A%2F%2Fwww.codingame.com=
+%2F%3Futm_medium%3Demail%26amp%3Butm_source%3Dtl%26amp%3Butm_campaign%3D23-=
+Q1-Email-ThoughtLeadership-AWR-All-Global-survey-2023%26amp%3Butm_content%3=
+Dcg-community">
+               <img src=3D"https://www.codingame.com/servlet/mfileservlet?i=
+d=3D99104309654463&amp;lmid=3D1931957360pUcKU" width=3D"196" height=3D"56" =
+style=3D"margin: 0;padding: 0;display: block;-ms-interpolation-mode: bicubi=
+c;border: none;outline: none;">
+              </a>
+             </td>
+             <td style=3D"padding: 40px; padding-top: 42px;font-size:14px; =
+line-height: 17px;text-align: right;" align=3D"right">
+              <strong> Survey results</strong>
+              <br>
+              <span style=3D"color: #ffffff; font-size: 14px;"> January 202=
+5</span>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+         </td>
+        </tr>
+        <tr>
+         <td bgcolor=3D"#192126" style=3D"background-color: #192126;font-si=
+ze: 0px;line-height: 0px;vertical-align: top;"></td>
+        </tr>
+        <!-- //////// Main article -->
+        <tr>
+         <td style=3D"color: #ffffff;text-align: justify; padding-left: 40p=
+x;padding-right: 40px;padding-top: 30px;padding-bottom: 34px;font-size: 17p=
+x;line-height: 24px;">
+          Our =E2=80=9CState of Tech Hiring in 2025=E2=80=9D report is live=
+!=20
+          <br>
+          <br>
+           At the end of last year, we invited you to take part in our annu=
+al survey. We asked you all about what it means to be a developer today.=20
+          <br>
+          <br>
+           We=E2=80=99ve analyzed the 5,000 responses that came in, and we=
+=E2=80=99re ready to share the results. Some key takeaways were:=20
+          <br>
+          <ul>
+           <li>76% of developers find GenAI useful but GenAI is not allowed=
+ in most technical interviews.</li>
+           <li>78% of recruiters still include degree requirements in job p=
+ostings, and 72% of candidates don=E2=80=99t think resume accurately showca=
+se their skills.</li>
+           <li>90% of developers say that technical interviews are the best=
+ setting to showcase their skills, and call for more realistic questions.</=
+li>
+          </ul>
+           Want to learn more about technologies, interviews, business prio=
+rities for 2025?=20
+          <br>
+          <br>
+           Check out the full report here:
+         </td>
+        </tr>
+        <tr>
+         <td style=3D"background-color: #192126; text-align: center;">
+          <div style=3D"display: inline-block;">
+           <!--[if mso]>
+  <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-=
+microsoft-com:office:word" href=3D"https://www.codingame.com/servlet/mlinks=
+ervlet?lmid=3D1931957360pUcKU&amp;ltpl=3D1&amp;link=3Dhttps%3A%2F%2Fcoderpa=
+d.io%2Fsurvey-reports%2Fcoderpad-and-codingame-state-of-tech-hiring-2024%2F=
+%3Futm_medium%3Dwebref%26utm_source%3Dcodingame%26utm_campaign%3D24-Q1-WebR=
+ef-CodinGame-AWR-All-Global-survey-2024%26utm_content%3Demail" style=3D"hei=
+ght:50px;v-text-anchor:middle;width:520px;" stroke=3D"f" fillcolor=3D"#f9b7=
+00">
+    <w:anchorlock/>
+    <center>
+  <![endif]-->
+           <a href=3D"https://www.codingame.com/servlet/mlinkservlet?lmid=
+=3D1931957360pUcKU&amp;ltpl=3D2&amp;link=3Dhttps%3A%2F%2Fcoderpad.io%2Fsurv=
+ey-reports%2Fcoderpad-and-codingame-state-of-tech-hiring-2025%2F%3Futm_medi=
+um%3Dwebref%26amp%3Butm_source%3Dcodingame%26amp%3Butm_campaign%3D24-Q4-Web=
+Ref-CodinGame-ACQ-Eng-Global-state-tech-hiring-2025%26amp%3Butm_content%3D"=
+ style=3D"background-color:#f9b700;color:#20252a;display:inline-block;font-=
+family:Arial, Helvetica, sans-serif;font-size:15px;font-weight:bold;line-he=
+ight:50px;text-align:center;text-decoration:none;width:520px;-webkit-text-s=
+ize-adjust:none;">READ THE REPORT</a>
+           <!--[if mso]>
+    </center>
+  </v:rect>
+<![endif]-->
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td style=3D"color: #ffffff;text-align: justify; padding-left: 40p=
+x;padding-right: 40px;padding-top: 30px;padding-bottom: 34px;font-size: 17p=
+x;line-height: 24px;">
+          Happy New Year!
+          <br>
+           The CodinGame team
+         </td>
+        </tr>
+        <tr>
+         <td colspan=3D"2" height=3D"41" style=3D"height:41px;border-bottom=
+: 1px dashed black">&nbsp;</td>
+        </tr>
+        <tr>
+         <td style=3D"padding:40px; padding-bottom: 37px; border-top: 1px s=
+olid black; text-align: center;font-size:19px" align=3D"center">
+          <a href=3D"https://www.codingame.com/servlet/mlinkservlet?lmid=3D=
+1931957360pUcKU&amp;ltpl=3D3&amp;link=3Dhttps%3A%2F%2Ftwitter.com%2Fcodinga=
+me">
+           <img src=3D"https://files.codingame.com/codingame/mail/twitter_n=
+ew.png" style=3D"border: 0;" width=3D"40" height=3D"40">
+          </a>
+          &nbsp;=20
+          <a href=3D"https://www.codingame.com/servlet/mlinkservlet?lmid=3D=
+1931957360pUcKU&amp;ltpl=3D4&amp;link=3Dhttps%3A%2F%2Fwww.instagram.com%2Fc=
+odingame_official%2F">
+           <img src=3D"https://files.codingame.com/codingame/mail/instagram=
+_new.png" style=3D"border: 0;" width=3D"40" height=3D"40">
+          </a>
+          &nbsp;=20
+          <a href=3D"https://www.codingame.com/servlet/mlinkservlet?lmid=3D=
+1931957360pUcKU&amp;ltpl=3D5&amp;link=3Dhttps%3A%2F%2Fgithub.com%2FCodinGam=
+e">
+           <img src=3D"https://www.codingame.com/servlet/mfileservlet?id=3D=
+25895742527347" style=3D"border: 0;" width=3D"40" height=3D"40">
+          </a>
+          &nbsp;=20
+          <a href=3D"https://www.codingame.com/servlet/mlinkservlet?lmid=3D=
+1931957360pUcKU&amp;ltpl=3D6&amp;link=3Dhttps%3A%2F%2Fwww.twitch.tv%2Fcodin=
+game">
+           <img src=3D"https://www.codingame.com/servlet/mfileservlet?id=3D=
+25895737535035" style=3D"border: 0;" width=3D"40" height=3D"40">
+          </a>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </td>
+    </tr>
+    <tr>
+     <td style=3D"color: black; text-align: center; padding-top: 23px;font-=
+size: 15px;font-weight: 300">=C2=A9 CodinGame 2023</td>
+    </tr>
+    <tr>
+     <td style=3D"color: black; text-align: center; padding: 10px;padding-b=
+ottom: 35px;font-size: 12px;">
+      No longer want to receive these emails?
+      <strong>
+       <a href=3D"https://www.codingame.com/servlet/mlinkservlet?lmid=3D193=
+1957360pUcKU&amp;ltpl=3D7&amp;link=3Dhttps%3A%2F%2Fwww.codingame.com%2Fserv=
+let%2Funsubscribe%2F6c799d8362cb79c5d1ea8496a8f19fdf5832331%2F4e29cfb9c2d9f=
+5771ccd03cd5e660912774f757b%2Finstant%2Fother" style=3D"color: #192126; tex=
+t-decoration: none">Unsubscribe here</a>
+      </strong>
+       or=20
+      <strong>
+       <a href=3D"https://www.codingame.com/servlet/mlinkservlet?lmid=3D193=
+1957360pUcKU&amp;ltpl=3D8&amp;link=3Dhttps%3A%2F%2Fwww.codingame.com%2Fserv=
+let%2Funsubscribe%2F6c799d8362cb79c5d1ea8496a8f19fdf5832331%2F4e29cfb9c2d9f=
+5771ccd03cd5e660912774f757b" style=3D"color: #192126; text-decoration: none=
+">manage your notifications</a>
+      </strong>
+      .
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>
+------=_Part_328685_856021975.1738071163205--
+
+------=_Part_328684_185576229.1738071163205--
