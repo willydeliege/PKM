@@ -4,7 +4,7 @@ author:: [[BBC Ideas]]
 published:: 2021-01-21
 created:: 2025-01-29
 description:: "Is the sky really blue? That might seem obvious. But sometimes things are more nuanced and complicated than you think. Here are five strategies to boost your critical thinking skills.Animated by Ana"
-tags:: clippings, literature
+tags:: clippings, literature, inbox
 
 - * ![](https://www.youtube.com/watch?v=NHjgKe7JMNE)
   * Is the sky really blue? That might seem obvious. But sometimes things are more nuanced and complicated than you think. Here are five strategies to boost your critical thinking skills.
