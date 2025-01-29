@@ -1,1 +1,6 @@
+* Inboxes
+:PROPERTIES:
+:heading: 2
+:END:
+**
 * [[Projects]]
