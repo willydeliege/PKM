@@ -2,5 +2,6 @@
 :PROPERTIES:
 :heading: 2
 :END:
-**
+** [[inbox]]
+** [[draft]]
 * [[Projects]]
