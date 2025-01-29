@@ -234,7 +234,7 @@
             [?h :block/page ?p]]
     :inputs [:today :7d-after]
     :group-by-page? false
-    :collapsed? false}
+    :collapsed? true}
    {:title [:h3 "⚠️ Overdue"]
       :query [:find (pull ?block [*])
               :in $ ?start ?next
@@ -445,11 +445,12 @@
  ;;      ;use triple underscore `___` for slash `/` in page title
  ;;      ;use Percent-encoding for other invalid characters
  :file/name-format :triple-lowbar
- :graph/settings {:excluded-pages? true
+ :graph/settings {:excluded-pages? false
  :journal? false
  :orphan-pages? false
  :builtin-pages? false}
  :ui/show-brackets? false
  :journal/page-title-format "yyyy/MM/dd"
  :editor/preferred-pasting-file? true
- :editor/logical-outdenting? true}
+ :editor/logical-outdenting? true
+ :graph/forcesettings {:charge-range 1000}}
