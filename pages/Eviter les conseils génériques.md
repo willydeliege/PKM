@@ -4,5 +4,5 @@ tags:: well-being, permanent
 - Mais la personne à qui ils donnent le conseil n'est peut être pas dans la même situation.
 - Chacun a son vécu et son expérience
 - #+BEGIN_EXAMPLE
-  Tu devrais suivre tel régime mais le régime
+  Tu devrais suivre tel régime mais le régime dépend de la cause du surpoids (genétique, hormona)
   #+END_EXAMPLE
